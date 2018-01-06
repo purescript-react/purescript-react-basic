@@ -1,0 +1,14 @@
+{
+  "name": "purescript-react-basic",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "output"
+  ],
+  "dependencies": {
+    "purescript-functions": "^3.0.0",
+    "purescript-eff": "^3.1.0",
+    "purescript-unsafe-coerce": "^3.0.0"
+  }
+}
