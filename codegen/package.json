@@ -1,0 +1,10 @@
+{
+  "name": "purescript-react-basic-codegen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "dependencies": {
+    "react-html-attributes": "^1.4.1"
+  }
+}
