@@ -14,7 +14,7 @@ import React.Basic.Types as React.Basic.Types
 
 foreign import react_
   :: forall props state
-   . { initialState :: state
+   . { initialState :: props -> state
      , render :: Fn3 props state (state -> Eff (react :: ReactFX) Unit) JSX
      }
   -> ReactComponent props
@@ -30,7 +30,7 @@ foreign import react_
 -- | module (and re-exported here).
 react
   :: forall props state
-   . { initialState :: state
+   . { initialState :: props -> state
      , render :: props -> state -> (state -> Eff (react :: ReactFX) Unit) -> JSX
      }
   -> ReactComponent props

@@ -5,7 +5,7 @@ var React = require('react');
 exports.react_ = function(spec) {
   return React.createClass({
     getInitialState: function() {
-      return spec.initialState;
+      return spec.initialState(this.props);
     },
     render: function() {
       var this_ = this;
