@@ -6,6 +6,6 @@ var ReactDOM = require("react-dom");
 var RC = require("./ReducerComponent.purs");
 
 ReactDOM.render(
-  React.createElement(RC.reducerComponent, {}),
+  React.createElement(RC.counter, {}),
   document.getElementById("app")
 );
