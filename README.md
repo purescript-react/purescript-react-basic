@@ -41,7 +41,7 @@ type ExampleState =
 -- state update callback, and produces a document.
 example :: R.ReactComponent ExampleProps
 example = R.react
-  { initialState: { counter: 0 }
+  { initialState: \_ -> { counter: 0 }
   , render: \{ label } { counter } setState ->
       R.button { onClick: mkEffFn1 \_ -> do
                             setState { counter: counter + 1 }
