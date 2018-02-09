@@ -23,7 +23,7 @@ module React.Basic.Example where
 
 import Prelude
 
-import Data.Function.Uncurried (mkEffFn1)
+import Control.Monad.Eff.Uncurried (mkEffFn1)
 import React.Basic as R
 
 -- The props for the component
