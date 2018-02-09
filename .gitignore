@@ -1,8 +1,10 @@
 /bower_components/
 /node_modules/
+/example/node_modules/
 /.pulp-cache/
 /output/
 /.psc-package/
 /.psc*
 /.purs*
 /.psa*
+/.vscode/
