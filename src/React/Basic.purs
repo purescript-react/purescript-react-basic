@@ -7,6 +7,7 @@ module React.Basic
 import Prelude
 
 import Control.Monad.Eff (Eff, kind Effect)
+import Control.Monad.Eff.Uncurried (EffFn3, mkEffFn3)
 import Data.Function.Uncurried (Fn3, mkFn3)
 import React.Basic.DOM as React.Basic.DOM
 import React.Basic.Types (CSS, EventHandler, JSX, ReactComponent, ReactFX)
@@ -15,6 +16,7 @@ import React.Basic.Types as React.Basic.Types
 foreign import react_
   :: forall props state
    . { initialState :: props -> state
+     , setup :: EffFn3 (react :: ReactFX) props state (state -> Eff (react :: ReactFX) Unit) Unit
      , render :: Fn3 props state (state -> Eff (react :: ReactFX) Unit) JSX
      }
   -> ReactComponent props
@@ -31,7 +33,13 @@ foreign import react_
 react
   :: forall props state
    . { initialState :: props -> state
+     , setup :: props -> state -> (state -> Eff (react :: ReactFX) Unit) -> Eff (react :: ReactFX) Unit
      , render :: props -> state -> (state -> Eff (react :: ReactFX) Unit) -> JSX
      }
   -> ReactComponent props
-react { initialState, render } = react_ { initialState, render: mkFn3 render }
+react { initialState, setup, render } =
+  react_
+    { initialState
+    , setup: mkEffFn3 setup
+    , render: mkFn3 render
+    }

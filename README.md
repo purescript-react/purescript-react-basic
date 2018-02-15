@@ -2,7 +2,7 @@
 
 This package implements an opinionated set of bindings to the React library, optimizing for the most basic use cases.
 
-## Features 
+## Features
 
 - All React DOM elements and attributes are supported.
 - An intuitive API for specifying props - no arrays of key value pairs, just records.
@@ -42,6 +42,7 @@ type ExampleState =
 example :: R.ReactComponent ExampleProps
 example = R.react
   { initialState: \_ -> { counter: 0 }
+  , setup: \_ _ _ -> pure unit
   , render: \{ label } { counter } setState ->
       R.button { onClick: mkEffFn1 \_ -> do
                             setState { counter: counter + 1 }

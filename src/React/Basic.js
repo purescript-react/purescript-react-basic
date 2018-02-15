@@ -7,6 +7,13 @@ exports.react_ = function(spec) {
     getInitialState: function() {
       return spec.initialState(this.props);
     },
+    componentDidMount: function() {
+      spec.setup(this.props, this.state, function(newState) {
+        return function() {
+          this_.setState(newState);
+        };
+      });
+    },
     render: function() {
       var this_ = this;
       return spec.render(this.props, this.state, function(newState) {
