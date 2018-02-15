@@ -21,6 +21,7 @@ type ExampleState =
 component :: R.ReactComponent ExampleProps
 component = R.react
   { initialState: \_ -> { counter: 0 }
+  , setup: \_ _ _ -> pure unit
   , render: \{ label } { counter } setState ->
       R.button { onClick: mkEffFn1 \_ -> do
                             setState { counter: counter + 1 }
