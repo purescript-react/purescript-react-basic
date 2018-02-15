@@ -3,7 +3,7 @@
 #### `react`
 
 ``` purescript
-react :: forall props state. { initialState :: state, render :: props -> state -> (state -> Eff (react :: ReactFX) Unit) -> JSX } -> ReactComponent props
+react :: forall props state. { initialState :: props -> state, setup :: props -> state -> (state -> Eff (react :: ReactFX) Unit) -> Eff (react :: ReactFX) Unit, render :: props -> state -> (state -> Eff (react :: ReactFX) Unit) -> JSX } -> ReactComponent props
 ```
 
 Create a React component from a _specification_ of that component.
