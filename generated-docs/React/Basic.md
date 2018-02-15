@@ -16,6 +16,12 @@ The rendering function should return a value of type `JSX`, which can be
 constructed using the helper functions provided by the `React.Basic.DOM`
 module (and re-exported here).
 
+#### `component`
+
+``` purescript
+component :: forall props. ReactComponent props -> props -> JSX
+```
+
 
 ### Re-exported from React.Basic.DOM:
 

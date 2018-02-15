@@ -1,5 +1,6 @@
 module React.Basic
   ( react
+  , component
   , module React.Basic.DOM
   , module React.Basic.Types
   ) where
@@ -8,7 +9,7 @@ import Prelude
 
 import Control.Monad.Eff (Eff, kind Effect)
 import Control.Monad.Eff.Uncurried (EffFn3, mkEffFn3)
-import Data.Function.Uncurried (Fn3, mkFn3)
+import Data.Function.Uncurried (Fn2, runFn2, Fn3, mkFn3)
 import React.Basic.DOM as React.Basic.DOM
 import React.Basic.Types (CSS, EventHandler, JSX, ReactComponent, ReactFX)
 import React.Basic.Types as React.Basic.Types
@@ -43,3 +44,12 @@ react { initialState, setup, render } =
     , setup: mkEffFn3 setup
     , render: mkFn3 render
     }
+
+foreign import component_ :: forall props. Fn2 (ReactComponent props) props JSX
+
+component
+  :: forall props
+   . ReactComponent props
+  -> props
+  -> JSX
+component = runFn2 component_
