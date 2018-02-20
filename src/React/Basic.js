@@ -25,3 +25,7 @@ exports.react_ = function(spec) {
     }
   });
 };
+
+exports.component_ = function(component, props) {
+  return React.createElement(component, props);
+}
