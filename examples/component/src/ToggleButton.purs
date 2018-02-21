@@ -15,8 +15,8 @@ type ExampleState =
 
 component :: R.ReactComponent ExampleProps
 component = R.react
-  { initialState: \{ on } -> { on }
-  , setup: \_ _ _ -> pure unit
+  { initialState: { on: false }
+  , receiveProps: \{ on } _ setState -> setState { on }
   , render: \_ { on } setState ->
       R.button { onClick: mkEffFn1 \_ -> setState { on: not on }
                }

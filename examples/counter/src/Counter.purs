@@ -20,8 +20,8 @@ type ExampleState =
 -- state update callback, and produces a document.
 component :: R.ReactComponent ExampleProps
 component = R.react
-  { initialState: \_ -> { counter: 0 }
-  , setup: \_ _ _ -> pure unit
+  { initialState: { counter: 0 }
+  , receiveProps: \_ _ _ -> pure unit
   , render: \{ label } { counter } setState ->
       R.button { onClick: mkEffFn1 \_ -> do
                             setState { counter: counter + 1 }
