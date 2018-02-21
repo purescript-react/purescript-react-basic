@@ -1,0 +1,15 @@
+{
+  "name": "counter",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "dependencies": {
+    "create-react-class": "^15.6.2",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2"
+  },
+  "devDependencies": {
+    "browserify": "^16.1.0"
+  }
+}
