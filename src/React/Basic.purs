@@ -1,8 +1,7 @@
 module React.Basic
   ( react
-  , reactComponent
   , createElement
-  , keyed
+  , createElementKeyed
   , module React.Basic.Types
   ) where
 
@@ -10,16 +9,11 @@ import Prelude
 
 import Control.Monad.Eff (Eff, kind Effect)
 import Control.Monad.Eff.Uncurried (EffFn3, mkEffFn3)
-import Data.Function.Uncurried (Fn2, runFn2, Fn3, mkFn3)
+import Data.Function.Uncurried (Fn2, Fn3, mkFn3, runFn2, runFn3)
 import React.Basic.Types (CSS, EventHandler, JSX, ReactComponent, ReactFX)
 import React.Basic.Types as React.Basic.Types
 
 -- | Create a React component from a _specification_ of that component.
--- |
--- | `react` pre-applies `createElement` and returns `props -> JSX`, making it
--- | convenient for consumption within another `purescript-react-basic`
--- | component. Use `reactComponent` for better interop with JavaScript, as it
--- | returns a `ReactComponent`.
 -- |
 -- | A _specification_ consists of a state type, an initial value for that state,
 -- | a function to apply incoming props to the internal state, and a rendering
@@ -35,22 +29,8 @@ react
      , receiveProps :: props -> state -> (SetState state fx) -> Eff (react :: ReactFX | fx) Unit
      , render :: props -> state -> (SetState state fx) -> JSX
      }
-  -> props
-  -> JSX
-react = createElement <<< reactComponent
-
--- | Create a React component from a _specification_ of that component, without
--- | pre-applying it to `createElement`. Use this function for more standard
--- | JavaScript React interop.
-reactComponent
-  :: forall props state fx
-   . { displayName :: String
-     , initialState :: state
-     , receiveProps :: props -> state -> (SetState state fx) -> Eff (react :: ReactFX | fx) Unit
-     , render :: props -> state -> (SetState state fx) -> JSX
-     }
   -> ReactComponent props
-reactComponent { displayName, initialState, receiveProps, render } =
+react { displayName, initialState, receiveProps, render } =
   component_
     { displayName
     , initialState
@@ -69,7 +49,25 @@ createElement
   -> JSX
 createElement = runFn2 createElement_
 
-foreign import keyed :: Array { key :: String, child :: JSX } -> JSX
+-- | Like `createElement`, plus a `key` for rendering components in a dynamic list.
+-- | For more information see: https://reactjs.org/docs/reconciliation.html#keys
+createElementKeyed
+  :: forall props
+   . ReactComponent props
+  -> String
+  -> props
+  -> JSX
+createElementKeyed = runFn3 createElementKeyed_
+
+-- | Render an Array of children without a wrapping component.
+foreign import fragment :: Array JSX -> JSX
+
+-- | Render an Array of children without a wrapping component.
+-- |
+-- | Provide a key when dynamically rendering multiple fragments along side
+-- | each other.
+fragmentKeyed :: String -> Array JSX -> JSX
+fragmentKeyed = runFn2 fragmentKeyed_
 
 -- | Private FFI
 
@@ -83,3 +81,7 @@ foreign import component_
   -> ReactComponent props
 
 foreign import createElement_ :: forall props. Fn2 (ReactComponent props) props JSX
+
+foreign import createElementKeyed_ :: forall props. Fn3 (ReactComponent props) String props JSX
+
+foreign import fragmentKeyed_ :: Fn2 String (Array JSX) JSX

@@ -3,7 +3,7 @@ module Counter where
 import Prelude
 
 import Control.Monad.Eff.Uncurried (mkEffFn1)
-import React.Basic (ReactComponent, reactComponent)
+import React.Basic (ReactComponent, react)
 import React.Basic.DOM as R
 
 -- The props for the component
@@ -15,7 +15,7 @@ type ExampleProps =
 -- The `render` function takes the props and current state, as well as a
 -- state update callback, and produces a document.
 component :: ReactComponent ExampleProps
-component = reactComponent
+component = react
   { displayName: "Counter"
   , initialState: { counter: 0 }
   , receiveProps: \_ _ _ -> pure unit

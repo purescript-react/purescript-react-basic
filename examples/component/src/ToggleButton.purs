@@ -3,14 +3,14 @@ module ToggleButton where
 import Prelude
 
 import Control.Monad.Eff.Uncurried (mkEffFn1)
-import React.Basic (JSX, react)
+import React.Basic (ReactComponent, react)
 import React.Basic.DOM as R
 
 type ExampleProps =
   { on :: Boolean
   }
 
-component :: ExampleProps -> JSX
+component :: ReactComponent ExampleProps
 component = react
   { displayName: "ToggleButton"
   , initialState: { on: false }

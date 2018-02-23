@@ -1,7 +1,7 @@
 "use strict";
 
 var React = require("react");
-var KeyedContainer = React.Fragment || "div";
+var Fragment = React.Fragment || "div";
 
 // Class polyfill
 var __extends =
@@ -27,6 +27,15 @@ var __extends =
           : ((__.prototype = b.prototype), new __());
     };
   })();
+
+var __shallowCopy = function(obj) {
+  if (obj == null) return;
+  var result = {};
+  Object.keys(obj).forEach(function(key) {
+    result[key] = obj[key];
+  });
+  return result;
+};
 
 exports.component_ = function(spec) {
   function Component(props) {
@@ -68,13 +77,25 @@ exports.component_ = function(spec) {
 };
 
 exports.createElement_ = function(el, attrs) {
-  return React.createElement.apply(null, [el, attrs].concat(attrs.children));
+  return React.createElement.apply(
+    null,
+    [el, attrs].concat((attrs && attrs.children) || [])
+  );
 };
 
-exports.keyed = function(keyChildPairs) {
-  return React.createElement(KeyedContainer, {
-    children: keyChildPairs.map(function(keyChildPair) {
-      return React.cloneElement(keyChildPair.child, { key: keyChildPair.key });
-    })
-  });
+exports.createElementKeyed_ = function(el, key, attrs) {
+  var attrsClone = __shallowCopy(attrs) || {};
+  attrsClone.key = key;
+  return React.createElement(el, attrsClone);
+};
+
+exports.fragment = function(children) {
+  return React.createElement.apply(null, [Fragment, {}].concat(children));
+};
+
+exports.fragmentKeyed_ = function(key, children) {
+  return React.createElement.apply(
+    null,
+    [Fragment, { key: key }].concat(children)
+  );
 };

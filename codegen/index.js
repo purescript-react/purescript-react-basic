@@ -42,15 +42,24 @@ printRecord = (elProps) => elProps.length ? `
   )` : "()"
 
 props.elements.html
-  .map((e) => `
+  .map((e) => {
+    const noChildren = voids.includes(e);
+    const symbol = reserved.includes(e) ? `${e}'` : e;
+    return `
     type Props_${e} = ${printRecord(
-      (voids.includes(e) ? [] : ["children"]).concat(props[e] || []).sort()
+      (noChildren ? [] : ["children"]).concat(props[e] || []).sort()
     )}
 
-    ${reserved.includes(e) ? `${e}_` : e}
+    ${symbol}
       :: forall attrs attrs_
        . Union attrs attrs_ (SharedProps Props_${e})
       => Record attrs
       -> JSX
-    ${reserved.includes(e) ? `${e}_` : e} = createElement (unsafeCoerce "${e}")
-`).forEach((x) => console.log(x.replace(/^\n\ {4}/, "").replace(/\n\ {4}/g, "\n")))
+    ${symbol} = createElement (stringComponent "${e}")${
+      noChildren ? "" : `
+    
+    ${e}_ :: Array JSX -> JSX
+    ${e}_ children = ${symbol} { children }`
+    }
+`;
+}).forEach((x) => console.log(x.replace(/^\n\ {4}/, "").replace(/\n\ {4}/g, "\n")))
