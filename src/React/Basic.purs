@@ -2,6 +2,8 @@ module React.Basic
   ( react
   , createElement
   , createElementKeyed
+  , fragment
+  , fragmentKeyed
   , module React.Basic.Types
   ) where
 
