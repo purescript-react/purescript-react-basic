@@ -11,7 +11,7 @@ import Prelude
 
 import Control.Monad.Eff (Eff, kind Effect)
 import Control.Monad.Eff.Uncurried (EffFn3, mkEffFn3)
-import Data.Function.Uncurried (Fn2, Fn3, mkFn3, runFn2, runFn3)
+import Data.Function.Uncurried (Fn2, Fn3, mkFn3, runFn2)
 import React.Basic.Types (CSS, EventHandler, JSX, ReactComponent, ReactFX)
 import React.Basic.Types as React.Basic.Types
 
@@ -55,11 +55,10 @@ createElement = runFn2 createElement_
 -- | For more information see: https://reactjs.org/docs/reconciliation.html#keys
 createElementKeyed
   :: forall props
-   . ReactComponent props
-  -> String
-  -> props
+   . ReactComponent { | props }
+  -> { key :: String | props }
   -> JSX
-createElementKeyed = runFn3 createElementKeyed_
+createElementKeyed = runFn2 createElementKeyed_
 
 -- | Render an Array of children without a wrapping component.
 foreign import fragment :: Array JSX -> JSX
@@ -84,6 +83,6 @@ foreign import component_
 
 foreign import createElement_ :: forall props. Fn2 (ReactComponent props) props JSX
 
-foreign import createElementKeyed_ :: forall props. Fn3 (ReactComponent props) String props JSX
+foreign import createElementKeyed_ :: forall props. Fn2 (ReactComponent { | props }) { key :: String | props } JSX
 
 foreign import fragmentKeyed_ :: Fn2 String (Array JSX) JSX
