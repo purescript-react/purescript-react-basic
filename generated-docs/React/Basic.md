@@ -27,7 +27,7 @@ Create a `JSX` node from a React component, by providing the props.
 #### `createElementKeyed`
 
 ``` purescript
-createElementKeyed :: forall props. ReactComponent props -> String -> props -> JSX
+createElementKeyed :: forall props. ReactComponent {  | props } -> { key :: String | props } -> JSX
 ```
 
 Like `createElement`, plus a `key` for rendering components in a dynamic list.

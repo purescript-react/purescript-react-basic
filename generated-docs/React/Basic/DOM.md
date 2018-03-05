@@ -38,10 +38,10 @@ type SharedProps specific = (key :: String, about :: String, acceptCharset :: St
 
 Standard props which are shared by all DOM elements.
 
-#### `stringComponent`
+#### `unsafeCreateDOMComponent`
 
 ``` purescript
-stringComponent :: forall props. String -> ReactComponent props
+unsafeCreateDOMComponent :: forall props. String -> ReactComponent props
 ```
 
 #### `Props_a`

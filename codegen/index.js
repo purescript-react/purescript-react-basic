@@ -55,7 +55,7 @@ props.elements.html
        . Union attrs attrs_ (SharedProps Props_${e})
       => Record attrs
       -> JSX
-    ${symbol} = createElement (stringComponent "${e}")${
+    ${symbol} = createElement (unsafeCreateDOMComponent "${e}")${
       noChildren ? "" : `
     
     ${e}_ :: Array JSX -> JSX
