@@ -1,11 +1,12 @@
-const props = require('react-html-attributes');
-const voids = ['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'];
+const props = require("react-html-attributes");
+const voids = ["area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"];
 const types = {
   "allowFullScreen": "Boolean",
   "async": "Boolean",
   "autoPlay": "Boolean",
   "capture": "Boolean",
   "checked": "Boolean",
+  "children": "Array JSX",
   "cols": "Number",
   "controls": "Boolean",
   "default": "Boolean",
@@ -30,29 +31,35 @@ const types = {
   "selected": "Boolean",
   "size": "Number",
   "span": "Number",
-  "start": "Number",
-  "zoomAndPan": "String"
+  "start": "Number"
 };
+const reserved = ["module", "data", "type", "newtype", "class", "instance", "where", "derive", "if", "then", "else", "case", "of"];
 
-printRecord = (elProps) => `
+printRecord = (elProps) => elProps.length ? `
   ( ${ elProps.map((p) =>
-       `${p} :: ${types[p] || 'String'}`).join('\n  , ')
+       `${p} :: ${types[p] || "String"}`).join("\n  , ")
      }
-  )`
+  )` : "()"
 
 props.elements.html
-  .map((e) =>`
-    type Props_${e} = ${
-      props[e]
-        ? printRecord(props[e])
-        : '()'
-    }
+  .map((e) => {
+    const noChildren = voids.includes(e);
+    const symbol = reserved.includes(e) ? `${e}'` : e;
+    return `
+    type Props_${e} = ${printRecord(
+      (noChildren ? [] : ["children"]).concat(props[e] || []).sort()
+    )}
 
-    ${e}
+    ${symbol}
       :: forall attrs attrs_
-       . Union attrs attrs_ (SharedProps Props_${e}))
+       . Union attrs attrs_ (SharedProps Props_${e})
       => Record attrs
-      -> Array JSX
       -> JSX
-    ${e} = ${voids.indexOf(e) >= 0 ? 'createElementNoChildren' : 'createElement'} "${e}"
-`).forEach((x) => console.log(x.replace(/^\n\ {4}/, '').replace(/\n\ {4}/g, '\n')))
+    ${symbol} = createElement (unsafeCreateDOMComponent "${e}")${
+      noChildren ? "" : `
+    
+    ${e}_ :: Array JSX -> JSX
+    ${e}_ children = ${symbol} { children }`
+    }
+`;
+}).forEach((x) => console.log(x.replace(/^\n\ {4}/, "").replace(/\n\ {4}/g, "\n")))

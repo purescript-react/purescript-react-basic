@@ -2,15 +2,18 @@ module Container where
 
 import Prelude
 
-import React.Basic as R
+import React.Basic (ReactComponent, createElement, react)
+import React.Basic.DOM as R
 import ToggleButton as ToggleButton
 
-component :: R.ReactComponent Unit
-component = R.react
-  { initialState: unit
+component :: ReactComponent Unit
+component = react
+  { displayName: "Container"
+  , initialState: unit
   , receiveProps: \_ _ _ -> pure unit
   , render: \_ _ setState ->
-      R.div { } [ R.component ToggleButton.component { on: true }
-                , R.component ToggleButton.component { on: false }
-                ]
+      R.div { children: [ createElement ToggleButton.component { on: true }
+                        , createElement ToggleButton.component { on: false }
+                        ]
+            }
   }

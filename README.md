@@ -4,7 +4,7 @@ This package implements an opinionated set of bindings to the React library, opt
 
 ## Features
 
-- All React DOM elements and attributes are supported.
+- All React DOM elements and attributes are supported (soon, events are a work in progress).
 - An intuitive API for specifying props - no arrays of key value pairs, just records.
 - Attributes are optional, but type-checked. It is a type error to specify `href` as an integer, for example.
 
@@ -12,7 +12,7 @@ This package implements an opinionated set of bindings to the React library, opt
 
 You can install this package using Bower:
 
-```
+```sh
 bower install git@github.com:lumihq/purescript-react-basic.git
 ```
 
@@ -24,36 +24,32 @@ module React.Basic.Example where
 import Prelude
 
 import Control.Monad.Eff.Uncurried (mkEffFn1)
-import React.Basic as R
+import React.Basic (ReactComponent, react)
+import React.Basic.DOM as R
 
 -- The props for the component
 type ExampleProps =
   { label :: String
   }
 
--- The internal state of the component
-type ExampleState =
-  { counter :: Int
-  }
-
 -- Create a component by passing a record to the `react` function.
 -- The `render` function takes the props and current state, as well as a
 -- state update callback, and produces a document.
-example :: R.ReactComponent ExampleProps
-example = R.react
+example :: ReactComponent ExampleProps
+example = react
   { initialState: { counter: 0 }
   , receiveProps: \_ _ _ -> pure unit
   , render: \{ label } { counter } setState ->
       R.button { onClick: mkEffFn1 \_ -> do
-                            setState { counter: counter + 1 }
+                            setState \s -> { counter: s.counter + 1 }
+               , children: [ R.text (label <> ": " <> show counter) ]
                }
-               [ R.text (label <> ": " <> show counter) ]
   }
 ```
 
 This component can be used directly from JavaScript. For example, if you are using `purs-loader`:
 
-```javascript
+```jsx
 import {example as Example} from 'React.Basic.Example.purs';
 
 const myComponent = () => (
