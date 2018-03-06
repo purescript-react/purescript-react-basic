@@ -24,7 +24,7 @@ module React.Basic.Example where
 import Prelude
 
 import Control.Monad.Eff.Uncurried (mkEffFn1)
-import React.Basic (ReactComponent, reactComponent)
+import React.Basic (ReactComponent, react)
 import React.Basic.DOM as R
 
 -- The props for the component
@@ -32,11 +32,11 @@ type ExampleProps =
   { label :: String
   }
 
--- Create a component by passing a record to the `reactComponent` function.
+-- Create a component by passing a record to the `react` function.
 -- The `render` function takes the props and current state, as well as a
 -- state update callback, and produces a document.
 example :: ReactComponent ExampleProps
-example = reactComponent
+example = react
   { initialState: { counter: 0 }
   , receiveProps: \_ _ _ -> pure unit
   , render: \{ label } { counter } setState ->
