@@ -1,6 +1,6 @@
 module React.Basic
   ( react
-  , react_
+  , stateless
   , createElement
   , createElementKeyed
   , fragment
@@ -45,13 +45,13 @@ react { displayName, initialState, receiveProps, render } =
 -- |
 -- | Removes a little bit of the `react` function's boilerplate when creating
 -- | components which don't use state.
-react_
+stateless
   :: forall props
    . { displayName :: String
      , render :: props -> JSX
      }
   -> ReactComponent props
-react_ { displayName, render } =
+stateless { displayName, render } =
   react
     { displayName
     , initialState: unit

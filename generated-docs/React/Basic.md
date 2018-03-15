@@ -16,6 +16,17 @@ The rendering function should return a value of type `JSX`, which can be
 constructed using the helper functions provided by the `React.Basic.DOM`
 module (and re-exported here).
 
+#### `stateless`
+
+``` purescript
+stateless :: forall props. { displayName :: String, render :: props -> JSX } -> ReactComponent props
+```
+
+Create a stateless React component.
+
+Removes a little bit of the `react` function's boilerplate when creating
+components which don't use state.
+
 #### `createElement`
 
 ``` purescript
