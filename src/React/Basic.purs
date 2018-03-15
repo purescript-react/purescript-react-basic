@@ -40,6 +40,24 @@ react { displayName, initialState, receiveProps, render } =
     , render: mkFn3 render
     }
 
+-- | Create a stateless React component.
+-- |
+-- | Removes a little bit of the `react` function's boilerplate when creating
+-- | components which don't use state.
+react_
+  :: forall props
+   . { displayName :: String
+     , render :: props -> JSX
+     }
+  -> ReactComponent props
+react_ { displayName, render } =
+  react
+    { displayName
+    , initialState: unit
+    , receiveProps: \_ _ _ -> pure unit
+    , render: \props _ _ -> render props
+    }
+
 -- | SetState uses an update function to modify the current state.
 type SetState state fx = (state -> state) -> Eff (react :: ReactFX | fx) Unit
 
