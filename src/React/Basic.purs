@@ -1,5 +1,6 @@
 module React.Basic
   ( react
+  , react_
   , createElement
   , createElementKeyed
   , fragment
