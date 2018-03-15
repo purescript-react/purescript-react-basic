@@ -1,5 +1,6 @@
 module React.Basic
   ( react
+  , stateless
   , createElement
   , createElementKeyed
   , fragment
@@ -38,6 +39,24 @@ react { displayName, initialState, receiveProps, render } =
     , initialState
     , receiveProps: mkEffFn3 receiveProps
     , render: mkFn3 render
+    }
+
+-- | Create a stateless React component.
+-- |
+-- | Removes a little bit of the `react` function's boilerplate when creating
+-- | components which don't use state.
+stateless
+  :: forall props
+   . { displayName :: String
+     , render :: props -> JSX
+     }
+  -> ReactComponent props
+stateless { displayName, render } =
+  react
+    { displayName
+    , initialState: unit
+    , receiveProps: \_ _ _ -> pure unit
+    , render: \props _ _ -> render props
     }
 
 -- | SetState uses an update function to modify the current state.
