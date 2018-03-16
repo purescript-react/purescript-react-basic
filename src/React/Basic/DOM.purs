@@ -117,7 +117,7 @@ unsafeCreateDOMComponent = unsafeCoerce
 -- | GENERATED CODE BELOW THIS LINE!
 -- | -------------------------------
 
-type Props_a = 
+type Props_a =
   ( children :: Array JSX
   , coords :: String
   , download :: String
@@ -139,7 +139,7 @@ a = createElement (unsafeCreateDOMComponent "a")
 a_ :: Array JSX -> JSX
 a_ children = a { children }
 
-type Props_abbr = 
+type Props_abbr =
   ( children :: Array JSX
   , title :: String
   )
@@ -154,7 +154,7 @@ abbr = createElement (unsafeCreateDOMComponent "abbr")
 abbr_ :: Array JSX -> JSX
 abbr_ children = abbr { children }
 
-type Props_address = 
+type Props_address =
   ( children :: Array JSX
   )
 
@@ -168,7 +168,7 @@ address = createElement (unsafeCreateDOMComponent "address")
 address_ :: Array JSX -> JSX
 address_ children = address { children }
 
-type Props_area = 
+type Props_area =
   ( alt :: String
   , coords :: String
   , download :: String
@@ -186,7 +186,7 @@ area
   -> JSX
 area = createElement (unsafeCreateDOMComponent "area")
 
-type Props_article = 
+type Props_article =
   ( children :: Array JSX
   )
 
@@ -200,7 +200,7 @@ article = createElement (unsafeCreateDOMComponent "article")
 article_ :: Array JSX -> JSX
 article_ children = article { children }
 
-type Props_aside = 
+type Props_aside =
   ( children :: Array JSX
   )
 
@@ -214,7 +214,7 @@ aside = createElement (unsafeCreateDOMComponent "aside")
 aside_ :: Array JSX -> JSX
 aside_ children = aside { children }
 
-type Props_audio = 
+type Props_audio =
   ( children :: Array JSX
   , controls :: Boolean
   , loop :: Boolean
@@ -233,7 +233,7 @@ audio = createElement (unsafeCreateDOMComponent "audio")
 audio_ :: Array JSX -> JSX
 audio_ children = audio { children }
 
-type Props_b = 
+type Props_b =
   ( children :: Array JSX
   )
 
@@ -247,7 +247,7 @@ b = createElement (unsafeCreateDOMComponent "b")
 b_ :: Array JSX -> JSX
 b_ children = b { children }
 
-type Props_base = 
+type Props_base =
   ( href :: String
   , target :: String
   )
@@ -259,7 +259,7 @@ base
   -> JSX
 base = createElement (unsafeCreateDOMComponent "base")
 
-type Props_bdi = 
+type Props_bdi =
   ( children :: Array JSX
   )
 
@@ -273,7 +273,7 @@ bdi = createElement (unsafeCreateDOMComponent "bdi")
 bdi_ :: Array JSX -> JSX
 bdi_ children = bdi { children }
 
-type Props_bdo = 
+type Props_bdo =
   ( children :: Array JSX
   , dir :: String
   )
@@ -288,7 +288,7 @@ bdo = createElement (unsafeCreateDOMComponent "bdo")
 bdo_ :: Array JSX -> JSX
 bdo_ children = bdo { children }
 
-type Props_blockquote = 
+type Props_blockquote =
   ( children :: Array JSX
   , cite :: String
   )
@@ -303,7 +303,7 @@ blockquote = createElement (unsafeCreateDOMComponent "blockquote")
 blockquote_ :: Array JSX -> JSX
 blockquote_ children = blockquote { children }
 
-type Props_body = 
+type Props_body =
   ( children :: Array JSX
   )
 
@@ -317,7 +317,7 @@ body = createElement (unsafeCreateDOMComponent "body")
 body_ :: Array JSX -> JSX
 body_ children = body { children }
 
-type Props_br = ()
+type Props_br =()
 
 br
   :: forall attrs attrs_
@@ -326,7 +326,7 @@ br
   -> JSX
 br = createElement (unsafeCreateDOMComponent "br")
 
-type Props_button = 
+type Props_button =
   ( children :: Array JSX
   , disabled :: Boolean
   , form :: String
@@ -345,7 +345,7 @@ button = createElement (unsafeCreateDOMComponent "button")
 button_ :: Array JSX -> JSX
 button_ children = button { children }
 
-type Props_canvas = 
+type Props_canvas =
   ( children :: Array JSX
   , height :: String
   , width :: String
@@ -361,7 +361,7 @@ canvas = createElement (unsafeCreateDOMComponent "canvas")
 canvas_ :: Array JSX -> JSX
 canvas_ children = canvas { children }
 
-type Props_caption = 
+type Props_caption =
   ( children :: Array JSX
   )
 
@@ -375,7 +375,7 @@ caption = createElement (unsafeCreateDOMComponent "caption")
 caption_ :: Array JSX -> JSX
 caption_ children = caption { children }
 
-type Props_cite = 
+type Props_cite =
   ( children :: Array JSX
   )
 
@@ -389,7 +389,7 @@ cite = createElement (unsafeCreateDOMComponent "cite")
 cite_ :: Array JSX -> JSX
 cite_ children = cite { children }
 
-type Props_code = 
+type Props_code =
   ( children :: Array JSX
   )
 
@@ -403,7 +403,7 @@ code = createElement (unsafeCreateDOMComponent "code")
 code_ :: Array JSX -> JSX
 code_ children = code { children }
 
-type Props_col = 
+type Props_col =
   ( span :: Number
   , width :: String
   )
@@ -415,7 +415,7 @@ col
   -> JSX
 col = createElement (unsafeCreateDOMComponent "col")
 
-type Props_colgroup = 
+type Props_colgroup =
   ( children :: Array JSX
   , span :: Number
   , width :: String
@@ -431,7 +431,7 @@ colgroup = createElement (unsafeCreateDOMComponent "colgroup")
 colgroup_ :: Array JSX -> JSX
 colgroup_ children = colgroup { children }
 
-type Props_data = 
+type Props_data =
   ( children :: Array JSX
   , value :: String
   )
@@ -446,7 +446,7 @@ data' = createElement (unsafeCreateDOMComponent "data")
 data_ :: Array JSX -> JSX
 data_ children = data' { children }
 
-type Props_datalist = 
+type Props_datalist =
   ( children :: Array JSX
   )
 
@@ -460,7 +460,7 @@ datalist = createElement (unsafeCreateDOMComponent "datalist")
 datalist_ :: Array JSX -> JSX
 datalist_ children = datalist { children }
 
-type Props_dd = 
+type Props_dd =
   ( children :: Array JSX
   )
 
@@ -474,7 +474,7 @@ dd = createElement (unsafeCreateDOMComponent "dd")
 dd_ :: Array JSX -> JSX
 dd_ children = dd { children }
 
-type Props_del = 
+type Props_del =
   ( children :: Array JSX
   , cite :: String
   )
@@ -489,7 +489,7 @@ del = createElement (unsafeCreateDOMComponent "del")
 del_ :: Array JSX -> JSX
 del_ children = del { children }
 
-type Props_details = 
+type Props_details =
   ( children :: Array JSX
   , open :: Boolean
   )
@@ -504,7 +504,7 @@ details = createElement (unsafeCreateDOMComponent "details")
 details_ :: Array JSX -> JSX
 details_ children = details { children }
 
-type Props_dfn = 
+type Props_dfn =
   ( children :: Array JSX
   , title :: String
   )
@@ -519,7 +519,7 @@ dfn = createElement (unsafeCreateDOMComponent "dfn")
 dfn_ :: Array JSX -> JSX
 dfn_ children = dfn { children }
 
-type Props_dialog = 
+type Props_dialog =
   ( children :: Array JSX
   , open :: Boolean
   )
@@ -534,7 +534,7 @@ dialog = createElement (unsafeCreateDOMComponent "dialog")
 dialog_ :: Array JSX -> JSX
 dialog_ children = dialog { children }
 
-type Props_div = 
+type Props_div =
   ( children :: Array JSX
   )
 
@@ -548,7 +548,7 @@ div = createElement (unsafeCreateDOMComponent "div")
 div_ :: Array JSX -> JSX
 div_ children = div { children }
 
-type Props_dl = 
+type Props_dl =
   ( children :: Array JSX
   )
 
@@ -562,7 +562,7 @@ dl = createElement (unsafeCreateDOMComponent "dl")
 dl_ :: Array JSX -> JSX
 dl_ children = dl { children }
 
-type Props_dt = 
+type Props_dt =
   ( children :: Array JSX
   )
 
@@ -576,7 +576,7 @@ dt = createElement (unsafeCreateDOMComponent "dt")
 dt_ :: Array JSX -> JSX
 dt_ children = dt { children }
 
-type Props_em = 
+type Props_em =
   ( children :: Array JSX
   )
 
@@ -590,7 +590,7 @@ em = createElement (unsafeCreateDOMComponent "em")
 em_ :: Array JSX -> JSX
 em_ children = em { children }
 
-type Props_embed = 
+type Props_embed =
   ( height :: String
   , src :: String
   , type :: String
@@ -604,7 +604,7 @@ embed
   -> JSX
 embed = createElement (unsafeCreateDOMComponent "embed")
 
-type Props_fieldset = 
+type Props_fieldset =
   ( children :: Array JSX
   , disabled :: Boolean
   , form :: String
@@ -621,7 +621,7 @@ fieldset = createElement (unsafeCreateDOMComponent "fieldset")
 fieldset_ :: Array JSX -> JSX
 fieldset_ children = fieldset { children }
 
-type Props_figcaption = 
+type Props_figcaption =
   ( children :: Array JSX
   )
 
@@ -635,7 +635,7 @@ figcaption = createElement (unsafeCreateDOMComponent "figcaption")
 figcaption_ :: Array JSX -> JSX
 figcaption_ children = figcaption { children }
 
-type Props_figure = 
+type Props_figure =
   ( children :: Array JSX
   )
 
@@ -649,7 +649,7 @@ figure = createElement (unsafeCreateDOMComponent "figure")
 figure_ :: Array JSX -> JSX
 figure_ children = figure { children }
 
-type Props_footer = 
+type Props_footer =
   ( children :: Array JSX
   )
 
@@ -663,7 +663,7 @@ footer = createElement (unsafeCreateDOMComponent "footer")
 footer_ :: Array JSX -> JSX
 footer_ children = footer { children }
 
-type Props_form = 
+type Props_form =
   ( accept :: String
   , action :: String
   , children :: Array JSX
@@ -682,7 +682,7 @@ form = createElement (unsafeCreateDOMComponent "form")
 form_ :: Array JSX -> JSX
 form_ children = form { children }
 
-type Props_h1 = 
+type Props_h1 =
   ( children :: Array JSX
   )
 
@@ -696,7 +696,7 @@ h1 = createElement (unsafeCreateDOMComponent "h1")
 h1_ :: Array JSX -> JSX
 h1_ children = h1 { children }
 
-type Props_h2 = 
+type Props_h2 =
   ( children :: Array JSX
   )
 
@@ -710,7 +710,7 @@ h2 = createElement (unsafeCreateDOMComponent "h2")
 h2_ :: Array JSX -> JSX
 h2_ children = h2 { children }
 
-type Props_h3 = 
+type Props_h3 =
   ( children :: Array JSX
   )
 
@@ -724,7 +724,7 @@ h3 = createElement (unsafeCreateDOMComponent "h3")
 h3_ :: Array JSX -> JSX
 h3_ children = h3 { children }
 
-type Props_h4 = 
+type Props_h4 =
   ( children :: Array JSX
   )
 
@@ -738,7 +738,7 @@ h4 = createElement (unsafeCreateDOMComponent "h4")
 h4_ :: Array JSX -> JSX
 h4_ children = h4 { children }
 
-type Props_h5 = 
+type Props_h5 =
   ( children :: Array JSX
   )
 
@@ -752,7 +752,7 @@ h5 = createElement (unsafeCreateDOMComponent "h5")
 h5_ :: Array JSX -> JSX
 h5_ children = h5 { children }
 
-type Props_h6 = 
+type Props_h6 =
   ( children :: Array JSX
   )
 
@@ -766,7 +766,7 @@ h6 = createElement (unsafeCreateDOMComponent "h6")
 h6_ :: Array JSX -> JSX
 h6_ children = h6 { children }
 
-type Props_head = 
+type Props_head =
   ( children :: Array JSX
   , profile :: String
   )
@@ -781,7 +781,7 @@ head = createElement (unsafeCreateDOMComponent "head")
 head_ :: Array JSX -> JSX
 head_ children = head { children }
 
-type Props_header = 
+type Props_header =
   ( children :: Array JSX
   )
 
@@ -795,7 +795,7 @@ header = createElement (unsafeCreateDOMComponent "header")
 header_ :: Array JSX -> JSX
 header_ children = header { children }
 
-type Props_hgroup = 
+type Props_hgroup =
   ( children :: Array JSX
   )
 
@@ -809,7 +809,7 @@ hgroup = createElement (unsafeCreateDOMComponent "hgroup")
 hgroup_ :: Array JSX -> JSX
 hgroup_ children = hgroup { children }
 
-type Props_hr = 
+type Props_hr =
   ( size :: Number
   , width :: String
   )
@@ -821,7 +821,7 @@ hr
   -> JSX
 hr = createElement (unsafeCreateDOMComponent "hr")
 
-type Props_html = 
+type Props_html =
   ( children :: Array JSX
   , manifest :: String
   )
@@ -836,7 +836,7 @@ html = createElement (unsafeCreateDOMComponent "html")
 html_ :: Array JSX -> JSX
 html_ children = html { children }
 
-type Props_i = 
+type Props_i =
   ( children :: Array JSX
   )
 
@@ -850,7 +850,7 @@ i = createElement (unsafeCreateDOMComponent "i")
 i_ :: Array JSX -> JSX
 i_ children = i { children }
 
-type Props_iframe = 
+type Props_iframe =
   ( children :: Array JSX
   , height :: String
   , name :: String
@@ -870,7 +870,7 @@ iframe = createElement (unsafeCreateDOMComponent "iframe")
 iframe_ :: Array JSX -> JSX
 iframe_ children = iframe { children }
 
-type Props_img = 
+type Props_img =
   ( alt :: String
   , height :: String
   , name :: String
@@ -886,7 +886,7 @@ img
   -> JSX
 img = createElement (unsafeCreateDOMComponent "img")
 
-type Props_input = 
+type Props_input =
   ( accept :: String
   , alt :: String
   , autoCapitalize :: String
@@ -903,7 +903,7 @@ type Props_input =
   , min :: String
   , multiple :: Boolean
   , name :: String
-  , onChange :: String
+  , onChange :: EventHandler
   , pattern :: String
   , placeholder :: String
   , required :: Boolean
@@ -924,7 +924,7 @@ input
   -> JSX
 input = createElement (unsafeCreateDOMComponent "input")
 
-type Props_ins = 
+type Props_ins =
   ( children :: Array JSX
   , cite :: String
   )
@@ -939,7 +939,7 @@ ins = createElement (unsafeCreateDOMComponent "ins")
 ins_ :: Array JSX -> JSX
 ins_ children = ins { children }
 
-type Props_kbd = 
+type Props_kbd =
   ( children :: Array JSX
   )
 
@@ -953,7 +953,7 @@ kbd = createElement (unsafeCreateDOMComponent "kbd")
 kbd_ :: Array JSX -> JSX
 kbd_ children = kbd { children }
 
-type Props_keygen = 
+type Props_keygen =
   ( challenge :: String
   , children :: Array JSX
   , disabled :: Boolean
@@ -971,7 +971,7 @@ keygen = createElement (unsafeCreateDOMComponent "keygen")
 keygen_ :: Array JSX -> JSX
 keygen_ children = keygen { children }
 
-type Props_label = 
+type Props_label =
   ( children :: Array JSX
   , form :: String
   )
@@ -986,7 +986,7 @@ label = createElement (unsafeCreateDOMComponent "label")
 label_ :: Array JSX -> JSX
 label_ children = label { children }
 
-type Props_legend = 
+type Props_legend =
   ( children :: Array JSX
   )
 
@@ -1000,7 +1000,7 @@ legend = createElement (unsafeCreateDOMComponent "legend")
 legend_ :: Array JSX -> JSX
 legend_ children = legend { children }
 
-type Props_li = 
+type Props_li =
   ( children :: Array JSX
   , type :: String
   , value :: String
@@ -1016,7 +1016,7 @@ li = createElement (unsafeCreateDOMComponent "li")
 li_ :: Array JSX -> JSX
 li_ children = li { children }
 
-type Props_link = 
+type Props_link =
   ( color :: String
   , href :: String
   , integrity :: String
@@ -1037,7 +1037,7 @@ link
   -> JSX
 link = createElement (unsafeCreateDOMComponent "link")
 
-type Props_main = 
+type Props_main =
   ( children :: Array JSX
   )
 
@@ -1051,7 +1051,7 @@ main = createElement (unsafeCreateDOMComponent "main")
 main_ :: Array JSX -> JSX
 main_ children = main { children }
 
-type Props_map = 
+type Props_map =
   ( children :: Array JSX
   , name :: String
   )
@@ -1066,7 +1066,7 @@ map = createElement (unsafeCreateDOMComponent "map")
 map_ :: Array JSX -> JSX
 map_ children = map { children }
 
-type Props_mark = 
+type Props_mark =
   ( children :: Array JSX
   )
 
@@ -1080,7 +1080,7 @@ mark = createElement (unsafeCreateDOMComponent "mark")
 mark_ :: Array JSX -> JSX
 mark_ children = mark { children }
 
-type Props_math = 
+type Props_math =
   ( children :: Array JSX
   )
 
@@ -1094,7 +1094,7 @@ math = createElement (unsafeCreateDOMComponent "math")
 math_ :: Array JSX -> JSX
 math_ children = math { children }
 
-type Props_menu = 
+type Props_menu =
   ( children :: Array JSX
   )
 
@@ -1108,7 +1108,7 @@ menu = createElement (unsafeCreateDOMComponent "menu")
 menu_ :: Array JSX -> JSX
 menu_ children = menu { children }
 
-type Props_menuitem = 
+type Props_menuitem =
   ( children :: Array JSX
   )
 
@@ -1122,7 +1122,7 @@ menuitem = createElement (unsafeCreateDOMComponent "menuitem")
 menuitem_ :: Array JSX -> JSX
 menuitem_ children = menuitem { children }
 
-type Props_meta = 
+type Props_meta =
   ( content :: String
   , name :: String
   )
@@ -1134,7 +1134,7 @@ meta
   -> JSX
 meta = createElement (unsafeCreateDOMComponent "meta")
 
-type Props_meter = 
+type Props_meter =
   ( children :: Array JSX
   , high :: String
   , low :: String
@@ -1154,7 +1154,7 @@ meter = createElement (unsafeCreateDOMComponent "meter")
 meter_ :: Array JSX -> JSX
 meter_ children = meter { children }
 
-type Props_nav = 
+type Props_nav =
   ( children :: Array JSX
   )
 
@@ -1168,7 +1168,7 @@ nav = createElement (unsafeCreateDOMComponent "nav")
 nav_ :: Array JSX -> JSX
 nav_ children = nav { children }
 
-type Props_noscript = 
+type Props_noscript =
   ( children :: Array JSX
   )
 
@@ -1182,7 +1182,7 @@ noscript = createElement (unsafeCreateDOMComponent "noscript")
 noscript_ :: Array JSX -> JSX
 noscript_ children = noscript { children }
 
-type Props_object = 
+type Props_object =
   ( children :: Array JSX
   , data :: String
   , form :: String
@@ -1202,7 +1202,7 @@ object = createElement (unsafeCreateDOMComponent "object")
 object_ :: Array JSX -> JSX
 object_ children = object { children }
 
-type Props_ol = 
+type Props_ol =
   ( children :: Array JSX
   , reversed :: Boolean
   , start :: Number
@@ -1219,7 +1219,7 @@ ol = createElement (unsafeCreateDOMComponent "ol")
 ol_ :: Array JSX -> JSX
 ol_ children = ol { children }
 
-type Props_optgroup = 
+type Props_optgroup =
   ( children :: Array JSX
   , disabled :: Boolean
   , label :: String
@@ -1235,7 +1235,7 @@ optgroup = createElement (unsafeCreateDOMComponent "optgroup")
 optgroup_ :: Array JSX -> JSX
 optgroup_ children = optgroup { children }
 
-type Props_option = 
+type Props_option =
   ( children :: Array JSX
   , disabled :: Boolean
   , label :: String
@@ -1253,7 +1253,7 @@ option = createElement (unsafeCreateDOMComponent "option")
 option_ :: Array JSX -> JSX
 option_ children = option { children }
 
-type Props_output = 
+type Props_output =
   ( children :: Array JSX
   , form :: String
   , name :: String
@@ -1269,7 +1269,7 @@ output = createElement (unsafeCreateDOMComponent "output")
 output_ :: Array JSX -> JSX
 output_ children = output { children }
 
-type Props_p = 
+type Props_p =
   ( children :: Array JSX
   )
 
@@ -1283,7 +1283,7 @@ p = createElement (unsafeCreateDOMComponent "p")
 p_ :: Array JSX -> JSX
 p_ children = p { children }
 
-type Props_param = 
+type Props_param =
   ( name :: String
   , type :: String
   , value :: String
@@ -1296,7 +1296,7 @@ param
   -> JSX
 param = createElement (unsafeCreateDOMComponent "param")
 
-type Props_picture = 
+type Props_picture =
   ( children :: Array JSX
   )
 
@@ -1310,7 +1310,7 @@ picture = createElement (unsafeCreateDOMComponent "picture")
 picture_ :: Array JSX -> JSX
 picture_ children = picture { children }
 
-type Props_pre = 
+type Props_pre =
   ( children :: Array JSX
   , width :: String
   )
@@ -1325,7 +1325,7 @@ pre = createElement (unsafeCreateDOMComponent "pre")
 pre_ :: Array JSX -> JSX
 pre_ children = pre { children }
 
-type Props_progress = 
+type Props_progress =
   ( children :: Array JSX
   , max :: String
   , value :: String
@@ -1341,7 +1341,7 @@ progress = createElement (unsafeCreateDOMComponent "progress")
 progress_ :: Array JSX -> JSX
 progress_ children = progress { children }
 
-type Props_q = 
+type Props_q =
   ( children :: Array JSX
   , cite :: String
   )
@@ -1356,7 +1356,7 @@ q = createElement (unsafeCreateDOMComponent "q")
 q_ :: Array JSX -> JSX
 q_ children = q { children }
 
-type Props_rb = 
+type Props_rb =
   ( children :: Array JSX
   )
 
@@ -1370,7 +1370,7 @@ rb = createElement (unsafeCreateDOMComponent "rb")
 rb_ :: Array JSX -> JSX
 rb_ children = rb { children }
 
-type Props_rp = 
+type Props_rp =
   ( children :: Array JSX
   )
 
@@ -1384,7 +1384,7 @@ rp = createElement (unsafeCreateDOMComponent "rp")
 rp_ :: Array JSX -> JSX
 rp_ children = rp { children }
 
-type Props_rt = 
+type Props_rt =
   ( children :: Array JSX
   )
 
@@ -1398,7 +1398,7 @@ rt = createElement (unsafeCreateDOMComponent "rt")
 rt_ :: Array JSX -> JSX
 rt_ children = rt { children }
 
-type Props_rtc = 
+type Props_rtc =
   ( children :: Array JSX
   )
 
@@ -1412,7 +1412,7 @@ rtc = createElement (unsafeCreateDOMComponent "rtc")
 rtc_ :: Array JSX -> JSX
 rtc_ children = rtc { children }
 
-type Props_ruby = 
+type Props_ruby =
   ( children :: Array JSX
   )
 
@@ -1426,7 +1426,7 @@ ruby = createElement (unsafeCreateDOMComponent "ruby")
 ruby_ :: Array JSX -> JSX
 ruby_ children = ruby { children }
 
-type Props_s = 
+type Props_s =
   ( children :: Array JSX
   )
 
@@ -1440,7 +1440,7 @@ s = createElement (unsafeCreateDOMComponent "s")
 s_ :: Array JSX -> JSX
 s_ children = s { children }
 
-type Props_samp = 
+type Props_samp =
   ( children :: Array JSX
   )
 
@@ -1454,7 +1454,7 @@ samp = createElement (unsafeCreateDOMComponent "samp")
 samp_ :: Array JSX -> JSX
 samp_ children = samp { children }
 
-type Props_script = 
+type Props_script =
   ( async :: Boolean
   , children :: Array JSX
   , defer :: Boolean
@@ -1474,7 +1474,7 @@ script = createElement (unsafeCreateDOMComponent "script")
 script_ :: Array JSX -> JSX
 script_ children = script { children }
 
-type Props_section = 
+type Props_section =
   ( children :: Array JSX
   )
 
@@ -1488,14 +1488,14 @@ section = createElement (unsafeCreateDOMComponent "section")
 section_ :: Array JSX -> JSX
 section_ children = section { children }
 
-type Props_select = 
+type Props_select =
   ( children :: Array JSX
   , defaultValue :: String
   , disabled :: Boolean
   , form :: String
   , multiple :: Boolean
   , name :: String
-  , onChange :: String
+  , onChange :: EventHandler
   , required :: Boolean
   , size :: Number
   , value :: String
@@ -1511,7 +1511,7 @@ select = createElement (unsafeCreateDOMComponent "select")
 select_ :: Array JSX -> JSX
 select_ children = select { children }
 
-type Props_slot = 
+type Props_slot =
   ( children :: Array JSX
   , name :: String
   )
@@ -1526,7 +1526,7 @@ slot = createElement (unsafeCreateDOMComponent "slot")
 slot_ :: Array JSX -> JSX
 slot_ children = slot { children }
 
-type Props_small = 
+type Props_small =
   ( children :: Array JSX
   )
 
@@ -1540,7 +1540,7 @@ small = createElement (unsafeCreateDOMComponent "small")
 small_ :: Array JSX -> JSX
 small_ children = small { children }
 
-type Props_source = 
+type Props_source =
   ( media :: String
   , sizes :: String
   , src :: String
@@ -1554,7 +1554,7 @@ source
   -> JSX
 source = createElement (unsafeCreateDOMComponent "source")
 
-type Props_span = 
+type Props_span =
   ( children :: Array JSX
   )
 
@@ -1568,7 +1568,7 @@ span = createElement (unsafeCreateDOMComponent "span")
 span_ :: Array JSX -> JSX
 span_ children = span { children }
 
-type Props_strong = 
+type Props_strong =
   ( children :: Array JSX
   )
 
@@ -1582,7 +1582,7 @@ strong = createElement (unsafeCreateDOMComponent "strong")
 strong_ :: Array JSX -> JSX
 strong_ children = strong { children }
 
-type Props_style = 
+type Props_style =
   ( children :: Array JSX
   , media :: String
   , nonce :: String
@@ -1600,7 +1600,7 @@ style = createElement (unsafeCreateDOMComponent "style")
 style_ :: Array JSX -> JSX
 style_ children = style { children }
 
-type Props_sub = 
+type Props_sub =
   ( children :: Array JSX
   )
 
@@ -1614,7 +1614,7 @@ sub = createElement (unsafeCreateDOMComponent "sub")
 sub_ :: Array JSX -> JSX
 sub_ children = sub { children }
 
-type Props_summary = 
+type Props_summary =
   ( children :: Array JSX
   )
 
@@ -1628,7 +1628,7 @@ summary = createElement (unsafeCreateDOMComponent "summary")
 summary_ :: Array JSX -> JSX
 summary_ children = summary { children }
 
-type Props_sup = 
+type Props_sup =
   ( children :: Array JSX
   )
 
@@ -1642,7 +1642,7 @@ sup = createElement (unsafeCreateDOMComponent "sup")
 sup_ :: Array JSX -> JSX
 sup_ children = sup { children }
 
-type Props_svg = 
+type Props_svg =
   ( accentHeight :: String
   , accumulate :: String
   , additive :: String
@@ -1898,7 +1898,7 @@ svg = createElement (unsafeCreateDOMComponent "svg")
 svg_ :: Array JSX -> JSX
 svg_ children = svg { children }
 
-type Props_table = 
+type Props_table =
   ( children :: Array JSX
   , summary :: String
   , width :: String
@@ -1914,7 +1914,7 @@ table = createElement (unsafeCreateDOMComponent "table")
 table_ :: Array JSX -> JSX
 table_ children = table { children }
 
-type Props_tbody = 
+type Props_tbody =
   ( children :: Array JSX
   )
 
@@ -1928,7 +1928,7 @@ tbody = createElement (unsafeCreateDOMComponent "tbody")
 tbody_ :: Array JSX -> JSX
 tbody_ children = tbody { children }
 
-type Props_td = 
+type Props_td =
   ( children :: Array JSX
   , headers :: String
   , height :: String
@@ -1946,7 +1946,7 @@ td = createElement (unsafeCreateDOMComponent "td")
 td_ :: Array JSX -> JSX
 td_ children = td { children }
 
-type Props_template = 
+type Props_template =
   ( children :: Array JSX
   )
 
@@ -1960,7 +1960,7 @@ template = createElement (unsafeCreateDOMComponent "template")
 template_ :: Array JSX -> JSX
 template_ children = template { children }
 
-type Props_textarea = 
+type Props_textarea =
   ( autoCapitalize :: String
   , autoCorrect :: String
   , children :: Array JSX
@@ -1969,7 +1969,7 @@ type Props_textarea =
   , disabled :: Boolean
   , form :: String
   , name :: String
-  , onChange :: String
+  , onChange :: EventHandler
   , placeholder :: String
   , required :: Boolean
   , rows :: Number
@@ -1987,7 +1987,7 @@ textarea = createElement (unsafeCreateDOMComponent "textarea")
 textarea_ :: Array JSX -> JSX
 textarea_ children = textarea { children }
 
-type Props_tfoot = 
+type Props_tfoot =
   ( children :: Array JSX
   )
 
@@ -2001,7 +2001,7 @@ tfoot = createElement (unsafeCreateDOMComponent "tfoot")
 tfoot_ :: Array JSX -> JSX
 tfoot_ children = tfoot { children }
 
-type Props_th = 
+type Props_th =
   ( children :: Array JSX
   , headers :: String
   , height :: String
@@ -2019,7 +2019,7 @@ th = createElement (unsafeCreateDOMComponent "th")
 th_ :: Array JSX -> JSX
 th_ children = th { children }
 
-type Props_thead = 
+type Props_thead =
   ( children :: Array JSX
   )
 
@@ -2033,7 +2033,7 @@ thead = createElement (unsafeCreateDOMComponent "thead")
 thead_ :: Array JSX -> JSX
 thead_ children = thead { children }
 
-type Props_time = 
+type Props_time =
   ( children :: Array JSX
   )
 
@@ -2047,7 +2047,7 @@ time = createElement (unsafeCreateDOMComponent "time")
 time_ :: Array JSX -> JSX
 time_ children = time { children }
 
-type Props_title = 
+type Props_title =
   ( children :: Array JSX
   )
 
@@ -2061,7 +2061,7 @@ title = createElement (unsafeCreateDOMComponent "title")
 title_ :: Array JSX -> JSX
 title_ children = title { children }
 
-type Props_tr = 
+type Props_tr =
   ( children :: Array JSX
   )
 
@@ -2075,7 +2075,7 @@ tr = createElement (unsafeCreateDOMComponent "tr")
 tr_ :: Array JSX -> JSX
 tr_ children = tr { children }
 
-type Props_track = 
+type Props_track =
   ( default :: Boolean
   , kind :: String
   , label :: String
@@ -2089,7 +2089,7 @@ track
   -> JSX
 track = createElement (unsafeCreateDOMComponent "track")
 
-type Props_u = 
+type Props_u =
   ( children :: Array JSX
   )
 
@@ -2103,7 +2103,7 @@ u = createElement (unsafeCreateDOMComponent "u")
 u_ :: Array JSX -> JSX
 u_ children = u { children }
 
-type Props_ul = 
+type Props_ul =
   ( children :: Array JSX
   , type :: String
   )
@@ -2118,7 +2118,7 @@ ul = createElement (unsafeCreateDOMComponent "ul")
 ul_ :: Array JSX -> JSX
 ul_ children = ul { children }
 
-type Props_var = 
+type Props_var =
   ( children :: Array JSX
   )
 
@@ -2132,7 +2132,7 @@ var = createElement (unsafeCreateDOMComponent "var")
 var_ :: Array JSX -> JSX
 var_ children = var { children }
 
-type Props_video = 
+type Props_video =
   ( children :: Array JSX
   , controls :: Boolean
   , height :: String
@@ -2154,7 +2154,7 @@ video = createElement (unsafeCreateDOMComponent "video")
 video_ :: Array JSX -> JSX
 video_ children = video { children }
 
-type Props_wbr = ()
+type Props_wbr =()
 
 wbr
   :: forall attrs attrs_
@@ -2162,3 +2162,4 @@ wbr
   => Record attrs
   -> JSX
 wbr = createElement (unsafeCreateDOMComponent "wbr")
+

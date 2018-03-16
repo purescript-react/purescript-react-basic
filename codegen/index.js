@@ -19,6 +19,7 @@ const types = {
   "multiple": "Boolean",
   "muted": "Boolean",
   "noValidate": "Boolean",
+  "onChange": "EventHandler",
   "open": "Boolean",
   "playsInline": "Boolean",
   "readOnly": "Boolean",
@@ -46,7 +47,7 @@ props.elements.html
     const noChildren = voids.includes(e);
     const symbol = reserved.includes(e) ? `${e}'` : e;
     return `
-    type Props_${e} = ${printRecord(
+    type Props_${e} =${printRecord(
       (noChildren ? [] : ["children"]).concat(props[e] || []).sort()
     )}
 
@@ -57,9 +58,10 @@ props.elements.html
       -> JSX
     ${symbol} = createElement (unsafeCreateDOMComponent "${e}")${
       noChildren ? "" : `
-    
+
     ${e}_ :: Array JSX -> JSX
     ${e}_ children = ${symbol} { children }`
     }
 `;
 }).forEach((x) => console.log(x.replace(/^\n\ {4}/, "").replace(/\n\ {4}/g, "\n")))
+
