@@ -28,9 +28,9 @@ import React.Basic.Types as React.Basic.Types
 react
   :: forall props state fx
    . { displayName :: String
-     , initialState :: state
-     , receiveProps :: props -> state -> (SetState state fx) -> Eff (react :: ReactFX | fx) Unit
-     , render :: props -> state -> (SetState state fx) -> JSX
+     , initialState :: { | state }
+     , receiveProps :: props -> { | state } -> (SetState state fx) -> Eff (react :: ReactFX | fx) Unit
+     , render :: props -> { | state } -> (SetState state fx) -> JSX
      }
   -> ReactComponent props
 react { displayName, initialState, receiveProps, render } =
@@ -54,13 +54,13 @@ stateless
 stateless { displayName, render } =
   react
     { displayName
-    , initialState: unit
+    , initialState: {}
     , receiveProps: \_ _ _ -> pure unit
     , render: \props _ _ -> render props
     }
 
 -- | SetState uses an update function to modify the current state.
-type SetState state fx = (state -> state) -> Eff (react :: ReactFX | fx) Unit
+type SetState state fx = ({ | state } -> { | state }) -> Eff (react :: ReactFX | fx) Unit
 
 -- | Create a `JSX` node from a React component, by providing the props.
 createElement
@@ -94,9 +94,9 @@ fragmentKeyed = runFn2 fragmentKeyed_
 foreign import component_
   :: forall props state fx
    . { displayName :: String
-     , initialState :: state
-     , receiveProps :: EffFn3 (react :: ReactFX | fx) props state (SetState state fx) Unit
-     , render :: Fn3 props state (SetState state fx) JSX
+     , initialState :: { | state }
+     , receiveProps :: EffFn3 (react :: ReactFX | fx) props { | state } (SetState state fx) Unit
+     , render :: Fn3 props { | state } (SetState state fx) JSX
      }
   -> ReactComponent props
 
