@@ -945,7 +945,7 @@ img :: forall attrs attrs_. Union attrs attrs_ (SharedProps Props_img) => {  | a
 #### `Props_input`
 
 ``` purescript
-type Props_input = (accept :: String, alt :: String, autoCapitalize :: String, autoCorrect :: String, autoSave :: String, checked :: Boolean, defaultChecked :: String, defaultValue :: String, disabled :: Boolean, form :: String, height :: String, list :: String, max :: String, min :: String, multiple :: Boolean, name :: String, onChange :: String, pattern :: String, placeholder :: String, required :: Boolean, results :: String, size :: Number, src :: String, step :: String, title :: String, "type" :: String, value :: String, width :: String)
+type Props_input = (accept :: String, alt :: String, autoCapitalize :: String, autoCorrect :: String, autoSave :: String, checked :: Boolean, defaultChecked :: String, defaultValue :: String, disabled :: Boolean, form :: String, height :: String, list :: String, max :: String, min :: String, multiple :: Boolean, name :: String, onChange :: EventHandler, pattern :: String, placeholder :: String, required :: Boolean, results :: String, size :: Number, src :: String, step :: String, title :: String, "type" :: String, value :: String, width :: String)
 ```
 
 #### `input`
@@ -1605,7 +1605,7 @@ section_ :: Array JSX -> JSX
 #### `Props_select`
 
 ``` purescript
-type Props_select = (children :: Array JSX, defaultValue :: String, disabled :: Boolean, form :: String, multiple :: Boolean, name :: String, onChange :: String, required :: Boolean, size :: Number, value :: String)
+type Props_select = (children :: Array JSX, defaultValue :: String, disabled :: Boolean, form :: String, multiple :: Boolean, name :: String, onChange :: EventHandler, required :: Boolean, size :: Number, value :: String)
 ```
 
 #### `select`
@@ -1869,7 +1869,7 @@ template_ :: Array JSX -> JSX
 #### `Props_textarea`
 
 ``` purescript
-type Props_textarea = (autoCapitalize :: String, autoCorrect :: String, children :: Array JSX, cols :: Number, defaultValue :: String, disabled :: Boolean, form :: String, name :: String, onChange :: String, placeholder :: String, required :: Boolean, rows :: Number, value :: String, wrap :: String)
+type Props_textarea = (autoCapitalize :: String, autoCorrect :: String, children :: Array JSX, cols :: Number, defaultValue :: String, disabled :: Boolean, form :: String, name :: String, onChange :: EventHandler, placeholder :: String, required :: Boolean, rows :: Number, value :: String, wrap :: String)
 ```
 
 #### `textarea`
