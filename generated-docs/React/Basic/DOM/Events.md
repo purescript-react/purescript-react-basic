@@ -45,6 +45,19 @@ newtype EventFn a b
 ``` purescript
 Semigroupoid EventFn
 Category EventFn
+(IsSymbol l, RowCons l (EventFn a b) fns_rest fns, RowCons l b r_rest r, RowLacks l fns_rest, RowLacks l r_rest, Merge rest fns_rest a r_rest) => Merge (Cons l (EventFn a b) rest) fns a r
+```
+
+#### `handler`
+
+``` purescript
+handler :: forall a. EventFn SyntheticEvent a -> (a -> Eff (react :: ReactFX) Unit) -> EventHandler
+```
+
+#### `merge`
+
+``` purescript
+merge :: forall a fns fns_list r. RowToList fns fns_list => Merge fns_list fns a r => {  | fns } -> EventFn a ({  | r })
 ```
 
 #### `bubbles`
@@ -143,6 +156,18 @@ isPropagationStopped :: EventFn SyntheticEvent Boolean
 target :: EventFn SyntheticEvent DOMNode
 ```
 
+#### `targetChecked`
+
+``` purescript
+targetChecked :: EventFn SyntheticEvent (Nullable Boolean)
+```
+
+#### `targetValue`
+
+``` purescript
+targetValue :: EventFn SyntheticEvent (Nullable String)
+```
+
 #### `timeStamp`
 
 ``` purescript
@@ -153,6 +178,19 @@ timeStamp :: EventFn SyntheticEvent Number
 
 ``` purescript
 type_ :: EventFn SyntheticEvent String
+```
+
+#### `Merge`
+
+``` purescript
+class Merge (rl :: RowList) fns a r | rl -> fns, rl a -> r where
+  mergeImpl :: RLProxy rl -> {  | fns } -> EventFn a ({  | r })
+```
+
+##### Instances
+``` purescript
+Merge Nil () a ()
+(IsSymbol l, RowCons l (EventFn a b) fns_rest fns, RowCons l b r_rest r, RowLacks l fns_rest, RowLacks l r_rest, Merge rest fns_rest a r_rest) => Merge (Cons l (EventFn a b) rest) fns a r
 ```
 
 

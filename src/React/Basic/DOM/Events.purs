@@ -7,7 +7,7 @@ module React.Basic.DOM.Events
   , DOMEvent
   , EventFn
   , handler
-  -- , smoosh
+  , merge
   , bubbles
   , cancelable
   , currentTarget
@@ -28,6 +28,8 @@ module React.Basic.DOM.Events
   , targetValue
   , timeStamp
   , type_
+  , class Merge
+  , mergeImpl
   ) where
 
 import Prelude
@@ -35,7 +37,10 @@ import Prelude
 import Control.Monad.Eff (Eff)
 import Control.Monad.Eff.Uncurried (EffFn1, mkEffFn1)
 import Data.Nullable (Nullable)
+import Data.Record (delete, get, insert)
+import Data.Symbol (class IsSymbol, SProxy(SProxy))
 import React.Basic (ReactFX)
+import Type.Row (kind RowList, class RowToList, class RowLacks, RLProxy(..), Cons, Nil)
 import Unsafe.Coerce (unsafeCoerce)
 
 -- | An event handler, which receives a `SyntheticEvent` and performs some
@@ -59,9 +64,36 @@ derive newtype instance categoryBuilder :: Category EventFn
 handler :: forall a. EventFn SyntheticEvent a -> (a -> Eff (react :: ReactFX) Unit) -> EventHandler
 handler (EventFn fn) cb = mkEffFn1 $ fn >>> cb
 
--- smoosh
---   :: { b :: EventFn a b } -> { c :: EventFn a c } -> EventFn a { b :: b, c :: c }
--- smoosh = ?smoosh
+class Merge (rl :: RowList) fns a r | rl -> fns, rl a -> r where
+  mergeImpl :: RLProxy rl -> Record fns -> EventFn a (Record r)
+
+instance mergeNil :: Merge Nil () a () where
+  mergeImpl _ _ = EventFn \_ -> {}
+
+instance mergeCons
+    :: ( IsSymbol l
+       , RowCons l (EventFn a b) fns_rest fns
+       , RowCons l b r_rest r
+       , RowLacks l fns_rest
+       , RowLacks l r_rest
+       , Merge rest fns_rest a r_rest
+       )
+    => Merge (Cons l (EventFn a b) rest) fns a r
+  where
+    mergeImpl _ fns = EventFn \a ->
+        let EventFn inner = mergeImpl (RLProxy :: RLProxy rest) (delete l fns)
+            EventFn f = get l fns
+         in insert l (f a) (inner a)
+      where
+        l = SProxy :: SProxy l
+
+merge
+  :: forall a fns fns_list r
+   . RowToList fns fns_list
+  => Merge fns_list fns a r
+  => Record fns
+  -> EventFn a (Record r)
+merge = mergeImpl (RLProxy :: RLProxy fns_list)
 
 bubbles :: EventFn SyntheticEvent Boolean
 bubbles = EventFn \e -> (unsafeCoerce e).bubbles
