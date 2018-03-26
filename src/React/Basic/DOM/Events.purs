@@ -6,6 +6,7 @@ module React.Basic.DOM.Events
   , DOMNode
   , DOMEvent
   , EventFn
+  , handler
   -- , smoosh
   , bubbles
   , cancelable
@@ -23,13 +24,16 @@ module React.Basic.DOM.Events
   , stopPropagation
   , isPropagationStopped
   , target
+  , targetChecked
+  , targetValue
   , timeStamp
   , type_
   ) where
 
 import Prelude
 
-import Control.Monad.Eff.Uncurried (EffFn1)
+import Control.Monad.Eff (Eff)
+import Control.Monad.Eff.Uncurried (EffFn1, mkEffFn1)
 import Data.Nullable (Nullable)
 import React.Basic (ReactFX)
 import Unsafe.Coerce (unsafeCoerce)
@@ -51,6 +55,9 @@ newtype EventFn a b = EventFn (a -> b)
 
 derive newtype instance semigroupoidBuilder :: Semigroupoid EventFn
 derive newtype instance categoryBuilder :: Category EventFn
+
+handler :: forall a. EventFn SyntheticEvent a -> (a -> Eff (react :: ReactFX) Unit) -> EventHandler
+handler (EventFn fn) cb = mkEffFn1 $ fn >>> cb
 
 -- smoosh
 --   :: { b :: EventFn a b } -> { c :: EventFn a c } -> EventFn a { b :: b, c :: c }
@@ -113,10 +120,10 @@ target :: EventFn SyntheticEvent DOMNode
 target = EventFn \e -> (unsafeCoerce e).target
 
 targetChecked :: EventFn SyntheticEvent (Nullable Boolean)
-targetChecked = EventFn \e -> (unsafeCoerce e).targetChecked
+targetChecked = EventFn \e -> (unsafeCoerce e).target.checked
 
 targetValue :: EventFn SyntheticEvent (Nullable String)
-targetValue = EventFn \e -> (unsafeCoerce e).targetValue
+targetValue = EventFn \e -> (unsafeCoerce e).target.value
 
 timeStamp :: EventFn SyntheticEvent Number
 timeStamp = EventFn \e -> (unsafeCoerce e).timeStamp
