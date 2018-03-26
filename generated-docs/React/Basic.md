@@ -63,24 +63,13 @@ Render an Array of children without a wrapping component.
 Provide a key when dynamically rendering multiple fragments along side
 each other.
 
-
-### Re-exported from React.Basic.Types:
-
-#### `SyntheticEvent`
+#### `JSX`
 
 ``` purescript
-type SyntheticEvent = { bubbles :: Boolean, cancelable :: Boolean, currentTarget :: DOMNode, defaultPrevented :: Boolean, eventPhase :: Number, isTrusted :: Boolean, target :: DOMNode, timeStamp :: Number, "type" :: String }
+data JSX :: Type
 ```
 
-Event data that we receive from React.
-
-#### `ReactFX`
-
-``` purescript
-data ReactFX :: Effect
-```
-
-A placeholder effect for all React FFI.
+A virtual DOM element.
 
 #### `ReactComponent`
 
@@ -90,36 +79,12 @@ data ReactComponent :: Type -> Type
 
 A React component which can be used from JavaScript.
 
-#### `JSX`
+#### `ReactFX`
 
 ``` purescript
-data JSX :: Type
+data ReactFX :: Effect
 ```
 
-A virtual DOM element.
+A placeholder effect for all React FFI.
 
-#### `EventHandler`
-
-``` purescript
-type EventHandler = EffFn1 (react :: ReactFX) SyntheticEvent Unit
-```
-
-An event handler, which receives a `SyntheticEvent` and performs some
-effects in return.
-
-#### `DOMNode`
-
-``` purescript
-data DOMNode :: Type
-```
-
-An _actual_ DOM node (not a virtual DOM element!)
-
-#### `CSS`
-
-``` purescript
-data CSS :: Type
-```
-
-An abstract type representing records of CSS attributes.
 

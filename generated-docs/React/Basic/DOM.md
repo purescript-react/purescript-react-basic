@@ -15,6 +15,14 @@ text :: String -> JSX
 
 Create a text node.
 
+#### `CSS`
+
+``` purescript
+data CSS :: Type
+```
+
+An abstract type representing records of CSS attributes.
+
 #### `css`
 
 ``` purescript
