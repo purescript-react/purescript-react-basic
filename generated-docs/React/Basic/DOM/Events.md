@@ -33,12 +33,23 @@ An _actual_ DOM node (not a virtual DOM element!)
 data DOMEvent :: Type
 ```
 
-The underlying browser Event
+The underlying browser Event.
 
 #### `EventFn`
 
 ``` purescript
 newtype EventFn a b
+```
+
+Encapsulates a safe event operation. `EventFn`s can be composed
+to perform multiple operations.
+
+For example:
+
+```purs
+input { onChange: handler (preventDefault >>> targetValue)
+                    \value -> setState \_ -> { value }
+      }
 ```
 
 ##### Instances
@@ -54,10 +65,30 @@ Category EventFn
 handler :: forall a. EventFn SyntheticEvent a -> (a -> Eff (react :: ReactFX) Unit) -> EventHandler
 ```
 
+Create an `EventHandler`, given an `EventFn` and a callback.
+
+For example:
+
+```purs
+input { onChange: handler targetValue
+                    \value -> setState \_ -> { value }
+      }
+```
+
 #### `merge`
 
 ``` purescript
 merge :: forall a fns fns_list r. RowToList fns fns_list => Merge fns_list fns a r => {  | fns } -> EventFn a ({  | r })
+```
+
+Merge multiple `EventFn` operations and collect their results.
+
+For example:
+
+```purs
+input { onChange: handler (merge { targetValue, timeStamp })
+                    \{ targetValue, timeStamp } -> setState \_ -> { ... }
+      }
 ```
 
 #### `bubbles`
@@ -76,12 +107,6 @@ cancelable :: EventFn SyntheticEvent Boolean
 
 ``` purescript
 currentTarget :: EventFn SyntheticEvent DOMNode
-```
-
-#### `defaultPrevented`
-
-``` purescript
-defaultPrevented :: EventFn SyntheticEvent Boolean
 ```
 
 #### `eventPhase`

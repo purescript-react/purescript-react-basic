@@ -11,7 +11,6 @@ module React.Basic.DOM.Events
   , bubbles
   , cancelable
   , currentTarget
-  , defaultPrevented
   , eventPhase
   , eventPhaseNone
   , eventPhaseCapturing
@@ -53,14 +52,33 @@ foreign import data SyntheticEvent :: Type
 -- | An _actual_ DOM node (not a virtual DOM element!)
 foreign import data DOMNode :: Type
 
--- | The underlying browser Event
+-- | The underlying browser Event.
 foreign import data DOMEvent :: Type
 
+-- | Encapsulates a safe event operation. `EventFn`s can be composed
+-- | to perform multiple operations.
+-- |
+-- | For example:
+-- |
+-- | ```purs
+-- | input { onChange: handler (preventDefault >>> targetValue)
+-- |                     \value -> setState \_ -> { value }
+-- |       }
+-- | ```
 newtype EventFn a b = EventFn (a -> b)
 
 derive newtype instance semigroupoidBuilder :: Semigroupoid EventFn
 derive newtype instance categoryBuilder :: Category EventFn
 
+-- | Create an `EventHandler`, given an `EventFn` and a callback.
+-- |
+-- | For example:
+-- |
+-- | ```purs
+-- | input { onChange: handler targetValue
+-- |                     \value -> setState \_ -> { value }
+-- |       }
+-- | ```
 handler :: forall a. EventFn SyntheticEvent a -> (a -> Eff (react :: ReactFX) Unit) -> EventHandler
 handler (EventFn fn) cb = mkEffFn1 $ fn >>> cb
 
@@ -87,6 +105,15 @@ instance mergeCons
       where
         l = SProxy :: SProxy l
 
+-- | Merge multiple `EventFn` operations and collect their results.
+-- |
+-- | For example:
+-- |
+-- | ```purs
+-- | input { onChange: handler (merge { targetValue, timeStamp })
+-- |                     \{ targetValue, timeStamp } -> setState \_ -> { ... }
+-- |       }
+-- | ```
 merge
   :: forall a fns fns_list r
    . RowToList fns fns_list
