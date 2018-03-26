@@ -1,12 +1,10 @@
 module Container where
 
-import Prelude
-
 import React.Basic (ReactComponent, createElement, stateless)
 import React.Basic.DOM as R
 import ToggleButton as ToggleButton
 
-component :: ReactComponent Unit
+component :: ReactComponent {}
 component = stateless
   { displayName: "Container"
   , render: \_ ->
