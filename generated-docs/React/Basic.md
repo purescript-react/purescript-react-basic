@@ -3,7 +3,7 @@
 #### `react`
 
 ``` purescript
-react :: forall props state fx. { displayName :: String, initialState :: {  | state }, receiveProps :: props -> {  | state } -> (SetState state fx) -> Eff (react :: ReactFX | fx) Unit, render :: props -> {  | state } -> (SetState state fx) -> JSX } -> ReactComponent props
+react :: forall props state fx. { displayName :: String, initialState :: {  | state }, receiveProps :: {  | props } -> {  | state } -> (SetState state fx) -> Eff (react :: ReactFX | fx) Unit, render :: {  | props } -> {  | state } -> (SetState state fx) -> JSX } -> ReactComponent {  | props }
 ```
 
 Create a React component from a _specification_ of that component.
@@ -19,7 +19,7 @@ module (and re-exported here).
 #### `stateless`
 
 ``` purescript
-stateless :: forall props. { displayName :: String, render :: props -> JSX } -> ReactComponent props
+stateless :: forall props. { displayName :: String, render :: {  | props } -> JSX } -> ReactComponent {  | props }
 ```
 
 Create a stateless React component.
@@ -30,7 +30,7 @@ components which don't use state.
 #### `createElement`
 
 ``` purescript
-createElement :: forall props. ReactComponent props -> props -> JSX
+createElement :: forall props. ReactComponent {  | props } -> {  | props } -> JSX
 ```
 
 Create a `JSX` node from a React component, by providing the props.

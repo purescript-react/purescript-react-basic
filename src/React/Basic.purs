@@ -38,10 +38,10 @@ react
   :: forall props state fx
    . { displayName :: String
      , initialState :: { | state }
-     , receiveProps :: props -> { | state } -> (SetState state fx) -> Eff (react :: ReactFX | fx) Unit
-     , render :: props -> { | state } -> (SetState state fx) -> JSX
+     , receiveProps :: { | props } -> { | state } -> (SetState state fx) -> Eff (react :: ReactFX | fx) Unit
+     , render :: { | props } -> { | state } -> (SetState state fx) -> JSX
      }
-  -> ReactComponent props
+  -> ReactComponent { | props }
 react { displayName, initialState, receiveProps, render } =
   component_
     { displayName
@@ -57,9 +57,9 @@ react { displayName, initialState, receiveProps, render } =
 stateless
   :: forall props
    . { displayName :: String
-     , render :: props -> JSX
+     , render :: { | props } -> JSX
      }
-  -> ReactComponent props
+  -> ReactComponent { | props }
 stateless { displayName, render } =
   react
     { displayName
@@ -74,8 +74,8 @@ type SetState state fx = ({ | state } -> { | state }) -> Eff (react :: ReactFX |
 -- | Create a `JSX` node from a React component, by providing the props.
 createElement
   :: forall props
-   . ReactComponent props
-  -> props
+   . ReactComponent { | props }
+  -> { | props }
   -> JSX
 createElement = runFn2 createElement_
 
@@ -104,12 +104,12 @@ foreign import component_
   :: forall props state fx
    . { displayName :: String
      , initialState :: { | state }
-     , receiveProps :: EffFn3 (react :: ReactFX | fx) props { | state } (SetState state fx) Unit
-     , render :: Fn3 props { | state } (SetState state fx) JSX
+     , receiveProps :: EffFn3 (react :: ReactFX | fx) { | props } { | state } (SetState state fx) Unit
+     , render :: Fn3 { | props } { | state } (SetState state fx) JSX
      }
-  -> ReactComponent props
+  -> ReactComponent { | props }
 
-foreign import createElement_ :: forall props. Fn2 (ReactComponent props) props JSX
+foreign import createElement_ :: forall props. Fn2 (ReactComponent { | props }) { | props } JSX
 
 foreign import createElementKeyed_ :: forall props. Fn2 (ReactComponent { | props }) { key :: String | props } JSX
 
