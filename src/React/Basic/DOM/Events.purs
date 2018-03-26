@@ -104,9 +104,6 @@ cancelable = EventFn \e -> (unsafeCoerce e).cancelable
 currentTarget :: EventFn SyntheticEvent DOMNode
 currentTarget = EventFn \e -> (unsafeCoerce e).currentTarget
 
-defaultPrevented :: EventFn SyntheticEvent Boolean
-defaultPrevented = EventFn \e -> (unsafeCoerce e).defaultPrevented
-
 eventPhase :: EventFn SyntheticEvent Int
 eventPhase = EventFn \e -> (unsafeCoerce e).eventPhase
 
