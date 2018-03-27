@@ -7,13 +7,16 @@
 
 module React.Basic.DOM where
 
-import React.Basic (ReactComponent, createElement)
-import React.Basic.Types (CSS, JSX, EventHandler)
+import React.Basic (JSX, ReactComponent, createElement)
+import React.Basic.DOM.Events (EventHandler)
 import Unsafe.Coerce (unsafeCoerce)
 
 -- | Create a text node.
 text :: String -> JSX
 text = unsafeCoerce
+
+-- | An abstract type representing records of CSS attributes.
+foreign import data CSS :: Type
 
 -- | Create a value of type `CSS` (which can be provided to the `style` property)
 -- | from a plain record of CSS attributes.
@@ -2162,4 +2165,3 @@ wbr
   => Record attrs
   -> JSX
 wbr = createElement (unsafeCreateDOMComponent "wbr")
-

@@ -3,7 +3,7 @@
 #### `react`
 
 ``` purescript
-react :: forall props state fx. { displayName :: String, initialState :: {  | state }, receiveProps :: props -> {  | state } -> (SetState state fx) -> Eff (react :: ReactFX | fx) Unit, render :: props -> {  | state } -> (SetState state fx) -> JSX } -> ReactComponent props
+react :: forall props state fx. { displayName :: String, initialState :: {  | state }, receiveProps :: {  | props } -> {  | state } -> (SetState state fx) -> Eff (react :: ReactFX | fx) Unit, render :: {  | props } -> {  | state } -> (SetState state fx) -> JSX } -> ReactComponent {  | props }
 ```
 
 Create a React component from a _specification_ of that component.
@@ -19,7 +19,7 @@ module (and re-exported here).
 #### `stateless`
 
 ``` purescript
-stateless :: forall props. { displayName :: String, render :: props -> JSX } -> ReactComponent props
+stateless :: forall props. { displayName :: String, render :: {  | props } -> JSX } -> ReactComponent {  | props }
 ```
 
 Create a stateless React component.
@@ -30,7 +30,7 @@ components which don't use state.
 #### `createElement`
 
 ``` purescript
-createElement :: forall props. ReactComponent props -> props -> JSX
+createElement :: forall props. ReactComponent {  | props } -> {  | props } -> JSX
 ```
 
 Create a `JSX` node from a React component, by providing the props.
@@ -63,24 +63,13 @@ Render an Array of children without a wrapping component.
 Provide a key when dynamically rendering multiple fragments along side
 each other.
 
-
-### Re-exported from React.Basic.Types:
-
-#### `SyntheticEvent`
+#### `JSX`
 
 ``` purescript
-type SyntheticEvent = { bubbles :: Boolean, cancelable :: Boolean, currentTarget :: DOMNode, defaultPrevented :: Boolean, eventPhase :: Number, isTrusted :: Boolean, target :: DOMNode, timeStamp :: Number, "type" :: String }
+data JSX :: Type
 ```
 
-Event data that we receive from React.
-
-#### `ReactFX`
-
-``` purescript
-data ReactFX :: Effect
-```
-
-A placeholder effect for all React FFI.
+A virtual DOM element.
 
 #### `ReactComponent`
 
@@ -90,36 +79,12 @@ data ReactComponent :: Type -> Type
 
 A React component which can be used from JavaScript.
 
-#### `JSX`
+#### `ReactFX`
 
 ``` purescript
-data JSX :: Type
+data ReactFX :: Effect
 ```
 
-A virtual DOM element.
+A placeholder effect for all React FFI.
 
-#### `EventHandler`
-
-``` purescript
-type EventHandler = EffFn1 (react :: ReactFX) SyntheticEvent Unit
-```
-
-An event handler, which receives a `SyntheticEvent` and performs some
-effects in return.
-
-#### `DOMNode`
-
-``` purescript
-data DOMNode :: Type
-```
-
-An _actual_ DOM node (not a virtual DOM element!)
-
-#### `CSS`
-
-``` purescript
-data CSS :: Type
-```
-
-An abstract type representing records of CSS attributes.
 
