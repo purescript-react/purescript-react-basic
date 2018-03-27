@@ -6,6 +6,10 @@
     "bower_components",
     "output"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lumihq/purescript-react-basic.git"
+  },
   "dependencies": {
     "purescript-functions": "^3.0.0",
     "purescript-eff": "^3.1.0",
