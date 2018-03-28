@@ -4,15 +4,16 @@ var React = require("react");
 var Fragment = React.Fragment || "div";
 
 exports.component_ = function(spec) {
-  function Component(props) {
+  var Component = function constructor(props) {
     this.state = spec.initialState;
     return this;
-  }
+  };
+
   Component.prototype = Object.create(React.Component.prototype);
 
-  Component.prototype.displayName = spec.displayName;
+  Component.displayName = spec.displayName;
 
-  Component.prototype.componentDidMount = function() {
+  Component.prototype.componentDidMount = function componentDidMount() {
     var this_ = this;
     spec.receiveProps(this.props, this.state, function(newState) {
       return function() {
@@ -21,7 +22,9 @@ exports.component_ = function(spec) {
     });
   };
 
-  Component.prototype.componentWillReceiveProps = function(newProps) {
+  Component.prototype.componentWillReceiveProps = function componentWillReceiveProps(
+    newProps
+  ) {
     var this_ = this;
     spec.receiveProps(newProps, this.state, function(newState) {
       return function() {
@@ -30,7 +33,7 @@ exports.component_ = function(spec) {
     });
   };
 
-  Component.prototype.render = function() {
+  Component.prototype.render = function render() {
     var this_ = this;
     return spec.render(this.props, this.state, function(newState) {
       return function() {

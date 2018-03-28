@@ -10,7 +10,7 @@ import React.Basic.DOM.Events as Events
 
 component :: ReactComponent {}
 component = react
-  { displayName: "Counter"
+  { displayName: "ControlledInput"
   , initialState: { value: "hello world", timeStamp: Nothing }
   , receiveProps: \_ _ _ -> pure unit
   , render: \_ state setState ->
