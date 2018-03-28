@@ -35,6 +35,8 @@ input { onChange: handler (preventDefault >>> targetValue)
       }
 ```
 
+_Note: Misusing the `EventFn` *constructor* is UNSAFE and should be avoided -- use the helper functions specific to your platform (such as `React.Basic.DOM.Events`)_
+
 ##### Instances
 ``` purescript
 Semigroupoid EventFn

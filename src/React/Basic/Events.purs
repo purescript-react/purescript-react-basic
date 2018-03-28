@@ -34,6 +34,8 @@ foreign import data SyntheticEvent :: Type
 -- |                     \value -> setState \_ -> { value }
 -- |       }
 -- | ```
+-- |
+-- | _Note: Misusing the `EventFn` *constructor* is UNSAFE and should be avoided -- use the helper functions specific to your platform (such as `React.Basic.DOM.Events`)_
 newtype EventFn a b = EventFn (a -> b)
 
 derive newtype instance semigroupoidBuilder :: Semigroupoid EventFn
