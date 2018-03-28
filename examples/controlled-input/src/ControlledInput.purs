@@ -2,8 +2,7 @@ module ControlledInput where
 
 import Prelude
 
-import Data.Maybe (Maybe(..), fromMaybe, maybe)
-import Data.Nullable (toMaybe)
+import Data.Maybe (Maybe(..), fromMaybe)
 import React.Basic (ReactComponent, react)
 import React.Basic.DOM as R
 import React.Basic.DOM.Events (targetValue, timeStamp)
@@ -16,14 +15,15 @@ component = react
   , receiveProps: \_ _ _ -> pure unit
   , render: \_ state setState ->
       R.div_
-        [ R.p_ [ R.input { onChange: Events.handler (Events.preventDefault >>> Events.merge { targetValue, timeStamp }) \{ timeStamp, targetValue } ->
-                             setState \_ -> { value: fromMaybe "" (toMaybe targetValue)
-                                            , timeStamp: Just timeStamp
-                                            }
+        [ R.p_ [ R.input { onChange: Events.handler (Events.preventDefault >>> Events.merge { targetValue, timeStamp })
+                             \{ timeStamp, targetValue } -> setState \_ ->
+                                { value: fromMaybe "" targetValue
+                                , timeStamp: Just timeStamp
+                                }
                          , value: state.value
                          }
                ]
         , R.p_ [ R.text ("Current value = " <> show state.value) ]
-        , R.p_ (maybe [] (\ts -> [R.text ("Changed at: " <> show ts)]) state.timeStamp)
+        , R.p_ [ R.text ("Changed at = " <> fromMaybe "never" (show <$> state.timeStamp)) ]
         ]
   }

@@ -35,7 +35,8 @@ import Prelude
 
 import Control.Monad.Eff (Eff)
 import Control.Monad.Eff.Uncurried (EffFn1, mkEffFn1)
-import Data.Nullable (Nullable)
+import Data.Maybe (Maybe)
+import Data.Nullable (toMaybe)
 import Data.Record (delete, get, insert)
 import Data.Symbol (class IsSymbol, SProxy(SProxy))
 import React.Basic (ReactFX)
@@ -175,11 +176,11 @@ foreign import unsafeIsPropagationStopped :: SyntheticEvent -> Boolean
 target :: EventFn SyntheticEvent DOMNode
 target = EventFn \e -> (unsafeCoerce e).target
 
-targetChecked :: EventFn SyntheticEvent (Nullable Boolean)
-targetChecked = EventFn \e -> (unsafeCoerce e).target.checked
+targetChecked :: EventFn SyntheticEvent (Maybe Boolean)
+targetChecked = EventFn \e -> toMaybe (unsafeCoerce e).target.checked
 
-targetValue :: EventFn SyntheticEvent (Nullable String)
-targetValue = EventFn \e -> (unsafeCoerce e).target.value
+targetValue :: EventFn SyntheticEvent (Maybe String)
+targetValue = EventFn \e -> toMaybe (unsafeCoerce e).target.value
 
 timeStamp :: EventFn SyntheticEvent Number
 timeStamp = EventFn \e -> (unsafeCoerce e).timeStamp
