@@ -47,8 +47,11 @@ Category EventFn
 unsafeEventFn :: forall a b. (a -> b) -> EventFn a b
 ```
 
-Unsafely create an `EventFn`. This function should be avoided.
-Use the helper functions specific to your platform (such as `React.Basic.DOM.Events`).
+Unsafely create an `EventFn`. This function should be avoided as it can allow
+a `SyntheticEvent` to escape its scope. Accessing a React event's properties is only
+valid in a synchronous event callback.
+
+Instead, use the helper functions specific to your platform, such as `React.Basic.DOM.Events`.
 
 #### `handler`
 
