@@ -1,23 +1,6 @@
 ## Module React.Basic.DOM.Events
 
-This module defines safe event function and property accessors.
-
-#### `EventHandler`
-
-``` purescript
-type EventHandler = EffFn1 (react :: ReactFX) SyntheticEvent Unit
-```
-
-An event handler, which receives a `SyntheticEvent` and performs some
-effects in return.
-
-#### `SyntheticEvent`
-
-``` purescript
-data SyntheticEvent :: Type
-```
-
-Event data that we receive from React.
+This module defines safe DOM event function and property accessors.
 
 #### `DOMNode`
 
@@ -34,62 +17,6 @@ data DOMEvent :: Type
 ```
 
 The underlying browser Event.
-
-#### `EventFn`
-
-``` purescript
-newtype EventFn a b
-```
-
-Encapsulates a safe event operation. `EventFn`s can be composed
-to perform multiple operations.
-
-For example:
-
-```purs
-input { onChange: handler (preventDefault >>> targetValue)
-                    \value -> setState \_ -> { value }
-      }
-```
-
-##### Instances
-``` purescript
-Semigroupoid EventFn
-Category EventFn
-(IsSymbol l, RowCons l (EventFn a b) fns_rest fns, RowCons l b r_rest r, RowLacks l fns_rest, RowLacks l r_rest, Merge rest fns_rest a r_rest) => Merge (Cons l (EventFn a b) rest) fns a r
-```
-
-#### `handler`
-
-``` purescript
-handler :: forall a. EventFn SyntheticEvent a -> (a -> Eff (react :: ReactFX) Unit) -> EventHandler
-```
-
-Create an `EventHandler`, given an `EventFn` and a callback.
-
-For example:
-
-```purs
-input { onChange: handler targetValue
-                    \value -> setState \_ -> { value }
-      }
-```
-
-#### `merge`
-
-``` purescript
-merge :: forall a fns fns_list r. RowToList fns fns_list => Merge fns_list fns a r => {  | fns } -> EventFn a ({  | r })
-```
-
-Merge multiple `EventFn` operations and collect their results.
-
-For example:
-
-```purs
-input { onChange: handler (merge { targetValue, timeStamp })
-                    \{ targetValue, timeStamp } -> setState \_ -> { ... }
-      }
-```
 
 #### `bubbles`
 
@@ -184,13 +111,13 @@ target :: EventFn SyntheticEvent DOMNode
 #### `targetChecked`
 
 ``` purescript
-targetChecked :: EventFn SyntheticEvent (Nullable Boolean)
+targetChecked :: EventFn SyntheticEvent (Maybe Boolean)
 ```
 
 #### `targetValue`
 
 ``` purescript
-targetValue :: EventFn SyntheticEvent (Nullable String)
+targetValue :: EventFn SyntheticEvent (Maybe String)
 ```
 
 #### `timeStamp`
@@ -203,19 +130,6 @@ timeStamp :: EventFn SyntheticEvent Number
 
 ``` purescript
 type_ :: EventFn SyntheticEvent String
-```
-
-#### `Merge`
-
-``` purescript
-class Merge (rl :: RowList) fns a r | rl -> fns, rl a -> r where
-  mergeImpl :: RLProxy rl -> {  | fns } -> EventFn a ({  | r })
-```
-
-##### Instances
-``` purescript
-Merge Nil () a ()
-(IsSymbol l, RowCons l (EventFn a b) fns_rest fns, RowCons l b r_rest r, RowLacks l fns_rest, RowLacks l r_rest, Merge rest fns_rest a r_rest) => Merge (Cons l (EventFn a b) rest) fns a r
 ```
 
 

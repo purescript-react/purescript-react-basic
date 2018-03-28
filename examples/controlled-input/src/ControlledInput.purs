@@ -5,8 +5,8 @@ import Prelude
 import Data.Maybe (Maybe(..), fromMaybe)
 import React.Basic (ReactComponent, react)
 import React.Basic.DOM as R
-import React.Basic.DOM.Events (targetValue, timeStamp)
-import React.Basic.DOM.Events as Events
+import React.Basic.DOM.Events (preventDefault, targetValue, timeStamp)
+import React.Basic.Events as Events
 
 component :: ReactComponent {}
 component = react
@@ -15,7 +15,7 @@ component = react
   , receiveProps: \_ _ _ -> pure unit
   , render: \_ state setState ->
       R.div_
-        [ R.p_ [ R.input { onChange: Events.handler (Events.preventDefault >>> Events.merge { targetValue, timeStamp })
+        [ R.p_ [ R.input { onChange: Events.handler (preventDefault >>> Events.merge { targetValue, timeStamp })
                              \{ timeStamp, targetValue } -> setState \_ ->
                                 { value: fromMaybe "" targetValue
                                 , timeStamp: Just timeStamp
