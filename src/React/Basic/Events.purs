@@ -37,8 +37,11 @@ foreign import data SyntheticEvent :: Type
 -- | ```
 newtype EventFn a b = EventFn (a -> b)
 
--- | Unsafely create an `EventFn`. This function should be avoided.
--- | Use the helper functions specific to your platform (such as `React.Basic.DOM.Events`).
+-- | Unsafely create an `EventFn`. This function should be avoided as it can allow
+-- | a `SyntheticEvent` to escape its scope. Accessing a React event's properties is only
+-- | valid in a synchronous event callback.
+-- |
+-- | Instead, use the helper functions specific to your platform, such as `React.Basic.DOM.Events`.
 unsafeEventFn :: forall a b. (a -> b) -> EventFn a b
 unsafeEventFn = EventFn
 
