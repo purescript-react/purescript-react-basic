@@ -26,7 +26,7 @@ module React.Basic.DOM.Events
 
 import Data.Maybe (Maybe)
 import Data.Nullable (toMaybe)
-import React.Basic.Events (EventFn(..), SyntheticEvent)
+import React.Basic.Events (EventFn, SyntheticEvent, unsafeEventFn)
 import Unsafe.Coerce (unsafeCoerce)
 
 -- | An _actual_ DOM node (not a virtual DOM element!)
@@ -36,16 +36,16 @@ foreign import data DOMNode :: Type
 foreign import data DOMEvent :: Type
 
 bubbles :: EventFn SyntheticEvent Boolean
-bubbles = EventFn \e -> (unsafeCoerce e).bubbles
+bubbles = unsafeEventFn \e -> (unsafeCoerce e).bubbles
 
 cancelable :: EventFn SyntheticEvent Boolean
-cancelable = EventFn \e -> (unsafeCoerce e).cancelable
+cancelable = unsafeEventFn \e -> (unsafeCoerce e).cancelable
 
 currentTarget :: EventFn SyntheticEvent DOMNode
-currentTarget = EventFn \e -> (unsafeCoerce e).currentTarget
+currentTarget = unsafeEventFn \e -> (unsafeCoerce e).currentTarget
 
 eventPhase :: EventFn SyntheticEvent Int
-eventPhase = EventFn \e -> (unsafeCoerce e).eventPhase
+eventPhase = unsafeEventFn \e -> (unsafeCoerce e).eventPhase
 
 eventPhaseNone :: Int
 eventPhaseNone = 0
@@ -60,42 +60,42 @@ eventPhaseBubbling :: Int
 eventPhaseBubbling = 3
 
 isTrusted :: EventFn SyntheticEvent Boolean
-isTrusted = EventFn \e -> (unsafeCoerce e).isTrusted
+isTrusted = unsafeEventFn \e -> (unsafeCoerce e).isTrusted
 
 nativeEvent :: EventFn SyntheticEvent DOMEvent
-nativeEvent = EventFn \e -> (unsafeCoerce e).nativeEvent
+nativeEvent = unsafeEventFn \e -> (unsafeCoerce e).nativeEvent
 
 preventDefault :: EventFn SyntheticEvent SyntheticEvent
-preventDefault = EventFn unsafePreventDefault
+preventDefault = unsafeEventFn unsafePreventDefault
 
 foreign import unsafePreventDefault :: SyntheticEvent -> SyntheticEvent
 
 isDefaultPrevented :: EventFn SyntheticEvent Boolean
-isDefaultPrevented = EventFn unsafeIsDefaultPrevented
+isDefaultPrevented = unsafeEventFn unsafeIsDefaultPrevented
 
 foreign import unsafeIsDefaultPrevented :: SyntheticEvent -> Boolean
 
 stopPropagation :: EventFn SyntheticEvent SyntheticEvent
-stopPropagation = EventFn unsafeStopPropagation
+stopPropagation = unsafeEventFn unsafeStopPropagation
 
 foreign import unsafeStopPropagation :: SyntheticEvent -> SyntheticEvent
 
 isPropagationStopped :: EventFn SyntheticEvent Boolean
-isPropagationStopped = EventFn unsafeIsPropagationStopped
+isPropagationStopped = unsafeEventFn unsafeIsPropagationStopped
 
 foreign import unsafeIsPropagationStopped :: SyntheticEvent -> Boolean
 
 target :: EventFn SyntheticEvent DOMNode
-target = EventFn \e -> (unsafeCoerce e).target
+target = unsafeEventFn \e -> (unsafeCoerce e).target
 
 targetChecked :: EventFn SyntheticEvent (Maybe Boolean)
-targetChecked = EventFn \e -> toMaybe (unsafeCoerce e).target.checked
+targetChecked = unsafeEventFn \e -> toMaybe (unsafeCoerce e).target.checked
 
 targetValue :: EventFn SyntheticEvent (Maybe String)
-targetValue = EventFn \e -> toMaybe (unsafeCoerce e).target.value
+targetValue = unsafeEventFn \e -> toMaybe (unsafeCoerce e).target.value
 
 timeStamp :: EventFn SyntheticEvent Number
-timeStamp = EventFn \e -> (unsafeCoerce e).timeStamp
+timeStamp = unsafeEventFn \e -> (unsafeCoerce e).timeStamp
 
 type_ :: EventFn SyntheticEvent String
-type_ = EventFn \e -> (unsafeCoerce e)."type"
+type_ = unsafeEventFn \e -> (unsafeCoerce e)."type"

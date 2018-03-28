@@ -2,7 +2,7 @@ module ControlledInput where
 
 import Prelude
 
-import Data.Maybe (Maybe(..), fromMaybe)
+import Data.Maybe (Maybe(..), fromMaybe, maybe)
 import React.Basic (ReactComponent, react)
 import React.Basic.DOM as R
 import React.Basic.DOM.Events (preventDefault, targetValue, timeStamp)
@@ -24,6 +24,6 @@ component = react
                          }
                ]
         , R.p_ [ R.text ("Current value = " <> show state.value) ]
-        , R.p_ [ R.text ("Changed at = " <> fromMaybe "never" (show <$> state.timeStamp)) ]
+        , R.p_ [ R.text ("Changed at = " <> maybe "never" show state.timeStamp) ]
         ]
   }

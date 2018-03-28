@@ -21,7 +21,6 @@ Event data that we receive from React.
 
 ``` purescript
 newtype EventFn a b
-  = EventFn (a -> b)
 ```
 
 Encapsulates a safe event operation. `EventFn`s can be composed
@@ -35,14 +34,21 @@ input { onChange: handler (preventDefault >>> targetValue)
       }
 ```
 
-_Note: Misusing the `EventFn` *constructor* is UNSAFE and should be avoided -- use the helper functions specific to your platform (such as `React.Basic.DOM.Events`)_
-
 ##### Instances
 ``` purescript
 Semigroupoid EventFn
 Category EventFn
 (IsSymbol l, RowCons l (EventFn a b) fns_rest fns, RowCons l b r_rest r, RowLacks l fns_rest, RowLacks l r_rest, Merge rest fns_rest a r_rest) => Merge (Cons l (EventFn a b) rest) fns a r
 ```
+
+#### `unsafeEventFn`
+
+``` purescript
+unsafeEventFn :: forall a b. (a -> b) -> EventFn a b
+```
+
+Unsafely create an `EventFn`. This function should be avoided.
+Use the helper functions specific to your platform (such as `React.Basic.DOM.Events`).
 
 #### `handler`
 
