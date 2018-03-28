@@ -8,7 +8,7 @@
 module React.Basic.DOM where
 
 import React.Basic (JSX, ReactComponent, createElement)
-import React.Basic.DOM.Events (EventHandler)
+import React.Basic.Events (EventHandler)
 import Unsafe.Coerce (unsafeCoerce)
 
 -- | Create a text node.

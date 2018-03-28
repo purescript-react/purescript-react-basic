@@ -1,13 +1,8 @@
--- | This module defines safe event function and property accessors.
+-- | This module defines safe DOM event function and property accessors.
 
 module React.Basic.DOM.Events
-  ( EventHandler
-  , SyntheticEvent
-  , DOMNode
+  ( DOMNode
   , DOMEvent
-  , EventFn
-  , handler
-  , merge
   , bubbles
   , cancelable
   , currentTarget
@@ -27,28 +22,12 @@ module React.Basic.DOM.Events
   , targetValue
   , timeStamp
   , type_
-  , class Merge
-  , mergeImpl
   ) where
 
-import Prelude
-
-import Control.Monad.Eff (Eff)
-import Control.Monad.Eff.Uncurried (EffFn1, mkEffFn1)
 import Data.Maybe (Maybe)
 import Data.Nullable (toMaybe)
-import Data.Record (delete, get, insert)
-import Data.Symbol (class IsSymbol, SProxy(SProxy))
-import React.Basic (ReactFX)
-import Type.Row (kind RowList, class RowToList, class RowLacks, RLProxy(..), Cons, Nil)
+import React.Basic.Events (EventFn, SyntheticEvent, unsafeEventFn)
 import Unsafe.Coerce (unsafeCoerce)
-
--- | An event handler, which receives a `SyntheticEvent` and performs some
--- | effects in return.
-type EventHandler = EffFn1 (react :: ReactFX) SyntheticEvent Unit
-
--- | Event data that we receive from React.
-foreign import data SyntheticEvent :: Type
 
 -- | An _actual_ DOM node (not a virtual DOM element!)
 foreign import data DOMNode :: Type
@@ -56,84 +35,17 @@ foreign import data DOMNode :: Type
 -- | The underlying browser Event.
 foreign import data DOMEvent :: Type
 
--- | Encapsulates a safe event operation. `EventFn`s can be composed
--- | to perform multiple operations.
--- |
--- | For example:
--- |
--- | ```purs
--- | input { onChange: handler (preventDefault >>> targetValue)
--- |                     \value -> setState \_ -> { value }
--- |       }
--- | ```
-newtype EventFn a b = EventFn (a -> b)
-
-derive newtype instance semigroupoidBuilder :: Semigroupoid EventFn
-derive newtype instance categoryBuilder :: Category EventFn
-
--- | Create an `EventHandler`, given an `EventFn` and a callback.
--- |
--- | For example:
--- |
--- | ```purs
--- | input { onChange: handler targetValue
--- |                     \value -> setState \_ -> { value }
--- |       }
--- | ```
-handler :: forall a. EventFn SyntheticEvent a -> (a -> Eff (react :: ReactFX) Unit) -> EventHandler
-handler (EventFn fn) cb = mkEffFn1 $ fn >>> cb
-
-class Merge (rl :: RowList) fns a r | rl -> fns, rl a -> r where
-  mergeImpl :: RLProxy rl -> Record fns -> EventFn a (Record r)
-
-instance mergeNil :: Merge Nil () a () where
-  mergeImpl _ _ = EventFn \_ -> {}
-
-instance mergeCons
-    :: ( IsSymbol l
-       , RowCons l (EventFn a b) fns_rest fns
-       , RowCons l b r_rest r
-       , RowLacks l fns_rest
-       , RowLacks l r_rest
-       , Merge rest fns_rest a r_rest
-       )
-    => Merge (Cons l (EventFn a b) rest) fns a r
-  where
-    mergeImpl _ fns = EventFn \a ->
-        let EventFn inner = mergeImpl (RLProxy :: RLProxy rest) (delete l fns)
-            EventFn f = get l fns
-         in insert l (f a) (inner a)
-      where
-        l = SProxy :: SProxy l
-
--- | Merge multiple `EventFn` operations and collect their results.
--- |
--- | For example:
--- |
--- | ```purs
--- | input { onChange: handler (merge { targetValue, timeStamp })
--- |                     \{ targetValue, timeStamp } -> setState \_ -> { ... }
--- |       }
--- | ```
-merge
-  :: forall a fns fns_list r
-   . RowToList fns fns_list
-  => Merge fns_list fns a r
-  => Record fns
-  -> EventFn a (Record r)
-merge = mergeImpl (RLProxy :: RLProxy fns_list)
-
 bubbles :: EventFn SyntheticEvent Boolean
-bubbles = EventFn \e -> (unsafeCoerce e).bubbles
+bubbles = unsafeEventFn \e -> (unsafeCoerce e).bubbles
 
 cancelable :: EventFn SyntheticEvent Boolean
-cancelable = EventFn \e -> (unsafeCoerce e).cancelable
+cancelable = unsafeEventFn \e -> (unsafeCoerce e).cancelable
 
 currentTarget :: EventFn SyntheticEvent DOMNode
-currentTarget = EventFn \e -> (unsafeCoerce e).currentTarget
+currentTarget = unsafeEventFn \e -> (unsafeCoerce e).currentTarget
 
 eventPhase :: EventFn SyntheticEvent Int
-eventPhase = EventFn \e -> (unsafeCoerce e).eventPhase
+eventPhase = unsafeEventFn \e -> (unsafeCoerce e).eventPhase
 
 eventPhaseNone :: Int
 eventPhaseNone = 0
@@ -148,42 +60,42 @@ eventPhaseBubbling :: Int
 eventPhaseBubbling = 3
 
 isTrusted :: EventFn SyntheticEvent Boolean
-isTrusted = EventFn \e -> (unsafeCoerce e).isTrusted
+isTrusted = unsafeEventFn \e -> (unsafeCoerce e).isTrusted
 
 nativeEvent :: EventFn SyntheticEvent DOMEvent
-nativeEvent = EventFn \e -> (unsafeCoerce e).nativeEvent
+nativeEvent = unsafeEventFn \e -> (unsafeCoerce e).nativeEvent
 
 preventDefault :: EventFn SyntheticEvent SyntheticEvent
-preventDefault = EventFn unsafePreventDefault
+preventDefault = unsafeEventFn unsafePreventDefault
 
 foreign import unsafePreventDefault :: SyntheticEvent -> SyntheticEvent
 
 isDefaultPrevented :: EventFn SyntheticEvent Boolean
-isDefaultPrevented = EventFn unsafeIsDefaultPrevented
+isDefaultPrevented = unsafeEventFn unsafeIsDefaultPrevented
 
 foreign import unsafeIsDefaultPrevented :: SyntheticEvent -> Boolean
 
 stopPropagation :: EventFn SyntheticEvent SyntheticEvent
-stopPropagation = EventFn unsafeStopPropagation
+stopPropagation = unsafeEventFn unsafeStopPropagation
 
 foreign import unsafeStopPropagation :: SyntheticEvent -> SyntheticEvent
 
 isPropagationStopped :: EventFn SyntheticEvent Boolean
-isPropagationStopped = EventFn unsafeIsPropagationStopped
+isPropagationStopped = unsafeEventFn unsafeIsPropagationStopped
 
 foreign import unsafeIsPropagationStopped :: SyntheticEvent -> Boolean
 
 target :: EventFn SyntheticEvent DOMNode
-target = EventFn \e -> (unsafeCoerce e).target
+target = unsafeEventFn \e -> (unsafeCoerce e).target
 
 targetChecked :: EventFn SyntheticEvent (Maybe Boolean)
-targetChecked = EventFn \e -> toMaybe (unsafeCoerce e).target.checked
+targetChecked = unsafeEventFn \e -> toMaybe (unsafeCoerce e).target.checked
 
 targetValue :: EventFn SyntheticEvent (Maybe String)
-targetValue = EventFn \e -> toMaybe (unsafeCoerce e).target.value
+targetValue = unsafeEventFn \e -> toMaybe (unsafeCoerce e).target.value
 
 timeStamp :: EventFn SyntheticEvent Number
-timeStamp = EventFn \e -> (unsafeCoerce e).timeStamp
+timeStamp = unsafeEventFn \e -> (unsafeCoerce e).timeStamp
 
 type_ :: EventFn SyntheticEvent String
-type_ = EventFn \e -> (unsafeCoerce e)."type"
+type_ = unsafeEventFn \e -> (unsafeCoerce e)."type"
