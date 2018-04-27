@@ -33,11 +33,12 @@ type ExampleProps =
   }
 
 -- Create a component by passing a record to the `react` function.
--- The `render` function takes the props and current state, as well as a
+-- The `render` function takes a display name, the props and current state, as well as a
 -- state update callback, and produces a document.
 example :: ReactComponent ExampleProps
 example = react
-  { initialState: { counter: 0 }
+  { displayName: "Example"
+  , initialState: { counter: 0 }
   , receiveProps: \_ _ _ -> pure unit
   , render: \{ label } { counter } setState ->
       R.button { onClick: mkEffFn1 \_ -> do
