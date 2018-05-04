@@ -902,8 +902,8 @@ type Props_input =
   , form :: String
   , height :: String
   , list :: String
-  , max :: String
-  , min :: String
+  , max :: Number
+  , min :: Number
   , multiple :: Boolean
   , name :: String
   , onChange :: EventHandler
@@ -1141,8 +1141,8 @@ type Props_meter =
   ( children :: Array JSX
   , high :: String
   , low :: String
-  , max :: String
-  , min :: String
+  , max :: Number
+  , min :: Number
   , optimum :: String
   , value :: String
   )
@@ -1330,7 +1330,7 @@ pre_ children = pre { children }
 
 type Props_progress =
   ( children :: Array JSX
-  , max :: String
+  , max :: Number
   , value :: String
   )
 
@@ -2141,6 +2141,7 @@ type Props_video =
   , height :: String
   , loop :: Boolean
   , muted :: Boolean
+  , playsInline :: Boolean
   , poster :: String
   , preload :: String
   , src :: String
