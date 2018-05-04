@@ -4,6 +4,7 @@ module React.Basic.Events
   , EventFn
   , unsafeEventFn
   , handler
+  , handler_
   , merge
   , class Merge
   , mergeImpl
@@ -68,7 +69,7 @@ handler (EventFn fn) cb = mkEffFn1 $ fn >>> cb
 -- | input { onChange: handler_ (setState \_ -> { value })
 -- |       }
 -- | ```
-handler_ :: forall a. Eff (react :: ReactFX) Unit -> EventHandler
+handler_ :: Eff (react :: ReactFX) Unit -> EventHandler
 handler_ = mkEffFn1 <<< const
 
 class Merge (rl :: RowList) fns a r | rl -> fns, rl a -> r where
