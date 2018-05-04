@@ -69,6 +69,21 @@ input { onChange: handler targetValue
       }
 ```
 
+#### `handler_`
+
+``` purescript
+handler_ :: Eff (react :: ReactFX) Unit -> EventHandler
+```
+
+Create an `EventHandler` which discards the `SyntheticEvent`.
+
+For example:
+
+```purs
+input { onChange: handler_ (setState \_ -> { value })
+      }
+```
+
 #### `merge`
 
 ``` purescript
