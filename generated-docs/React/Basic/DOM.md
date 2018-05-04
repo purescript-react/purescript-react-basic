@@ -15,6 +15,16 @@ text :: String -> JSX
 
 Create a text node.
 
+#### `empty`
+
+``` purescript
+empty :: JSX
+```
+
+An empty node. This is often useful when you would like to conditionally
+show something, but you don't want to (or can't) modify the `children` prop
+on the parent node.
+
 #### `CSS`
 
 ``` purescript
