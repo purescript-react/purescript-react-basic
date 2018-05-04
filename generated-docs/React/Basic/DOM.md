@@ -963,7 +963,7 @@ img :: forall attrs attrs_. Union attrs attrs_ (SharedProps Props_img) => {  | a
 #### `Props_input`
 
 ``` purescript
-type Props_input = (accept :: String, alt :: String, autoCapitalize :: String, autoCorrect :: String, autoSave :: String, checked :: Boolean, defaultChecked :: String, defaultValue :: String, disabled :: Boolean, form :: String, height :: String, list :: String, max :: String, min :: String, multiple :: Boolean, name :: String, onChange :: EventHandler, pattern :: String, placeholder :: String, required :: Boolean, results :: String, size :: Number, src :: String, step :: String, title :: String, "type" :: String, value :: String, width :: String)
+type Props_input = (accept :: String, alt :: String, autoCapitalize :: String, autoCorrect :: String, autoSave :: String, checked :: Boolean, defaultChecked :: String, defaultValue :: String, disabled :: Boolean, form :: String, height :: String, list :: String, max :: Number, min :: Number, multiple :: Boolean, name :: String, onChange :: EventHandler, pattern :: String, placeholder :: String, required :: Boolean, results :: String, size :: Number, src :: String, step :: String, title :: String, "type" :: String, value :: String, width :: String)
 ```
 
 #### `input`
@@ -1215,7 +1215,7 @@ meta :: forall attrs attrs_. Union attrs attrs_ (SharedProps Props_meta) => {  |
 #### `Props_meter`
 
 ``` purescript
-type Props_meter = (children :: Array JSX, high :: String, low :: String, max :: String, min :: String, optimum :: String, value :: String)
+type Props_meter = (children :: Array JSX, high :: String, low :: String, max :: Number, min :: Number, optimum :: String, value :: String)
 ```
 
 #### `meter`
@@ -1425,7 +1425,7 @@ pre_ :: Array JSX -> JSX
 #### `Props_progress`
 
 ``` purescript
-type Props_progress = (children :: Array JSX, max :: String, value :: String)
+type Props_progress = (children :: Array JSX, max :: Number, value :: String)
 ```
 
 #### `progress`
@@ -2079,7 +2079,7 @@ var_ :: Array JSX -> JSX
 #### `Props_video`
 
 ``` purescript
-type Props_video = (children :: Array JSX, controls :: Boolean, height :: String, loop :: Boolean, muted :: Boolean, poster :: String, preload :: String, src :: String, width :: String)
+type Props_video = (children :: Array JSX, controls :: Boolean, height :: String, loop :: Boolean, muted :: Boolean, playsInline :: Boolean, poster :: String, preload :: String, src :: String, width :: String)
 ```
 
 #### `video`

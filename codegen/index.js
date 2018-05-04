@@ -16,6 +16,8 @@ const types = {
   "hidden": "Boolean",
   "itemScope": "Boolean",
   "loop": "Boolean",
+  "max": "Number",
+  "min": "Number",
   "multiple": "Boolean",
   "muted": "Boolean",
   "noValidate": "Boolean",
@@ -64,4 +66,3 @@ props.elements.html
     }
 `;
 }).forEach((x) => console.log(x.replace(/^\n\ {4}/, "").replace(/\n\ {4}/g, "\n")))
-
