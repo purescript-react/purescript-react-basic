@@ -2,21 +2,25 @@ module ToggleButton where
 
 import Prelude
 
-import Control.Monad.Eff.Uncurried (mkEffFn1)
 import React.Basic (ReactComponent, react)
 import React.Basic.DOM as R
+import React.Basic.Events as Events
 
 type ExampleProps =
   { on :: Boolean
   }
 
 component :: ReactComponent ExampleProps
-component = react
-  { displayName: "ToggleButton"
-  , initialState: { on: false }
-  , receiveProps: \{ on } _ setState -> setState (const { on })
-  , render: \_ { on } setState ->
-      R.button { onClick: mkEffFn1 \_ -> setState \s -> { on: not s.on }
-               , children: [ R.text if on then "On" else "Off" ]
-               }
-  }
+component = react { displayName: "ToggleButton", initialState, receiveProps, render }
+  where
+    initialState =
+      { on: false }
+
+    receiveProps props _ setState =
+      setState _ { on = props.on }
+
+    render _ state setState =
+      R.button
+        { onClick: Events.handler_ (setState \s -> s { on = not s.on })
+        , children: [ R.text if state.on then "On" else "Off" ]
+        }

@@ -23,9 +23,9 @@ module React.Basic.Example where
 
 import Prelude
 
-import Control.Monad.Eff.Uncurried (mkEffFn1)
 import React.Basic (ReactComponent, react)
 import React.Basic.DOM as R
+import React.Basic.Events as Events
 
 -- The props for the component
 type ExampleProps =
@@ -33,19 +33,24 @@ type ExampleProps =
   }
 
 -- Create a component by passing a record to the `react` function.
--- The `render` function takes a display name, the props and current state, as well as a
+-- The `render` function takes the props and current state, as well as a
 -- state update callback, and produces a document.
-example :: ReactComponent ExampleProps
-example = react
-  { displayName: "Example"
-  , initialState: { counter: 0 }
-  , receiveProps: \_ _ _ -> pure unit
-  , render: \{ label } { counter } setState ->
-      R.button { onClick: mkEffFn1 \_ -> do
-                            setState \s -> { counter: s.counter + 1 }
-               , children: [ R.text (label <> ": " <> show counter) ]
-               }
-  }
+component :: ReactComponent ExampleProps
+component = react { displayName: "Counter", initialState, receiveProps, render }
+  where
+    initialState =
+      { counter: 0
+      }
+
+    receiveProps _ _ _ =
+      pure unit
+
+    render props state setState =
+      R.button
+        { onClick: Events.handler_ do
+                     setState \s -> s { counter = s.counter + 1 }
+        , children: [ R.text (props.label <> ": " <> show state.counter) ]
+        }
 ```
 
 This component can be used directly from JavaScript. For example, if you are using `purs-loader`:

@@ -2,9 +2,9 @@ module Counter where
 
 import Prelude
 
-import Control.Monad.Eff.Uncurried (mkEffFn1)
 import React.Basic (ReactComponent, react)
 import React.Basic.DOM as R
+import React.Basic.Events as Events
 
 -- The props for the component
 type ExampleProps =
@@ -15,13 +15,18 @@ type ExampleProps =
 -- The `render` function takes the props and current state, as well as a
 -- state update callback, and produces a document.
 component :: ReactComponent ExampleProps
-component = react
-  { displayName: "Counter"
-  , initialState: { counter: 0 }
-  , receiveProps: \_ _ _ -> pure unit
-  , render: \{ label } { counter } setState ->
-      R.button { onClick: mkEffFn1 \_ -> do
-                            setState \s -> { counter: s.counter + 1 }
-               , children: [ R.text (label <> ": " <> show counter) ]
-               }
-  }
+component = react { displayName: "Counter", initialState, receiveProps, render }
+  where
+    initialState =
+      { counter: 0
+      }
+
+    receiveProps _ _ _ =
+      pure unit
+
+    render props state setState =
+      R.button
+        { onClick: Events.handler_ do
+                     setState \s -> s { counter = s.counter + 1 }
+        , children: [ R.text (props.label <> ": " <> show state.counter) ]
+        }
