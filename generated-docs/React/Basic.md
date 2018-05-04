@@ -44,6 +44,16 @@ createElementKeyed :: forall props. ReactComponent {  | props } -> { key :: Stri
 Like `createElement`, plus a `key` for rendering components in a dynamic list.
 For more information see: https://reactjs.org/docs/reconciliation.html#keys
 
+#### `empty`
+
+``` purescript
+empty :: JSX
+```
+
+An empty node. This is often useful when you would like to conditionally
+show something, but you don't want to (or can't) modify the `children` prop
+on the parent node.
+
 #### `fragment`
 
 ``` purescript

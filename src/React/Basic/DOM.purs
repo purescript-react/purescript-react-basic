@@ -15,12 +15,6 @@ import Unsafe.Coerce (unsafeCoerce)
 text :: String -> JSX
 text = unsafeCoerce
 
--- | An empty node. This is often useful when you would like to conditionally
--- | show something, but you don't want to (or can't) modify the `children` prop
--- | on the parent node.
-empty :: JSX
-empty = unsafeCoerce false
-
 -- | An abstract type representing records of CSS attributes.
 foreign import data CSS :: Type
 

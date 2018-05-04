@@ -3,6 +3,7 @@ module React.Basic
   , stateless
   , createElement
   , createElementKeyed
+  , empty
   , fragment
   , fragmentKeyed
   , JSX
@@ -15,6 +16,7 @@ import Prelude
 import Control.Monad.Eff (Eff, kind Effect)
 import Control.Monad.Eff.Uncurried (EffFn3, mkEffFn3)
 import Data.Function.Uncurried (Fn2, Fn3, mkFn3, runFn2)
+import Unsafe.Coerce (unsafeCoerce)
 
 -- | A virtual DOM element.
 foreign import data JSX :: Type
@@ -87,6 +89,12 @@ createElementKeyed
   -> { key :: String | props }
   -> JSX
 createElementKeyed = runFn2 createElementKeyed_
+
+-- | An empty node. This is often useful when you would like to conditionally
+-- | show something, but you don't want to (or can't) modify the `children` prop
+-- | on the parent node.
+empty :: JSX
+empty = unsafeCoerce false
 
 -- | Render an Array of children without a wrapping component.
 foreign import fragment :: Array JSX -> JSX
