@@ -60,6 +60,17 @@ derive newtype instance categoryBuilder :: Category EventFn
 handler :: forall a. EventFn SyntheticEvent a -> (a -> Eff (react :: ReactFX) Unit) -> EventHandler
 handler (EventFn fn) cb = mkEffFn1 $ fn >>> cb
 
+-- | Create an `EventHandler` which discards the `SyntheticEvent`.
+-- |
+-- | For example:
+-- |
+-- | ```purs
+-- | input { onChange: handler_ (setState \_ -> { value })
+-- |       }
+-- | ```
+handler_ :: forall a. Eff (react :: ReactFX) Unit -> EventHandler
+handler_ = mkEffFn1 <<< const
+
 class Merge (rl :: RowList) fns a r | rl -> fns, rl a -> r where
   mergeImpl :: RLProxy rl -> Record fns -> EventFn a (Record r)
 
