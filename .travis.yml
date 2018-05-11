@@ -1,0 +1,17 @@
+dist: trusty
+sudo: required
+language: node_js
+node_js: 10
+
+install:
+  - npm install
+
+script:
+  - npx bower install
+  - npm -s test
+
+# after_success:
+# - >-
+#   test $TRAVIS_TAG &&
+#   echo $GITHUB_TOKEN | pulp login &&
+#   echo y | pulp publish --no-push
