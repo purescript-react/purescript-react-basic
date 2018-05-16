@@ -1,5 +1,7 @@
 # purescript-react-basic
 
+[![Build Status](https://travis-ci.org/lumihq/purescript-react-basic.svg?branch=master)](https://travis-ci.org/lumihq/purescript-react-basic)
+
 This package implements an opinionated set of bindings to the React library, optimizing for the most basic use cases.
 
 ## Features
