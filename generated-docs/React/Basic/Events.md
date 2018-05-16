@@ -84,6 +84,12 @@ input { onChange: handler_ (setState \_ -> { value })
       }
 ```
 
+#### `syntheticEvent`
+
+``` purescript
+syntheticEvent :: EventFn SyntheticEvent SyntheticEvent
+```
+
 #### `merge`
 
 ``` purescript

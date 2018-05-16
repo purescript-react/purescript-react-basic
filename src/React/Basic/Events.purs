@@ -5,6 +5,7 @@ module React.Basic.Events
   , unsafeEventFn
   , handler
   , handler_
+  , syntheticEvent
   , merge
   , class Merge
   , mergeImpl
@@ -71,6 +72,9 @@ handler (EventFn fn) cb = mkEffFn1 $ fn >>> cb
 -- | ```
 handler_ :: Eff (react :: ReactFX) Unit -> EventHandler
 handler_ = mkEffFn1 <<< const
+
+syntheticEvent :: EventFn SyntheticEvent SyntheticEvent
+syntheticEvent = id
 
 class Merge (rl :: RowList) fns a r | rl -> fns, rl a -> r where
   mergeImpl :: RLProxy rl -> Record fns -> EventFn a (Record r)
