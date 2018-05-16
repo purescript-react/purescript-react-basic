@@ -38,6 +38,20 @@ E.g.
 div { style: css { padding: "5px" } } [ text "This text is padded." ]
 ```
 
+#### `mergeStyles`
+
+``` purescript
+mergeStyles :: Array CSS -> CSS
+```
+
+Merge styles from right to left. Uses `Object.assign`.
+
+E.g.
+
+```
+style: mergeCSS [ (css { padding: "5px" }), props.style ]
+```
+
 #### `SharedProps`
 
 ``` purescript

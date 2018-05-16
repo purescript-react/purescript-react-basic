@@ -29,6 +29,15 @@ foreign import data CSS :: Type
 css :: forall css. { | css } -> CSS
 css = unsafeCoerce
 
+-- | Merge styles from right to left. Uses `Object.assign`.
+-- |
+-- | E.g.
+-- |
+-- | ```
+-- | style: mergeCSS [ (css { padding: "5px" }), props.style ]
+-- | ```
+foreign import mergeStyles :: Array CSS -> CSS
+
 -- | Standard props which are shared by all DOM elements.
 type SharedProps specific =
   -- | `key` is not really a DOM attribute - React intercepts it
