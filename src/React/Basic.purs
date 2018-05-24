@@ -16,10 +16,17 @@ import Prelude
 import Control.Monad.Eff (Eff, kind Effect)
 import Control.Monad.Eff.Uncurried (EffFn3, mkEffFn3)
 import Data.Function.Uncurried (Fn2, Fn3, mkFn3, runFn2)
+import Data.Monoid (class Monoid)
 import Unsafe.Coerce (unsafeCoerce)
 
 -- | A virtual DOM element.
 foreign import data JSX :: Type
+
+instance semigroupJSX :: Semigroup JSX where
+  append a b = fragment [ a, b ]
+
+instance monoidJSX :: Monoid JSX where
+  mempty = empty
 
 -- | A React component which can be used from JavaScript.
 foreign import data ReactComponent :: Type -> Type
