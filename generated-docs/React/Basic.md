@@ -81,6 +81,12 @@ data JSX :: Type
 
 A virtual DOM element.
 
+##### Instances
+``` purescript
+Semigroup JSX
+Monoid JSX
+```
+
 #### `ReactComponent`
 
 ``` purescript
