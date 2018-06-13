@@ -8,4 +8,4 @@ install:
 
 script:
   - npx bower install
-  - npx pulp build
+  - npm run build
