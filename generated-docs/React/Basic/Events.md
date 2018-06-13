@@ -3,7 +3,7 @@
 #### `EventHandler`
 
 ``` purescript
-type EventHandler = EffFn1 (react :: ReactFX) SyntheticEvent Unit
+type EventHandler = EffectFn1 SyntheticEvent Unit
 ```
 
 An event handler, which receives a `SyntheticEvent` and performs some
@@ -38,7 +38,7 @@ input { onChange: handler (preventDefault >>> targetValue)
 ``` purescript
 Semigroupoid EventFn
 Category EventFn
-(IsSymbol l, RowCons l (EventFn a b) fns_rest fns, RowCons l b r_rest r, RowLacks l fns_rest, RowLacks l r_rest, Merge rest fns_rest a r_rest) => Merge (Cons l (EventFn a b) rest) fns a r
+(IsSymbol l, Cons l (EventFn a b) fns_rest fns, Cons l b r_rest r, Lacks l fns_rest, Lacks l r_rest, Merge rest fns_rest a r_rest) => Merge (Cons l (EventFn a b) rest) fns a r
 ```
 
 #### `unsafeEventFn`
@@ -56,7 +56,7 @@ Instead, use the helper functions specific to your platform, such as `React.Basi
 #### `handler`
 
 ``` purescript
-handler :: forall a. EventFn SyntheticEvent a -> (a -> Eff (react :: ReactFX) Unit) -> EventHandler
+handler :: forall a. EventFn SyntheticEvent a -> (a -> Effect Unit) -> EventHandler
 ```
 
 Create an `EventHandler`, given an `EventFn` and a callback.
@@ -72,7 +72,7 @@ input { onChange: handler targetValue
 #### `handler_`
 
 ``` purescript
-handler_ :: Eff (react :: ReactFX) Unit -> EventHandler
+handler_ :: Effect Unit -> EventHandler
 ```
 
 Create an `EventHandler` which discards the `SyntheticEvent`.
@@ -116,7 +116,7 @@ class Merge (rl :: RowList) fns a r | rl -> fns, rl a -> r where
 ##### Instances
 ``` purescript
 Merge Nil () a ()
-(IsSymbol l, RowCons l (EventFn a b) fns_rest fns, RowCons l b r_rest r, RowLacks l fns_rest, RowLacks l r_rest, Merge rest fns_rest a r_rest) => Merge (Cons l (EventFn a b) rest) fns a r
+(IsSymbol l, Cons l (EventFn a b) fns_rest fns, Cons l b r_rest r, Lacks l fns_rest, Lacks l r_rest, Merge rest fns_rest a r_rest) => Merge (Cons l (EventFn a b) rest) fns a r
 ```
 
 
