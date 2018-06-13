@@ -8,15 +8,13 @@ module React.Basic
   , fragmentKeyed
   , JSX
   , ReactComponent
-  , ReactFX
   ) where
 
 import Prelude
 
-import Control.Monad.Eff (Eff, kind Effect)
-import Control.Monad.Eff.Uncurried (EffFn3, mkEffFn3)
 import Data.Function.Uncurried (Fn2, Fn3, mkFn3, runFn2)
-import Data.Monoid (class Monoid)
+import Effect (Effect)
+import Effect.Uncurried (EffectFn3, mkEffectFn3)
 import Unsafe.Coerce (unsafeCoerce)
 
 -- | A virtual DOM element.
@@ -31,9 +29,6 @@ instance monoidJSX :: Monoid JSX where
 -- | A React component which can be used from JavaScript.
 foreign import data ReactComponent :: Type -> Type
 
--- | A placeholder effect for all React FFI.
-foreign import data ReactFX :: Effect
-
 -- | Create a React component from a _specification_ of that component.
 -- |
 -- | A _specification_ consists of a state type, an initial value for that state,
@@ -47,7 +42,7 @@ react
   :: forall props state fx
    . { displayName :: String
      , initialState :: { | state }
-     , receiveProps :: { | props } -> { | state } -> (SetState state fx) -> Eff (react :: ReactFX | fx) Unit
+     , receiveProps :: { | props } -> { | state } -> (SetState state fx) -> Effect Unit
      , render :: { | props } -> { | state } -> (SetState state fx) -> JSX
      }
   -> ReactComponent { | props }
@@ -55,7 +50,7 @@ react { displayName, initialState, receiveProps, render } =
   component_
     { displayName
     , initialState
-    , receiveProps: mkEffFn3 receiveProps
+    , receiveProps: mkEffectFn3 receiveProps
     , render: mkFn3 render
     }
 
@@ -78,7 +73,7 @@ stateless { displayName, render } =
     }
 
 -- | SetState uses an update function to modify the current state.
-type SetState state fx = ({ | state } -> { | state }) -> Eff (react :: ReactFX | fx) Unit
+type SetState state fx = ({ | state } -> { | state }) -> Effect Unit
 
 -- | Create a `JSX` node from a React component, by providing the props.
 createElement
@@ -119,7 +114,7 @@ foreign import component_
   :: forall props state fx
    . { displayName :: String
      , initialState :: { | state }
-     , receiveProps :: EffFn3 (react :: ReactFX | fx) { | props } { | state } (SetState state fx) Unit
+     , receiveProps :: EffectFn3 { | props } { | state } (SetState state fx) Unit
      , render :: Fn3 { | props } { | state } (SetState state fx) JSX
      }
   -> ReactComponent { | props }

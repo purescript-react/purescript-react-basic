@@ -7,6 +7,7 @@
 
 module React.Basic.DOM where
 
+import Prim.Row (class Union)
 import React.Basic (JSX, ReactComponent, createElement)
 import React.Basic.Events (EventHandler)
 import Unsafe.Coerce (unsafeCoerce)

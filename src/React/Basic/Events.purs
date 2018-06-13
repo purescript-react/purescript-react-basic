@@ -13,16 +13,17 @@ module React.Basic.Events
 
 import Prelude
 
-import Control.Monad.Eff (Eff)
-import Control.Monad.Eff.Uncurried (EffFn1, mkEffFn1)
-import Data.Record (delete, get, insert)
 import Data.Symbol (class IsSymbol, SProxy(SProxy))
-import React.Basic (ReactFX)
-import Type.Row (kind RowList, class RowToList, class RowLacks, RLProxy(..), Cons, Nil)
+import Effect (Effect)
+import Effect.Uncurried (EffectFn1, mkEffectFn1)
+import Prim.Row as Row
+import Prim.RowList (kind RowList, class RowToList, Cons, Nil)
+import Record (delete, get, insert)
+import Type.Row (RLProxy(..))
 
 -- | An event handler, which receives a `SyntheticEvent` and performs some
 -- | effects in return.
-type EventHandler = EffFn1 (react :: ReactFX) SyntheticEvent Unit
+type EventHandler = EffectFn1 SyntheticEvent Unit
 
 -- | Event data that we receive from React.
 foreign import data SyntheticEvent :: Type
@@ -59,8 +60,8 @@ derive newtype instance categoryBuilder :: Category EventFn
 -- |                     \value -> setState \_ -> { value }
 -- |       }
 -- | ```
-handler :: forall a. EventFn SyntheticEvent a -> (a -> Eff (react :: ReactFX) Unit) -> EventHandler
-handler (EventFn fn) cb = mkEffFn1 $ fn >>> cb
+handler :: forall a. EventFn SyntheticEvent a -> (a -> Effect Unit) -> EventHandler
+handler (EventFn fn) cb = mkEffectFn1 $ fn >>> cb
 
 -- | Create an `EventHandler` which discards the `SyntheticEvent`.
 -- |
@@ -70,11 +71,11 @@ handler (EventFn fn) cb = mkEffFn1 $ fn >>> cb
 -- | input { onChange: handler_ (setState \_ -> { value })
 -- |       }
 -- | ```
-handler_ :: Eff (react :: ReactFX) Unit -> EventHandler
-handler_ = mkEffFn1 <<< const
+handler_ :: Effect Unit -> EventHandler
+handler_ = mkEffectFn1 <<< const
 
 syntheticEvent :: EventFn SyntheticEvent SyntheticEvent
-syntheticEvent = id
+syntheticEvent = identity
 
 class Merge (rl :: RowList) fns a r | rl -> fns, rl a -> r where
   mergeImpl :: RLProxy rl -> Record fns -> EventFn a (Record r)
@@ -84,10 +85,10 @@ instance mergeNil :: Merge Nil () a () where
 
 instance mergeCons
     :: ( IsSymbol l
-       , RowCons l (EventFn a b) fns_rest fns
-       , RowCons l b r_rest r
-       , RowLacks l fns_rest
-       , RowLacks l r_rest
+       , Row.Cons l (EventFn a b) fns_rest fns
+       , Row.Cons l b r_rest r
+       , Row.Lacks l fns_rest
+       , Row.Lacks l r_rest
        , Merge rest fns_rest a r_rest
        )
     => Merge (Cons l (EventFn a b) rest) fns a r
