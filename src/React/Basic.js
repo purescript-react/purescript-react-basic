@@ -6,6 +6,7 @@ var Fragment = React.Fragment || "div";
 exports.component_ = function(spec) {
   var Component = function constructor(props) {
     this.state = spec.initialState;
+    this._setState = this.setState.bind(this);
     return this;
   };
 
@@ -14,31 +15,36 @@ exports.component_ = function(spec) {
   Component.displayName = spec.displayName;
 
   Component.prototype.componentDidMount = function componentDidMount() {
-    var this_ = this;
-    spec.receiveProps(this.props, this.state, function(newState) {
-      return function() {
-        this_.setState(newState);
-      };
+    spec.receiveProps({
+      isFirstMount: true,
+      props: this.props,
+      state: this.state,
+      setState: this._setState,
+      setStateThen: this._setState,
+      instance_: this,
     });
   };
 
   Component.prototype.componentWillReceiveProps = function componentWillReceiveProps(
     newProps
   ) {
-    var this_ = this;
-    spec.receiveProps(newProps, this.state, function(newState) {
-      return function() {
-        this_.setState(newState);
-      };
+    spec.receiveProps({
+      isFirstMount: false,
+      props: newProps,
+      state: this.state,
+      setState: this._setState,
+      setStateThen: this._setState,
+      instance_: this,
     });
   };
 
   Component.prototype.render = function render() {
-    var this_ = this;
-    return spec.render(this.props, this.state, function(newState) {
-      return function() {
-        this_.setState(newState);
-      };
+    return spec.render({
+      props: this.props,
+      state: this.state,
+      setState: this._setState,
+      setStateThen: this._setState,
+      instance_: this,
     });
   };
 
@@ -52,7 +58,7 @@ exports.createElement_ = function(el, attrs) {
   );
 };
 
-exports.createElementKeyed_ = React.createElement;
+exports.createElementKeyed_ = exports.createElement_;
 
 exports.fragment = function(children) {
   return React.createElement.apply(null, [Fragment, {}].concat(children));
