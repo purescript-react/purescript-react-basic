@@ -1,15 +1,14 @@
 module React.Basic
-  ( component
+  ( Component
+  , ComponentInstance
+  , JSX
+  , component
   , stateless
-  , createElement
-  , createElementKeyed
+  , element
+  , elementKeyed
   , empty
   , fragment
   , fragmentKeyed
-  , JSX
-  , ReactComponent
-  , ReactComponentInstance
-  , react
   ) where
 
 import Prelude
@@ -29,7 +28,7 @@ instance monoidJSX :: Monoid JSX where
   mempty = empty
 
 -- | A React component which can be used from JavaScript.
-foreign import data ReactComponent :: Type -> Type
+foreign import data Component :: Type -> Type
 
 -- | Create a React component from a _specification_ of that component.
 -- |
@@ -50,7 +49,7 @@ component
         , state :: { | state }
         , setState :: ({ | state } -> { | state }) -> Effect Unit
         , setStateThen :: ({ | state } -> { | state }) -> ({ | state } -> Effect Unit) -> Effect Unit
-        , instance_ :: ReactComponentInstance
+        , instance_ :: ComponentInstance
         }
         -> Effect Unit
      , render ::
@@ -58,11 +57,11 @@ component
         , state :: { | state }
         , setState :: ({ | state } -> { | state }) -> Effect Unit
         , setStateThen :: ({ | state } -> { | state }) -> ({ | state } -> Effect Unit) -> Effect Unit
-        , instance_ :: ReactComponentInstance
+        , instance_ :: ComponentInstance
         }
         -> JSX
      }
-  -> ReactComponent { | props }
+  -> Component { | props }
 component { displayName, initialState, receiveProps, render } =
   component_
     { displayName
@@ -93,7 +92,7 @@ stateless
    . { displayName :: String
      , render :: { | props } -> JSX
      }
-  -> ReactComponent { | props }
+  -> Component { | props }
 stateless { displayName, render } =
   component
     { displayName
@@ -103,24 +102,24 @@ stateless { displayName, render } =
     }
 
 -- | Represents the mounted component instance, or "this" in vanilla React.
-foreign import data ReactComponentInstance :: Type
+foreign import data ComponentInstance :: Type
 
 -- | Create a `JSX` node from a React component, by providing the props.
-createElement
+element
   :: forall props
-   . ReactComponent { | props }
+   . Component { | props }
   -> { | props }
   -> JSX
-createElement = runFn2 createElement_
+element = runFn2 element_
 
--- | Like `createElement`, plus a `key` for rendering components in a dynamic list.
+-- | Like `element`, plus a `key` for rendering components in a dynamic list.
 -- | For more information see: https://reactjs.org/docs/reconciliation.html#keys
-createElementKeyed
+elementKeyed
   :: forall props
-   . ReactComponent { | props }
+   . Component { | props }
   -> { key :: String | props }
   -> JSX
-createElementKeyed = runFn2 createElementKeyed_
+elementKeyed = runFn2 elementKeyed_
 
 -- | An empty node. This is often useful when you would like to conditionally
 -- | show something, but you don't want to (or can't) modify the `children` prop
@@ -151,7 +150,7 @@ foreign import component_
           , state :: { | state }
           , setState :: EffectFn1 ({ | state } -> { | state }) Unit
           , setStateThen :: EffectFn2 ({ | state } -> { | state }) (EffectFn1 { | state } Unit) Unit
-          , instance_ :: ReactComponentInstance
+          , instance_ :: ComponentInstance
           }
           Unit
      , render ::
@@ -160,32 +159,14 @@ foreign import component_
           , state :: { | state }
           , setState :: EffectFn1 ({ | state } -> { | state }) Unit
           , setStateThen :: EffectFn2 ({ | state } -> { | state }) (EffectFn1 { | state } Unit) Unit
-          , instance_ :: ReactComponentInstance
+          , instance_ :: ComponentInstance
           }
           JSX
      }
-  -> ReactComponent { | props }
+  -> Component { | props }
 
-foreign import createElement_ :: forall props. Fn2 (ReactComponent { | props }) { | props } JSX
+foreign import element_ :: forall props. Fn2 (Component { | props }) { | props } JSX
 
-foreign import createElementKeyed_ :: forall props. Fn2 (ReactComponent { | props }) { key :: String | props } JSX
+foreign import elementKeyed_ :: forall props. Fn2 (Component { | props }) { key :: String | props } JSX
 
 foreign import fragmentKeyed_ :: Fn2 String (Array JSX) JSX
-
--- | Deprecated -- prefer `component`
--- | This function is only to make upgrades a little easier.
-react
-  :: forall props state
-   . { displayName :: String
-     , initialState :: { | state }
-     , receiveProps :: { | props } -> { | state } -> (({ | state } -> { | state }) -> Effect Unit) -> Effect Unit
-     , render :: { | props } -> { | state } -> (({ | state } -> { | state }) -> Effect Unit) -> JSX
-     }
-  -> ReactComponent { | props }
-react { displayName, initialState, receiveProps, render } =
-  component
-    { displayName
-    , initialState
-    , receiveProps: \this -> receiveProps this.props this.state this.setState
-    , render: \this -> render this.props this.state this.setState
-    }

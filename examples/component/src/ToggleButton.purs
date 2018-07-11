@@ -2,16 +2,16 @@ module ToggleButton where
 
 import Prelude
 
-import React.Basic (ReactComponent, component)
+import React.Basic as React
 import React.Basic.DOM as R
 import React.Basic.Events as Events
 
-type ExampleProps =
+type Props =
   { on :: Boolean
   }
 
-toggleButton :: ReactComponent ExampleProps
-toggleButton = component { displayName: "ToggleButton", initialState, receiveProps, render }
+component :: React.Component Props
+component = React.component { displayName: "ToggleButton", initialState, receiveProps, render }
   where
     initialState =
       { on: false }

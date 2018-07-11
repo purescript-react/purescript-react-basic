@@ -51,14 +51,14 @@ exports.component_ = function(spec) {
   return Component;
 };
 
-exports.createElement_ = function(el, attrs) {
+exports.element_ = function(el, attrs) {
   return React.createElement.apply(
     null,
     [el, attrs].concat((attrs && attrs.children) || [])
   );
 };
 
-exports.createElementKeyed_ = exports.createElement_;
+exports.elementKeyed_ = exports.element_;
 
 exports.fragment = function(children) {
   return React.createElement.apply(null, [Fragment, {}].concat(children));

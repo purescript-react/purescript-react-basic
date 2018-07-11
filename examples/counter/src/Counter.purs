@@ -2,20 +2,20 @@ module Counter where
 
 import Prelude
 
-import React.Basic (ReactComponent, component)
+import React.Basic as React
 import React.Basic.DOM as R
 import React.Basic.Events as Events
 
 -- The props for the component
-type ExampleProps =
+type Props =
   { label :: String
   }
 
 -- Create a component by passing a record to the `react` function.
 -- The `render` function takes the props and current state, as well as a
 -- state update callback, and produces a document.
-counter :: ReactComponent ExampleProps
-counter = component { displayName: "Counter", initialState, receiveProps, render }
+component :: React.Component Props
+component = React.component { displayName: "Counter", initialState, receiveProps, render }
   where
     initialState =
       { counter: 0
@@ -27,6 +27,6 @@ counter = component { displayName: "Counter", initialState, receiveProps, render
     render { props, state, setState } =
       R.button
         { onClick: Events.handler_ do
-                     setState \s -> s { counter = s.counter + 1 }
+            setState \s -> s { counter = s.counter + 1 }
         , children: [ R.text (props.label <> ": " <> show state.counter) ]
         }
