@@ -47,16 +47,16 @@ component
         { isFirstMount :: Boolean
         , props :: { | props }
         , state :: { | state }
-        , setState :: ({ | state } -> { | state }) -> Effect Unit
-        , setStateThen :: ({ | state } -> { | state }) -> ({ | state } -> Effect Unit) -> Effect Unit
+        , setState :: SetState state
+        , setStateThen :: SetStateThen state
         , instance_ :: ComponentInstance
         }
         -> Effect Unit
      , render ::
         { props :: { | props }
         , state :: { | state }
-        , setState :: ({ | state } -> { | state }) -> Effect Unit
-        , setStateThen :: ({ | state } -> { | state }) -> ({ | state } -> Effect Unit) -> Effect Unit
+        , setState :: SetState state
+        , setStateThen :: SetStateThen state
         , instance_ :: ComponentInstance
         }
         -> JSX
@@ -100,6 +100,13 @@ stateless { displayName, render } =
     , receiveProps: \_ -> pure unit
     , render: \this -> render this.props
     }
+
+-- | SetState uses an update function to modify the current state.
+type SetState state = ({ | state } -> { | state }) -> Effect Unit
+
+-- | SetState uses an update function to modify the current state and a
+-- | callback to invoke once the resulting rerender has been completely applied.
+type SetStateThen state = ({ | state } -> { | state }) -> ({ | state } -> Effect Unit) -> Effect Unit
 
 -- | Represents the mounted component instance, or "this" in vanilla React.
 foreign import data ComponentInstance :: Type
