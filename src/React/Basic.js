@@ -52,7 +52,7 @@ exports.createElement_ = function(el, attrs) {
   );
 };
 
-exports.createElementKeyed_ = React.createElement;
+exports.createElementKeyed_ = exports.createElement_;
 
 exports.fragment = function(children) {
   return React.createElement.apply(null, [Fragment, {}].concat(children));
