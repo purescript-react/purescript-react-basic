@@ -136,6 +136,7 @@ type Props_a =
   , download :: String
   , href :: String
   , name :: String
+  , onClick :: EventHandler
   , rel :: String
   , shape :: String
   , target :: String
@@ -682,6 +683,10 @@ type Props_form =
   , children :: Array JSX
   , method :: String
   , name :: String
+  , onChange :: EventHandler
+  , onInput :: EventHandler
+  , onInvalid :: EventHandler
+  , onSubmit :: EventHandler
   , target :: String
   )
 
