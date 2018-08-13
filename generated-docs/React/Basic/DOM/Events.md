@@ -2,22 +2,6 @@
 
 This module defines safe DOM event function and property accessors.
 
-#### `DOMNode`
-
-``` purescript
-data DOMNode :: Type
-```
-
-An _actual_ DOM node (not a virtual DOM element!)
-
-#### `DOMEvent`
-
-``` purescript
-data DOMEvent :: Type
-```
-
-The underlying browser Event.
-
 #### `bubbles`
 
 ``` purescript
@@ -71,7 +55,7 @@ isTrusted :: EventFn SyntheticEvent Boolean
 #### `nativeEvent`
 
 ``` purescript
-nativeEvent :: EventFn SyntheticEvent DOMEvent
+nativeEvent :: EventFn SyntheticEvent Event
 ```
 
 #### `preventDefault`
@@ -101,19 +85,19 @@ isPropagationStopped :: EventFn SyntheticEvent Boolean
 #### `target`
 
 ``` purescript
-target :: EventFn SyntheticEvent DOMNode
+target :: EventFn SyntheticEvent EventTarget
 ```
 
 #### `currentTarget`
 
 ``` purescript
-currentTarget :: EventFn SyntheticEvent DOMNode
+currentTarget :: EventFn SyntheticEvent EventTarget
 ```
 
 #### `relatedTarget`
 
 ``` purescript
-relatedTarget :: EventFn SyntheticEvent (Maybe DOMNode)
+relatedTarget :: EventFn SyntheticEvent (Maybe EventTarget)
 ```
 
 #### `targetChecked`

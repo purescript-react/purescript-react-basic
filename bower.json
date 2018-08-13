@@ -21,5 +21,8 @@
     "purescript-web-events": "^1.0.0",
     "purescript-web-dom": "^1.0.0",
     "purescript-exceptions": "^4.0.0"
+  },
+  "devDependencies": {
+    "purescript-web-html": "^1.0.0"
   }
 }
