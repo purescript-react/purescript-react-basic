@@ -33,22 +33,51 @@ import React.Basic.DOM.Internal (CSS, SharedProps, unsafeCreateDOMComponent) as 
 import Unsafe.Coerce (unsafeCoerce)
 import Web.DOM (Element, Node)
 
+-- | Render or update/re-render a component tree into
+-- | a DOM element.
+-- |
+-- | Note: Relies on `ReactDOM.render`
 render :: JSX -> Element -> Effect Unit
 render jsx node = render' jsx node (pure unit)
 
+-- | Render or update/re-render a component tree into
+-- | a DOM element. The given Effect is run once the
+-- | DOM update is complete.
+-- |
+-- | Note: Relies on `ReactDOM.render`
 render' :: JSX -> Element -> Effect Unit -> Effect Unit
 render' = runEffectFn3 render_
 
 foreign import render_ :: EffectFn3 JSX Element (Effect Unit) Unit
 
+-- | Render or update/re-render a component tree into
+-- | a DOM element, attempting to reuse the existing
+-- | DOM tree.
+-- |
+-- | Note: Relies on `ReactDOM.hydrate`, generally only
+-- |   used with `ReactDOMServer.renderToNodeStream` or
+-- |   `ReactDOMServer.renderToString`
 hydrate :: JSX -> Element -> Effect Unit
 hydrate jsx node = hydrate' jsx node (pure unit)
 
+-- | Render or update/re-render a component tree into
+-- | a DOM element, attempting to reuse the existing
+-- | DOM tree. The given Effect is run once the
+-- | DOM update is complete.
+-- |
+-- | Note: Relies on `ReactDOM.hydrate`, generally only
+-- |   used with `ReactDOMServer.renderToNodeStream` or
+-- |   `ReactDOMServer.renderToString`
 hydrate' :: JSX -> Element -> Effect Unit -> Effect Unit
 hydrate' = runEffectFn3 hydrate_
 
 foreign import hydrate_ :: EffectFn3 JSX Element (Effect Unit) Unit
 
+-- | Attempt to unmount and clean up the React app
+-- | rendered into the given element. Returns `true`
+-- | if an app existed and was unmounted successfully.
+-- |
+-- | Note: Relies on `ReactDOM.unmountComponentAtNode`
 unmount :: Element -> Effect Boolean
 unmount = runEffectFn1 unmountComponentAtNode_
 

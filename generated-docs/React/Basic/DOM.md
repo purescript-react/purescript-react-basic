@@ -13,11 +13,22 @@ do provide must have the correct types.
 render :: JSX -> Element -> Effect Unit
 ```
 
+Render or update/re-render a component tree into
+a DOM element.
+
+Note: Relies on `ReactDOM.render`
+
 #### `render'`
 
 ``` purescript
 render' :: JSX -> Element -> Effect Unit -> Effect Unit
 ```
+
+Render or update/re-render a component tree into
+a DOM element. The given Effect is run once the
+DOM update is complete.
+
+Note: Relies on `ReactDOM.render`
 
 #### `hydrate`
 
@@ -25,17 +36,40 @@ render' :: JSX -> Element -> Effect Unit -> Effect Unit
 hydrate :: JSX -> Element -> Effect Unit
 ```
 
+Render or update/re-render a component tree into
+a DOM element, attempting to reuse the existing
+DOM tree.
+
+Note: Relies on `ReactDOM.hydrate`, generally only
+  used with `ReactDOMServer.renderToNodeStream` or
+  `ReactDOMServer.renderToString`
+
 #### `hydrate'`
 
 ``` purescript
 hydrate' :: JSX -> Element -> Effect Unit -> Effect Unit
 ```
 
+Render or update/re-render a component tree into
+a DOM element, attempting to reuse the existing
+DOM tree. The given Effect is run once the
+DOM update is complete.
+
+Note: Relies on `ReactDOM.hydrate`, generally only
+  used with `ReactDOMServer.renderToNodeStream` or
+  `ReactDOMServer.renderToString`
+
 #### `unmount`
 
 ``` purescript
 unmount :: Element -> Effect Boolean
 ```
+
+Attempt to unmount and clean up the React app
+rendered into the given element. Returns `true`
+if an app existed and was unmounted successfully.
+
+Note: Relies on `ReactDOM.unmountComponentAtNode`
 
 #### `findDOMNode`
 
