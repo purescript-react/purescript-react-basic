@@ -19,6 +19,7 @@
     "purescript-record": "^1.0.0",
     "purescript-effect": "^2.0.0",
     "purescript-web-events": "^1.0.0",
-    "purescript-web-dom": "^1.0.0"
+    "purescript-web-dom": "^1.0.0",
+    "purescript-exceptions": "^4.0.0"
   }
 }
