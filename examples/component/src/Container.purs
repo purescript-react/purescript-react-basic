@@ -1,16 +1,16 @@
 module Container where
 
-import React.Basic (ReactComponent, createElement, stateless)
+import React.Basic as React
 import React.Basic.DOM as R
 import ToggleButton as ToggleButton
 
-component :: ReactComponent {}
-component = stateless { displayName: "Container", render }
+component :: React.Component {}
+component = React.stateless { displayName: "Container", render }
   where
     render _ =
       R.div
         { children:
-            [ createElement ToggleButton.component { on: true }
-            , createElement ToggleButton.component { on: false }
+            [ React.element ToggleButton.component { on: true }
+            , React.element ToggleButton.component { on: false }
             ]
         }

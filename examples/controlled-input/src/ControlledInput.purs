@@ -3,24 +3,24 @@ module ControlledInput where
 import Prelude
 
 import Data.Maybe (Maybe(..), fromMaybe, maybe)
-import React.Basic (ReactComponent, fragment, react)
+import React.Basic as React
 import React.Basic.DOM as R
 import React.Basic.DOM.Events (preventDefault, targetValue, timeStamp)
 import React.Basic.Events as Events
 
-component :: ReactComponent {}
-component = react { displayName: "ControlledInput", initialState, receiveProps, render }
+component :: React.Component {}
+component = React.component { displayName: "ControlledInput", initialState, receiveProps, render }
   where
     initialState =
       { value: "hello world"
       , timeStamp: Nothing
       }
 
-    receiveProps _ _ _ =
+    receiveProps _ =
       pure unit
-      
-    render _ state setState =
-      fragment
+
+    render { state, setState } =
+      React.fragment
         [ R.input
             { onChange:
                 Events.handler

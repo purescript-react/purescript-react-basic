@@ -1,20 +1,21 @@
 module React.Basic
-  ( react
+  ( Component
+  , ComponentInstance
+  , JSX
+  , component
   , stateless
-  , createElement
-  , createElementKeyed
+  , element
+  , elementKeyed
   , empty
   , fragment
   , fragmentKeyed
-  , JSX
-  , ReactComponent
   ) where
 
 import Prelude
 
-import Data.Function.Uncurried (Fn2, Fn3, mkFn3, runFn2)
+import Data.Function.Uncurried (Fn1, Fn2, mkFn1, runFn2)
 import Effect (Effect)
-import Effect.Uncurried (EffectFn3, mkEffectFn3)
+import Effect.Uncurried (EffectFn1, EffectFn2, mkEffectFn1, runEffectFn1, runEffectFn2)
 import Unsafe.Coerce (unsafeCoerce)
 
 -- | A virtual DOM element.
@@ -27,7 +28,7 @@ instance monoidJSX :: Monoid JSX where
   mempty = empty
 
 -- | A React component which can be used from JavaScript.
-foreign import data ReactComponent :: Type -> Type
+foreign import data Component :: Type -> Type
 
 -- | Create a React component from a _specification_ of that component.
 -- |
@@ -37,21 +38,51 @@ foreign import data ReactComponent :: Type -> Type
 -- |
 -- | The rendering function should return a value of type `JSX`, which can be
 -- | constructed using the helper functions provided by the `React.Basic.DOM`
--- | module (and re-exported here).
-react
-  :: forall props state fx
+-- | module.
+-- |
+-- | Note: This function relies on `React.PureComponent` internally
+component
+  :: forall props state
    . { displayName :: String
      , initialState :: { | state }
-     , receiveProps :: { | props } -> { | state } -> (SetState state fx) -> Effect Unit
-     , render :: { | props } -> { | state } -> (SetState state fx) -> JSX
+     , receiveProps ::
+        { isFirstMount :: Boolean
+        , props :: { | props }
+        , state :: { | state }
+        , setState :: SetState state
+        , setStateThen :: SetStateThen state
+        , instance_ :: ComponentInstance
+        }
+        -> Effect Unit
+     , render ::
+        { props :: { | props }
+        , state :: { | state }
+        , setState :: SetState state
+        , setStateThen :: SetStateThen state
+        , instance_ :: ComponentInstance
+        }
+        -> JSX
      }
-  -> ReactComponent { | props }
-react { displayName, initialState, receiveProps, render } =
+  -> Component { | props }
+component { displayName, initialState, receiveProps, render } =
   component_
     { displayName
     , initialState
-    , receiveProps: mkEffectFn3 receiveProps
-    , render: mkFn3 render
+    , receiveProps: mkEffectFn1 \this -> receiveProps
+        { isFirstMount: this.isFirstMount
+        , props: this.props
+        , state: this.state
+        , setState: runEffectFn1 this.setState
+        , setStateThen: \update cb -> runEffectFn2 this.setStateThen update (mkEffectFn1 cb)
+        , instance_: this.instance_
+        }
+    , render: mkFn1 \this -> render
+        { props: this.props
+        , state: this.state
+        , setState: runEffectFn1 this.setState
+        , setStateThen: \update cb -> runEffectFn2 this.setStateThen update (mkEffectFn1 cb)
+        , instance_: this.instance_
+        }
     }
 
 -- | Create a stateless React component.
@@ -63,34 +94,41 @@ stateless
    . { displayName :: String
      , render :: { | props } -> JSX
      }
-  -> ReactComponent { | props }
+  -> Component { | props }
 stateless { displayName, render } =
-  react
+  component
     { displayName
     , initialState: {}
-    , receiveProps: \_ _ _ -> pure unit
-    , render: \props _ _ -> render props
+    , receiveProps: \_ -> pure unit
+    , render: \this -> render this.props
     }
 
 -- | SetState uses an update function to modify the current state.
-type SetState state fx = ({ | state } -> { | state }) -> Effect Unit
+type SetState state = ({ | state } -> { | state }) -> Effect Unit
+
+-- | SetState uses an update function to modify the current state and a
+-- | callback to invoke once the resulting rerender has been completely applied.
+type SetStateThen state = ({ | state } -> { | state }) -> ({ | state } -> Effect Unit) -> Effect Unit
+
+-- | Represents the mounted component instance, or "this" in vanilla React.
+foreign import data ComponentInstance :: Type
 
 -- | Create a `JSX` node from a React component, by providing the props.
-createElement
+element
   :: forall props
-   . ReactComponent { | props }
+   . Component { | props }
   -> { | props }
   -> JSX
-createElement = runFn2 createElement_
+element = runFn2 element_
 
--- | Like `createElement`, plus a `key` for rendering components in a dynamic list.
+-- | Like `element`, plus a `key` for rendering components in a dynamic list.
 -- | For more information see: https://reactjs.org/docs/reconciliation.html#keys
-createElementKeyed
+elementKeyed
   :: forall props
-   . ReactComponent { | props }
+   . Component { | props }
   -> { key :: String | props }
   -> JSX
-createElementKeyed = runFn2 createElementKeyed_
+elementKeyed = runFn2 elementKeyed_
 
 -- | An empty node. This is often useful when you would like to conditionally
 -- | show something, but you don't want to (or can't) modify the `children` prop
@@ -111,16 +149,33 @@ fragmentKeyed = runFn2 fragmentKeyed_
 -- | Private FFI
 
 foreign import component_
-  :: forall props state fx
+  :: forall props state
    . { displayName :: String
      , initialState :: { | state }
-     , receiveProps :: EffectFn3 { | props } { | state } (SetState state fx) Unit
-     , render :: Fn3 { | props } { | state } (SetState state fx) JSX
+     , receiveProps ::
+        EffectFn1
+          { isFirstMount :: Boolean
+          , props :: { | props }
+          , state :: { | state }
+          , setState :: EffectFn1 ({ | state } -> { | state }) Unit
+          , setStateThen :: EffectFn2 ({ | state } -> { | state }) (EffectFn1 { | state } Unit) Unit
+          , instance_ :: ComponentInstance
+          }
+          Unit
+     , render ::
+        Fn1
+          { props :: { | props }
+          , state :: { | state }
+          , setState :: EffectFn1 ({ | state } -> { | state }) Unit
+          , setStateThen :: EffectFn2 ({ | state } -> { | state }) (EffectFn1 { | state } Unit) Unit
+          , instance_ :: ComponentInstance
+          }
+          JSX
      }
-  -> ReactComponent { | props }
+  -> Component { | props }
 
-foreign import createElement_ :: forall props. Fn2 (ReactComponent { | props }) { | props } JSX
+foreign import element_ :: forall props. Fn2 (Component { | props }) { | props } JSX
 
-foreign import createElementKeyed_ :: forall props. Fn2 (ReactComponent { | props }) { key :: String | props } JSX
+foreign import elementKeyed_ :: forall props. Fn2 (Component { | props }) { key :: String | props } JSX
 
 foreign import fragmentKeyed_ :: Fn2 String (Array JSX) JSX

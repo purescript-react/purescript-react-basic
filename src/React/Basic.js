@@ -4,55 +4,61 @@ var React = require("react");
 var Fragment = React.Fragment || "div";
 
 exports.component_ = function(spec) {
-  var Component = function constructor(props) {
+  var Component = function constructor() {
     this.state = spec.initialState;
+    this._setState = this.setState.bind(this);
     return this;
   };
 
-  Component.prototype = Object.create(React.Component.prototype);
+  Component.prototype = Object.create(React.PureComponent.prototype);
 
   Component.displayName = spec.displayName;
 
   Component.prototype.componentDidMount = function componentDidMount() {
-    var this_ = this;
-    spec.receiveProps(this.props, this.state, function(newState) {
-      return function() {
-        this_.setState(newState);
-      };
+    spec.receiveProps({
+      isFirstMount: true,
+      props: this.props,
+      state: this.state,
+      setState: this._setState,
+      setStateThen: this._setState,
+      instance_: this,
     });
   };
 
   Component.prototype.componentWillReceiveProps = function componentWillReceiveProps(
     newProps
   ) {
-    var this_ = this;
-    spec.receiveProps(newProps, this.state, function(newState) {
-      return function() {
-        this_.setState(newState);
-      };
+    spec.receiveProps({
+      isFirstMount: false,
+      props: newProps,
+      state: this.state,
+      setState: this._setState,
+      setStateThen: this._setState,
+      instance_: this,
     });
   };
 
   Component.prototype.render = function render() {
-    var this_ = this;
-    return spec.render(this.props, this.state, function(newState) {
-      return function() {
-        this_.setState(newState);
-      };
+    return spec.render({
+      props: this.props,
+      state: this.state,
+      setState: this._setState,
+      setStateThen: this._setState,
+      instance_: this,
     });
   };
 
   return Component;
 };
 
-exports.createElement_ = function(el, attrs) {
+exports.element_ = function(el, attrs) {
   return React.createElement.apply(
     null,
     [el, attrs].concat((attrs && attrs.children) || [])
   );
 };
 
-exports.createElementKeyed_ = exports.createElement_;
+exports.elementKeyed_ = exports.element_;
 
 exports.fragment = function(children) {
   return React.createElement.apply(null, [Fragment, {}].concat(children));
