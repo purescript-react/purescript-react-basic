@@ -4,13 +4,13 @@ var React = require("react");
 var Fragment = React.Fragment || "div";
 
 exports.component_ = function(spec) {
-  var Component = function constructor(props) {
+  var Component = function constructor() {
     this.state = spec.initialState;
     this._setState = this.setState.bind(this);
     return this;
   };
 
-  Component.prototype = Object.create(React.Component.prototype);
+  Component.prototype = Object.create(React.PureComponent.prototype);
 
   Component.displayName = spec.displayName;
 

@@ -1,9 +1,7 @@
 -- | This module defines safe DOM event function and property accessors.
 
 module React.Basic.DOM.Events
-  ( DOMNode
-  , DOMEvent
-  , bubbles
+  ( bubbles
   , cancelable
   , eventPhase
   , eventPhaseNone
@@ -49,12 +47,7 @@ import Data.Nullable (toMaybe)
 import Effect.Unsafe (unsafePerformEffect)
 import React.Basic.Events (EventFn, SyntheticEvent, unsafeEventFn)
 import Unsafe.Coerce (unsafeCoerce)
-
--- | An _actual_ DOM node (not a virtual DOM element!)
-foreign import data DOMNode :: Type
-
--- | The underlying browser Event.
-foreign import data DOMEvent :: Type
+import Web.Event.Internal.Types (Event, EventTarget)
 
 -- | General event fields
 
@@ -82,7 +75,7 @@ eventPhaseBubbling = 3
 isTrusted :: EventFn SyntheticEvent Boolean
 isTrusted = unsafeEventFn \e -> (unsafeCoerce e).isTrusted
 
-nativeEvent :: EventFn SyntheticEvent DOMEvent
+nativeEvent :: EventFn SyntheticEvent Event
 nativeEvent = unsafeEventFn \e -> (unsafeCoerce e).nativeEvent
 
 preventDefault :: EventFn SyntheticEvent SyntheticEvent
@@ -103,13 +96,13 @@ isPropagationStopped :: EventFn SyntheticEvent Boolean
 isPropagationStopped = unsafeEventFn \e -> unsafePerformEffect do
   (unsafeCoerce e).isPropagationStopped
 
-target :: EventFn SyntheticEvent DOMNode
+target :: EventFn SyntheticEvent EventTarget
 target = unsafeEventFn \e -> (unsafeCoerce e).target
 
-currentTarget :: EventFn SyntheticEvent DOMNode
+currentTarget :: EventFn SyntheticEvent EventTarget
 currentTarget = unsafeEventFn \e -> (unsafeCoerce e).currentTarget
 
-relatedTarget :: EventFn SyntheticEvent (Maybe DOMNode)
+relatedTarget :: EventFn SyntheticEvent (Maybe EventTarget)
 relatedTarget = unsafeEventFn \e -> toMaybe (unsafeCoerce e).relatedTarget
 
 targetChecked :: EventFn SyntheticEvent (Maybe Boolean)

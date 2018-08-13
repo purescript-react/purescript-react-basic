@@ -17,6 +17,8 @@
     "purescript-nullable": "^4.0.0",
     "purescript-typelevel-prelude": "^3.0.0",
     "purescript-record": "^1.0.0",
-    "purescript-effect": "^2.0.0"
+    "purescript-effect": "^2.0.0",
+    "purescript-web-events": "^1.0.0",
+    "purescript-web-dom": "^1.0.0"
   }
 }

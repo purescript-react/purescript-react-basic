@@ -38,7 +38,9 @@ foreign import data Component :: Type -> Type
 -- |
 -- | The rendering function should return a value of type `JSX`, which can be
 -- | constructed using the helper functions provided by the `React.Basic.DOM`
--- | module (and re-exported here).
+-- | module.
+-- |
+-- | Note: This function relies on `React.PureComponent` internally
 component
   :: forall props state
    . { displayName :: String
