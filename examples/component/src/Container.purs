@@ -10,7 +10,7 @@ component = React.stateless { displayName: "Container", render }
     render _ =
       R.div
         { children:
-            [ React.element ToggleButton.component { on: true }
-            , React.element ToggleButton.component { on: false }
+            [ React.element ToggleButton.component { label: "A" }
+            , React.element ToggleButton.component { label: "B" }
             ]
         }

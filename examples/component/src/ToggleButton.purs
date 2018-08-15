@@ -7,20 +7,27 @@ import React.Basic.DOM as R
 import React.Basic.Events as Events
 
 type Props =
-  { on :: Boolean
+  { label :: String
   }
 
 component :: React.Component Props
 component = React.component { displayName: "ToggleButton", initialState, receiveProps, render }
   where
     initialState =
-      { on: false }
+      { on: false
+      }
 
-    receiveProps { props, setState } =
-      setState _ { on = props.on }
+    receiveProps _ =
+      pure unit
 
-    render { state, setState } =
+    render { props, state, setState } =
       R.button
-        { onClick: Events.handler_ (setState \s -> s { on = not s.on })
-        , children: [ R.text if state.on then "On" else "Off" ]
+        { onClick: Events.handler_ do
+            setState \s -> s { on = not s.on }
+        , children:
+            [ R.text props.label
+            , R.text if state.on
+                       then " On"
+                       else " Off"
+            ]
         }

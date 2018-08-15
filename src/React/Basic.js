@@ -21,20 +21,18 @@ exports.component_ = function(spec) {
       state: this.state,
       setState: this._setState,
       setStateThen: this._setState,
-      instance_: this,
+      instance_: this
     });
   };
 
-  Component.prototype.componentWillReceiveProps = function componentWillReceiveProps(
-    newProps
-  ) {
+  Component.prototype.componentDidUpdate = function componentDidUpdate() {
     spec.receiveProps({
       isFirstMount: false,
-      props: newProps,
+      props: this.props,
       state: this.state,
       setState: this._setState,
       setStateThen: this._setState,
-      instance_: this,
+      instance_: this
     });
   };
 
@@ -44,7 +42,7 @@ exports.component_ = function(spec) {
       state: this.state,
       setState: this._setState,
       setStateThen: this._setState,
-      instance_: this,
+      instance_: this
     });
   };
 
