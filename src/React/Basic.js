@@ -3,60 +3,119 @@
 var React = require("react");
 var Fragment = React.Fragment || "div";
 
-exports.component_ = function(spec) {
-  var Component = function constructor() {
-    this.state = spec.initialState;
-    this._setState = this.setState.bind(this);
+exports.voidState = {};
+
+exports.createComponent = function(displayName) {
+  function contextToSelf(instance) {
+    var self = {
+      props: instance.props.$$props,
+      state: instance.state === undefined ? undefined : instance.state.$$state,
+      readProps: function() {
+        return self.instance_.props.$$props;
+      },
+      readState: function() {
+        var state = self.instance_.state;
+        return state !== undefined && state.$$state;
+      },
+      send: function(action) {
+        return function() {
+          var updates = self.instance_.$$spec.buildStateUpdate(
+            self.instance_.$$spec.update(self)(action)
+          );
+          if (updates.state !== null) {
+            self.instance_.setState(
+              { $$state: updates.state },
+              updates.effects !== null
+                ? function() {
+                    updates.effects(contextToSelf(this));
+                  }
+                : undefined
+            );
+          } else if (updates.effects !== null) {
+            updates.effects(self);
+          }
+        };
+      },
+      instance_: instance
+    };
+    return self;
+  }
+
+  var Component = function constructor(props) {
+    this.$$spec = props.$$spec;
+    this.state =
+      // React may optimize components with no state,
+      // so we leave state undefined if it was initialized
+      // as Void.
+      this.$$spec.initialState === exports.voidState
+        ? undefined
+        : { $$state: this.$$spec.initialState };
     return this;
   };
 
-  Component.prototype = Object.create(React.PureComponent.prototype);
+  Component.prototype = Object.create(React.Component.prototype);
 
-  Component.displayName = spec.displayName;
+  Component.displayName = displayName;
 
-  Component.prototype.componentDidMount = function componentDidMount() {
-    spec.receiveProps({
-      isFirstMount: true,
-      props: this.props,
-      state: this.state,
-      setState: this._setState,
-      setStateThen: this._setState,
-      instance_: this
-    });
-  };
-
-  Component.prototype.componentDidUpdate = function componentDidUpdate() {
-    spec.receiveProps({
-      isFirstMount: false,
-      props: this.props,
-      state: this.state,
-      setState: this._setState,
-      setStateThen: this._setState,
-      instance_: this
-    });
+  Component.prototype.shouldComponentUpdate = function shouldComponentUpdate(
+    nextProps,
+    nextState
+  ) {
+    return (
+      !this.$$spec.eqProps(this.props.$$props)(nextProps.$$props) ||
+      (this.state !== undefined &&
+        !this.$$spec.eqState(this.state.$$state)(nextState.$$state))
+    );
   };
 
   Component.prototype.render = function render() {
-    return spec.render({
-      props: this.props,
-      state: this.state,
-      setState: this._setState,
-      setStateThen: this._setState,
-      instance_: this
-    });
+    return this.$$spec.render(contextToSelf(this));
   };
 
   return Component;
 };
 
-exports.element_ = function(el, attrs) {
+exports.make_ = function(
+  buildStateUpdate,
+  eqProps,
+  eqState,
+  component,
+  initialState,
+  update,
+  render,
+  $$props
+) {
+  var props = {
+    $$props: $$props,
+    $$spec: {
+      buildStateUpdate: buildStateUpdate,
+      eqProps: eqProps,
+      eqState: eqState,
+      initialState: initialState,
+      update: update,
+      render: render
+    }
+  };
   return React.createElement.apply(
     null,
-    [el, attrs].concat((attrs && attrs.children) || [])
+    [component, props].concat(($$props && $$props.children) || null)
   );
 };
 
-exports.elementKeyed_ = exports.element_;
+exports.keyed_ = function(key, child) {
+  return React.createElement(Fragment, { key: key }, child);
+};
+
+exports.element_ = function(component, props) {
+  return React.createElement.apply(
+    null,
+    [component, props].concat((props && props.children) || null)
+  );
+};
+
+exports.elementKeyed_ = function(key, child) {
+  return React.createElement.call(null, Fragment, { key: key }, child);
+};
 
 exports.fragment = function(children) {
   return React.createElement.apply(null, [Fragment, {}].concat(children));

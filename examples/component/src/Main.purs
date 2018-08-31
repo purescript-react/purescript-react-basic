@@ -6,7 +6,6 @@ import Container as Container
 import Data.Maybe (Maybe(..))
 import Effect (Effect)
 import Effect.Exception (throw)
-import React.Basic (element)
 import React.Basic.DOM (render)
 import Web.DOM.NonElementParentNode (getElementById)
 import Web.HTML (window)
@@ -19,5 +18,5 @@ main = do
   case container of
     Nothing -> throw "Container element not found."
     Just c  ->
-      let app = element Container.component {}
+      let app = Container.render
        in render app c

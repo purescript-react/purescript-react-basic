@@ -2,31 +2,36 @@ module Counter where
 
 import Prelude
 
-import React.Basic as React
+import React.Basic (JSX, Update, Component, StateUpdate(..), make, createComponent)
 import React.Basic.DOM as R
 import React.Basic.Events as Events
 
--- The props for the component
 type Props =
   { label :: String
   }
 
--- Create a component by passing a record to the `react` function.
--- The `render` function takes the props and current state, as well as a
--- state update callback, and produces a document.
-component :: React.Component Props
-component = React.component { displayName: "Counter", initialState, receiveProps, render }
-  where
-    initialState =
-      { counter: 0
-      }
+data Action
+  = Increment
 
-    receiveProps _ =
-      pure unit
+type State =
+  { counter :: Int
+  }
 
-    render { props, state, setState } =
-      R.button
-        { onClick: Events.handler_ do
-            setState \s -> s { counter = s.counter + 1 }
-        , children: [ R.text (props.label <> ": " <> show state.counter) ]
-        }
+initialState :: State
+initialState =
+  { counter: 0
+  }
+
+update :: Update Props State Action
+update self = case _ of
+  Increment -> Update self.state { counter = self.state.counter + 1 }
+
+render :: Props -> JSX
+render = make component initialState update \self ->
+  R.button
+    { onClick: Events.handler_ do self.send Increment
+    , children: [ R.text (self.props.label <> ": " <> show self.state.counter) ]
+    }
+
+component :: Component Props State Action
+component = createComponent "Counter"

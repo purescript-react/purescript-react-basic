@@ -1,16 +1,19 @@
 module Container where
 
-import React.Basic as React
+import Prelude
+
+import React.Basic (JSX, StatelessComponent, createComponent, makeStateless)
 import React.Basic.DOM as R
 import ToggleButton as ToggleButton
 
-component :: React.Component {}
-component = React.stateless { displayName: "Container", render }
-  where
-    render _ =
-      R.div
-        { children:
-            [ React.element ToggleButton.component { label: "A" }
-            , React.element ToggleButton.component { label: "B" }
-            ]
-        }
+render :: JSX
+render = {} # makeStateless component \_ ->
+  R.div
+    { children:
+        [ ToggleButton.render { label: "A" }
+        , ToggleButton.render { label: "B" }
+        ]
+    }
+
+component :: StatelessComponent {}
+component = createComponent "Container"
