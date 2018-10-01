@@ -2,6 +2,7 @@ module ToggleButton where
 
 import Prelude
 
+import Effect.Console (log)
 import React.Basic as React
 import React.Basic.DOM as R
 import React.Basic.Events as Events
@@ -20,10 +21,11 @@ component = React.component { displayName: "ToggleButton", initialState, receive
     receiveProps _ =
       pure unit
 
-    render { props, state, setState } =
+    render { props, state, setStateThen } =
       R.button
         { onClick: Events.handler_ do
-            setState \s -> s { on = not s.on }
+            setStateThen (\s -> s { on = not s.on }) \nextState -> do
+              log $ "nextState: " <> show nextState
         , children:
             [ R.text props.label
             , R.text if state.on
