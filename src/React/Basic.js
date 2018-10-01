@@ -3,6 +3,14 @@
 var React = require("react");
 var Fragment = React.Fragment || "div";
 
+function setStateThen(instance) {
+  return function(update, then) {
+    return instance.setState(update, function() {
+      then(this.state);
+    });
+  };
+}
+
 exports.component_ = function(spec) {
   var Component = function constructor() {
     this.state = spec.initialState;
@@ -20,7 +28,7 @@ exports.component_ = function(spec) {
       props: this.props,
       state: this.state,
       setState: this._setState,
-      setStateThen: this._setState,
+      setStateThen: setStateThen(this),
       instance_: this
     });
   };
@@ -31,7 +39,7 @@ exports.component_ = function(spec) {
       props: this.props,
       state: this.state,
       setState: this._setState,
-      setStateThen: this._setState,
+      setStateThen: setStateThen(this),
       instance_: this
     });
   };
@@ -41,7 +49,7 @@ exports.component_ = function(spec) {
       props: this.props,
       state: this.state,
       setState: this._setState,
-      setStateThen: this._setState,
+      setStateThen: setStateThen(this),
       instance_: this
     });
   };
