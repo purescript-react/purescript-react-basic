@@ -3,9 +3,7 @@
 var React = require("react");
 var Fragment = React.Fragment || "div";
 
-exports.voidState = {};
-
-exports.createComponent = function(displayName) {
+exports.createComponent_ = function(noUpdate, buildStateUpdate, displayName) {
   function contextToSelf(instance) {
     var self = {
       props: instance.props.$$props,
@@ -19,7 +17,7 @@ exports.createComponent = function(displayName) {
       },
       send: function(action) {
         return function() {
-          var updates = self.instance_.$$spec.buildStateUpdate(
+          var updates = buildStateUpdate(
             self.instance_.$$spec.update(self)(action)
           );
           if (updates.state !== null) {
@@ -41,13 +39,39 @@ exports.createComponent = function(displayName) {
     return self;
   }
 
+  var defaultInitialState = {};
+  var defaultShouldUpdate = function() {
+    return function() {
+      return function() {
+        return true;
+      };
+    };
+  };
+  var defaultDidMount = function() {
+    return function() {};
+  };
+  var defaultDidUpdate = function() {
+    return function() {};
+  };
+  var defaultWillUnmount = function() {
+    return function() {};
+  };
+  var defaultUpdate = function() {
+    return function() {
+      return noUpdate;
+    };
+  };
+  var defaultRender = function() {
+    return false;
+  };
+
   var Component = function constructor(props) {
     this.$$spec = props.$$spec;
     this.state =
       // React may optimize components with no state,
-      // so we leave state undefined if it was initialized
-      // as Void.
-      this.$$spec.initialState === exports.voidState
+      // so we leave state undefined if it was left as
+      // the default value.
+      this.$$spec.initialState === defaultInitialState
         ? undefined
         : { $$state: this.$$spec.initialState };
     return this;
@@ -57,49 +81,98 @@ exports.createComponent = function(displayName) {
 
   Component.displayName = displayName;
 
-  Component.prototype.shouldComponentUpdate = function shouldComponentUpdate(
-    nextProps,
-    nextState
-  ) {
-    return (
-      !this.$$spec.eqProps(this.props.$$props)(nextProps.$$props) ||
-      (this.state !== undefined &&
-        !this.$$spec.eqState(this.state.$$state)(nextState.$$state))
-    );
+  Component.prototype.shouldComponentUpdate = function(nextProps, nextState) {
+    return this.$$spec.shouldUpdate(contextToSelf(this))(nextProps)(nextState);
   };
 
-  Component.prototype.render = function render() {
+  Component.prototype.componentDidMount = function() {
+    return this.$$spec.didMount(contextToSelf(this))();
+  };
+
+  Component.prototype.componentDidUpdate = function() {
+    return this.$$spec.didUpdate(contextToSelf(this))();
+  };
+
+  Component.prototype.componentWillUnmount = function() {
+    return this.$$spec.willUnmount(contextToSelf(this))();
+  };
+
+  Component.prototype.render = function() {
     return this.$$spec.render(contextToSelf(this));
   };
 
-  return Component;
+  return {
+    $$type: Component,
+    initialState: defaultInitialState,
+    shouldUpdate: defaultShouldUpdate,
+    didMount: defaultDidMount,
+    didUpdate: defaultDidUpdate,
+    willUnmount: defaultWillUnmount,
+    update: defaultUpdate,
+    render: defaultRender
+  };
 };
 
-exports.make_ = function(
-  buildStateUpdate,
-  eqProps,
-  eqState,
-  component,
-  initialState,
-  update,
-  render,
-  $$props
-) {
-  var props = {
-    $$props: $$props,
-    $$spec: {
-      buildStateUpdate: buildStateUpdate,
-      eqProps: eqProps,
-      eqState: eqState,
-      initialState: initialState,
-      update: update,
-      render: render
-    }
+exports.createStatelessComponent = function(displayName) {
+  var defaultInitialState = {};
+  var defaultShouldUpdate = function() {
+    return function() {
+      return function() {
+        return true;
+      };
+    };
   };
-  return React.createElement.apply(
-    null,
-    [component, props].concat(($$props && $$props.children) || null)
-  );
+  var defaultDidMount = function() {
+    return function() {};
+  };
+  var defaultDidUpdate = function() {
+    return function() {};
+  };
+  var defaultWillUnmount = function() {
+    return function() {};
+  };
+  var defaultUpdate = function() {
+    return function() {
+      return noUpdate;
+    };
+  };
+  var defaultRender = function() {
+    return false;
+  };
+
+  var Component = function constructor(props) {
+    this.$$spec = props.$$spec;
+    return this;
+  };
+
+  Component.prototype = Object.create(React.Component.prototype);
+
+  Component.displayName = displayName;
+
+  Component.prototype.render = function() {
+    return this.$$spec.render(this.props.$$props);
+  };
+
+  return {
+    $$type: Component,
+    initialState: defaultInitialState,
+    shouldUpdate: defaultShouldUpdate,
+    didMount: defaultDidMount,
+    didUpdate: defaultDidUpdate,
+    willUnmount: defaultWillUnmount,
+    update: defaultUpdate,
+    render: defaultRender
+  };
+};
+
+exports.make = function(component) {
+  return function($$props) {
+    var props = {
+      $$props: $$props,
+      $$spec: component
+    };
+    return React.createElement(component.$$type, props);
+  };
 };
 
 exports.keyed_ = function(key, child) {

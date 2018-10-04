@@ -2,7 +2,7 @@ module React.Basic where
 
 import Prelude
 
-import Data.Function.Uncurried (Fn1, Fn2, Fn8, runFn2, runFn8)
+import Data.Function.Uncurried (Fn2, Fn3, runFn2, runFn3)
 import Data.Nullable (Nullable, notNull, null)
 import Effect (Effect)
 import Unsafe.Coerce (unsafeCoerce)
@@ -16,9 +16,20 @@ instance semigroupJSX :: Semigroup JSX where
 instance monoidJSX :: Monoid JSX where
   mempty = empty
 
-data Component props state action
+type ComponentSpec props state action =
+  { "$$type" :: ReactComponent props
+  , initialState :: state
+  , shouldUpdate :: LimitedSelf props state -> props -> state -> Boolean
+  , didMount :: Self props state action -> Effect Unit
+  , didUpdate :: Self props state action -> Effect Unit
+  , willUnmount :: LimitedSelf props state -> Effect Unit
+  , update :: Update props state action
+  , render :: Self props state action -> JSX
+  }
 
-type StatelessComponent props = Component props Void Void
+type Component = forall props state action. ComponentSpec props state action
+
+type StatelessComponent = forall props. ComponentSpec props Void Void
 
 type Update props state action
    = Self props state action
@@ -55,37 +66,58 @@ buildStateUpdate = case _ of
     , effects: notNull effects
     }
 
-make
+-- | Turn a `ComponentSpec` into a usable render function.
+-- | This is usually where you will want to provide customized
+-- | implementations:
+-- |
+-- | ```purs
+-- | type Props =
+-- |   { label :: String
+-- |   }
+-- |
+-- | data Action
+-- |   = Increment
+-- |
+-- | render :: Props -> JSX
+-- | render = make component
+-- |   { initialState = { counter: 0 }
+-- |
+-- |   , update = \self action -> case action of
+-- |       Increment ->
+-- |         Update self.state { counter = self.state.counter + 1 }
+-- |
+-- |   , render = \self ->
+-- |       R.button
+-- |         { onClick: Events.handler_ do self.send Increment
+-- |         , children: [ R.text (self.props.label <> ": " <> show self.state.counter) ]
+-- |         }
+-- |   }
+-- |
+-- | component :: Component
+-- | component = createComponent "Counter"
+-- | ```
+foreign import make
   :: forall props state action
-   . Eq props
-  => Eq state
-  => Component props state action
-  -> state
-  -> (Update props state action)
-  -> (Self props state action -> JSX)
+   . ComponentSpec props state action
   -> props
   -> JSX
-make = runFn8 make_ buildStateUpdate eq eq
 
+-- | Helper to make stateless component definition slightly
+-- | less verbose:
+-- |
+-- | ```purs
+-- | render = makeStateless component \props -> JSX
+-- |
+-- | component = createStatelessComponent "Xyz"
+-- | ```
 makeStateless
   :: forall props
-   . Eq props
-  => Component props Void Void
+   . ComponentSpec props Void Void
   -> (props -> JSX)
   -> props
   -> JSX
 makeStateless component render =
-  runFn8 make_
-    (\_ -> { state: null, effects: null })
-    eq
-    (\_ _ -> true)
-    component
-    voidState
-    (\_ _ -> NoUpdate)
-    (render <<< _.props)
-
--- | Represents the state of a stateless component.
-foreign import voidState :: Void
+  make component { render = \self -> render self.props }
 
 type Self props state action =
   { props :: props
@@ -95,26 +127,58 @@ type Self props state action =
   , send :: action -> Effect Unit
   }
 
-foreign import make_ :: forall props state action.
-  Fn8
-    (StateUpdate props state action
-      -> { state :: Nullable state
-         , effects :: Nullable (Self props state action -> Effect Unit)
-         })
-    (props -> props -> Boolean)
-    (state -> state -> Boolean)
-    (Component props state action)
-    state
-    (Update props state action)
-    (Self props state action -> JSX)
-    props
-    JSX
+type LimitedSelf props state =
+  { props :: props
+  , state :: state
+  }
 
 data ReactComponent props
 
 data ReactComponentInstance
 
-foreign import createComponent :: forall props state action. Fn1 String (Component props state action)
+createComponent
+  :: String
+  -> { "$$type" :: forall props. ReactComponent props
+     , initialState :: forall state. state
+     , shouldUpdate :: forall props state. LimitedSelf props state -> props -> state -> Boolean
+     , didMount :: forall props state action. Self props state action -> Effect Unit
+     , didUpdate :: forall props state action. Self props state action -> Effect Unit
+     , willUnmount :: forall props state action. LimitedSelf props state -> Effect Unit
+     , update :: forall props state action. Update props state action
+     , render :: forall props state action. Self props state action -> JSX
+     }
+createComponent = runFn3 createComponent_ NoUpdate buildStateUpdate
+
+foreign import createComponent_
+  :: Fn3
+      (forall props state action. StateUpdate props state action)
+      (forall props state action. StateUpdate props state action
+        -> { state :: Nullable state
+           , effects :: Nullable (Self props state action -> Effect Unit)
+           })
+      String
+      ({ "$$type" :: forall props. ReactComponent props
+       , initialState :: forall state. state
+       , shouldUpdate :: forall props state. LimitedSelf props state -> props -> state -> Boolean
+       , didMount :: forall props state action. Self props state action -> Effect Unit
+       , didUpdate :: forall props state action. Self props state action -> Effect Unit
+       , willUnmount :: forall props state action. LimitedSelf props state -> Effect Unit
+       , update :: forall props state action. Update props state action
+       , render :: forall props state action. Self props state action -> JSX
+       })
+
+-- | Creates a named, stateless component
+foreign import createStatelessComponent
+  :: String
+  -> { "$$type" :: forall props. ReactComponent props
+     , initialState :: Void
+     , shouldUpdate :: forall props. LimitedSelf props Void -> props -> Void -> Boolean
+     , didMount :: forall props. Self props Void Void -> Effect Unit
+     , didUpdate :: forall props. Self props Void Void -> Effect Unit
+     , willUnmount :: forall props. LimitedSelf props Void -> Effect Unit
+     , update :: forall props. Update props Void Void
+     , render :: forall props. Self props Void Void -> JSX
+     }
 
 -- | An empty node. This is often useful when you would like to conditionally
 -- | show something, but you don't want to (or can't) modify the `children` prop
