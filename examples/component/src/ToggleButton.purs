@@ -2,6 +2,7 @@ module ToggleButton where
 
 import Prelude
 
+import Effect.Console (log)
 import React.Basic (Component, JSX, StateUpdate(..), createComponent, make)
 import React.Basic.DOM as R
 import React.Basic.Events as Events
@@ -20,7 +21,11 @@ render = make component
       }
 
   , update = \self -> case _ of
-      Toggle -> Update self.state { on = not self.state.on }
+      Toggle ->
+        UpdateAndSideEffects
+          self.state { on = not self.state.on }
+          \nextSelf -> do
+            log $ "next state: " <> show nextSelf.state
 
   , render = \self ->
       R.button

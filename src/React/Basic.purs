@@ -1,10 +1,35 @@
-module React.Basic where
+module React.Basic
+  ( Component
+  , StatelessComponent
+  , ComponentSpec
+  , JSX
+  , Update
+  , StateUpdate(..)
+  , Self
+  , LimitedSelf
+  , ReactComponent
+  , ReactComponentInstance
+  , make
+  , makeStateless
+  , asyncEffects
+  , createComponent
+  , createStatelessComponent
+  , empty
+  , keyed
+  , fragment
+  , fragmentKeyed
+  , element
+  , elementKeyed
+  ) where
 
 import Prelude
 
+import Data.Either (Either(..))
 import Data.Function.Uncurried (Fn2, Fn3, runFn2, runFn3)
 import Data.Nullable (Nullable, notNull, null)
 import Effect (Effect)
+import Effect.Aff (Aff, runAff_)
+import Effect.Console (error)
 import Unsafe.Coerce (unsafeCoerce)
 
 -- | A virtual DOM element.
@@ -41,6 +66,23 @@ data StateUpdate props state action
   | Update state
   | SideEffects (Self props state action -> Effect Unit)
   | UpdateAndSideEffects state (Self props state action -> Effect Unit)
+
+-- | Convenience function for sending an action asynchronously.
+-- |
+-- | Note: potential failure should be handled and converted to an
+-- |   action, as the default error handler will simply log the
+-- |   error to the console.
+asyncEffects
+  :: forall props state action
+   . (Self props state action -> Aff action)
+  -> Self props state action
+  -> Effect Unit
+asyncEffects work self = runAff_ handle (work self)
+  where
+    handle (Right action) = self.send action
+    handle (Left err) = do
+      error "An async action failed."
+      error (unsafeCoerce err)
 
 buildStateUpdate
   :: forall props state action
@@ -125,6 +167,10 @@ type Self props state action =
   , readProps :: Effect props
   , readState :: Effect state
   , send :: action -> Effect Unit
+
+  -- | Unsafe, but still frequently better than rewriting a
+  -- | whold component in JS
+  , instance_ :: ReactComponentInstance
   }
 
 type LimitedSelf props state =

@@ -25,12 +25,12 @@ exports.createComponent_ = function(noUpdate, buildStateUpdate, displayName) {
               { $$state: updates.state },
               updates.effects !== null
                 ? function() {
-                    updates.effects(contextToSelf(this));
+                    updates.effects(contextToSelf(this))();
                   }
                 : undefined
             );
           } else if (updates.effects !== null) {
-            updates.effects(self);
+            updates.effects(self)();
           }
         };
       },

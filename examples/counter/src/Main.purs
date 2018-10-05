@@ -12,11 +12,6 @@ import Web.HTML (window)
 import Web.HTML.HTMLDocument (toNonElementParentNode)
 import Web.HTML.Window (document)
 
--- dummy :: Component
--- dummy = stateless { displayName: "dummy", render }
---   where
---     render _ =
-
 main :: Effect Unit
 main = do
   container <- getElementById "container" =<< (map toNonElementParentNode $ document =<< window)

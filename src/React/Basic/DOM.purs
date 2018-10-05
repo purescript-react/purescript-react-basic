@@ -13,6 +13,7 @@ module React.Basic.DOM
   , hydrate'
   , unmount
   , findDOMNode
+  , createPortal
   , text
   , css
   , mergeStyles
@@ -22,6 +23,7 @@ module React.Basic.DOM
 import Prelude
 
 import Data.Either (Either)
+import Data.Function.Uncurried (Fn2, runFn2)
 import Data.Maybe (Maybe(..))
 import Data.Nullable (Nullable, toMaybe)
 import Effect (Effect)
@@ -97,6 +99,14 @@ findDOMNode instance_ = try do
 
 -- | Warning: Relies on `ReactDOM.findDOMNode` which may throw exceptions
 foreign import findDOMNode_ :: EffectFn1 ReactComponentInstance (Nullable Node)
+
+-- | Divert a render tree into a separate DOM node. The node's
+-- | content will be overwritten and managed by React, similar
+-- | to `render` and `hydrate`.
+createPortal :: JSX -> Element -> JSX
+createPortal = runFn2 createPortal_
+
+foreign import createPortal_ :: Fn2 JSX Element JSX
 
 -- | Create a text node.
 text :: String -> JSX
