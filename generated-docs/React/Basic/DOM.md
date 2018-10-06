@@ -74,7 +74,7 @@ Note: Relies on `ReactDOM.unmountComponentAtNode`
 #### `findDOMNode`
 
 ``` purescript
-findDOMNode :: ComponentInstance -> Effect (Either Error Node)
+findDOMNode :: ReactComponentInstance -> Effect (Either Error Node)
 ```
 
 Returns the current DOM node associated with the given
@@ -82,6 +82,16 @@ instance, or an Error if no node was found or the given
 instance was not mounted.
 
 Note: Relies on `ReactDOM.findDOMNode`
+
+#### `createPortal`
+
+``` purescript
+createPortal :: JSX -> Element -> JSX
+```
+
+Divert a render tree into a separate DOM node. The node's
+content will be overwritten and managed by React, similar
+to `render` and `hydrate`.
 
 #### `text`
 
@@ -2184,6 +2194,6 @@ An abstract type representing records of CSS attributes.
 #### `unsafeCreateDOMComponent`
 
 ``` purescript
-unsafeCreateDOMComponent :: forall props. String -> Component props
+unsafeCreateDOMComponent :: forall props. String -> ReactComponent props
 ```
 

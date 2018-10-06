@@ -13,7 +13,7 @@ exports.createComponent_ = function(noUpdate, buildStateUpdate, displayName) {
       },
       readState: function() {
         var state = self.instance_.state;
-        return state !== undefined && state.$$state;
+        return state === undefined ? undefined : state.$$state;
       },
       send: function(action) {
         return function() {
@@ -114,6 +114,24 @@ exports.createComponent_ = function(noUpdate, buildStateUpdate, displayName) {
 };
 
 exports.createStatelessComponent = function(displayName) {
+  function contextToSelf(instance) {
+    var self = {
+      props: instance.props.$$props,
+      state: undefined,
+      readProps: function() {
+        return self.instance_.props.$$props;
+      },
+      readState: function() {
+        return undefined;
+      },
+      send: function() {
+        return function() {};
+      },
+      instance_: instance
+    };
+    return self;
+  }
+
   var defaultInitialState = {};
   var defaultShouldUpdate = function() {
     return function() {
@@ -150,7 +168,7 @@ exports.createStatelessComponent = function(displayName) {
   Component.displayName = displayName;
 
   Component.prototype.render = function() {
-    return this.$$spec.render(this.props.$$props);
+    return this.$$spec.render(contextToSelf(this));
   };
 
   return {

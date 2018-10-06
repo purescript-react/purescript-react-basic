@@ -20,6 +20,7 @@ module React.Basic
   , fragmentKeyed
   , element
   , elementKeyed
+  , toReactComponent
   ) where
 
 import Prelude
@@ -82,6 +83,8 @@ asyncEffects work self = runAff_ handle (work self)
     handle (Right action) = self.send action
     handle (Left err) = do
       error "An async action failed."
+      -- Unsafely coercing to preserve browser console
+      -- error features such as linked stack traces
       error (unsafeCoerce err)
 
 buildStateUpdate
@@ -266,3 +269,6 @@ elementKeyed = runFn2 elementKeyed_
 foreign import element_ :: forall props. Fn2 (ReactComponent { | props }) { | props } JSX
 
 foreign import elementKeyed_ :: forall props. Fn2 (ReactComponent { | props }) { key :: String | props } JSX
+
+toReactComponent :: forall props. ({ | props } -> JSX) -> ReactComponent { | props }
+toReactComponent = unsafeCoerce
