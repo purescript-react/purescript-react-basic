@@ -7,31 +7,39 @@ exports.createComponent_ = function(noUpdate, buildStateUpdate, displayName) {
   function contextToSelf(instance) {
     var self = {
       props: instance.props.$$props,
-      state: instance.state === undefined ? undefined : instance.state.$$state,
+      state: instance.state === null ? null : instance.state.$$state,
       readProps: function() {
         return self.instance_.props.$$props;
       },
       readState: function() {
         var state = self.instance_.state;
-        return state === undefined ? undefined : state.$$state;
+        return state === null ? null : state.$$state;
       },
       send: function(action) {
         return function() {
-          var updates = buildStateUpdate(
-            self.instance_.$$spec.update(self)(action)
+          var sideEffects = null;
+          self.instance_.setState(
+            function(s) {
+              var setStateContext = contextToSelf(self.instance_);
+              setStateContext.state = s.$$state;
+              var updates = buildStateUpdate(
+                self.instance_.$$spec.update(setStateContext)(action)
+              );
+              if (updates.effects !== null) {
+                sideEffects = updates.effects;
+              }
+              if (updates.state !== null && updates.state !== s.$$state) {
+                return { $$state: updates.state };
+              } else {
+                return null;
+              }
+            },
+            function() {
+              if (sideEffects !== null) {
+                sideEffects(contextToSelf(this))();
+              }
+            }
           );
-          if (updates.state !== null) {
-            self.instance_.setState(
-              { $$state: updates.state },
-              updates.effects !== null
-                ? function() {
-                    updates.effects(contextToSelf(this))();
-                  }
-                : undefined
-            );
-          } else if (updates.effects !== null) {
-            updates.effects(self)();
-          }
         };
       },
       instance_: instance
@@ -39,7 +47,7 @@ exports.createComponent_ = function(noUpdate, buildStateUpdate, displayName) {
     return self;
   }
 
-  var defaultInitialState = {};
+  var defaultInitialState = null;
   var defaultShouldUpdate = function() {
     return function() {
       return function() {
@@ -69,10 +77,10 @@ exports.createComponent_ = function(noUpdate, buildStateUpdate, displayName) {
     this.$$spec = props.$$spec;
     this.state =
       // React may optimize components with no state,
-      // so we leave state undefined if it was left as
+      // so we leave state null if it was left as
       // the default value.
       this.$$spec.initialState === defaultInitialState
-        ? undefined
+        ? null
         : { $$state: this.$$spec.initialState };
     return this;
   };
@@ -117,12 +125,12 @@ exports.createStatelessComponent = function(displayName) {
   function contextToSelf(instance) {
     var self = {
       props: instance.props.$$props,
-      state: undefined,
+      state: null,
       readProps: function() {
         return self.instance_.props.$$props;
       },
       readState: function() {
-        return undefined;
+        return null;
       },
       send: function() {
         return function() {};
@@ -132,7 +140,7 @@ exports.createStatelessComponent = function(displayName) {
     return self;
   }
 
-  var defaultInitialState = {};
+  var defaultInitialState = null;
   var defaultShouldUpdate = function() {
     return function() {
       return function() {
@@ -183,14 +191,34 @@ exports.createStatelessComponent = function(displayName) {
   };
 };
 
-exports.make = function(component) {
+exports.make = function($$spec) {
   return function($$props) {
     var props = {
       $$props: $$props,
-      $$spec: component
+      $$spec: $$spec
     };
-    return React.createElement(component.$$type, props);
+    return React.createElement($$spec.$$type, props);
   };
+};
+
+exports.toReactComponent = function($$spec) {
+  var Component = function constructor() {
+    return this;
+  };
+
+  Component.prototype = Object.create(React.Component.prototype);
+
+  Component.displayName = $$spec.$$type.displayName + " (Wrapper)";
+
+  Component.prototype.render = function() {
+    var props = {
+      $$props: this.props,
+      $$spec: $$spec
+    };
+    return React.createElement($$spec.$$type, props);
+  };
+
+  return Component;
 };
 
 exports.keyed_ = function(key, child) {
@@ -204,9 +232,7 @@ exports.element_ = function(component, props) {
   );
 };
 
-exports.elementKeyed_ = function(key, child) {
-  return React.createElement.call(null, Fragment, { key: key }, child);
-};
+exports.elementKeyed_ = exports.element_;
 
 exports.fragment = function(children) {
   return React.createElement.apply(null, [Fragment, {}].concat(children));

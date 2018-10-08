@@ -22,18 +22,18 @@ component
      }
   -> ReactComponent { | props }
 component { displayName, initialState, receiveProps, render } =
-  toReactComponent (make (createComponent displayName)
+  toReactComponent (createComponent displayName)
     { initialState = initialState
     , didMount = receiveProps <<< selfToLegacySelf
     , didUpdate = receiveProps <<< selfToLegacySelf
-    , update = \self newState -> Update newState
+    , update = \self stateUpdate -> Update (stateUpdate self.state)
     , render = render <<< selfToLegacySelf
-    })
+    }
   where
     selfToLegacySelf { props, state, send } =
       { props
       , state
-      , setState: \fn -> send (fn state)
+      , setState: send
       }
 
 -- | Supports a common subset of the v2 API to ease the upgrade process
@@ -44,6 +44,6 @@ stateless
      }
   -> ReactComponent { | props }
 stateless { displayName, render } =
-  toReactComponent (make (createStatelessComponent displayName)
+  toReactComponent (createStatelessComponent displayName)
     { render = \self -> render self.props
-    })
+    }

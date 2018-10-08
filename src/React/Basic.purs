@@ -2,6 +2,7 @@ module React.Basic
   ( Component
   , StatelessComponent
   , ComponentSpec
+  , ComponentType
   , JSX
   , Update
   , StateUpdate(..)
@@ -42,8 +43,10 @@ instance semigroupJSX :: Semigroup JSX where
 instance monoidJSX :: Monoid JSX where
   mempty = empty
 
+data ComponentType props state action
+
 type ComponentSpec props state action =
-  { "$$type" :: ReactComponent props
+  { "$$type" :: ComponentType props state action
   , initialState :: state
   , shouldUpdate :: LimitedSelf props state -> props -> state -> Boolean
   , didMount :: Self props state action -> Effect Unit
@@ -187,7 +190,7 @@ data ReactComponentInstance
 
 createComponent
   :: String
-  -> { "$$type" :: forall props. ReactComponent props
+  -> { "$$type" :: forall props state action. ComponentType props state action
      , initialState :: forall state. state
      , shouldUpdate :: forall props state. LimitedSelf props state -> props -> state -> Boolean
      , didMount :: forall props state action. Self props state action -> Effect Unit
@@ -206,7 +209,7 @@ foreign import createComponent_
            , effects :: Nullable (Self props state action -> Effect Unit)
            })
       String
-      ({ "$$type" :: forall props. ReactComponent props
+      ({ "$$type" :: forall props state action. ComponentType props state action
        , initialState :: forall state. state
        , shouldUpdate :: forall props state. LimitedSelf props state -> props -> state -> Boolean
        , didMount :: forall props state action. Self props state action -> Effect Unit
@@ -219,7 +222,7 @@ foreign import createComponent_
 -- | Creates a named, stateless component
 foreign import createStatelessComponent
   :: String
-  -> { "$$type" :: forall props. ReactComponent props
+  -> { "$$type" :: forall props state action. ComponentType props state action
      , initialState :: Void
      , shouldUpdate :: forall props. LimitedSelf props Void -> props -> Void -> Boolean
      , didMount :: forall props. Self props Void Void -> Effect Unit
@@ -270,5 +273,7 @@ foreign import element_ :: forall props. Fn2 (ReactComponent { | props }) { | pr
 
 foreign import elementKeyed_ :: forall props. Fn2 (ReactComponent { | props }) { key :: String | props } JSX
 
-toReactComponent :: forall props. ({ | props } -> JSX) -> ReactComponent { | props }
-toReactComponent = unsafeCoerce
+foreign import toReactComponent :: forall props state action. ComponentSpec { | props } state action -> ReactComponent { | props }
+
+displayName :: forall props state action. ComponentSpec props state action -> String
+displayName = _.displayName <<< unsafeCoerce <<< _."$$type"
