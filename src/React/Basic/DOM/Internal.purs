@@ -86,7 +86,9 @@ type SharedProps specific =
   , useMap            :: String
   , vocab             :: String
   , wmode             :: String
+  , onBlur            :: EventHandler
   , onClick           :: EventHandler
+  , onFocus           :: EventHandler
   -- TODO: add more common event handlers
   | specific
   )
