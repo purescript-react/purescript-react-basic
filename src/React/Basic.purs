@@ -220,9 +220,9 @@ foreign import createComponent_
        })
 
 -- | Creates a named, stateless component
-foreign import createStatelessComponent
+createStatelessComponent
   :: String
-  -> { "$$type" :: forall props state action. ComponentType props state action
+  -> { "$$type" :: forall props state action. ComponentType props Void Void
      , initialState :: Void
      , shouldUpdate :: forall props. LimitedSelf props Void -> props -> Void -> Boolean
      , didMount :: forall props. Self props Void Void -> Effect Unit
@@ -231,6 +231,7 @@ foreign import createStatelessComponent
      , update :: forall props. Update props Void Void
      , render :: forall props. Self props Void Void -> JSX
      }
+createStatelessComponent = createComponent
 
 -- | An empty node. This is often useful when you would like to conditionally
 -- | show something, but you don't want to (or can't) modify the `children` prop
