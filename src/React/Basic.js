@@ -90,7 +90,9 @@ exports.createComponent_ = function(noUpdate, buildStateUpdate, displayName) {
   Component.displayName = displayName;
 
   Component.prototype.shouldComponentUpdate = function(nextProps, nextState) {
-    return this.$$spec.shouldUpdate(contextToSelf(this))(nextProps)(nextState);
+    return this.$$spec.shouldUpdate(contextToSelf(this))(nextProps.$$props)(
+      nextState === null ? null : nextState.$$state
+    );
   };
 
   Component.prototype.componentDidMount = function() {
