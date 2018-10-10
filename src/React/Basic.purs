@@ -1,6 +1,5 @@
 module React.Basic
   ( Component
-  , StatelessComponent
   , ComponentSpec
   , ComponentType
   , JSX
@@ -14,7 +13,6 @@ module React.Basic
   , makeStateless
   , asyncEffects
   , createComponent
-  , createStatelessComponent
   , empty
   , keyed
   , fragment
@@ -45,9 +43,9 @@ instance monoidJSX :: Monoid JSX where
 
 data ComponentType props state action
 
-type ComponentSpec props state action =
+type ComponentSpec props state initialState action =
   { "$$type" :: ComponentType props state action
-  , initialState :: state
+  , initialState :: initialState
   , shouldUpdate :: LimitedSelf props state -> props -> state -> Boolean
   , didMount :: Self props state action -> Effect Unit
   , didUpdate :: Self props state action -> Effect Unit
@@ -56,9 +54,7 @@ type ComponentSpec props state action =
   , render :: Self props state action -> JSX
   }
 
-type Component = forall props state action. ComponentSpec props state action
-
-type StatelessComponent = forall props. ComponentSpec props Void Void
+type Component = forall props state action. ComponentSpec props state Void action
 
 type Update props state action
    = Self props state action
@@ -70,6 +66,25 @@ data StateUpdate props state action
   | Update state
   | SideEffects (Self props state action -> Effect Unit)
   | UpdateAndSideEffects state (Self props state action -> Effect Unit)
+
+type Self props state action =
+  { props :: props
+  , state :: state
+  , readProps :: Effect props
+  , readState :: Effect state
+  , send :: action -> Effect Unit
+
+  -- | Unsafe, but still frequently better than rewriting a
+  -- | whold component in JS
+  , instance_ :: ReactComponentInstance
+  }
+
+type LimitedSelf props state =
+  { props :: props
+  , state :: state
+  }
+
+data ReactComponentInstance
 
 -- | Convenience function for sending an action asynchronously.
 -- |
@@ -146,7 +161,7 @@ buildStateUpdate = case _ of
 -- | ```
 foreign import make
   :: forall props state action
-   . ComponentSpec props state action
+   . ComponentSpec props state state action
   -> props
   -> JSX
 
@@ -160,78 +175,31 @@ foreign import make
 -- | ```
 makeStateless
   :: forall props
-   . ComponentSpec props Void Void
+   . ComponentSpec props Void Void Void
   -> (props -> JSX)
   -> props
   -> JSX
 makeStateless component render =
   make component { render = \self -> render self.props }
 
-type Self props state action =
-  { props :: props
-  , state :: state
-  , readProps :: Effect props
-  , readState :: Effect state
-  , send :: action -> Effect Unit
-
-  -- | Unsafe, but still frequently better than rewriting a
-  -- | whold component in JS
-  , instance_ :: ReactComponentInstance
-  }
-
-type LimitedSelf props state =
-  { props :: props
-  , state :: state
-  }
-
 data ReactComponent props
 
-data ReactComponentInstance
-
 createComponent
-  :: String
-  -> { "$$type" :: forall props state action. ComponentType props state action
-     , initialState :: forall state. state
-     , shouldUpdate :: forall props state. LimitedSelf props state -> props -> state -> Boolean
-     , didMount :: forall props state action. Self props state action -> Effect Unit
-     , didUpdate :: forall props state action. Self props state action -> Effect Unit
-     , willUnmount :: forall props state action. LimitedSelf props state -> Effect Unit
-     , update :: forall props state action. Update props state action
-     , render :: forall props state action. Self props state action -> JSX
-     }
+  :: forall props state action
+   . String
+  -> ComponentSpec props state Void action
 createComponent = runFn3 createComponent_ NoUpdate buildStateUpdate
 
 foreign import createComponent_
-  :: Fn3
-      (forall props state action. StateUpdate props state action)
-      (forall props state action. StateUpdate props state action
+  :: forall props state action
+   . Fn3
+      (StateUpdate props state action)
+      (StateUpdate props state action
         -> { state :: Nullable state
            , effects :: Nullable (Self props state action -> Effect Unit)
            })
       String
-      ({ "$$type" :: forall props state action. ComponentType props state action
-       , initialState :: forall state. state
-       , shouldUpdate :: forall props state. LimitedSelf props state -> props -> state -> Boolean
-       , didMount :: forall props state action. Self props state action -> Effect Unit
-       , didUpdate :: forall props state action. Self props state action -> Effect Unit
-       , willUnmount :: forall props state action. LimitedSelf props state -> Effect Unit
-       , update :: forall props state action. Update props state action
-       , render :: forall props state action. Self props state action -> JSX
-       })
-
--- | Creates a named, stateless component
-createStatelessComponent
-  :: String
-  -> { "$$type" :: forall props state action. ComponentType props Void Void
-     , initialState :: Void
-     , shouldUpdate :: forall props. LimitedSelf props Void -> props -> Void -> Boolean
-     , didMount :: forall props. Self props Void Void -> Effect Unit
-     , didUpdate :: forall props. Self props Void Void -> Effect Unit
-     , willUnmount :: forall props. LimitedSelf props Void -> Effect Unit
-     , update :: forall props. Update props Void Void
-     , render :: forall props. Self props Void Void -> JSX
-     }
-createStatelessComponent = createComponent
+      (ComponentSpec props state Void action)
 
 -- | An empty node. This is often useful when you would like to conditionally
 -- | show something, but you don't want to (or can't) modify the `children` prop
@@ -267,14 +235,28 @@ element = runFn2 element_
 
 -- | Like `element`, plus a `key` for rendering components in a dynamic list.
 -- | For more information see: https://reactjs.org/docs/reconciliation.html#keys
-elementKeyed :: forall props. ReactComponent { | props } -> { key :: String | props } -> JSX
+elementKeyed
+  :: forall props
+   . ReactComponent { | props }
+  -> { key :: String | props }
+  -> JSX
 elementKeyed = runFn2 elementKeyed_
 
-foreign import element_ :: forall props. Fn2 (ReactComponent { | props }) { | props } JSX
+foreign import element_
+  :: forall props
+   . Fn2 (ReactComponent { | props }) { | props } JSX
 
-foreign import elementKeyed_ :: forall props. Fn2 (ReactComponent { | props }) { key :: String | props } JSX
+foreign import elementKeyed_
+  :: forall props
+   . Fn2 (ReactComponent { | props }) { key :: String | props } JSX
 
-foreign import toReactComponent :: forall props state action. ComponentSpec { | props } state action -> ReactComponent { | props }
+foreign import toReactComponent
+  :: forall props state action
+   . ComponentSpec { | props } state state action
+  -> ReactComponent { | props }
 
-displayName :: forall props state action. ComponentSpec props state action -> String
+displayName
+  :: forall props state initialState action
+   . ComponentSpec props state initialState action
+  -> String
 displayName = _.displayName <<< unsafeCoerce <<< _."$$type"

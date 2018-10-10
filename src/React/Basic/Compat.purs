@@ -8,7 +8,7 @@ module React.Basic.Compat
 import Prelude
 
 import Effect (Effect)
-import React.Basic (JSX, ReactComponent, Self, StateUpdate(..), createComponent, createStatelessComponent, element, elementKeyed, empty, fragment, fragmentKeyed, make, makeStateless, toReactComponent)
+import React.Basic (JSX, ReactComponent, Self, StateUpdate(..), ComponentSpec, createComponent, element, elementKeyed, empty, fragment, fragmentKeyed, make, makeStateless, toReactComponent)
 
 type Component = ReactComponent
 
@@ -44,6 +44,6 @@ stateless
      }
   -> ReactComponent { | props }
 stateless { displayName, render } =
-  toReactComponent (createStatelessComponent displayName)
+  toReactComponent (createComponent displayName)
     { render = \self -> render self.props
     }

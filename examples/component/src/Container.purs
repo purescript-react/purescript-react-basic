@@ -2,7 +2,7 @@ module Container where
 
 import Prelude
 
-import React.Basic (JSX, StatelessComponent, createStatelessComponent, makeStateless)
+import React.Basic (Component, JSX, createComponent, makeStateless)
 import React.Basic.DOM as R
 import ToggleButton as ToggleButton
 
@@ -15,5 +15,5 @@ render = unit # makeStateless component \_ ->
         ]
     }
 
-component :: StatelessComponent
-component = createStatelessComponent "Container"
+component :: Component
+component = createComponent "Container"

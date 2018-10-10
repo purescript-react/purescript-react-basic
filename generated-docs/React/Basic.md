@@ -3,19 +3,19 @@
 #### `Component`
 
 ``` purescript
-type Component = forall props state action. ComponentSpec props state action
-```
-
-#### `StatelessComponent`
-
-``` purescript
-type StatelessComponent = forall props. ComponentSpec props Void Void
+type Component = forall props state action. ComponentSpec props state Void action
 ```
 
 #### `ComponentSpec`
 
 ``` purescript
-type ComponentSpec props state action = { "$$type" :: ReactComponent props, initialState :: state, shouldUpdate :: LimitedSelf props state -> props -> state -> Boolean, didMount :: Self props state action -> Effect Unit, didUpdate :: Self props state action -> Effect Unit, willUnmount :: LimitedSelf props state -> Effect Unit, update :: Update props state action, render :: Self props state action -> JSX }
+type ComponentSpec props state initialState action = { "$$type" :: ComponentType props state action, initialState :: initialState, shouldUpdate :: LimitedSelf props state -> props -> state -> Boolean, didMount :: Self props state action -> Effect Unit, didUpdate :: Self props state action -> Effect Unit, willUnmount :: LimitedSelf props state -> Effect Unit, update :: Update props state action, render :: Self props state action -> JSX }
+```
+
+#### `ComponentType`
+
+``` purescript
+data ComponentType props state action
 ```
 
 #### `JSX`
@@ -75,7 +75,7 @@ data ReactComponentInstance
 #### `make`
 
 ``` purescript
-make :: forall props state action. ComponentSpec props state action -> props -> JSX
+make :: forall props state action. ComponentSpec props state state action -> props -> JSX
 ```
 
 Turn a `ComponentSpec` into a usable render function.
@@ -112,7 +112,7 @@ component = createComponent "Counter"
 #### `makeStateless`
 
 ``` purescript
-makeStateless :: forall props. ComponentSpec props Void Void -> (props -> JSX) -> props -> JSX
+makeStateless :: forall props. ComponentSpec props Void Void Void -> (props -> JSX) -> props -> JSX
 ```
 
 Helper to make stateless component definition slightly
@@ -139,16 +139,8 @@ Note: potential failure should be handled and converted to an
 #### `createComponent`
 
 ``` purescript
-createComponent :: String -> { "$$type" :: forall props. ReactComponent props, initialState :: forall state. state, shouldUpdate :: forall props state. LimitedSelf props state -> props -> state -> Boolean, didMount :: forall props state action. Self props state action -> Effect Unit, didUpdate :: forall props state action. Self props state action -> Effect Unit, willUnmount :: forall props state action. LimitedSelf props state -> Effect Unit, update :: forall props state action. Update props state action, render :: forall props state action. Self props state action -> JSX }
+createComponent :: forall props state action. String -> ComponentSpec props state Void action
 ```
-
-#### `createStatelessComponent`
-
-``` purescript
-createStatelessComponent :: String -> { "$$type" :: forall props. ReactComponent props, initialState :: Void, shouldUpdate :: forall props. LimitedSelf props Void -> props -> Void -> Boolean, didMount :: forall props. Self props Void Void -> Effect Unit, didUpdate :: forall props. Self props Void Void -> Effect Unit, willUnmount :: forall props. LimitedSelf props Void -> Effect Unit, update :: forall props. Update props Void Void, render :: forall props. Self props Void Void -> JSX }
-```
-
-Creates a named, stateless component
 
 #### `empty`
 
@@ -207,7 +199,7 @@ For more information see: https://reactjs.org/docs/reconciliation.html#keys
 #### `toReactComponent`
 
 ``` purescript
-toReactComponent :: forall props. ({  | props } -> JSX) -> ReactComponent {  | props }
+toReactComponent :: forall props state action. ComponentSpec {  | props } state state action -> ReactComponent {  | props }
 ```
 
 
