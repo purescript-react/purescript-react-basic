@@ -44,14 +44,14 @@ instance monoidJSX :: Monoid JSX where
 data ComponentType props state action
 
 type ComponentSpec props state initialState action =
-  { "$$type" :: ComponentType props state action
+  { "$$type"     :: ComponentType props state action
   , initialState :: initialState
   , shouldUpdate :: LimitedSelf props state -> props -> state -> Boolean
-  , didMount :: Self props state action -> Effect Unit
-  , didUpdate :: Self props state action -> Effect Unit
-  , willUnmount :: LimitedSelf props state -> Effect Unit
-  , update :: Update props state action
-  , render :: Self props state action -> JSX
+  , didMount     :: Self props state action -> Effect Unit
+  , didUpdate    :: Self props state action -> Effect Unit
+  , willUnmount  :: LimitedSelf props state -> Effect Unit
+  , update       :: Update props state action
+  , render       :: Self props state action -> JSX
   }
 
 type Component = forall props state action. ComponentSpec props state Void action
@@ -63,16 +63,16 @@ type Update props state action
 
 data StateUpdate props state action
   = NoUpdate
-  | Update state
-  | SideEffects (Self props state action -> Effect Unit)
+  | Update               state
+  | SideEffects                (Self props state action -> Effect Unit)
   | UpdateAndSideEffects state (Self props state action -> Effect Unit)
 
 type Self props state action =
-  { props :: props
-  , state :: state
+  { props     :: props
+  , state     :: state
   , readProps :: Effect props
   , readState :: Effect state
-  , send :: action -> Effect Unit
+  , send      :: action -> Effect Unit
 
   -- | Unsafe, but still frequently better than rewriting a
   -- | whold component in JS
@@ -195,7 +195,7 @@ foreign import createComponent_
    . Fn3
       (StateUpdate props state action)
       (StateUpdate props state action
-        -> { state :: Nullable state
+        -> { state   :: Nullable state
            , effects :: Nullable (Self props state action -> Effect Unit)
            })
       String
