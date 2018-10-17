@@ -8,8 +8,7 @@ exports.createComponent_ = function(
   buildStateUpdate,
   handler,
   composeCancelEventFn,
-  identityEventFn,
-  displayName
+  identityEventFn
 ) {
   var defaultInitialState = null;
   var defaultShouldUpdate = function() {
@@ -106,71 +105,73 @@ exports.createComponent_ = function(
     return self;
   }
 
-  var Component = function constructor(props) {
-    this.$$mounted = true;
-    this.$$spec = props.$$spec;
-    this.state =
-      // React may optimize components with no state,
-      // so we leave state null if it was left as
-      // the default value.
-      this.$$spec.initialState === defaultInitialState
-        ? null
-        : { $$state: this.$$spec.initialState };
-    return this;
-  };
+  return function(displayName) {
+    var Component = function constructor(props) {
+      this.$$mounted = true;
+      this.$$spec = props.$$spec;
+      this.state =
+        // React may optimize components with no state,
+        // so we leave state null if it was left as
+        // the default value.
+        this.$$spec.initialState === defaultInitialState
+          ? null
+          : { $$state: this.$$spec.initialState };
+      return this;
+    };
 
-  Component.prototype = Object.create(React.Component.prototype);
+    Component.prototype = Object.create(React.Component.prototype);
 
-  Component.displayName = displayName;
+    Component.displayName = displayName;
 
-  Component.prototype.shouldComponentUpdate = function(nextProps, nextState) {
-    var shouldUpdate = this.$$spec.shouldUpdate;
-    return shouldUpdate === defaultShouldUpdate
-      ? true
-      : shouldUpdate({
+    Component.prototype.shouldComponentUpdate = function(nextProps, nextState) {
+      var shouldUpdate = this.$$spec.shouldUpdate;
+      return shouldUpdate === defaultShouldUpdate
+        ? true
+        : shouldUpdate({
+            props: this.props.$$props,
+            state: this.state === null ? null : this.state.$$state
+          })(nextProps.$$props)(nextState === null ? null : nextState.$$state);
+    };
+
+    Component.prototype.componentDidMount = function() {
+      var didMount = this.$$spec.didMount;
+      if (didMount !== defaultDidMount) {
+        this.$$spec.didMount(contextToSelf(this))();
+      }
+    };
+
+    Component.prototype.componentDidUpdate = function() {
+      var didUpdate = this.$$spec.didUpdate;
+      if (didUpdate !== defaultDidUpdate) {
+        didUpdate(contextToSelf(this))();
+      }
+    };
+
+    Component.prototype.componentWillUnmount = function() {
+      this.$$mounted = false;
+      var willUnmount = this.$$spec.willUnmount;
+      if (willUnmount !== defaultWillUnmount) {
+        willUnmount({
           props: this.props.$$props,
           state: this.state === null ? null : this.state.$$state
-        })(nextProps.$$props)(nextState === null ? null : nextState.$$state);
-  };
+        })();
+      }
+    };
 
-  Component.prototype.componentDidMount = function() {
-    var didMount = this.$$spec.didMount;
-    if (didMount !== defaultDidMount) {
-      this.$$spec.didMount(contextToSelf(this))();
-    }
-  };
+    Component.prototype.render = function() {
+      return this.$$spec.render(contextToSelf(this));
+    };
 
-  Component.prototype.componentDidUpdate = function() {
-    var didUpdate = this.$$spec.didUpdate;
-    if (didUpdate !== defaultDidUpdate) {
-      didUpdate(contextToSelf(this))();
-    }
-  };
-
-  Component.prototype.componentWillUnmount = function() {
-    this.$$mounted = false;
-    var willUnmount = this.$$spec.willUnmount;
-    if (willUnmount !== defaultWillUnmount) {
-      willUnmount({
-        props: this.props.$$props,
-        state: this.state === null ? null : this.state.$$state
-      })();
-    }
-  };
-
-  Component.prototype.render = function() {
-    return this.$$spec.render(contextToSelf(this));
-  };
-
-  return {
-    $$type: Component,
-    initialState: defaultInitialState,
-    shouldUpdate: defaultShouldUpdate,
-    didMount: defaultDidMount,
-    didUpdate: defaultDidUpdate,
-    willUnmount: defaultWillUnmount,
-    update: defaultUpdate,
-    render: defaultRender
+    return {
+      $$type: Component,
+      initialState: defaultInitialState,
+      shouldUpdate: defaultShouldUpdate,
+      didMount: defaultDidMount,
+      didUpdate: defaultDidUpdate,
+      willUnmount: defaultWillUnmount,
+      update: defaultUpdate,
+      render: defaultRender
+    };
   };
 };
 

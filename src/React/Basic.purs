@@ -27,7 +27,7 @@ module React.Basic
 import Prelude
 
 import Data.Either (Either(..))
-import Data.Function.Uncurried (Fn2, Fn6, runFn2, runFn6)
+import Data.Function.Uncurried (Fn2, Fn5, runFn2, runFn5)
 import Data.Nullable (Nullable, notNull, null)
 import Effect (Effect)
 import Effect.Aff (Aff, runAff_)
@@ -201,7 +201,7 @@ createComponent
    . String
   -> ComponentSpec props state Unit action
 createComponent =
-  runFn6
+  runFn5
     createComponent_
     NoUpdate
     buildStateUpdate
@@ -211,7 +211,7 @@ createComponent =
 
 foreign import createComponent_
   :: forall props state action
-   . Fn6
+   . Fn5
       (StateUpdate props state action)
       (StateUpdate props state action
         -> { state   :: Nullable state
@@ -223,8 +223,7 @@ foreign import createComponent_
       (forall a. EventFn SyntheticEvent a -> EventFn SyntheticEvent a)
       -- identityEventFn
       (EventFn SyntheticEvent SyntheticEvent)
-      String
-      (ComponentSpec props state Unit action)
+      (String -> ComponentSpec props state Unit action)
 
 -- | An empty node. This is often useful when you would like to conditionally
 -- | show something, but you don't want to (or can't) modify the `children` prop
