@@ -20,6 +20,8 @@ module React.Basic
   , element
   , elementKeyed
   , toReactComponent
+  , displayNameFromComponentSpec
+  , displayNameFromSelf
   ) where
 
 import Prelude
@@ -278,14 +280,12 @@ foreign import toReactComponent
    . ComponentSpec { | props } state state action
   -> ReactComponent { | props }
 
-displayNameFromComponentSpec
+foreign import displayNameFromComponentSpec
   :: forall props state initialState action
    . ComponentSpec props state initialState action
   -> String
-displayNameFromComponentSpec = _.displayName <<< unsafeCoerce <<< _."$$type"
 
-displayNameFromSelf
+foreign import displayNameFromSelf
   :: forall props state action
    . Self props state action
   -> String
-displayNameFromSelf = _.dislpayName <<< _."$$type" <<< _."$$spec" <<< unsafeCoerce <<< _.instance_

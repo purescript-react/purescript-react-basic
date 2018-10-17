@@ -227,3 +227,11 @@ exports.fragmentKeyed_ = function(key, children) {
     [Fragment, { key: key }].concat(children)
   );
 };
+
+exports.displayNameFromComponentSpec = function($$spec) {
+  return $$spec.$$type.displayName || "[unknown]";
+};
+
+exports.displayNameFromSelf = function(self) {
+  return exports.displayNameFromComponentSpec(self.instance_.$$spec);
+};
