@@ -25,7 +25,7 @@ module React.Basic
 import Prelude
 
 import Data.Either (Either(..))
-import Data.Function.Uncurried (Fn2, Fn5, runFn2, runFn5)
+import Data.Function.Uncurried (Fn2, Fn6, runFn2, runFn6)
 import Data.Nullable (Nullable, notNull, null)
 import Effect (Effect)
 import Effect.Aff (Aff, runAff_)
@@ -79,8 +79,10 @@ type Self props state action =
   -- |
   -- | *capturing: prevent default and stop propagation
   , capture   :: forall a. EventFn SyntheticEvent a -> (a -> action) -> EventHandler
+  , capture_  ::           action -> EventHandler
   -- | Like `capture`, but does not cancel the event.
   , monitor   :: forall a. EventFn SyntheticEvent a -> (a -> action) -> EventHandler
+  , monitor_  ::           action -> EventHandler
 
   -- | Unsafe, but still frequently better than rewriting a
   -- | whold component in JS
@@ -196,18 +198,29 @@ createComponent
   :: forall props state action
    . String
   -> ComponentSpec props state Unit action
-createComponent = runFn5 createComponent_ NoUpdate buildStateUpdate handler ((preventDefault >>> stopPropagation) >>> _)
+createComponent =
+  runFn6
+    createComponent_
+    NoUpdate
+    buildStateUpdate
+    handler
+    ((preventDefault >>> stopPropagation) >>> _)
+    identity
 
 foreign import createComponent_
   :: forall props state action
-   . Fn5
+   . Fn6
       (StateUpdate props state action)
       (StateUpdate props state action
         -> { state   :: Nullable state
            , effects :: Nullable (Self props state action -> Effect Unit)
            })
+      -- handler
       (forall a. EventFn SyntheticEvent a -> (a -> Effect Unit) -> EventHandler)
+      -- composeCancelEventFn
       (forall a. EventFn SyntheticEvent a -> EventFn SyntheticEvent a)
+      -- identityEventFn
+      (EventFn SyntheticEvent SyntheticEvent)
       String
       (ComponentSpec props state Unit action)
 

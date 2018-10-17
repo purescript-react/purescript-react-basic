@@ -7,7 +7,8 @@ exports.createComponent_ = function(
   noUpdate,
   buildStateUpdate,
   handler,
-  composeCancel,
+  composeCancelEventFn,
+  identityEventFn,
   displayName
 ) {
   function contextToSelf(instance) {
@@ -52,11 +53,12 @@ exports.createComponent_ = function(
         };
       },
       capture: function(eventFn) {
-        return function(makeAction) {
-          return handler(composeCancel(eventFn))(function(event) {
-            return self.send(makeAction(event));
-          });
-        };
+        return self.monitor(composeCancelEventFn(eventFn));
+      },
+      capture_: function(action) {
+        return self.capture(identityEventFn)(function() {
+          return action;
+        });
       },
       monitor: function(eventFn) {
         return function(makeAction) {
@@ -64,6 +66,11 @@ exports.createComponent_ = function(
             return self.send(makeAction(event));
           });
         };
+      },
+      monitor_: function(action) {
+        return self.monitor(identityEventFn)(function() {
+          return action;
+        });
       },
       instance_: instance
     };
@@ -114,9 +121,10 @@ exports.createComponent_ = function(
   Component.displayName = displayName;
 
   Component.prototype.shouldComponentUpdate = function(nextProps, nextState) {
-    return this.$$spec.shouldUpdate(contextToSelf(this))(nextProps.$$props)(
-      nextState === null ? null : nextState.$$state
-    );
+    return this.$$spec.shouldUpdate({
+      props: this.props.$$props,
+      state: this.state === null ? null : this.state.$$state
+    })(nextProps.$$props)(nextState === null ? null : nextState.$$state);
   };
 
   Component.prototype.componentDidMount = function() {
@@ -129,7 +137,10 @@ exports.createComponent_ = function(
 
   Component.prototype.componentWillUnmount = function() {
     this.$$mounted = false;
-    return this.$$spec.willUnmount(contextToSelf(this))();
+    return this.$$spec.willUnmount({
+      props: this.props.$$props,
+      state: this.state === null ? null : this.state.$$state
+    })();
   };
 
   Component.prototype.render = function() {

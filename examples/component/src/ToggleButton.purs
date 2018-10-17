@@ -28,7 +28,7 @@ render = make component
 
   , render = \self ->
       R.button
-        { onClick: self.capture identity $ const Toggle
+        { onClick: self.capture_ Toggle
         , children:
             [ R.text self.props.label
             , R.text if self.state.on

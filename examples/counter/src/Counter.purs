@@ -22,7 +22,7 @@ render = make component
 
   , render = \self ->
       R.button
-        { onClick: self.capture identity $ const Increment
+        { onClick: self.capture_ Increment
         , children: [ R.text (self.props.label <> ": " <> show self.state.counter) ]
         }
   }
