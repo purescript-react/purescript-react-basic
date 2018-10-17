@@ -6,8 +6,8 @@ import Data.Maybe (Maybe(..), fromMaybe, maybe)
 import React.Basic (Component, JSX, StateUpdate(..), createComponent, make)
 import React.Basic as React
 import React.Basic.DOM as R
-import React.Basic.DOM.Events (preventDefault, targetValue, timeStamp)
-import React.Basic.Events as Events
+import React.Basic.DOM.Events (targetValue, timeStamp)
+import React.Basic.Events (merge)
 
 type Props = {}
 
@@ -32,11 +32,9 @@ render = make component
       React.fragment
         [ R.input
             { onChange:
-                Events.handler
-                  (preventDefault >>> Events.merge { targetValue, timeStamp })
-                  \{ timeStamp, targetValue } ->
-                    self.send $
-                      ValueChanged (fromMaybe "" targetValue) timeStamp
+                self.capture
+                  (merge { targetValue, timeStamp })
+                  \{ timeStamp, targetValue } -> ValueChanged (fromMaybe "" targetValue) timeStamp
             , value: self.state.value
             }
         , R.p_ [ R.text ("Current value = " <> show self.state.value) ]

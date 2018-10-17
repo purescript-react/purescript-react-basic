@@ -5,7 +5,6 @@ import Prelude
 import Effect.Console (log)
 import React.Basic (Component, JSX, StateUpdate(..), createComponent, make)
 import React.Basic.DOM as R
-import React.Basic.Events as Events
 
 type Props =
   { label :: String
@@ -29,7 +28,7 @@ render = make component
 
   , render = \self ->
       R.button
-        { onClick: Events.handler_ do self.send Toggle
+        { onClick: self.capture identity $ const Toggle
         , children:
             [ R.text self.props.label
             , R.text if self.state.on

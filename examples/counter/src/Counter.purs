@@ -4,7 +4,6 @@ import Prelude
 
 import React.Basic (Component, JSX, StateUpdate(..), createComponent, make)
 import React.Basic.DOM as R
-import React.Basic.Events as Events
 
 type Props =
   { label :: String
@@ -23,7 +22,7 @@ render = make component
 
   , render = \self ->
       R.button
-        { onClick: Events.handler_ do self.send Increment
+        { onClick: self.capture identity $ const Increment
         , children: [ R.text (self.props.label <> ": " <> show self.state.counter) ]
         }
   }

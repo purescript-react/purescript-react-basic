@@ -25,11 +25,13 @@ module React.Basic
 import Prelude
 
 import Data.Either (Either(..))
-import Data.Function.Uncurried (Fn2, Fn3, runFn2, runFn3)
+import Data.Function.Uncurried (Fn2, Fn5, runFn2, runFn5)
 import Data.Nullable (Nullable, notNull, null)
 import Effect (Effect)
 import Effect.Aff (Aff, runAff_)
 import Effect.Console (error)
+import React.Basic.DOM.Events (preventDefault, stopPropagation)
+import React.Basic.Events (EventFn, EventHandler, SyntheticEvent, handler)
 import Unsafe.Coerce (unsafeCoerce)
 
 -- | A virtual DOM element.
@@ -54,7 +56,7 @@ type ComponentSpec props state initialState action =
   , render       :: Self props state action -> JSX
   }
 
-type Component = forall props state action. ComponentSpec props state Void action
+type Component = forall props state action. ComponentSpec props state Unit action
 
 type Update props state action
    = Self props state action
@@ -73,6 +75,12 @@ type Self props state action =
   , readProps :: Effect props
   , readState :: Effect state
   , send      :: action -> Effect Unit
+  -- | Create a capturing* `EventHandler` to send an action when an event occurs.
+  -- |
+  -- | *capturing: prevent default and stop propagation
+  , capture   :: forall a. EventFn SyntheticEvent a -> (a -> action) -> EventHandler
+  -- | Like `capture`, but does not cancel the event.
+  , monitor   :: forall a. EventFn SyntheticEvent a -> (a -> action) -> EventHandler
 
   -- | Unsafe, but still frequently better than rewriting a
   -- | whold component in JS
@@ -100,7 +108,7 @@ asyncEffects work self = runAff_ handle (work self)
   where
     handle (Right action) = self.send action
     handle (Left err) = do
-      error "An async action failed."
+      error $ "An async action failed in a " <> displayNameFromSelf self <> " component."
       -- Unsafely coercing to preserve browser console
       -- error features such as linked stack traces
       error (unsafeCoerce err)
@@ -175,7 +183,7 @@ foreign import make
 -- | ```
 makeStateless
   :: forall props
-   . ComponentSpec props Void Void Void
+   . ComponentSpec props Unit Unit Unit
   -> (props -> JSX)
   -> props
   -> JSX
@@ -187,19 +195,21 @@ data ReactComponent props
 createComponent
   :: forall props state action
    . String
-  -> ComponentSpec props state Void action
-createComponent = runFn3 createComponent_ NoUpdate buildStateUpdate
+  -> ComponentSpec props state Unit action
+createComponent = runFn5 createComponent_ NoUpdate buildStateUpdate handler ((preventDefault >>> stopPropagation) >>> _)
 
 foreign import createComponent_
   :: forall props state action
-   . Fn3
+   . Fn5
       (StateUpdate props state action)
       (StateUpdate props state action
         -> { state   :: Nullable state
            , effects :: Nullable (Self props state action -> Effect Unit)
            })
+      (forall a. EventFn SyntheticEvent a -> (a -> Effect Unit) -> EventHandler)
+      (forall a. EventFn SyntheticEvent a -> EventFn SyntheticEvent a)
       String
-      (ComponentSpec props state Void action)
+      (ComponentSpec props state Unit action)
 
 -- | An empty node. This is often useful when you would like to conditionally
 -- | show something, but you don't want to (or can't) modify the `children` prop
@@ -255,8 +265,14 @@ foreign import toReactComponent
    . ComponentSpec { | props } state state action
   -> ReactComponent { | props }
 
-displayName
+displayNameFromComponentSpec
   :: forall props state initialState action
    . ComponentSpec props state initialState action
   -> String
-displayName = _.displayName <<< unsafeCoerce <<< _."$$type"
+displayNameFromComponentSpec = _.displayName <<< unsafeCoerce <<< _."$$type"
+
+displayNameFromSelf
+  :: forall props state action
+   . Self props state action
+  -> String
+displayNameFromSelf = _.dislpayName <<< _."$$type" <<< _."$$spec" <<< unsafeCoerce <<< _.instance_

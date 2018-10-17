@@ -3,7 +3,13 @@
 var React = require("react");
 var Fragment = React.Fragment || "div";
 
-exports.createComponent_ = function(noUpdate, buildStateUpdate, displayName) {
+exports.createComponent_ = function(
+  noUpdate,
+  buildStateUpdate,
+  handler,
+  composeCancel,
+  displayName
+) {
   function contextToSelf(instance) {
     var self = {
       props: instance.props.$$props,
@@ -17,6 +23,9 @@ exports.createComponent_ = function(noUpdate, buildStateUpdate, displayName) {
       },
       send: function(action) {
         return function() {
+          if (!self.instance_.$$mounted) {
+            return;
+          }
           var sideEffects = null;
           self.instance_.setState(
             function(s) {
@@ -40,6 +49,20 @@ exports.createComponent_ = function(noUpdate, buildStateUpdate, displayName) {
               }
             }
           );
+        };
+      },
+      capture: function(eventFn) {
+        return function(makeAction) {
+          return handler(composeCancel(eventFn))(function(event) {
+            return self.send(makeAction(event));
+          });
+        };
+      },
+      monitor: function(eventFn) {
+        return function(makeAction) {
+          return handler(eventFn)(function(event) {
+            return self.send(makeAction(event));
+          });
         };
       },
       instance_: instance
@@ -74,6 +97,7 @@ exports.createComponent_ = function(noUpdate, buildStateUpdate, displayName) {
   };
 
   var Component = function constructor(props) {
+    this.$$mounted = true;
     this.$$spec = props.$$spec;
     this.state =
       // React may optimize components with no state,
@@ -104,6 +128,7 @@ exports.createComponent_ = function(noUpdate, buildStateUpdate, displayName) {
   };
 
   Component.prototype.componentWillUnmount = function() {
+    this.$$mounted = false;
     return this.$$spec.willUnmount(contextToSelf(this))();
   };
 
