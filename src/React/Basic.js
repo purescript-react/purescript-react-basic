@@ -11,6 +11,32 @@ exports.createComponent_ = function(
   identityEventFn,
   displayName
 ) {
+  var defaultInitialState = null;
+  var defaultShouldUpdate = function() {
+    return function() {
+      return function() {
+        return true;
+      };
+    };
+  };
+  var defaultDidMount = function() {
+    return function() {};
+  };
+  var defaultDidUpdate = function() {
+    return function() {};
+  };
+  var defaultWillUnmount = function() {
+    return function() {};
+  };
+  var defaultUpdate = function() {
+    return function() {
+      return noUpdate;
+    };
+  };
+  var defaultRender = function() {
+    return false;
+  };
+
   function contextToSelf(instance) {
     var self = {
       props: instance.props.$$props,
@@ -24,7 +50,10 @@ exports.createComponent_ = function(
       },
       send: function(action) {
         return function() {
-          if (!self.instance_.$$mounted) {
+          if (
+            !self.instance_.$$mounted ||
+            self.instance_.$$spec.update === defaultUpdate
+          ) {
             return;
           }
           var sideEffects = null;
@@ -77,32 +106,6 @@ exports.createComponent_ = function(
     return self;
   }
 
-  var defaultInitialState = null;
-  var defaultShouldUpdate = function() {
-    return function() {
-      return function() {
-        return true;
-      };
-    };
-  };
-  var defaultDidMount = function() {
-    return function() {};
-  };
-  var defaultDidUpdate = function() {
-    return function() {};
-  };
-  var defaultWillUnmount = function() {
-    return function() {};
-  };
-  var defaultUpdate = function() {
-    return function() {
-      return noUpdate;
-    };
-  };
-  var defaultRender = function() {
-    return false;
-  };
-
   var Component = function constructor(props) {
     this.$$mounted = true;
     this.$$spec = props.$$spec;
@@ -121,26 +124,38 @@ exports.createComponent_ = function(
   Component.displayName = displayName;
 
   Component.prototype.shouldComponentUpdate = function(nextProps, nextState) {
-    return this.$$spec.shouldUpdate({
-      props: this.props.$$props,
-      state: this.state === null ? null : this.state.$$state
-    })(nextProps.$$props)(nextState === null ? null : nextState.$$state);
+    var shouldUpdate = this.$$spec.shouldUpdate;
+    return shouldUpdate === defaultShouldUpdate
+      ? true
+      : shouldUpdate({
+          props: this.props.$$props,
+          state: this.state === null ? null : this.state.$$state
+        })(nextProps.$$props)(nextState === null ? null : nextState.$$state);
   };
 
   Component.prototype.componentDidMount = function() {
-    return this.$$spec.didMount(contextToSelf(this))();
+    var didMount = this.$$spec.didMount;
+    if (didMount !== defaultDidMount) {
+      this.$$spec.didMount(contextToSelf(this))();
+    }
   };
 
   Component.prototype.componentDidUpdate = function() {
-    return this.$$spec.didUpdate(contextToSelf(this))();
+    var didUpdate = this.$$spec.didUpdate;
+    if (didUpdate !== defaultDidUpdate) {
+      didUpdate(contextToSelf(this))();
+    }
   };
 
   Component.prototype.componentWillUnmount = function() {
     this.$$mounted = false;
-    return this.$$spec.willUnmount({
-      props: this.props.$$props,
-      state: this.state === null ? null : this.state.$$state
-    })();
+    var willUnmount = this.$$spec.willUnmount;
+    if (willUnmount !== defaultWillUnmount) {
+      willUnmount({
+        props: this.props.$$props,
+        state: this.state === null ? null : this.state.$$state
+      })();
+    }
   };
 
   Component.prototype.render = function() {
