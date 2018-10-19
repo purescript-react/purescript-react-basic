@@ -3,6 +3,7 @@ module ControlledInput where
 import Prelude
 
 import Data.Maybe (Maybe(..), fromMaybe, maybe)
+import Effect.Console (logShow)
 import React.Basic (Component, JSX, StateUpdate(..), createComponent, make)
 import React.Basic as React
 import React.Basic.DOM as R
@@ -28,7 +29,10 @@ render = make component
           , timestamp = Just timestamp
           }
 
-  , render = \self ->
+  , render = render
+  }
+  where
+    render self =
       React.fragment
         [ R.input
             { onChange:
@@ -40,7 +44,7 @@ render = make component
         , R.p_ [ R.text ("Current value = " <> show self.state.value) ]
         , R.p_ [ R.text ("Changed at = " <> maybe "never" show self.state.timestamp) ]
         ]
-  }
+
 
 component :: Component
 component = createComponent "ControlledInput"
