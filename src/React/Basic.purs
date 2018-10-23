@@ -6,9 +6,15 @@ module React.Basic
   , Update
   , StateUpdate(..)
   , Self
-  , LimitedSelf
   , ReactComponent
   , ReactComponentInstance
+  , readProps
+  , readState
+  , send
+  , capture
+  , capture_
+  , monitor
+  , monitor_
   , make
   , makeStateless
   , asyncEffects
@@ -27,11 +33,11 @@ module React.Basic
 import Prelude
 
 import Data.Either (Either(..))
-import Data.Function.Uncurried (Fn2, Fn5, runFn2, runFn5)
+import Data.Function.Uncurried (Fn2, Fn1, runFn1, runFn2)
 import Data.Nullable (Nullable, notNull, null)
 import Effect (Effect)
-import Effect.Aff (Aff, runAff_)
-import Effect.Console (error)
+import Effect.Aff (Aff, Error, runAff_)
+import Effect.Uncurried (EffectFn2, runEffectFn2)
 import React.Basic.DOM.Events (preventDefault, stopPropagation)
 import React.Basic.Events (EventFn, EventHandler, SyntheticEvent, handler)
 import Unsafe.Coerce (unsafeCoerce)
@@ -50,10 +56,10 @@ data ComponentType props state action
 type ComponentSpec props state initialState action =
   { "$$type"     :: ComponentType props state action
   , initialState :: initialState
-  , shouldUpdate :: LimitedSelf props state -> props -> state -> Boolean
+  , shouldUpdate :: Self props state action -> props -> state -> Boolean
   , didMount     :: Self props state action -> Effect Unit
   , didUpdate    :: Self props state action -> Effect Unit
-  , willUnmount  :: LimitedSelf props state -> Effect Unit
+  , willUnmount  :: Self props state action -> Effect Unit
   , update       :: Update props state action
   , render       :: Self props state action -> JSX
   }
@@ -72,31 +78,58 @@ data StateUpdate props state action
   | UpdateAndSideEffects state (Self props state action -> Effect Unit)
 
 type Self props state action =
+  -- | Read the snapshot of `props` taken when this `Self` was created.
   { props     :: props
-  , state     :: state
-  , readProps :: Effect props
-  , readState :: Effect state
-  , send      :: action -> Effect Unit
-  -- | Create a capturing* `EventHandler` to send an action when an event occurs.
-  -- |
-  -- | *capturing: prevent default and stop propagation
-  , capture   :: forall a. EventFn SyntheticEvent a -> (a -> action) -> EventHandler
-  , capture_  ::           action -> EventHandler
-  -- | Like `capture`, but does not cancel the event.
-  , monitor   :: forall a. EventFn SyntheticEvent a -> (a -> action) -> EventHandler
-  , monitor_  ::           action -> EventHandler
 
-  -- | Unsafe, but still frequently better than rewriting a
-  -- | whold component in JS
+  -- | Read the snapshot of `state` taken when this `Self` was created.
+  , state     :: state
+
+-- | Unsafe escape hatch, but still frequently better than
+-- | rewriting an entire component in JS.
   , instance_ :: ReactComponentInstance
   }
 
-type LimitedSelf props state =
-  { props :: props
-  , state :: state
-  }
-
 data ReactComponentInstance
+
+-- | Read the most up to date `props` directly from the component instance
+-- | associated with this `Self`. Generally, the `props` function is sufficient.
+foreign import readProps :: forall props state action. Self props state action -> Effect props
+
+-- | Read the most up to date `state` directly from the component instance
+-- | associated with this `Self`. Generally, the `state` function is sufficient.
+foreign import readState :: forall props state action. Self props state action -> Effect state
+
+-- | Dispatch an `action` into the component to be handled by `update`.
+send :: forall props state action. Self props state action -> action -> Effect Unit
+send = runEffectFn2 (runFn1 send_ buildStateUpdate)
+
+foreign import send_
+  :: forall props state action
+   . Fn1
+       (StateUpdate props state action
+         -> { state   :: Nullable state
+            , effects :: Nullable (Self props state action -> Effect Unit)
+            })
+       (EffectFn2
+         (Self props state action)
+         action
+         Unit)
+
+-- | Create a capturing* `EventHandler` to send an action when an event occurs.
+-- |
+-- | *capturing: prevent default and stop propagation
+capture :: forall props state action a. Self props state action -> EventFn SyntheticEvent a -> (a -> action) -> EventHandler
+capture self eventFn = monitor self (preventDefault >>> stopPropagation >>> eventFn)
+
+capture_ :: forall props state action. Self props state action -> action -> EventHandler
+capture_ self action = capture self identity \_ -> action
+
+-- | Like `capture`, but does not cancel the event.
+monitor :: forall props state action a. Self props state action -> EventFn SyntheticEvent a -> (a -> action) -> EventHandler
+monitor self eventFn makeAction = handler eventFn \a -> send self (makeAction a)
+
+monitor_ :: forall props state action. Self props state action -> action -> EventHandler
+monitor_ self action = monitor self identity \_ -> action
 
 -- | Convenience function for sending an action asynchronously.
 -- |
@@ -110,12 +143,8 @@ asyncEffects
   -> Effect Unit
 asyncEffects work self = runAff_ handle (work self)
   where
-    handle (Right action) = self.send action
-    handle (Left err) = do
-      error $ "An async action failed in a " <> displayNameFromSelf self <> " component."
-      -- Unsafely coercing to preserve browser console
-      -- error features such as linked stack traces
-      error (unsafeCoerce err)
+    handle (Right action) = send self action
+    handle (Left err) = runEffectFn2 warningFailedAsyncAction self err
 
 buildStateUpdate
   :: forall props state action
@@ -128,16 +157,16 @@ buildStateUpdate = case _ of
     { state:   null
     , effects: null
     }
-  Update state ->
-    { state:   notNull state
+  Update state_ ->
+    { state:   notNull state_
     , effects: null
     }
   SideEffects effects ->
     { state:   null
     , effects: notNull effects
     }
-  UpdateAndSideEffects state effects ->
-    { state:   notNull state
+  UpdateAndSideEffects state_ effects ->
+    { state:   notNull state_
     , effects: notNull effects
     }
 
@@ -201,28 +230,16 @@ createComponent
    . String
   -> ComponentSpec props state Unit action
 createComponent =
-  runFn5
+  runFn1
     createComponent_
-    NoUpdate
-    buildStateUpdate
-    handler
-    ((preventDefault >>> stopPropagation) >>> _)
-    identity
+    (\_ action ->
+      SideEffects \self -> do
+        runEffectFn2 warningDefaultUpdate self action)
 
 foreign import createComponent_
   :: forall props state action
-   . Fn5
-      (StateUpdate props state action)
-      (StateUpdate props state action
-        -> { state   :: Nullable state
-           , effects :: Nullable (Self props state action -> Effect Unit)
-           })
-      -- handler
-      (forall a. EventFn SyntheticEvent a -> (a -> Effect Unit) -> EventHandler)
-      -- composeCancelEventFn
-      (forall a. EventFn SyntheticEvent a -> EventFn SyntheticEvent a)
-      -- identityEventFn
-      (EventFn SyntheticEvent SyntheticEvent)
+   . Fn1
+      (Update props state action)
       (String -> ComponentSpec props state Unit action)
 
 -- | An empty node. This is often useful when you would like to conditionally
@@ -274,11 +291,6 @@ foreign import elementKeyed_
   :: forall props
    . Fn2 (ReactComponent { | props }) { key :: String | props } JSX
 
-foreign import toReactComponent
-  :: forall props state action
-   . ComponentSpec { | props } state state action
-  -> ReactComponent { | props }
-
 foreign import displayNameFromComponentSpec
   :: forall props state initialState action
    . ComponentSpec props state initialState action
@@ -288,3 +300,38 @@ foreign import displayNameFromSelf
   :: forall props state action
    . Self props state action
   -> String
+
+toReactComponent
+  :: forall jsProps props state action
+   . ({ | jsProps } -> props)
+  -> ComponentSpec props state state action
+  -> ReactComponent { | jsProps }
+toReactComponent = runFn2 toReactComponent_
+
+foreign import toReactComponent_
+  :: forall jsProps props state action
+   . Fn2
+       ({ | jsProps } -> props)
+       (ComponentSpec props state state action)
+       (ReactComponent { | jsProps })
+
+foreign import warningDefaultUpdate
+  :: forall props state action
+   . EffectFn2
+       (Self props state action)
+       action
+       Unit
+
+foreign import warningUnmountedComponentAction
+  :: forall props state action
+   . EffectFn2
+       (Self props state action)
+       action
+       Unit
+
+foreign import warningFailedAsyncAction
+  :: forall props state action
+   . EffectFn2
+       (Self props state action)
+       Error
+       Unit

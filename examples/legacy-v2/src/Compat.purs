@@ -8,7 +8,7 @@ module React.Basic.Compat
 import Prelude
 
 import Effect (Effect)
-import React.Basic (JSX, ReactComponent, Self, StateUpdate(..), ComponentSpec, createComponent, element, elementKeyed, empty, fragment, fragmentKeyed, make, makeStateless, toReactComponent)
+import React.Basic (ComponentSpec, JSX, ReactComponent, Self, StateUpdate(..), createComponent, element, elementKeyed, empty, fragment, fragmentKeyed, make, makeStateless, send, toReactComponent)
 
 type Component = ReactComponent
 
@@ -22,7 +22,7 @@ component
      }
   -> ReactComponent { | props }
 component { displayName, initialState, receiveProps, render } =
-  toReactComponent (createComponent displayName)
+  toReactComponent identity (createComponent displayName)
     { initialState = initialState
     , didMount = receiveProps <<< selfToLegacySelf
     , didUpdate = receiveProps <<< selfToLegacySelf
@@ -30,10 +30,10 @@ component { displayName, initialState, receiveProps, render } =
     , render = render <<< selfToLegacySelf
     }
   where
-    selfToLegacySelf { props, state, send } =
+    selfToLegacySelf self@{ props, state } =
       { props
       , state
-      , setState: send
+      , setState: send self
       }
 
 -- | Supports a common subset of the v2 API to ease the upgrade process
@@ -44,6 +44,6 @@ stateless
      }
   -> ReactComponent { | props }
 stateless { displayName, render } =
-  toReactComponent (createComponent displayName)
+  toReactComponent identity (createComponent displayName)
     { render = \self -> render self.props
     }

@@ -2,7 +2,7 @@ module Main where
 
 import Prelude
 
-import Container as Container
+import Container (toggleButtonContainer)
 import Data.Maybe (Maybe(..))
 import Effect (Effect)
 import Effect.Exception (throw)
@@ -18,5 +18,5 @@ main = do
   case container of
     Nothing -> throw "Container element not found."
     Just c  ->
-      let app = Container.render
+      let app = toggleButtonContainer
        in render app c

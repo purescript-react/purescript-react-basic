@@ -11,8 +11,8 @@ type Props =
   }
 
 -- | checks `component`
-counter :: Component Props
-counter = component { displayName: "LegacyCounter", initialState, receiveProps, render }
+legacyCounter :: Component Props
+legacyCounter = component { displayName: "LegacyCounter", initialState, receiveProps, render }
   where
     initialState =
       { counter: 0

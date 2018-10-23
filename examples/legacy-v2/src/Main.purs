@@ -5,7 +5,7 @@ import Prelude
 import Data.Maybe (Maybe(..))
 import Effect (Effect)
 import Effect.Exception (throw)
-import LegacyCounter as LegacyCounter
+import LegacyCounter (legacyCounter)
 import React.Basic (element)
 import React.Basic.DOM (render)
 import Web.DOM.NonElementParentNode (getElementById)
@@ -19,5 +19,5 @@ main = do
   case container of
     Nothing -> throw "Container element not found."
     Just c  ->
-      let app = element LegacyCounter.counter { label: "Increment" }
+      let app = element legacyCounter { label: "Increment" }
        in render app c

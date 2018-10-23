@@ -2,7 +2,7 @@ module Main where
 
 import Prelude
 
-import ControlledInput as ControlledInput
+import ControlledInput (controlledInput)
 import Data.Maybe (Maybe(..))
 import Effect (Effect)
 import Effect.Exception (throw)
@@ -18,5 +18,5 @@ main = do
   case container of
     Nothing -> throw "Container element not found."
     Just c  ->
-      let app = ControlledInput.render {}
+      let app = controlledInput {}
        in render app c

@@ -2,7 +2,7 @@ module Main where
 
 import Prelude
 
-import Counter as Counter
+import Counter (counter)
 import Data.Maybe (Maybe(..))
 import Effect (Effect)
 import Effect.Exception (throw)
@@ -18,5 +18,5 @@ main = do
   case container of
     Nothing -> throw "Container element not found."
     Just c  ->
-      let app = Counter.render { label: "Increment" }
+      let app = counter { label: "Increment" }
        in render app c

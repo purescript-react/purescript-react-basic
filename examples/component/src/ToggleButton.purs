@@ -3,7 +3,7 @@ module ToggleButton where
 import Prelude
 
 import Effect.Console (log)
-import React.Basic (Component, JSX, StateUpdate(..), createComponent, make)
+import React.Basic (Component, JSX, StateUpdate(..), capture_, createComponent, make)
 import React.Basic.DOM as R
 
 type Props =
@@ -13,8 +13,8 @@ type Props =
 data Action
   = Toggle
 
-render :: Props -> JSX
-render = make component
+toggleButton :: Props -> JSX
+toggleButton = make component
   { initialState =
       { on: false
       }
@@ -28,7 +28,7 @@ render = make component
 
   , render = \self ->
       R.button
-        { onClick: self.capture_ Toggle
+        { onClick: capture_ self Toggle
         , children:
             [ R.text self.props.label
             , R.text if self.state.on

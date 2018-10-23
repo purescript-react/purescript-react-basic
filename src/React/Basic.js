@@ -3,13 +3,48 @@
 var React = require("react");
 var Fragment = React.Fragment || "div";
 
-exports.createComponent_ = function(
-  noUpdate,
-  buildStateUpdate,
-  handler,
-  composeCancelEventFn,
-  identityEventFn
-) {
+exports.readProps = function(self) {
+  return self.instance_.props.$$props;
+};
+
+exports.readState = function(self) {
+  var state = self.instance_.state;
+  return state === null ? null : state.$$state;
+};
+
+exports.send_ = function(buildStateUpdate) {
+  return function(self, action) {
+    if (!self.instance_.$$mounted) {
+      exports.warningUnmountedComponentAction(self, action);
+      return;
+    }
+    var sideEffects = null;
+    self.instance_.setState(
+      function(s) {
+        var setStateContext = self.instance_.toSelf();
+        setStateContext.state = s.$$state;
+        var updates = buildStateUpdate(
+          self.instance_.$$spec.update(setStateContext)(action)
+        );
+        if (updates.effects !== null) {
+          sideEffects = updates.effects;
+        }
+        if (updates.state !== null && updates.state !== s.$$state) {
+          return { $$state: updates.state };
+        } else {
+          return null;
+        }
+      },
+      function() {
+        if (sideEffects !== null) {
+          sideEffects(this.toSelf())();
+        }
+      }
+    );
+  };
+};
+
+exports.createComponent_ = function(defaultUpdate) {
   var defaultInitialState = null;
   var defaultShouldUpdate = function() {
     return function() {
@@ -27,80 +62,18 @@ exports.createComponent_ = function(
   var defaultWillUnmount = function() {
     return function() {};
   };
-  var defaultUpdate = function() {
-    return function() {
-      return noUpdate;
-    };
-  };
   var defaultRender = function() {
     return false;
   };
 
-  function contextToSelf(instance) {
+  // Begin component prototype functions
+  // (`this`-dependent, defined outside `createComponent`
+  // for a slight performance boost)
+  function toSelf() {
     var self = {
-      props: instance.props.$$props,
-      state: instance.state === null ? null : instance.state.$$state,
-      readProps: function() {
-        return self.instance_.props.$$props;
-      },
-      readState: function() {
-        var state = self.instance_.state;
-        return state === null ? null : state.$$state;
-      },
-      send: function(action) {
-        return function() {
-          if (
-            !self.instance_.$$mounted ||
-            self.instance_.$$spec.update === defaultUpdate
-          ) {
-            return;
-          }
-          var sideEffects = null;
-          self.instance_.setState(
-            function(s) {
-              var setStateContext = contextToSelf(self.instance_);
-              setStateContext.state = s.$$state;
-              var updates = buildStateUpdate(
-                self.instance_.$$spec.update(setStateContext)(action)
-              );
-              if (updates.effects !== null) {
-                sideEffects = updates.effects;
-              }
-              if (updates.state !== null && updates.state !== s.$$state) {
-                return { $$state: updates.state };
-              } else {
-                return null;
-              }
-            },
-            function() {
-              if (sideEffects !== null) {
-                sideEffects(contextToSelf(this))();
-              }
-            }
-          );
-        };
-      },
-      capture: function(eventFn) {
-        return self.monitor(composeCancelEventFn(eventFn));
-      },
-      capture_: function(action) {
-        return self.capture(identityEventFn)(function() {
-          return action;
-        });
-      },
-      monitor: function(eventFn) {
-        return function(makeAction) {
-          return handler(eventFn)(function(event) {
-            return self.send(makeAction(event));
-          });
-        };
-      },
-      monitor_: function(action) {
-        return self.monitor(identityEventFn)(function() {
-          return action;
-        });
-      },
-      instance_: instance
+      props: this.props.$$props,
+      state: this.state === null ? null : this.state.$$state,
+      instance_: this
     };
     return self;
   }
@@ -109,23 +82,22 @@ exports.createComponent_ = function(
     var shouldUpdate = this.$$spec.shouldUpdate;
     return shouldUpdate === defaultShouldUpdate
       ? true
-      : shouldUpdate({
-          props: this.props.$$props,
-          state: this.state === null ? null : this.state.$$state
-        })(nextProps.$$props)(nextState === null ? null : nextState.$$state);
+      : shouldUpdate(this.toSelf())(nextProps.$$props)(
+          nextState === null ? null : nextState.$$state
+        );
   }
 
   function componentDidMount() {
     var didMount = this.$$spec.didMount;
     if (didMount !== defaultDidMount) {
-      this.$$spec.didMount(contextToSelf(this))();
+      this.$$spec.didMount(this.toSelf())();
     }
   }
 
   function componentDidUpdate() {
     var didUpdate = this.$$spec.didUpdate;
     if (didUpdate !== defaultDidUpdate) {
-      didUpdate(contextToSelf(this))();
+      didUpdate(this.toSelf())();
     }
   }
 
@@ -133,16 +105,14 @@ exports.createComponent_ = function(
     this.$$mounted = false;
     var willUnmount = this.$$spec.willUnmount;
     if (willUnmount !== defaultWillUnmount) {
-      willUnmount({
-        props: this.props.$$props,
-        state: this.state === null ? null : this.state.$$state
-      })();
+      willUnmount(this.toSelf())();
     }
   }
 
   function render() {
-    return this.$$spec.render(contextToSelf(this));
+    return this.$$spec.render(this.toSelf());
   }
+  // End component prototype functions
 
   return function(displayName) {
     var Component = function constructor(props) {
@@ -160,6 +130,7 @@ exports.createComponent_ = function(
 
     Component.displayName = displayName;
     Component.prototype = Object.create(React.Component.prototype);
+    Component.prototype.toSelf = toSelf;
     Component.prototype.shouldComponentUpdate = shouldComponentUpdate;
     Component.prototype.componentDidMount = componentDidMount;
     Component.prototype.componentDidUpdate = componentDidUpdate;
@@ -187,26 +158,6 @@ exports.make = function($$spec) {
     };
     return React.createElement($$spec.$$type, props);
   };
-};
-
-exports.toReactComponent = function($$spec) {
-  var Component = function constructor() {
-    return this;
-  };
-
-  Component.prototype = Object.create(React.Component.prototype);
-
-  Component.displayName = $$spec.$$type.displayName + " (Wrapper)";
-
-  Component.prototype.render = function() {
-    var props = {
-      $$props: this.props,
-      $$spec: $$spec
-    };
-    return React.createElement($$spec.$$type, props);
-  };
-
-  return Component;
 };
 
 exports.keyed_ = function(key, child) {
@@ -239,4 +190,53 @@ exports.displayNameFromComponentSpec = function($$spec) {
 
 exports.displayNameFromSelf = function(self) {
   return exports.displayNameFromComponentSpec(self.instance_.$$spec);
+};
+
+exports.toReactComponent_ = function(fromJSProps, $$spec) {
+  var Component = function constructor() {
+    return this;
+  };
+
+  Component.prototype = Object.create(React.Component.prototype);
+
+  Component.displayName = $$spec.$$type.displayName + " (Wrapper)";
+
+  Component.prototype.render = function() {
+    var props = {
+      $$props: fromJSProps(this.props),
+      $$spec: $$spec
+    };
+    return React.createElement($$spec.$$type, props);
+  };
+
+  return Component;
+};
+
+exports.warningDefaultUpdate = function(self, action) {
+  console.error(
+    "A " +
+      exports.displayNameFromSelf(self) +
+      " component received an action but has no `update` function defined. Override the default `update` function to handle this action."
+  );
+  console.error("Self:", self);
+  console.error("Action:", action);
+};
+
+exports.warningUnmountedComponentAction = function(self, action) {
+  console.error(
+    "An unmounted " +
+      exports.displayNameFromSelf(self) +
+      " component received the action below. Actions received by unmounted components usually indicate a memory leak. Make sure to unsubscribe from any async work in `willUnmount`."
+  );
+  console.error("Self:", self);
+  console.error("Action:", action);
+};
+
+exports.warningFailedAsyncAction = function(self, error) {
+  console.error(
+    "An async action failed in a " +
+      exports.displayNameFromSelf(self) +
+      " component."
+  );
+  console.error(error);
 };

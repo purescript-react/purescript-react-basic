@@ -3,8 +3,7 @@ module ControlledInput where
 import Prelude
 
 import Data.Maybe (Maybe(..), fromMaybe, maybe)
-import Effect.Console (logShow)
-import React.Basic (Component, JSX, StateUpdate(..), createComponent, make)
+import React.Basic (Component, JSX, StateUpdate(..), capture, createComponent, make)
 import React.Basic as React
 import React.Basic.DOM as R
 import React.Basic.DOM.Events (targetValue, timeStamp)
@@ -15,8 +14,8 @@ type Props = {}
 data Action
   = ValueChanged String Number
 
-render :: Props -> JSX
-render = make component
+controlledInput :: Props -> JSX
+controlledInput = make component
   { initialState =
       { value: "hello world"
       , timestamp: Nothing
@@ -29,22 +28,18 @@ render = make component
           , timestamp = Just timestamp
           }
 
-  , render = render
-  }
-  where
-    render self =
+  , render = \self ->
       React.fragment
         [ R.input
             { onChange:
-                self.capture
-                  (merge { targetValue, timeStamp })
+                capture self (merge { targetValue, timeStamp })
                   \{ timeStamp, targetValue } -> ValueChanged (fromMaybe "" targetValue) timeStamp
             , value: self.state.value
             }
         , R.p_ [ R.text ("Current value = " <> show self.state.value) ]
         , R.p_ [ R.text ("Changed at = " <> maybe "never" show self.state.timestamp) ]
         ]
-
+  }
 
 component :: Component
 component = createComponent "ControlledInput"

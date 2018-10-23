@@ -4,14 +4,14 @@ import Prelude
 
 import React.Basic (Component, JSX, createComponent, makeStateless)
 import React.Basic.DOM as R
-import ToggleButton as ToggleButton
+import ToggleButton (toggleButton)
 
-render :: JSX
-render = unit # makeStateless component \_ ->
+toggleButtonContainer :: JSX
+toggleButtonContainer = unit # makeStateless component \_ ->
   R.div
     { children:
-        [ ToggleButton.render { label: "A" }
-        , ToggleButton.render { label: "B" }
+        [ toggleButton { label: "A" }
+        , toggleButton { label: "B" }
         ]
     }
 
