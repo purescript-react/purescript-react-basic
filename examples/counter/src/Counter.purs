@@ -5,6 +5,9 @@ import Prelude
 import React.Basic (Component, JSX, StateUpdate(..), capture_, createComponent, make)
 import React.Basic.DOM as R
 
+component :: Component
+component = createComponent "Counter"
+
 type Props =
   { label :: String
   }
@@ -14,7 +17,7 @@ data Action
 
 counter :: Props -> JSX
 counter = make component
-  { initialState = { counter: 0 }
+  { initialState = { counter: 0, dummy: 0 }
 
   , update = \self -> case _ of
       Increment ->
@@ -26,6 +29,3 @@ counter = make component
         , children: [ R.text (self.props.label <> ": " <> show self.state.counter) ]
         }
   }
-
-component :: Component
-component = createComponent "Counter"

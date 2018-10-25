@@ -1,33 +1,29 @@
 module React.Basic
-  ( Component
-  , ComponentSpec
+  ( ComponentSpec
+  , createComponent
+  , Component
   , ComponentType
-  , JSX
-  , Update
   , StateUpdate(..)
   , Self
-  , ReactComponent
-  , ReactComponentInstance
-  , readProps
-  , readState
   , send
+  , sendAsync
   , capture
   , capture_
   , monitor
   , monitor_
+  , readProps
+  , readState
   , make
   , makeStateless
-  , asyncEffects
-  , createComponent
+  , JSX
   , empty
   , keyed
   , fragment
-  , fragmentKeyed
   , element
   , elementKeyed
+  , ReactComponent
+  , ReactComponentInstance
   , toReactComponent
-  , displayNameFromComponentSpec
-  , displayNameFromSelf
   ) where
 
 import Prelude
@@ -40,9 +36,298 @@ import Effect.Aff (Aff, Error, runAff_)
 import Effect.Uncurried (EffectFn2, runEffectFn2)
 import React.Basic.DOM.Events (preventDefault, stopPropagation)
 import React.Basic.Events (EventFn, EventHandler, SyntheticEvent, handler)
-import Unsafe.Coerce (unsafeCoerce)
 
--- | A virtual DOM element.
+-- | `ComponentSpec` represents a React-Basic component implementation.
+-- |
+-- | These are the properties your component definition may override
+-- | with specific implementations. None are required to be overridden, unless
+-- | an overridden function interacts with `state`, in which case `initialState`
+-- | is required (the compiler enforces this). While you _can_ use `state` and
+-- | dispatch actions without defining `update`, doing so doesn't make much sense
+-- | so the default `update` implementation will emit a warning.
+-- |
+-- | - `initialState`
+-- |   - The component's starting state.
+-- |   - Avoid mirroring prop values in state.
+-- | - `update`
+-- |   - All state updates go through `update`.
+-- |   - `update` is called when `send` is used to dispatch an action.
+-- |   - State changes are described using `StateUpdate`. Only `Update` and `UpdateAndSideEffects` will cause rerenders and a call to `didUpdate`.
+-- |   - Side effects requested are only invoked _after_ any corrosponding state update has completed its render cycle and the changes have been applied. This means it is safe to interact with the DOM in a side effect, for example.
+-- | - `render`
+-- |   - Takes a current snapshot of the component (`Self`) and converts it to renderable `JSX`.
+-- | - `shouldUpdate`
+-- |   - Can be useful for occasional performance optimizations. Rarely necessary.
+-- | - `didMount`
+-- |   - The React component's `componentDidMount` lifecycle. Useful for initiating an action on first mount, such as fetching data from a server.
+-- | - `didUpdate`
+-- |   - The React component's `componentDidUpdate` lifecycle. Rarely necessary.
+-- | - `willUnmount`
+-- |   - The React component's `componentWillUpdate` lifecycle. Any subscriptions or timers created in `didMount` or `didUpdate` should be disposed of here.
+-- |
+-- | The component spec is generally not exported from your component
+-- | module and this type is rarely used explicitly. The simplified alias
+-- | `Component` is usually sufficient, and `make` will validate whether
+-- | your component's types line up.
+-- |
+-- | For example:
+-- |
+-- | ```purs
+-- | component :: Component
+-- | component = createComponent "Counter"
+-- |
+-- | type Props =
+-- |   { label :: String
+-- |   }
+-- |
+-- | data Action
+-- |   = Increment
+-- |
+-- | counter :: Props -> JSX
+-- | counter = make component
+-- |   { initialState = { counter: 0 }
+-- |
+-- |   , update = \self action -> case action of
+-- |       Increment ->
+-- |         Update self.state { counter = self.state.counter + 1 }
+-- |
+-- |   , render = \self ->
+-- |       R.button
+-- |         { onClick: capture_ self Increment
+-- |         , children: [ R.text (self.props.label <> ": " <> show self.state.counter) ]
+-- |         }
+-- |   }
+-- | ```
+-- |
+-- | This example component overrides `initialState`, `update`, and `render`.
+-- |
+-- | __*Note:* A `ComponentSpec` is *not* a valid React component by itself. If you would like to use
+-- |   a React-Basic component from JavaScript, use `toReactComponent`.__
+-- |
+-- | __*Note:* `$$type` is for internal use only. It needs to be on the type to
+-- |   preserve its existence during a record update, as in the example above.__
+-- |
+-- | __*See also:* `Component`, `ComponentSpec`, `make`, `makeStateless`__
+type ComponentSpec props state initialState action =
+  { initialState :: initialState
+  , update       :: Self props state action -> action -> StateUpdate props state action
+  , render       :: Self props state action -> JSX
+  , shouldUpdate :: Self props state action -> props -> state -> Boolean
+  , didMount     :: Self props state action -> Effect Unit
+  , didUpdate    :: Self props state action -> Effect Unit
+  , willUnmount  :: Self props state action -> Effect Unit
+  , "$$type"     :: ComponentType props state action
+  }
+
+-- | Creates a `ComponentSpec` with a given Display Name.
+-- |
+-- | The resulting component spec is usually given the simplified `Component` type:
+-- |
+-- | ```purs
+-- | component :: Component
+-- | component = createComponent "Counter"
+-- | ```
+-- |
+-- | This function should be used at the module level and considered side effecting.
+-- | This is because React uses referential equality when deciding whether a new
+-- | `JSX` tree is a valid update, or if it needs to be replaced entirely
+-- | (expensive and clears component state lower in the tree).
+-- |
+-- | __*Note:* A `Component` is *not* a valid React component by itself. If you would like to use
+-- |   a React-Basic component from JavaScript, use `toReactComponent`.__
+-- |
+-- | __*See also:* `Component`, `ComponentSpec`, `make`, `makeStateless`__
+createComponent
+  :: forall props state action
+   . String
+  -> ComponentSpec props state Unit action
+createComponent =
+  runFn1
+    createComponent_
+    (\_ action ->
+      SideEffects \self -> do
+        runEffectFn2 warningDefaultUpdate self action)
+
+-- | A simplified alias for `ComponentSpec`. This type is usually used to represent
+-- | the default component type returned from `createComponent`.
+type Component = forall props state action. ComponentSpec props state Unit action
+
+-- | Opaque component information for internal use.
+-- |
+-- | __*For the curious:* This is the "class" React will use to render and
+-- |   identify the component. It receives the `ComponentSpec` as a prop and knows
+-- |   how to defer behavior to it. It requires very specific props and is not useful by
+-- |   itself from JavaScript. For JavaScript interop, see `toReactComponent`.__
+data ComponentType props state action
+
+-- | Used by the `update` function to describe the kind of state update and/or side
+-- | effects desired.
+-- |
+-- | __*See also:* `ComponentSpec`__
+data StateUpdate props state action
+  = NoUpdate
+  | Update               state
+  | SideEffects                (Self props state action -> Effect Unit)
+  | UpdateAndSideEffects state (Self props state action -> Effect Unit)
+
+-- | `Self` represents the component instance at a particular point in time.
+-- |
+-- | - `props`
+-- |   - A snapshot of `props` taken when this `Self` was created.
+-- | - `state`
+-- |   - A snapshot of `state` taken when this `Self` was created.
+-- | - `instance_`
+-- |   - Unsafe escape hatch to the underlying component instance (`this` in the JavaScript React paradigm). Avoid as much as possible, but it's still frequently better than rewriting an entire component in JavaScript.
+-- |
+-- | __*See also:* `ComponentSpec`, `send`, `capture`, `readProps`, `readState`__
+type Self props state action =
+  { props     :: props
+  , state     :: state
+  , instance_ :: ReactComponentInstance
+  }
+
+-- | Dispatch an `action` into the component to be handled by `update`.
+-- |
+-- | __*See also:* `update`, `capture`__
+send :: forall props state action. Self props state action -> action -> Effect Unit
+send = runEffectFn2 (runFn1 send_ buildStateUpdate)
+
+-- | Convenience function for sending an action when an `Aff` completes.
+-- |
+-- | __*Note:* Potential failure should be handled in the given `Aff` and converted
+-- |   to an action, as the default error handler will simply log the   error to
+-- |   the console.__
+-- |
+-- | __*See also:* `send`__
+sendAsync
+  :: forall props state action
+   . Self props state action
+  -> Aff action
+  -> Effect Unit
+sendAsync self work = runAff_ handle work
+  where
+    handle (Right action) = send self action
+    handle (Left err) = runEffectFn2 warningFailedAsyncAction self err
+
+-- | Create a capturing\* `EventHandler` to send an action when an event occurs. For
+-- | more complicated event handlers requiring `Effect`, use `handler` from `React.Basic.Events`.
+-- |
+-- | __\*calls `preventDefault` and `stopPropagation`__
+-- |
+-- | __*See also:* `update`, `capture_`, `monitor`, `React.Basic.Events`__
+capture :: forall props state action a. Self props state action -> EventFn SyntheticEvent a -> (a -> action) -> EventHandler
+capture self eventFn = monitor self (preventDefault >>> stopPropagation >>> eventFn)
+
+-- | Like `capture`, but for actions which don't need to extract information from the Event.
+-- |
+-- | __*See also:* `update`, `capture`, `monitor_`__
+capture_ :: forall props state action. Self props state action -> action -> EventHandler
+capture_ self action = capture self identity \_ -> action
+
+-- | Like `capture`, but does not cancel the event.
+-- |
+-- | __*See also:* `update`, `capture`, `monitor\_`__
+monitor :: forall props state action a. Self props state action -> EventFn SyntheticEvent a -> (a -> action) -> EventHandler
+monitor self eventFn makeAction = handler eventFn \a -> send self (makeAction a)
+
+-- | Like `capture_`, but does not cancel the event.
+-- |
+-- | __*See also:* `update`, `monitor`, `capture_`, `React.Basic.Events`__
+monitor_ :: forall props state action. Self props state action -> action -> EventHandler
+monitor_ self action = monitor self identity \_ -> action
+
+-- | Read the most up to date `props` directly from the component instance
+-- | associated with this `Self`.
+-- |
+-- | _Note: This function is for specific, asynchronous edge cases.
+-- |   Generally, the `props` snapshot on `Self` is sufficient.
+-- |
+-- | __*See also:* `Self`__
+foreign import readProps :: forall props state action. Self props state action -> Effect props
+
+-- | Read the most up to date `state` directly from the component instance
+-- | associated with this `Self`.
+-- |
+-- | _Note: This function is for specific, asynchronous edge cases.
+-- |   Generally, the `state` snapshot on `Self` is sufficient.
+-- |
+-- | __*See also:* `Self`__
+foreign import readState :: forall props state action. Self props state action -> Effect state
+
+-- | Turn a `Component` into a usable render function.
+-- | This is where you will want to provide customized implementations:
+-- |
+-- | ```purs
+-- | component :: Component
+-- | component = createComponent "Counter"
+-- |
+-- | type Props =
+-- |   { label :: String
+-- |   }
+-- |
+-- | data Action
+-- |   = Increment
+-- |
+-- | counter :: Props -> JSX
+-- | counter = make component
+-- |   { initialState = { counter: 0 }
+-- |
+-- |   , update = \self action -> case action of
+-- |       Increment ->
+-- |         Update self.state { counter = self.state.counter + 1 }
+-- |
+-- |   , render = \self ->
+-- |       R.button
+-- |         { onClick: capture_ self Increment
+-- |         , children: [ R.text (self.props.label <> ": " <> show self.state.counter) ]
+-- |         }
+-- |   }
+-- | ```
+-- |
+-- | __*See also:* `makeStateless`, `createComponent`, `Component`, `ComponentSpec`__
+foreign import make
+  :: forall props state action
+   . ComponentSpec props state state action
+  -> props
+  -> JSX
+
+-- | Makes stateless component definition slightly less verbose:
+-- |
+-- | ```purs
+-- | component :: Component
+-- | component = createComponent "Xyz"
+-- |
+-- | myComponent :: Props -> JSX
+-- | myComponent = makeStateless component \props -> JSX
+-- | ```
+-- |
+-- | __*Note:* The only difference between a stateless React-Basic component and
+-- |   a plain `props -> JSX` function is the presense of the component name
+-- |   in React's dev tools and error stacks. It's just a conceptual boundary.
+-- |   If this isn't important simply write a `props -> JSX` function.__
+-- |
+-- | __*See also:* `make`, `createComponent`, `Component`, `ComponentSpec`__
+makeStateless
+  :: forall props
+   . ComponentSpec props Unit Unit Unit
+  -> (props -> JSX)
+  -> props
+  -> JSX
+makeStateless component render =
+  make component { render = \self -> render self.props }
+
+-- | Represents rendered React VDOM (the result of calling `React.createElement`
+-- | in JavaScript).
+-- |
+-- | `JSX` is a `Monoid`:
+-- |
+-- | - `append`
+-- |   - Merge two `JSX` nodes using `React.Fragment`.
+-- | - `mempty`
+-- |   - The `empty` node; renders nothing.
+-- |
+-- | __*Hint:* Many useful utility functions already exist for Monoids. For example,
+-- |   `guard` can be used to conditionally render a subtree of components.__
 foreign import data JSX :: Type
 
 instance semigroupJSX :: Semigroup JSX where
@@ -51,100 +336,111 @@ instance semigroupJSX :: Semigroup JSX where
 instance monoidJSX :: Monoid JSX where
   mempty = empty
 
-data ComponentType props state action
+-- | An empty `JSX` node. This is often useful when you would like to conditionally
+-- | show something, but you don't want to (or can't) modify the `children` prop
+-- | on the parent node.
+-- |
+-- | __*See also:* `JSX`, Monoid `guard`__
+foreign import empty :: JSX
 
-type ComponentSpec props state initialState action =
-  { "$$type"     :: ComponentType props state action
-  , initialState :: initialState
-  , shouldUpdate :: Self props state action -> props -> state -> Boolean
-  , didMount     :: Self props state action -> Effect Unit
-  , didUpdate    :: Self props state action -> Effect Unit
-  , willUnmount  :: Self props state action -> Effect Unit
-  , update       :: Update props state action
-  , render       :: Self props state action -> JSX
-  }
+-- | Apply a React key to a subtree. React-Basic usually hides React's warning about
+-- | using `key` props on components in an Array, but keys are still important for
+-- | any dynamic lists of child components.
+-- |
+-- | __*See also:* React's documentation regarding the special `key` prop__
+keyed :: String -> JSX -> JSX
+keyed = runFn2 keyed_
 
-type Component = forall props state action. ComponentSpec props state Unit action
+-- | Render an Array of children without a wrapping component.
+-- |
+-- | __*See also:* `JSX`__
+foreign import fragment :: Array JSX -> JSX
 
-type Update props state action
-   = Self props state action
-  -> action
-  -> StateUpdate props state action
+-- | Create a `JSX` node from a `ReactComponent`, by providing the props.
+-- |
+-- | This function is for non-React-Basic React components, such as those
+-- | imported from FFI.
+-- |
+-- | __*See also:* `ReactComponent`, `elementKeyed`__
+element
+  :: forall props
+   . ReactComponent { | props }
+  -> { | props }
+  -> JSX
+element = runFn2 element_
 
-data StateUpdate props state action
-  = NoUpdate
-  | Update               state
-  | SideEffects                (Self props state action -> Effect Unit)
-  | UpdateAndSideEffects state (Self props state action -> Effect Unit)
+-- | Create a `JSX` node from a `ReactComponent`, by providing the props and a key.
+-- |
+-- | This function is for non-React-Basic React components, such as those
+-- | imported from FFI.
+-- |
+-- | __*See also:* `ReactComponent`, `element`, React's documentation regarding the special `key` prop__
+elementKeyed
+  :: forall props
+   . ReactComponent { | props }
+  -> { key :: String | props }
+  -> JSX
+elementKeyed = runFn2 elementKeyed_
 
-type Self props state action =
-  -- | Read the snapshot of `props` taken when this `Self` was created.
-  { props     :: props
+-- | Retrieve the Display Name from a `ComponentSpec`. Useful for debugging and improving
+-- | error messages in logs.
+-- |
+-- | __*See also:* `displayNameFromSelf`, `createComponent`__
+foreign import displayNameFromComponentSpec
+  :: forall props state initialState action
+   . ComponentSpec props state initialState action
+  -> String
 
-  -- | Read the snapshot of `state` taken when this `Self` was created.
-  , state     :: state
+-- | Retrieve the Display Name from a `Self`. Useful for debugging and improving
+-- | error messages in logs.
+-- |
+-- | __*See also:* `displayNameFromComponentSpec`, `createComponent`__
+foreign import displayNameFromSelf
+  :: forall props state action
+   . Self props state action
+  -> String
 
--- | Unsafe escape hatch, but still frequently better than
--- | rewriting an entire component in JS.
-  , instance_ :: ReactComponentInstance
-  }
+-- | Represents a traditional React component. Useful for JavaScript interop and
+-- | FFI. For example:
+-- |
+-- | ```purs
+-- | foreign import ComponentRequiringJSHacks :: ReactComponent { someProp :: String }
+-- | ```
+-- |
+-- | __*See also:* `element`, `toReactComponent`__
+data ReactComponent props
 
+-- | An opaque representation of a React component's instance (`this` in the JavaScript
+-- | React paradigm). It exists as an escape hatch to unsafe behavior. Use it with
+-- | caution.
 data ReactComponentInstance
 
--- | Read the most up to date `props` directly from the component instance
--- | associated with this `Self`. Generally, the `props` function is sufficient.
-foreign import readProps :: forall props state action. Self props state action -> Effect props
+-- | Convert a React-Basic `ComponentSpec` to a JavaScript-friendly React component.
+-- | This function should only be used for JS interop and not normal React-Basic usage.
+-- |
+-- | __*Note:* Like `createComponent`, `toReactComponent` is side effecting in that
+-- |   it creates a "class" React will see as unique each time it's called. Lift
+-- |   any usage up to the module level, usage in `render` or any other function,
+-- |   and applying any type classes to the `props`.__
+-- |
+-- | __*See also:* `ReactComponent`__
+toReactComponent
+  :: forall jsProps props state action
+   . ({ | jsProps } -> props)
+  -> ComponentSpec props state state action
+  -> ReactComponent { | jsProps }
+toReactComponent = runFn2 toReactComponent_
 
--- | Read the most up to date `state` directly from the component instance
--- | associated with this `Self`. Generally, the `state` function is sufficient.
-foreign import readState :: forall props state action. Self props state action -> Effect state
 
--- | Dispatch an `action` into the component to be handled by `update`.
-send :: forall props state action. Self props state action -> action -> Effect Unit
-send = runEffectFn2 (runFn1 send_ buildStateUpdate)
+-- |
+-- | Internal utility or FFI functions
+-- |
 
-foreign import send_
+foreign import createComponent_
   :: forall props state action
    . Fn1
-       (StateUpdate props state action
-         -> { state   :: Nullable state
-            , effects :: Nullable (Self props state action -> Effect Unit)
-            })
-       (EffectFn2
-         (Self props state action)
-         action
-         Unit)
-
--- | Create a capturing* `EventHandler` to send an action when an event occurs.
--- |
--- | *capturing: prevent default and stop propagation
-capture :: forall props state action a. Self props state action -> EventFn SyntheticEvent a -> (a -> action) -> EventHandler
-capture self eventFn = monitor self (preventDefault >>> stopPropagation >>> eventFn)
-
-capture_ :: forall props state action. Self props state action -> action -> EventHandler
-capture_ self action = capture self identity \_ -> action
-
--- | Like `capture`, but does not cancel the event.
-monitor :: forall props state action a. Self props state action -> EventFn SyntheticEvent a -> (a -> action) -> EventHandler
-monitor self eventFn makeAction = handler eventFn \a -> send self (makeAction a)
-
-monitor_ :: forall props state action. Self props state action -> action -> EventHandler
-monitor_ self action = monitor self identity \_ -> action
-
--- | Convenience function for sending an action asynchronously.
--- |
--- | Note: potential failure should be handled and converted to an
--- |   action, as the default error handler will simply log the
--- |   error to the console.
-asyncEffects
-  :: forall props state action
-   . (Self props state action -> Aff action)
-  -> Self props state action
-  -> Effect Unit
-asyncEffects work self = runAff_ handle (work self)
-  where
-    handle (Right action) = send self action
-    handle (Left err) = runEffectFn2 warningFailedAsyncAction self err
+      (Self props state action -> action -> StateUpdate props state action)
+      (String -> ComponentSpec props state Unit action)
 
 buildStateUpdate
   :: forall props state action
@@ -170,118 +466,19 @@ buildStateUpdate = case _ of
     , effects: notNull effects
     }
 
--- | Turn a `ComponentSpec` into a usable render function.
--- | This is usually where you will want to provide customized
--- | implementations:
--- |
--- | ```purs
--- | type Props =
--- |   { label :: String
--- |   }
--- |
--- | data Action
--- |   = Increment
--- |
--- | render :: Props -> JSX
--- | render = make component
--- |   { initialState = { counter: 0 }
--- |
--- |   , update = \self action -> case action of
--- |       Increment ->
--- |         Update self.state { counter = self.state.counter + 1 }
--- |
--- |   , render = \self ->
--- |       R.button
--- |         { onClick: Events.handler_ do self.send Increment
--- |         , children: [ R.text (self.props.label <> ": " <> show self.state.counter) ]
--- |         }
--- |   }
--- |
--- | component :: Component
--- | component = createComponent "Counter"
--- | ```
-foreign import make
-  :: forall props state action
-   . ComponentSpec props state state action
-  -> props
-  -> JSX
-
--- | Helper to make stateless component definition slightly
--- | less verbose:
--- |
--- | ```purs
--- | render = makeStateless component \props -> JSX
--- |
--- | component = createStatelessComponent "Xyz"
--- | ```
-makeStateless
-  :: forall props
-   . ComponentSpec props Unit Unit Unit
-  -> (props -> JSX)
-  -> props
-  -> JSX
-makeStateless component render =
-  make component { render = \self -> render self.props }
-
-data ReactComponent props
-
-createComponent
-  :: forall props state action
-   . String
-  -> ComponentSpec props state Unit action
-createComponent =
-  runFn1
-    createComponent_
-    (\_ action ->
-      SideEffects \self -> do
-        runEffectFn2 warningDefaultUpdate self action)
-
-foreign import createComponent_
+foreign import send_
   :: forall props state action
    . Fn1
-      (Update props state action)
-      (String -> ComponentSpec props state Unit action)
-
--- | An empty node. This is often useful when you would like to conditionally
--- | show something, but you don't want to (or can't) modify the `children` prop
--- | on the parent node.
-empty :: JSX
-empty = unsafeCoerce false
-
--- | Apply a React key to a sub-tree.
-keyed :: String -> JSX -> JSX
-keyed = runFn2 keyed_
-
--- | Render an Array of children without a wrapping component.
-foreign import fragment :: Array JSX -> JSX
-
--- | Render an Array of children without a wrapping component.
--- |
--- | Provide a key when dynamically rendering multiple fragments along side
--- | each other.
-fragmentKeyed :: String -> Array JSX -> JSX
-fragmentKeyed = runFn2 fragmentKeyed_
-
-foreign import fragmentKeyed_ :: Fn2 String (Array JSX) JSX
+       (StateUpdate props state action
+         -> { state   :: Nullable state
+            , effects :: Nullable (Self props state action -> Effect Unit)
+            })
+       (EffectFn2
+         (Self props state action)
+         action
+         Unit)
 
 foreign import keyed_ :: Fn2 String JSX JSX
-
--- | Create a `JSX` node from a React component, by providing the props.
-element
-  :: forall props
-   . ReactComponent { | props }
-  -> { | props }
-  -> JSX
-element = runFn2 element_
-
--- | Like `element`, plus a `key` for rendering components in a dynamic list.
--- | For more information see: https://reactjs.org/docs/reconciliation.html#keys
-elementKeyed
-  :: forall props
-   . ReactComponent { | props }
-  -> { key :: String | props }
-  -> JSX
-elementKeyed = runFn2 elementKeyed_
 
 foreign import element_
   :: forall props
@@ -290,30 +487,6 @@ foreign import element_
 foreign import elementKeyed_
   :: forall props
    . Fn2 (ReactComponent { | props }) { key :: String | props } JSX
-
-foreign import displayNameFromComponentSpec
-  :: forall props state initialState action
-   . ComponentSpec props state initialState action
-  -> String
-
-foreign import displayNameFromSelf
-  :: forall props state action
-   . Self props state action
-  -> String
-
-toReactComponent
-  :: forall jsProps props state action
-   . ({ | jsProps } -> props)
-  -> ComponentSpec props state state action
-  -> ReactComponent { | jsProps }
-toReactComponent = runFn2 toReactComponent_
-
-foreign import toReactComponent_
-  :: forall jsProps props state action
-   . Fn2
-       ({ | jsProps } -> props)
-       (ComponentSpec props state state action)
-       (ReactComponent { | jsProps })
 
 foreign import warningDefaultUpdate
   :: forall props state action
@@ -335,3 +508,10 @@ foreign import warningFailedAsyncAction
        (Self props state action)
        Error
        Unit
+
+foreign import toReactComponent_
+  :: forall jsProps props state action
+   . Fn2
+       ({ | jsProps } -> props)
+       (ComponentSpec props state state action)
+       (ReactComponent { | jsProps })

@@ -3,47 +3,6 @@
 var React = require("react");
 var Fragment = React.Fragment || "div";
 
-exports.readProps = function(self) {
-  return self.instance_.props.$$props;
-};
-
-exports.readState = function(self) {
-  var state = self.instance_.state;
-  return state === null ? null : state.$$state;
-};
-
-exports.send_ = function(buildStateUpdate) {
-  return function(self, action) {
-    if (!self.instance_.$$mounted) {
-      exports.warningUnmountedComponentAction(self, action);
-      return;
-    }
-    var sideEffects = null;
-    self.instance_.setState(
-      function(s) {
-        var setStateContext = self.instance_.toSelf();
-        setStateContext.state = s.$$state;
-        var updates = buildStateUpdate(
-          self.instance_.$$spec.update(setStateContext)(action)
-        );
-        if (updates.effects !== null) {
-          sideEffects = updates.effects;
-        }
-        if (updates.state !== null && updates.state !== s.$$state) {
-          return { $$state: updates.state };
-        } else {
-          return null;
-        }
-      },
-      function() {
-        if (sideEffects !== null) {
-          sideEffects(this.toSelf())();
-        }
-      }
-    );
-  };
-};
-
 exports.createComponent_ = function(defaultUpdate) {
   var defaultInitialState = null;
   var defaultShouldUpdate = function() {
@@ -150,6 +109,47 @@ exports.createComponent_ = function(defaultUpdate) {
   };
 };
 
+exports.send_ = function(buildStateUpdate) {
+  return function(self, action) {
+    if (!self.instance_.$$mounted) {
+      exports.warningUnmountedComponentAction(self, action);
+      return;
+    }
+    var sideEffects = null;
+    self.instance_.setState(
+      function(s) {
+        var setStateContext = self.instance_.toSelf();
+        setStateContext.state = s.$$state;
+        var updates = buildStateUpdate(
+          self.instance_.$$spec.update(setStateContext)(action)
+        );
+        if (updates.effects !== null) {
+          sideEffects = updates.effects;
+        }
+        if (updates.state !== null && updates.state !== s.$$state) {
+          return { $$state: updates.state };
+        } else {
+          return null;
+        }
+      },
+      function() {
+        if (sideEffects !== null) {
+          sideEffects(this.toSelf())();
+        }
+      }
+    );
+  };
+};
+
+exports.readProps = function(self) {
+  return self.instance_.props.$$props;
+};
+
+exports.readState = function(self) {
+  var state = self.instance_.state;
+  return state === null ? null : state.$$state;
+};
+
 exports.make = function($$spec) {
   return function($$props) {
     var props = {
@@ -159,6 +159,8 @@ exports.make = function($$spec) {
     return React.createElement($$spec.$$type, props);
   };
 };
+
+exports.empty = null;
 
 exports.keyed_ = function(key, child) {
   return React.createElement(Fragment, { key: key }, child);
@@ -175,13 +177,6 @@ exports.elementKeyed_ = exports.element_;
 
 exports.fragment = function(children) {
   return React.createElement.apply(null, [Fragment, {}].concat(children));
-};
-
-exports.fragmentKeyed_ = function(key, children) {
-  return React.createElement.apply(
-    null,
-    [Fragment, { key: key }].concat(children)
-  );
 };
 
 exports.displayNameFromComponentSpec = function($$spec) {
