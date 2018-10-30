@@ -172,7 +172,7 @@ exports.displayNameFromComponent = function($$type) {
 };
 
 exports.displayNameFromSelf = function(self) {
-  return exports.displayNameFromComponent(self.instance_.prototype.constructor);
+  return exports.displayNameFromComponent(self.instance_.constructor);
 };
 
 exports.toReactComponent = function(_unionDict) {
