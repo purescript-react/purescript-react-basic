@@ -3,28 +3,7 @@
 var React = require("react");
 var Fragment = React.Fragment || "div";
 
-exports.createComponent_ = function(defaultUpdate) {
-  var defaultInitialState = null;
-  var defaultShouldUpdate = function() {
-    return function() {
-      return function() {
-        return true;
-      };
-    };
-  };
-  var defaultDidMount = function() {
-    return function() {};
-  };
-  var defaultDidUpdate = function() {
-    return function() {};
-  };
-  var defaultWillUnmount = function() {
-    return function() {};
-  };
-  var defaultRender = function() {
-    return false;
-  };
-
+exports.createComponent = (function() {
   // Begin component prototype functions
   // (`this`-dependent, defined outside `createComponent`
   // for a slight performance boost)
@@ -39,7 +18,7 @@ exports.createComponent_ = function(defaultUpdate) {
 
   function shouldComponentUpdate(nextProps, nextState) {
     var shouldUpdate = this.$$spec.shouldUpdate;
-    return shouldUpdate === defaultShouldUpdate
+    return shouldUpdate === undefined
       ? true
       : shouldUpdate(this.toSelf())(nextProps.$$props)(
           nextState === null ? null : nextState.$$state
@@ -48,14 +27,14 @@ exports.createComponent_ = function(defaultUpdate) {
 
   function componentDidMount() {
     var didMount = this.$$spec.didMount;
-    if (didMount !== defaultDidMount) {
-      this.$$spec.didMount(this.toSelf())();
+    if (didMount !== undefined) {
+      didMount(this.toSelf())();
     }
   }
 
   function componentDidUpdate() {
     var didUpdate = this.$$spec.didUpdate;
-    if (didUpdate !== defaultDidUpdate) {
+    if (didUpdate !== undefined) {
       didUpdate(this.toSelf())();
     }
   }
@@ -63,7 +42,7 @@ exports.createComponent_ = function(defaultUpdate) {
   function componentWillUnmount() {
     this.$$mounted = false;
     var willUnmount = this.$$spec.willUnmount;
-    if (willUnmount !== defaultWillUnmount) {
+    if (willUnmount !== undefined) {
       willUnmount(this.toSelf())();
     }
   }
@@ -81,7 +60,7 @@ exports.createComponent_ = function(defaultUpdate) {
         // React may optimize components with no state,
         // so we leave state null if it was left as
         // the default value.
-        this.$$spec.initialState === defaultInitialState
+        this.$$spec.initialState === undefined
           ? null
           : { $$state: this.$$spec.initialState };
       return this;
@@ -89,6 +68,7 @@ exports.createComponent_ = function(defaultUpdate) {
 
     Component.displayName = displayName;
     Component.prototype = Object.create(React.Component.prototype);
+    Component.prototype.constructor = Component;
     Component.prototype.toSelf = toSelf;
     Component.prototype.shouldComponentUpdate = shouldComponentUpdate;
     Component.prototype.componentDidMount = componentDidMount;
@@ -96,23 +76,18 @@ exports.createComponent_ = function(defaultUpdate) {
     Component.prototype.componentWillUnmount = componentWillUnmount;
     Component.prototype.render = render;
 
-    return {
-      $$type: Component,
-      initialState: defaultInitialState,
-      shouldUpdate: defaultShouldUpdate,
-      didMount: defaultDidMount,
-      didUpdate: defaultDidUpdate,
-      willUnmount: defaultWillUnmount,
-      update: defaultUpdate,
-      render: defaultRender
-    };
+    return Component;
   };
-};
+})();
 
 exports.send_ = function(buildStateUpdate) {
   return function(self, action) {
     if (!self.instance_.$$mounted) {
       exports.warningUnmountedComponentAction(self, action);
+      return;
+    }
+    if (self.instance_.$$spec.update === undefined) {
+      exports.warningDefaultUpdate(self, action);
       return;
     }
     var sideEffects = null;
@@ -150,13 +125,26 @@ exports.readState = function(self) {
   return state === null ? null : state.$$state;
 };
 
-exports.make = function($$spec) {
-  return function($$props) {
-    var props = {
-      $$props: $$props,
-      $$spec: $$spec
+exports.make = function(_unionDict) {
+  return function($$type) {
+    return function($$spec) {
+      var $$specPadded = {
+        initialState: $$spec.initialState,
+        update: $$spec.update,
+        render: $$spec.render,
+        shouldUpdate: $$spec.shouldUpdate,
+        didMount: $$spec.didMount,
+        didUpdate: $$spec.didUpdate,
+        willUnmount: $$spec.willUnmount
+      };
+      return function($$props) {
+        var props = {
+          $$props: $$props,
+          $$spec: $$specPadded
+        };
+        return React.createElement($$type, props);
+      };
     };
-    return React.createElement($$spec.$$type, props);
   };
 };
 
@@ -179,32 +167,48 @@ exports.fragment = function(children) {
   return React.createElement.apply(null, [Fragment, {}].concat(children));
 };
 
-exports.displayNameFromComponentSpec = function($$spec) {
-  return $$spec.$$type.displayName || "[unknown]";
+exports.displayNameFromComponent = function($$type) {
+  return $$type.displayName || "[unknown]";
 };
 
 exports.displayNameFromSelf = function(self) {
-  return exports.displayNameFromComponentSpec(self.instance_.$$spec);
+  return exports.displayNameFromComponent(self.instance_.prototype.constructor);
 };
 
-exports.toReactComponent_ = function(fromJSProps, $$spec) {
-  var Component = function constructor() {
-    return this;
-  };
+exports.toReactComponent = function(_unionDict) {
+  return function(fromJSProps) {
+    return function($$type) {
+      return function($$spec) {
+        var $$specPadded = {
+          initialState: $$spec.initialState,
+          update: $$spec.update,
+          render: $$spec.render,
+          shouldUpdate: $$spec.shouldUpdate,
+          didMount: $$spec.didMount,
+          didUpdate: $$spec.didUpdate,
+          willUnmount: $$spec.willUnmount
+        };
 
-  Component.prototype = Object.create(React.Component.prototype);
+        var Component = function constructor() {
+          return this;
+        };
 
-  Component.displayName = $$spec.$$type.displayName + " (Wrapper)";
+        Component.prototype = Object.create(React.Component.prototype);
 
-  Component.prototype.render = function() {
-    var props = {
-      $$props: fromJSProps(this.props),
-      $$spec: $$spec
+        Component.displayName = $$type.displayName + " (Wrapper)";
+
+        Component.prototype.render = function() {
+          var props = {
+            $$props: fromJSProps(this.props),
+            $$spec: $$specPadded
+          };
+          return React.createElement($$type, props);
+        };
+
+        return Component;
+      };
     };
-    return React.createElement($$spec.$$type, props);
   };
-
-  return Component;
 };
 
 exports.warningDefaultUpdate = function(self, action) {

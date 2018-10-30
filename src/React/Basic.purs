@@ -2,7 +2,6 @@ module React.Basic
   ( ComponentSpec
   , createComponent
   , Component
-  , ComponentType
   , StateUpdate(..)
   , Self
   , send
@@ -21,6 +20,8 @@ module React.Basic
   , fragment
   , element
   , elementKeyed
+  , displayNameFromComponent
+  , displayNameFromSelf
   , ReactComponent
   , ReactComponentInstance
   , toReactComponent
@@ -29,13 +30,14 @@ module React.Basic
 import Prelude
 
 import Data.Either (Either(..))
-import Data.Function.Uncurried (Fn2, Fn1, runFn1, runFn2)
+import Data.Function.Uncurried (Fn1, Fn2, runFn1, runFn2)
 import Data.Nullable (Nullable, notNull, null)
 import Effect (Effect)
 import Effect.Aff (Aff, Error, runAff_)
 import Effect.Uncurried (EffectFn2, runEffectFn2)
 import React.Basic.DOM.Events (preventDefault, stopPropagation)
 import React.Basic.Events (EventFn, EventHandler, SyntheticEvent, handler)
+import Type.Row (class Union)
 
 -- | `ComponentSpec` represents a React-Basic component implementation.
 -- |
@@ -104,20 +106,16 @@ import React.Basic.Events (EventFn, EventHandler, SyntheticEvent, handler)
 -- | __*Note:* A `ComponentSpec` is *not* a valid React component by itself. If you would like to use
 -- |   a React-Basic component from JavaScript, use `toReactComponent`.__
 -- |
--- | __*Note:* `$$type` is for internal use only. It needs to be on the type to
--- |   preserve its existence during a record update, as in the example above.__
--- |
 -- | __*See also:* `Component`, `ComponentSpec`, `make`, `makeStateless`__
-type ComponentSpec props state initialState action =
-  { initialState :: initialState
+type ComponentSpec props state action =
+  ( initialState :: state
   , update       :: Self props state action -> action -> StateUpdate props state action
   , render       :: Self props state action -> JSX
   , shouldUpdate :: Self props state action -> props -> state -> Boolean
   , didMount     :: Self props state action -> Effect Unit
   , didUpdate    :: Self props state action -> Effect Unit
   , willUnmount  :: Self props state action -> Effect Unit
-  , "$$type"     :: ComponentType props state action
-  }
+  )
 
 -- | Creates a `ComponentSpec` with a given Display Name.
 -- |
@@ -144,20 +142,14 @@ type ComponentSpec props state initialState action =
 -- |   a React-Basic component from JavaScript, use `toReactComponent`.__
 -- |
 -- | __*See also:* `Component`, `ComponentSpec`, `make`, `makeStateless`__
-createComponent
-  :: forall props state action
+foreign import createComponent
+  :: forall props
    . String
-  -> ComponentSpec props state Unit action
-createComponent =
-  runFn1
-    createComponent_
-    (\_ action ->
-      SideEffects \self -> do
-        runEffectFn2 warningDefaultUpdate self action)
+  -> Component props
 
 -- | A simplified alias for `ComponentSpec`. This type is usually used to represent
 -- | the default component type returned from `createComponent`.
-type Component props = forall state action. ComponentSpec props state Unit action
+-- type Component props = forall state action. ComponentSpec props state action
 
 -- | Opaque component information for internal use.
 -- |
@@ -165,7 +157,7 @@ type Component props = forall state action. ComponentSpec props state Unit actio
 -- |   identify the component. It receives the `ComponentSpec` as a prop and knows
 -- |   how to defer behavior to it. It requires very specific props and is not useful by
 -- |   itself from JavaScript. For JavaScript interop, see `toReactComponent`.__
-data ComponentType props state action
+data Component props
 
 -- | Used by the `update` function to describe the kind of state update and/or side
 -- | effects desired.
@@ -293,8 +285,10 @@ foreign import readState :: forall props state action. Self props state action -
 -- |
 -- | __*See also:* `makeStateless`, `createComponent`, `Component`, `ComponentSpec`__
 foreign import make
-  :: forall props state action
-   . ComponentSpec props state state action
+  :: forall spec spec_ props state action
+   . Union spec spec_ (ComponentSpec props state action)
+  => Component props
+  -> { render :: Self props state action -> JSX | spec }
   -> props
   -> JSX
 
@@ -316,12 +310,12 @@ foreign import make
 -- | __*See also:* `make`, `createComponent`, `Component`, `ComponentSpec`__
 makeStateless
   :: forall props
-   . ComponentSpec props Unit Unit Unit
+   . Component props
   -> (props -> JSX)
   -> props
   -> JSX
 makeStateless component render =
-  make component { render = \self -> render self.props }
+  make component { render: \self -> render self.props }
 
 -- | Represents rendered React VDOM (the result of calling `React.createElement`
 -- | in JavaScript).
@@ -393,15 +387,15 @@ elementKeyed = runFn2 elementKeyed_
 -- | error messages in logs.
 -- |
 -- | __*See also:* `displayNameFromSelf`, `createComponent`__
-foreign import displayNameFromComponentSpec
-  :: forall props state initialState action
-   . ComponentSpec props state initialState action
+foreign import displayNameFromComponent
+  :: forall props
+   . Component props
   -> String
 
 -- | Retrieve the Display Name from a `Self`. Useful for debugging and improving
 -- | error messages in logs.
 -- |
--- | __*See also:* `displayNameFromComponentSpec`, `createComponent`__
+-- | __*See also:* `displayNameFromComponent`, `createComponent`__
 foreign import displayNameFromSelf
   :: forall props state action
    . Self props state action
@@ -431,23 +425,18 @@ data ReactComponentInstance
 -- |   and applying any type classes to the `props`.__
 -- |
 -- | __*See also:* `ReactComponent`__
-toReactComponent
-  :: forall jsProps props state action
-   . ({ | jsProps } -> props)
-  -> ComponentSpec props state state action
+foreign import toReactComponent
+  :: forall spec spec_ jsProps props state action
+   . Union spec spec_ (ComponentSpec props state action)
+  => ({ | jsProps } -> props)
+  -> Component props
+  -> { render :: Self props state action -> JSX | spec }
   -> ReactComponent { | jsProps }
-toReactComponent = runFn2 toReactComponent_
 
 
 -- |
 -- | Internal utility or FFI functions
 -- |
-
-foreign import createComponent_
-  :: forall props state action
-   . Fn1
-      (Self props state action -> action -> StateUpdate props state action)
-      (String -> ComponentSpec props state Unit action)
 
 buildStateUpdate
   :: forall props state action
@@ -515,10 +504,3 @@ foreign import warningFailedAsyncAction
        (Self props state action)
        Error
        Unit
-
-foreign import toReactComponent_
-  :: forall jsProps props state action
-   . Fn2
-       ({ | jsProps } -> props)
-       (ComponentSpec props state state action)
-       (ReactComponent { | jsProps })

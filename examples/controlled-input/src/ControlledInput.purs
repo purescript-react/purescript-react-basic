@@ -19,19 +19,19 @@ data Action
 
 controlledInput :: Props -> JSX
 controlledInput = make component
-  { initialState =
+  { initialState:
       { value: "hello world"
       , timestamp: Nothing
       }
 
-  , update = \self -> case _ of
+  , update: \self -> case _ of
       ValueChanged value timestamp ->
         Update self.state
           { value = value
           , timestamp = Just timestamp
           }
 
-  , render = \self ->
+  , render: \self ->
       React.fragment
         [ R.input
             { onChange:

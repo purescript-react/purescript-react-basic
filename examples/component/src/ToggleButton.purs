@@ -18,18 +18,18 @@ data Action
 
 toggleButton :: Props -> JSX
 toggleButton = make component
-  { initialState =
+  { initialState:
       { on: false
       }
 
-  , update = \self -> case _ of
+  , update: \self -> case _ of
       Toggle ->
         UpdateAndSideEffects
           self.state { on = not self.state.on }
           \nextSelf -> do
             log $ "next state: " <> show nextSelf.state
 
-  , render = \self ->
+  , render: \self ->
       R.button
         { onClick: capture_ self Toggle
         , children:

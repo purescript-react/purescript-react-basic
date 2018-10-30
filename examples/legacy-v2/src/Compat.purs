@@ -23,11 +23,11 @@ component
   -> ReactComponent { | props }
 component { displayName, initialState, receiveProps, render } =
   toReactComponent identity (createComponent displayName)
-    { initialState = initialState
-    , didMount = receiveProps <<< selfToLegacySelf
-    , didUpdate = receiveProps <<< selfToLegacySelf
-    , update = \self stateUpdate -> Update (stateUpdate self.state)
-    , render = render <<< selfToLegacySelf
+    { initialState: initialState
+    , didMount: receiveProps <<< selfToLegacySelf
+    , didUpdate: receiveProps <<< selfToLegacySelf
+    , update: \self stateUpdate -> Update (stateUpdate self.state)
+    , render: render <<< selfToLegacySelf
     }
   where
     selfToLegacySelf self@{ props, state } =
@@ -45,5 +45,5 @@ stateless
   -> ReactComponent { | props }
 stateless { displayName, render } =
   toReactComponent identity (createComponent displayName)
-    { render = \self -> render self.props
+    { render: \self -> render self.props
     }
