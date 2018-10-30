@@ -73,7 +73,7 @@ import React.Basic.Events (EventFn, EventHandler, SyntheticEvent, handler)
 -- | For example:
 -- |
 -- | ```purs
--- | component :: Component
+-- | component :: Component Props
 -- | component = createComponent "Counter"
 -- |
 -- | type Props =
@@ -124,7 +124,7 @@ type ComponentSpec props state initialState action =
 -- | The resulting component spec is usually given the simplified `Component` type:
 -- |
 -- | ```purs
--- | component :: Component
+-- | component :: Component Props
 -- | component = createComponent "Counter"
 -- | ```
 -- |
@@ -132,6 +132,13 @@ type ComponentSpec props state initialState action =
 -- | This is because React uses referential equality when deciding whether a new
 -- | `JSX` tree is a valid update, or if it needs to be replaced entirely
 -- | (expensive and clears component state lower in the tree).
+-- |
+-- | __*Note:* A specific type for the props in `Component props` should always be chosen at this point.
+-- | It's technically possible to declare the component with `forall props. Component props`
+-- | but doing so is unsafe. Leaving the prop type open allows the use of a single `Component`
+-- | definition in multiple React-Basic components that may have different prop types. Because
+-- | component lifecycles are managed by React, it's possible for incompatible prop values to
+-- | be passed into a lifecycle function.__
 -- |
 -- | __*Note:* A `Component` is *not* a valid React component by itself. If you would like to use
 -- |   a React-Basic component from JavaScript, use `toReactComponent`.__
@@ -150,7 +157,7 @@ createComponent =
 
 -- | A simplified alias for `ComponentSpec`. This type is usually used to represent
 -- | the default component type returned from `createComponent`.
-type Component = forall props state action. ComponentSpec props state Unit action
+type Component props = forall state action. ComponentSpec props state Unit action
 
 -- | Opaque component information for internal use.
 -- |
@@ -258,7 +265,7 @@ foreign import readState :: forall props state action. Self props state action -
 -- | This is where you will want to provide customized implementations:
 -- |
 -- | ```purs
--- | component :: Component
+-- | component :: Component Props
 -- | component = createComponent "Counter"
 -- |
 -- | type Props =
@@ -294,7 +301,7 @@ foreign import make
 -- | Makes stateless component definition slightly less verbose:
 -- |
 -- | ```purs
--- | component :: Component
+-- | component :: Component Props
 -- | component = createComponent "Xyz"
 -- |
 -- | myComponent :: Props -> JSX

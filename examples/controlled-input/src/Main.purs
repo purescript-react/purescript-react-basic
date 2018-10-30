@@ -18,5 +18,5 @@ main = do
   case container of
     Nothing -> throw "Container element not found."
     Just c  ->
-      let app = controlledInput {}
+      let app = controlledInput unit
        in render app c

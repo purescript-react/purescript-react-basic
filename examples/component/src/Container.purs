@@ -6,6 +6,9 @@ import React.Basic (Component, JSX, createComponent, makeStateless)
 import React.Basic.DOM as R
 import ToggleButton (toggleButton)
 
+component :: Component Unit
+component = createComponent "Container"
+
 toggleButtonContainer :: JSX
 toggleButtonContainer = unit # makeStateless component \_ ->
   R.div
@@ -14,6 +17,3 @@ toggleButtonContainer = unit # makeStateless component \_ ->
         , toggleButton { label: "B" }
         ]
     }
-
-component :: Component
-component = createComponent "Container"

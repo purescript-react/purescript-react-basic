@@ -8,7 +8,7 @@ module React.Basic.Compat
 import Prelude
 
 import Effect (Effect)
-import React.Basic (ComponentSpec, JSX, ReactComponent, Self, StateUpdate(..), createComponent, element, elementKeyed, empty, fragment, fragmentKeyed, make, makeStateless, send, toReactComponent)
+import React.Basic (JSX, ReactComponent, Self, StateUpdate(..), createComponent, element, elementKeyed, empty, fragment, make, makeStateless, send, toReactComponent)
 
 type Component = ReactComponent
 

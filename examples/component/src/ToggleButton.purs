@@ -6,6 +6,9 @@ import Effect.Console (log)
 import React.Basic (Component, JSX, StateUpdate(..), capture_, createComponent, make)
 import React.Basic.DOM as R
 
+component :: Component Props
+component = createComponent "ToggleButton"
+
 type Props =
   { label :: String
   }
@@ -37,6 +40,3 @@ toggleButton = make component
             ]
         }
   }
-
-component :: Component
-component = createComponent "ToggleButton"

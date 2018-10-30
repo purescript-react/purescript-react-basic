@@ -9,7 +9,10 @@ import React.Basic.DOM as R
 import React.Basic.DOM.Events (targetValue, timeStamp)
 import React.Basic.Events (merge)
 
-type Props = {}
+component :: Component Props
+component = createComponent "ControlledInput"
+
+type Props = Unit
 
 data Action
   = ValueChanged String Number
@@ -40,6 +43,3 @@ controlledInput = make component
         , R.p_ [ R.text ("Changed at = " <> maybe "never" show self.state.timestamp) ]
         ]
   }
-
-component :: Component
-component = createComponent "ControlledInput"

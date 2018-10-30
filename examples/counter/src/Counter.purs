@@ -5,7 +5,7 @@ import Prelude
 import React.Basic (Component, JSX, StateUpdate(..), capture_, createComponent, make)
 import React.Basic.DOM as R
 
-component :: Component
+component :: Component Props
 component = createComponent "Counter"
 
 type Props =
