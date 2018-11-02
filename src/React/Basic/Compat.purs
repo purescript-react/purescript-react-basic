@@ -2,13 +2,14 @@ module React.Basic.Compat
   ( Component
   , component
   , stateless
-  , module React.Basic
+  , module CompatibleTypes
   ) where
 
 import Prelude
 
 import Effect (Effect)
-import React.Basic (JSX, ReactComponent, Self, StateUpdate(..), createComponent, element, elementKeyed, empty, fragment, make, makeStateless, send, toReactComponent)
+import React.Basic (ReactComponent, StateUpdate(..), createComponent, send, toReactComponent)
+import React.Basic (JSX, element, elementKeyed, empty, fragment, keyed) as CompatibleTypes
 
 type Component = ReactComponent
 
@@ -18,7 +19,7 @@ component
    . { displayName :: String
      , initialState :: { | state }
      , receiveProps :: { props :: { | props }, state :: { | state }, setState :: ({ | state } -> { | state }) -> Effect Unit } -> Effect Unit
-     , render :: { props :: { | props }, state :: { | state }, setState :: ({ | state } -> { | state }) -> Effect Unit } -> JSX
+     , render :: { props :: { | props }, state :: { | state }, setState :: ({ | state } -> { | state }) -> Effect Unit } -> CompatibleTypes.JSX
      }
   -> ReactComponent { | props }
 component { displayName, initialState, receiveProps, render } =
@@ -40,7 +41,7 @@ component { displayName, initialState, receiveProps, render } =
 stateless
   :: forall props
    . { displayName :: String
-     , render :: { | props } -> JSX
+     , render :: { | props } -> CompatibleTypes.JSX
      }
   -> ReactComponent { | props }
 stateless { displayName, render } =
