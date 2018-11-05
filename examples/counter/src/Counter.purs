@@ -19,7 +19,7 @@ data Action
 counter :: Props -> JSX
 counter = make component { initialState, update, render }
   where
-    initialState = { counter: 0, dummy: 0 }
+    initialState = { counter: 0 }
 
     update self = case _ of
       Increment ->
