@@ -14,8 +14,12 @@ exports.mkRef = function(toMaybe) {
   Ref.displayName = "Ref";
 
   Ref.prototype.syncRef = function() {
-    if (this.state.node !== this.ref.current) {
-      this.setState({ node: this.ref.current });
+    var selector = this.props.selector;
+    var current = this.ref.current;
+    var next =
+      selector === null ? current : current && current.querySelector(selector);
+    if (this.state.node !== next) {
+      this.setState({ node: next });
     }
   };
 
