@@ -46,7 +46,7 @@ import Type.Row (class Union)
 -- | an overridden function interacts with `state`, in which case `initialState`
 -- | is required (the compiler enforces this). While you _can_ use `state` and
 -- | dispatch actions without defining `update`, doing so doesn't make much sense
--- | so the default `update` implementation will emit a warning.
+-- | and will emit a warning.
 -- |
 -- | - `initialState`
 -- |   - The component's starting state.
@@ -59,7 +59,7 @@ import Type.Row (class Union)
 -- | - `render`
 -- |   - Takes a current snapshot of the component (`Self`) and converts it to renderable `JSX`.
 -- | - `shouldUpdate`
--- |   - Can be useful for occasional performance optimizations. Rarely necessary.
+-- |   - Can be useful for performance optimizations. Rarely necessary.
 -- | - `didMount`
 -- |   - The React component's `componentDidMount` lifecycle. Useful for initiating an action on first mount, such as fetching data from a server.
 -- | - `didUpdate`
@@ -68,9 +68,8 @@ import Type.Row (class Union)
 -- |   - The React component's `componentWillUpdate` lifecycle. Any subscriptions or timers created in `didMount` or `didUpdate` should be disposed of here.
 -- |
 -- | The component spec is generally not exported from your component
--- | module and this type is rarely used explicitly. The simplified alias
--- | `Component` is usually sufficient, and `make` will validate whether
--- | your component's types line up.
+-- | module and this type is rarely used explicitly. `make` will validate whether
+-- | your component's internal types line up.
 -- |
 -- | For example:
 -- |
@@ -86,14 +85,14 @@ import Type.Row (class Union)
 -- |   = Increment
 -- |
 -- | counter :: Props -> JSX
--- | counter = make component
+-- | counter: make component
 -- |   { initialState = { counter: 0 }
 -- |
--- |   , update = \self action -> case action of
+-- |   , update: \self action -> case action of
 -- |       Increment ->
 -- |         Update self.state { counter = self.state.counter + 1 }
 -- |
--- |   , render = \self ->
+-- |   , render: \self ->
 -- |       R.button
 -- |         { onClick: capture_ self Increment
 -- |         , children: [ R.text (self.props.label <> ": " <> show self.state.counter) ]
@@ -117,7 +116,7 @@ type ComponentSpec props state action =
   , willUnmount  :: Self props state action -> Effect Unit
   )
 
--- | Creates a `ComponentSpec` with a given Display Name.
+-- | Creates a `Component` with a given Display Name.
 -- |
 -- | The resulting component spec is usually given the simplified `Component` type:
 -- |
@@ -128,20 +127,20 @@ type ComponentSpec props state action =
 -- |
 -- | This function should be used at the module level and considered side effecting.
 -- | This is because React uses referential equality when deciding whether a new
--- | `JSX` tree is a valid update, or if it needs to be replaced entirely
+-- | `JSX` tree is a valid update or if it needs to be replaced entirely
 -- | (expensive and clears component state lower in the tree).
 -- |
 -- | __*Note:* A specific type for the props in `Component props` should always be chosen at this point.
--- | It's technically possible to declare the component with `forall props. Component props`
--- | but doing so is unsafe. Leaving the prop type open allows the use of a single `Component`
--- | definition in multiple React-Basic components that may have different prop types. Because
--- | component lifecycles are managed by React, it's possible for incompatible prop values to
--- | be passed into a lifecycle function.__
+-- |   It's technically possible to declare the component with `forall props. Component props`
+-- |   but doing so is unsafe. Leaving the prop type open allows the use of a single `Component`
+-- |   definition in multiple React-Basic components that may have different prop types. Because
+-- |   component lifecycles are managed by React, it becomes possible for incompatible prop values to
+-- |   be passed by React into lifecycle functions.__
 -- |
 -- | __*Note:* A `Component` is *not* a valid React component by itself. If you would like to use
 -- |   a React-Basic component from JavaScript, use `toReactComponent`.__
 -- |
--- | __*See also:* `Component`, `ComponentSpec`, `make`, `makeStateless`__
+-- | __*See also:* `Component`, `make`, `makeStateless`__
 foreign import createComponent
   :: forall props
    . String
@@ -153,6 +152,10 @@ foreign import createComponent
 
 -- | Opaque component information for internal use.
 -- |
+-- | __*Note:* Never define a component with
+-- |   a less specific type for `props` than its associated `ComponentSpec` and `make`
+-- |   calls, as this can lead to unsafe interactions with React's lifecycle management.__
+-- |
 -- | __*For the curious:* This is the "class" React will use to render and
 -- |   identify the component. It receives the `ComponentSpec` as a prop and knows
 -- |   how to defer behavior to it. It requires very specific props and is not useful by
@@ -162,7 +165,7 @@ data Component props
 -- | Used by the `update` function to describe the kind of state update and/or side
 -- | effects desired.
 -- |
--- | __*See also:* `ComponentSpec`__
+-- | __*See also:* `ComponentSpec`, `capture`__
 data StateUpdate props state action
   = NoUpdate
   | Update               state
@@ -253,7 +256,7 @@ foreign import readProps :: forall props state action. Self props state action -
 -- | __*See also:* `Self`__
 foreign import readState :: forall props state action. Self props state action -> Effect state
 
--- | Turn a `Component` into a usable render function.
+-- | Turn a `Component` and `ComponentSpec` into a usable render function.
 -- | This is where you will want to provide customized implementations:
 -- |
 -- | ```purs
@@ -269,13 +272,13 @@ foreign import readState :: forall props state action. Self props state action -
 -- |
 -- | counter :: Props -> JSX
 -- | counter = make component
--- |   { initialState = { counter: 0 }
+-- |   { initialState: { counter: 0 }
 -- |
--- |   , update = \self action -> case action of
+-- |   , update: \self action -> case action of
 -- |       Increment ->
 -- |         Update self.state { counter = self.state.counter + 1 }
 -- |
--- |   , render = \self ->
+-- |   , render: \self ->
 -- |       R.button
 -- |         { onClick: capture_ self Increment
 -- |         , children: [ R.text (self.props.label <> ": " <> show self.state.counter) ]

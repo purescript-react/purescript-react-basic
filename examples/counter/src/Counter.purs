@@ -2,7 +2,6 @@ module Counter where
 
 import Prelude
 
-
 import React.Basic (Component, JSX, StateUpdate(..), capture_, createComponent, make)
 import React.Basic.DOM as R
 

@@ -3,7 +3,7 @@
 #### `ComponentSpec`
 
 ``` purescript
-type ComponentSpec props state initialState action = { initialState :: initialState, update :: Self props state action -> action -> StateUpdate props state action, render :: Self props state action -> JSX, shouldUpdate :: Self props state action -> props -> state -> Boolean, didMount :: Self props state action -> Effect Unit, didUpdate :: Self props state action -> Effect Unit, willUnmount :: Self props state action -> Effect Unit, "$$type" :: ComponentType props state action }
+type ComponentSpec props state action = (initialState :: state, update :: Self props state action -> action -> StateUpdate props state action, render :: Self props state action -> JSX, shouldUpdate :: Self props state action -> props -> state -> Boolean, didMount :: Self props state action -> Effect Unit, didUpdate :: Self props state action -> Effect Unit, willUnmount :: Self props state action -> Effect Unit)
 ```
 
 `ComponentSpec` represents a React-Basic component implementation.
@@ -13,7 +13,7 @@ with specific implementations. None are required to be overridden, unless
 an overridden function interacts with `state`, in which case `initialState`
 is required (the compiler enforces this). While you _can_ use `state` and
 dispatch actions without defining `update`, doing so doesn't make much sense
-so the default `update` implementation will emit a warning.
+and will emit a warning.
 
 - `initialState`
   - The component's starting state.
@@ -26,7 +26,7 @@ so the default `update` implementation will emit a warning.
 - `render`
   - Takes a current snapshot of the component (`Self`) and converts it to renderable `JSX`.
 - `shouldUpdate`
-  - Can be useful for occasional performance optimizations. Rarely necessary.
+  - Can be useful for performance optimizations. Rarely necessary.
 - `didMount`
   - The React component's `componentDidMount` lifecycle. Useful for initiating an action on first mount, such as fetching data from a server.
 - `didUpdate`
@@ -35,14 +35,13 @@ so the default `update` implementation will emit a warning.
   - The React component's `componentWillUpdate` lifecycle. Any subscriptions or timers created in `didMount` or `didUpdate` should be disposed of here.
 
 The component spec is generally not exported from your component
-module and this type is rarely used explicitly. The simplified alias
-`Component` is usually sufficient, and `make` will validate whether
-your component's types line up.
+module and this type is rarely used explicitly. `make` will validate whether
+your component's internal types line up.
 
 For example:
 
 ```purs
-component :: Component
+component :: Component Props
 component = createComponent "Counter"
 
 type Props =
@@ -53,14 +52,14 @@ data Action
   = Increment
 
 counter :: Props -> JSX
-counter = make component
+counter: make component
   { initialState = { counter: 0 }
 
-  , update = \self action -> case action of
+  , update: \self action -> case action of
       Increment ->
         Update self.state { counter = self.state.counter + 1 }
 
-  , render = \self ->
+  , render: \self ->
       R.button
         { onClick: capture_ self Increment
         , children: [ R.text (self.props.label <> ": " <> show self.state.counter) ]
@@ -73,52 +72,53 @@ This example component overrides `initialState`, `update`, and `render`.
 __*Note:* A `ComponentSpec` is *not* a valid React component by itself. If you would like to use
   a React-Basic component from JavaScript, use `toReactComponent`.__
 
-__*Note:* `$$type` is for internal use only. It needs to be on the type to
-  preserve its existence during a record update, as in the example above.__
-
 __*See also:* `Component`, `ComponentSpec`, `make`, `makeStateless`__
 
 #### `createComponent`
 
 ``` purescript
-createComponent :: forall props state action. String -> ComponentSpec props state Unit action
+createComponent :: forall props. String -> Component props
 ```
 
-Creates a `ComponentSpec` with a given Display Name.
+Creates a `Component` with a given Display Name.
 
 The resulting component spec is usually given the simplified `Component` type:
 
 ```purs
-component :: Component
+component :: Component Props
 component = createComponent "Counter"
 ```
 
 This function should be used at the module level and considered side effecting.
 This is because React uses referential equality when deciding whether a new
-`JSX` tree is a valid update, or if it needs to be replaced entirely
+`JSX` tree is a valid update or if it needs to be replaced entirely
 (expensive and clears component state lower in the tree).
+
+__*Note:* A specific type for the props in `Component props` should always be chosen at this point.
+  It's technically possible to declare the component with `forall props. Component props`
+  but doing so is unsafe. Leaving the prop type open allows the use of a single `Component`
+  definition in multiple React-Basic components that may have different prop types. Because
+  component lifecycles are managed by React, it becomes possible for incompatible prop values to
+  be passed by React into lifecycle functions.__
 
 __*Note:* A `Component` is *not* a valid React component by itself. If you would like to use
   a React-Basic component from JavaScript, use `toReactComponent`.__
 
-__*See also:* `Component`, `ComponentSpec`, `make`, `makeStateless`__
+__*See also:* `Component`, `make`, `makeStateless`__
 
 #### `Component`
 
 ``` purescript
-type Component = forall props state action. ComponentSpec props state Unit action
+data Component props
 ```
 
 A simplified alias for `ComponentSpec`. This type is usually used to represent
 the default component type returned from `createComponent`.
-
-#### `ComponentType`
-
-``` purescript
-data ComponentType props state action
-```
-
 Opaque component information for internal use.
+
+__*Note:* Never define a component with
+  a less specific type for `props` than its associated `ComponentSpec` and `make`
+  calls, as this can lead to unsafe interactions with React's lifecycle management.__
 
 __*For the curious:* This is the "class" React will use to render and
   identify the component. It receives the `ComponentSpec` as a prop and knows
@@ -138,7 +138,7 @@ data StateUpdate props state action
 Used by the `update` function to describe the kind of state update and/or side
 effects desired.
 
-__*See also:* `ComponentSpec`__
+__*See also:* `ComponentSpec`, `capture`__
 
 #### `Self`
 
@@ -255,14 +255,14 @@ __*See also:* `Self`__
 #### `make`
 
 ``` purescript
-make :: forall props state action. ComponentSpec props state state action -> props -> JSX
+make :: forall spec spec_ props state action. Union spec spec_ (ComponentSpec props state action) => Component props -> { render :: Self props state action -> JSX | spec } -> props -> JSX
 ```
 
-Turn a `Component` into a usable render function.
+Turn a `Component` and `ComponentSpec` into a usable render function.
 This is where you will want to provide customized implementations:
 
 ```purs
-component :: Component
+component :: Component Props
 component = createComponent "Counter"
 
 type Props =
@@ -274,13 +274,13 @@ data Action
 
 counter :: Props -> JSX
 counter = make component
-  { initialState = { counter: 0 }
+  { initialState: { counter: 0 }
 
-  , update = \self action -> case action of
+  , update: \self action -> case action of
       Increment ->
         Update self.state { counter = self.state.counter + 1 }
 
-  , render = \self ->
+  , render: \self ->
       R.button
         { onClick: capture_ self Increment
         , children: [ R.text (self.props.label <> ": " <> show self.state.counter) ]
@@ -293,13 +293,13 @@ __*See also:* `makeStateless`, `createComponent`, `Component`, `ComponentSpec`__
 #### `makeStateless`
 
 ``` purescript
-makeStateless :: forall props. ComponentSpec props Unit Unit Unit -> (props -> JSX) -> props -> JSX
+makeStateless :: forall props. Component props -> (props -> JSX) -> props -> JSX
 ```
 
 Makes stateless component definition slightly less verbose:
 
 ```purs
-component :: Component
+component :: Component Props
 component = createComponent "Xyz"
 
 myComponent :: Props -> JSX
@@ -398,6 +398,28 @@ imported from FFI.
 
 __*See also:* `ReactComponent`, `element`, React's documentation regarding the special `key` prop__
 
+#### `displayNameFromComponent`
+
+``` purescript
+displayNameFromComponent :: forall props. Component props -> String
+```
+
+Retrieve the Display Name from a `ComponentSpec`. Useful for debugging and improving
+error messages in logs.
+
+__*See also:* `displayNameFromSelf`, `createComponent`__
+
+#### `displayNameFromSelf`
+
+``` purescript
+displayNameFromSelf :: forall props state action. Self props state action -> String
+```
+
+Retrieve the Display Name from a `Self`. Useful for debugging and improving
+error messages in logs.
+
+__*See also:* `displayNameFromComponent`, `createComponent`__
+
 #### `ReactComponent`
 
 ``` purescript
@@ -426,7 +448,7 @@ caution.
 #### `toReactComponent`
 
 ``` purescript
-toReactComponent :: forall jsProps props state action. ({  | jsProps } -> props) -> ComponentSpec props state state action -> ReactComponent {  | jsProps }
+toReactComponent :: forall spec spec_ jsProps props state action. Union spec spec_ (ComponentSpec props state action) => ({  | jsProps } -> props) -> Component props -> { render :: Self props state action -> JSX | spec } -> ReactComponent {  | jsProps }
 ```
 
 Convert a React-Basic `ComponentSpec` to a JavaScript-friendly React component.

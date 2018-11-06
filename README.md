@@ -2,13 +2,16 @@
 
 [![Build Status](https://travis-ci.org/lumihq/purescript-react-basic.svg?branch=master)](https://travis-ci.org/lumihq/purescript-react-basic)
 
-This package implements an opinionated set of bindings to the React library, optimizing for the most basic use cases.
+This package implements an opinionated set of bindings over [React](https://reactjs.org), optimizing for correctness and simplifying basic use cases.
 
 ## Features
 
 - All React DOM elements and attributes are supported (soon, events are a work in progress).
-- An intuitive API for specifying props - no arrays of key value pairs, just records.
+- An intuitive API for specifying props - simple records, no arrays of key value pairs.
 - Attributes are optional, but type-checked. It is a type error to specify `href` as an integer, for example.
+- An action/update pattern for local component state, inspired by [ReasonReact](https://reasonml.github.io/reason-react/).
+- React lifecycles are available, but not in your way when you don't need them.
+- Typeclasses, like `Eq props`, can be used in component definitions.
 
 ## Getting Started
 
@@ -18,49 +21,12 @@ You can install this package using Bower:
 bower install git@github.com:lumihq/purescript-react-basic.git
 ```
 
-Here is an example component which renders a label read from props along with a counter:
+See [the documentation](https://pursuit.purescript.org/packages/purescript-react-basic/docs/React.Basic) for a detailed overview, or take a look at one of the examples:
 
-```purescript
-module Counter where
+- [A Counter](./examples/counter/src/Counter.purs)
+- [A controlled input](./examples/controlled-input/src/ControlledInput.purs)
+- [Components](./examples/component/src/ToggleButton.purs) in [components](./examples/component/src/Container.purs)
 
-import Prelude
+## Migrating to v4 from v2 or v3
 
-import React.Basic as React
-import React.Basic.DOM as R
-import React.Basic.Events as Events
-
--- The props for the component
-type Props =
-  { label :: String
-  }
-
--- Create a component by passing a record to the `react` function.
--- The `render` function takes the props and current state, as well as a
--- state update callback, and produces a document.
-component :: React.Component Props
-component = React.component { displayName: "Counter", initialState, receiveProps, render }
-  where
-    initialState =
-      { counter: 0
-      }
-
-    receiveProps _ =
-      pure unit
-
-    render { props, state, setState } =
-      R.button
-        { onClick: Events.handler_ do
-            setState \s -> s { counter = s.counter + 1 }
-        , children: [ R.text (props.label <> ": " <> show state.counter) ]
-        }
-```
-
-This component can be used directly from JavaScript. For example, if you are using `purs-loader`:
-
-```jsx
-import {example as Example} from 'React.Basic.Example.purs';
-
-const myComponent = () => (
-  <Example label='Increment' />
-);
-```
+v4 includes a new (but deprecated) module, `React.Basic.Compat`. It matches most of the old API and types (except `setStateThen` and `isFirstMount`) to make upgrading easier and more gradual. You can find `^import\sReact\.Basic\b` and replace with `import React.Basic.Compat`, upgrade the package version, and proceed from there one component at a time (or only new components). See the documentation link above for more info on the v4 API.
