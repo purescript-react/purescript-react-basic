@@ -4,19 +4,14 @@ This module provides an efficient (no `ReactDOM.findDOMNode`) and
 declarative way to aquire a `Node` for an element in your render
 tree.
 
-For both type safety and performance reasons, `ref` will always
-provide a reference to its own `<react-basic-ref>` `Node`, but you
-can use this `Node` with `querySelector` to find more specific local
-elements.
-
 For example:
 
 ```purs
 render self =
   ref \myRef ->
     case myRef of
-      Nothing -> R.text "DOM render in progress..."
-      Just _  -> R.text "DOM render complete."
+      Nothing -> R.text "First DOM render in progress..."
+      Just _  -> R.text "First DOM render complete."
 ```
 
 #### `ref`
@@ -25,4 +20,26 @@ render self =
 ref :: (Maybe Node -> JSX) -> JSX
 ```
 
+#### `selectorRef`
+
+``` purescript
+selectorRef :: QuerySelector -> (Maybe Node -> JSX) -> JSX
+```
+
+
+### Re-exported from Web.DOM.ParentNode:
+
+#### `QuerySelector`
+
+``` purescript
+newtype QuerySelector
+  = QuerySelector String
+```
+
+##### Instances
+``` purescript
+Eq QuerySelector
+Ord QuerySelector
+Newtype QuerySelector _
+```
 

@@ -1,9 +1,9 @@
 -- | This module defines helper functions for creating virtual DOM elements
 -- | safely.
 -- |
--- | Note: DOM element props are provided as records, and checked using `Union`
--- | constraints. This means that we don't need to provide all props, but any we
--- | do provide must have the correct types.
+-- | __*Note:* DOM element props are provided as records, and checked using `Union`
+-- |   constraints. This means that we don't need to provide all props, but any we
+-- |   do provide must have the correct types.__
 
 module React.Basic.DOM
   ( module Internal
@@ -38,7 +38,7 @@ import Web.DOM (Element, Node)
 -- | Render or update/re-render a component tree into
 -- | a DOM element.
 -- |
--- | Note: Relies on `ReactDOM.render`
+-- | __*Note:* Relies on `ReactDOM.render`__
 render :: JSX -> Element -> Effect Unit
 render jsx node = render' jsx node (pure unit)
 
@@ -46,7 +46,7 @@ render jsx node = render' jsx node (pure unit)
 -- | a DOM element. The given Effect is run once the
 -- | DOM update is complete.
 -- |
--- | Note: Relies on `ReactDOM.render`
+-- | __*Note:* Relies on `ReactDOM.render`__
 render' :: JSX -> Element -> Effect Unit -> Effect Unit
 render' = runEffectFn3 render_
 
@@ -56,9 +56,9 @@ foreign import render_ :: EffectFn3 JSX Element (Effect Unit) Unit
 -- | a DOM element, attempting to reuse the existing
 -- | DOM tree.
 -- |
--- | Note: Relies on `ReactDOM.hydrate`, generally only
+-- | __*Note:* Relies on `ReactDOM.hydrate`, generally only
 -- |   used with `ReactDOMServer.renderToNodeStream` or
--- |   `ReactDOMServer.renderToString`
+-- |   `ReactDOMServer.renderToString`__
 hydrate :: JSX -> Element -> Effect Unit
 hydrate jsx node = hydrate' jsx node (pure unit)
 
@@ -67,9 +67,9 @@ hydrate jsx node = hydrate' jsx node (pure unit)
 -- | DOM tree. The given Effect is run once the
 -- | DOM update is complete.
 -- |
--- | Note: Relies on `ReactDOM.hydrate`, generally only
+-- | __*Note:* Relies on `ReactDOM.hydrate`, generally only
 -- |   used with `ReactDOMServer.renderToNodeStream` or
--- |   `ReactDOMServer.renderToString`
+-- |   `ReactDOMServer.renderToString`__
 hydrate' :: JSX -> Element -> Effect Unit -> Effect Unit
 hydrate' = runEffectFn3 hydrate_
 
@@ -79,7 +79,7 @@ foreign import hydrate_ :: EffectFn3 JSX Element (Effect Unit) Unit
 -- | rendered into the given element. Returns `true`
 -- | if an app existed and was unmounted successfully.
 -- |
--- | Note: Relies on `ReactDOM.unmountComponentAtNode`
+-- | __*Note:* Relies on `ReactDOM.unmountComponentAtNode`__
 unmount :: Element -> Effect Boolean
 unmount = runEffectFn1 unmountComponentAtNode_
 
@@ -89,7 +89,10 @@ foreign import unmountComponentAtNode_ :: EffectFn1 Element Boolean
 -- | instance, or an Error if no node was found or the given
 -- | instance was not mounted.
 -- |
--- | Note: Relies on `ReactDOM.findDOMNode`
+-- | __*Note:* This function can be *very* slow -- prefer
+-- | `React.Basic.DOM.Components.Ref` where possible__
+-- |
+-- | __*Note:* Relies on `ReactDOM.findDOMNode`__
 findDOMNode :: ReactComponentInstance -> Effect (Either Error Node)
 findDOMNode instance_ = try do
   node <- runEffectFn1 findDOMNode_ instance_
@@ -115,7 +118,7 @@ text = unsafeCoerce
 -- | Create a value of type `CSS` (which can be provided to the `style` property)
 -- | from a plain record of CSS attributes.
 -- |
--- | E.g.
+-- | For example:
 -- |
 -- | ```
 -- | div { style: css { padding: "5px" } } [ text "This text is padded." ]
@@ -125,7 +128,7 @@ css = unsafeCoerce
 
 -- | Merge styles from right to left. Uses `Object.assign`.
 -- |
--- | E.g.
+-- | For example:
 -- |
 -- | ```
 -- | style: mergeCSS [ (css { padding: "5px" }), props.style ]
