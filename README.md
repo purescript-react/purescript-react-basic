@@ -18,7 +18,7 @@ This package implements an opinionated set of bindings over [React](https://reac
 You can install this package using Bower:
 
 ```sh
-bower install git@github.com:lumihq/purescript-react-basic.git
+bower install purescript-react-basic
 ```
 
 See [the documentation](https://pursuit.purescript.org/packages/purescript-react-basic/docs/React.Basic) for a detailed overview, or take a look at one of the examples:
