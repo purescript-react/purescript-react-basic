@@ -21,6 +21,8 @@ You can install this package using Bower:
 bower install purescript-react-basic
 ```
 
+Or clone/fork the [starter project](https://github.com/lumihq/react-basic-starter).
+
 See [the documentation](https://pursuit.purescript.org/packages/purescript-react-basic/docs/React.Basic) for a detailed overview, or take a look at one of the examples:
 
 - [A Counter](./examples/counter/src/Counter.purs)
