@@ -19,7 +19,7 @@ Standard props which are shared by all DOM elements.
 #### `unsafeCreateDOMComponent`
 
 ``` purescript
-unsafeCreateDOMComponent :: forall props. String -> Component props
+unsafeCreateDOMComponent :: forall props. String -> ReactComponent props
 ```
 
 

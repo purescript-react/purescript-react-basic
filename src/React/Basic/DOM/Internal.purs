@@ -1,6 +1,6 @@
 module React.Basic.DOM.Internal where
 
-import React.Basic (Component)
+import React.Basic (ReactComponent)
 import React.Basic.Events (EventHandler)
 import Unsafe.Coerce (unsafeCoerce)
 
@@ -93,5 +93,5 @@ type SharedProps specific =
   | specific
   )
 
-unsafeCreateDOMComponent :: forall props. String -> Component props
+unsafeCreateDOMComponent :: forall props. String -> ReactComponent props
 unsafeCreateDOMComponent = unsafeCoerce

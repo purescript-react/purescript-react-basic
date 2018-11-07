@@ -3,34 +3,43 @@ module ControlledInput where
 import Prelude
 
 import Data.Maybe (Maybe(..), fromMaybe, maybe)
+import React.Basic (Component, JSX, StateUpdate(..), capture, createComponent, make)
 import React.Basic as React
 import React.Basic.DOM as R
-import React.Basic.DOM.Events (preventDefault, targetValue, timeStamp)
-import React.Basic.Events as Events
+import React.Basic.DOM.Events (targetValue, timeStamp)
+import React.Basic.Events (merge)
 
-component :: React.Component {}
-component = React.component { displayName: "ControlledInput", initialState, receiveProps, render }
-  where
-    initialState =
+component :: Component Props
+component = createComponent "ControlledInput"
+
+type Props = Unit
+
+data Action
+  = ValueChanged String Number
+
+controlledInput :: Props -> JSX
+controlledInput = make component
+  { initialState:
       { value: "hello world"
-      , timeStamp: Nothing
+      , timestamp: Nothing
       }
 
-    receiveProps _ =
-      pure unit
+  , update: \self -> case _ of
+      ValueChanged value timestamp ->
+        Update self.state
+          { value = value
+          , timestamp = Just timestamp
+          }
 
-    render { state, setState } =
+  , render: \self ->
       React.fragment
         [ R.input
             { onChange:
-                Events.handler
-                  (preventDefault >>> Events.merge { targetValue, timeStamp })
-                  \{ timeStamp, targetValue } ->
-                    setState _ { value = fromMaybe "" targetValue
-                               , timeStamp = Just timeStamp
-                               }
-            , value: state.value
+                capture self (merge { targetValue, timeStamp })
+                  \{ timeStamp, targetValue } -> ValueChanged (fromMaybe "" targetValue) timeStamp
+            , value: self.state.value
             }
-        , R.p_ [ R.text ("Current value = " <> show state.value) ]
-        , R.p_ [ R.text ("Changed at = " <> maybe "never" show state.timeStamp) ]
+        , R.p_ [ R.text ("Current value = " <> show self.state.value) ]
+        , R.p_ [ R.text ("Changed at = " <> maybe "never" show self.state.timestamp) ]
         ]
+  }

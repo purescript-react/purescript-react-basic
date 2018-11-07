@@ -3,9 +3,9 @@
 This module defines helper functions for creating virtual DOM elements
 safely.
 
-Note: DOM element props are provided as records, and checked using `Union`
-constraints. This means that we don't need to provide all props, but any we
-do provide must have the correct types.
+__*Note:* DOM element props are provided as records, and checked using `Union`
+  constraints. This means that we don't need to provide all props, but any we
+  do provide must have the correct types.__
 
 #### `render`
 
@@ -16,7 +16,7 @@ render :: JSX -> Element -> Effect Unit
 Render or update/re-render a component tree into
 a DOM element.
 
-Note: Relies on `ReactDOM.render`
+__*Note:* Relies on `ReactDOM.render`__
 
 #### `render'`
 
@@ -28,7 +28,7 @@ Render or update/re-render a component tree into
 a DOM element. The given Effect is run once the
 DOM update is complete.
 
-Note: Relies on `ReactDOM.render`
+__*Note:* Relies on `ReactDOM.render`__
 
 #### `hydrate`
 
@@ -40,9 +40,9 @@ Render or update/re-render a component tree into
 a DOM element, attempting to reuse the existing
 DOM tree.
 
-Note: Relies on `ReactDOM.hydrate`, generally only
+__*Note:* Relies on `ReactDOM.hydrate`, generally only
   used with `ReactDOMServer.renderToNodeStream` or
-  `ReactDOMServer.renderToString`
+  `ReactDOMServer.renderToString`__
 
 #### `hydrate'`
 
@@ -55,9 +55,9 @@ a DOM element, attempting to reuse the existing
 DOM tree. The given Effect is run once the
 DOM update is complete.
 
-Note: Relies on `ReactDOM.hydrate`, generally only
+__*Note:* Relies on `ReactDOM.hydrate`, generally only
   used with `ReactDOMServer.renderToNodeStream` or
-  `ReactDOMServer.renderToString`
+  `ReactDOMServer.renderToString`__
 
 #### `unmount`
 
@@ -69,19 +69,22 @@ Attempt to unmount and clean up the React app
 rendered into the given element. Returns `true`
 if an app existed and was unmounted successfully.
 
-Note: Relies on `ReactDOM.unmountComponentAtNode`
+__*Note:* Relies on `ReactDOM.unmountComponentAtNode`__
 
 #### `findDOMNode`
 
 ``` purescript
-findDOMNode :: ComponentInstance -> Effect (Either Error Node)
+findDOMNode :: ReactComponentInstance -> Effect (Either Error Node)
 ```
 
 Returns the current DOM node associated with the given
 instance, or an Error if no node was found or the given
 instance was not mounted.
 
-Note: Relies on `ReactDOM.findDOMNode`
+__*Note:* This function can be *very* slow -- prefer
+`React.Basic.DOM.Components.Ref` where possible__
+
+__*Note:* Relies on `ReactDOM.findDOMNode`__
 
 #### `createPortal`
 
@@ -110,7 +113,7 @@ css :: forall css. {  | css } -> CSS
 Create a value of type `CSS` (which can be provided to the `style` property)
 from a plain record of CSS attributes.
 
-E.g.
+For example:
 
 ```
 div { style: css { padding: "5px" } } [ text "This text is padded." ]
@@ -124,7 +127,7 @@ mergeStyles :: Array CSS -> CSS
 
 Merge styles from right to left. Uses `Object.assign`.
 
-E.g.
+For example:
 
 ```
 style: mergeCSS [ (css { padding: "5px" }), props.style ]
@@ -2194,6 +2197,6 @@ An abstract type representing records of CSS attributes.
 #### `unsafeCreateDOMComponent`
 
 ``` purescript
-unsafeCreateDOMComponent :: forall props. String -> Component props
+unsafeCreateDOMComponent :: forall props. String -> ReactComponent props
 ```
 

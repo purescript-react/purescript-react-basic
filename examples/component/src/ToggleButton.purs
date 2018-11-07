@@ -3,33 +3,40 @@ module ToggleButton where
 import Prelude
 
 import Effect.Console (log)
-import React.Basic as React
+import React.Basic (Component, JSX, StateUpdate(..), capture_, createComponent, make)
 import React.Basic.DOM as R
-import React.Basic.Events as Events
+
+component :: Component Props
+component = createComponent "ToggleButton"
 
 type Props =
   { label :: String
   }
 
-component :: React.Component Props
-component = React.component { displayName: "ToggleButton", initialState, receiveProps, render }
-  where
-    initialState =
+data Action
+  = Toggle
+
+toggleButton :: Props -> JSX
+toggleButton = make component
+  { initialState:
       { on: false
       }
 
-    receiveProps _ =
-      pure unit
+  , update: \self -> case _ of
+      Toggle ->
+        UpdateAndSideEffects
+          self.state { on = not self.state.on }
+          \nextSelf -> do
+            log $ "next state: " <> show nextSelf.state
 
-    render { props, state, setStateThen } =
+  , render: \self ->
       R.button
-        { onClick: Events.handler_ do
-            setStateThen (\s -> s { on = not s.on }) \nextState -> do
-              log $ "nextState: " <> show nextState
+        { onClick: capture_ self Toggle
         , children:
-            [ R.text props.label
-            , R.text if state.on
-                       then " On"
-                       else " Off"
+            [ R.text self.props.label
+            , R.text if self.state.on
+                        then " On"
+                        else " Off"
             ]
         }
+  }
