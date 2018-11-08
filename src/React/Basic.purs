@@ -65,7 +65,7 @@ import Type.Row (class Union)
 -- | - `didUpdate`
 -- |   - The React component's `componentDidUpdate` lifecycle. Rarely necessary.
 -- | - `willUnmount`
--- |   - The React component's `componentWillUpdate` lifecycle. Any subscriptions or timers created in `didMount` or `didUpdate` should be disposed of here.
+-- |   - The React component's `componentWillUnmount` lifecycle. Any subscriptions or timers created in `didMount` or `didUpdate` should be disposed of here.
 -- |
 -- | The component spec is generally not exported from your component
 -- | module and this type is rarely used explicitly. `make` will validate whether
