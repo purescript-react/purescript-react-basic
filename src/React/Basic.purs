@@ -146,10 +146,6 @@ foreign import createComponent
    . String
   -> Component props
 
--- | A simplified alias for `ComponentSpec`. This type is usually used to represent
--- | the default component type returned from `createComponent`.
--- type Component props = forall state action. ComponentSpec props state action
-
 -- | Opaque component information for internal use.
 -- |
 -- | __*Note:* Never define a component with
@@ -291,7 +287,7 @@ foreign import make
   :: forall spec spec_ props state action
    . Union spec spec_ (ComponentSpec props state action)
   => Component props
-  -> { render :: Self props state action -> JSX | spec }
+  -> { initialState :: state, render :: Self props state action -> JSX | spec }
   -> props
   -> JSX
 
@@ -318,7 +314,7 @@ makeStateless
   -> props
   -> JSX
 makeStateless component render =
-  make component { render: \self -> render self.props }
+  make component { initialState: unit, render: \self -> render self.props }
 
 -- | Represents rendered React VDOM (the result of calling `React.createElement`
 -- | in JavaScript).
