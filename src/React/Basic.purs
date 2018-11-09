@@ -86,7 +86,7 @@ import Type.Row (class Union)
 -- |
 -- | counter :: Props -> JSX
 -- | counter = make component
--- |   { initialState = { counter: 0 }
+-- |   { initialState: { counter: 0 }
 -- |
 -- |   , update: \self action -> case action of
 -- |       Increment ->
