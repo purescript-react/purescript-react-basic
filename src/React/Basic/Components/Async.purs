@@ -28,6 +28,8 @@ asyncWithLoader loader = make component
   , didMount: launch
   -- , didUpdate: No! Implementing `didUpdate` breaks the
   --               Aff/Component lifecycle relationship.
+  --               To update the Aff over time, wrap this
+  --               component with `keyed`.
   , willUnmount: cleanup
   }
   where
