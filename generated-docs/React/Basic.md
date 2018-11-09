@@ -52,8 +52,8 @@ data Action
   = Increment
 
 counter :: Props -> JSX
-counter: make component
-  { initialState = { counter: 0 }
+counter = make component
+  { initialState: { counter: 0 }
 
   , update: \self action -> case action of
       Increment ->
@@ -112,8 +112,6 @@ __*See also:* `Component`, `make`, `makeStateless`__
 data Component props
 ```
 
-A simplified alias for `ComponentSpec`. This type is usually used to represent
-the default component type returned from `createComponent`.
 Opaque component information for internal use.
 
 __*Note:* Never define a component with
@@ -255,7 +253,7 @@ __*See also:* `Self`__
 #### `make`
 
 ``` purescript
-make :: forall spec spec_ props state action. Union spec spec_ (ComponentSpec props state action) => Component props -> { render :: Self props state action -> JSX | spec } -> props -> JSX
+make :: forall spec spec_ props state action. Union spec spec_ (ComponentSpec props state action) => Component props -> { initialState :: state, render :: Self props state action -> JSX | spec } -> props -> JSX
 ```
 
 Turn a `Component` and `ComponentSpec` into a usable render function.

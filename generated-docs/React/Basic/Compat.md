@@ -1,5 +1,8 @@
 ## Module React.Basic.Compat
 
+This module is deprecated and may be removed in the next
+major version.
+
 #### `Component`
 
 ``` purescript
