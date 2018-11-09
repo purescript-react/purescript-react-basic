@@ -29,6 +29,6 @@ See [the documentation](https://pursuit.purescript.org/packages/purescript-react
 - [A controlled input](./examples/controlled-input/src/ControlledInput.purs)
 - [Components](./examples/component/src/ToggleButton.purs) in [components](./examples/component/src/Container.purs)
 
-## Migrating to v4 from v2 or v3
+## Migrating from v2 or v3
 
-v4 includes a new (but deprecated) module, `React.Basic.Compat`. It matches most of the old API and types (except `setStateThen` and `isFirstMount`) to make upgrading easier and more gradual. You can find `^import\sReact\.Basic\b` and replace with `import React.Basic.Compat`, upgrade the package version, and proceed from there one component at a time (or only new components). See the documentation link above for more info on the v4 API.
+`React.Basic.Compat` is a new (but deprecated) module. It matches most of the old API and types (except `setStateThen` and `isFirstMount`) to make upgrading easier and more gradual. You can find `^import\sReact\.Basic\b` and replace with `import React.Basic.Compat`, upgrade the package version, and proceed from there one component at a time (or only new components). See the documentation link above for more info on the new API.

@@ -1,3 +1,5 @@
+-- | This module is deprecated and may be removed in the next
+-- | major version.
 module React.Basic.Compat
   ( Component
   , component
