@@ -117,12 +117,16 @@ exports.send_ = function(buildStateUpdate) {
 };
 
 exports.readProps = function(self) {
-  return self.instance_.props.$$props;
+  return function() {
+    return self.instance_.props.$$props;
+  };
 };
 
 exports.readState = function(self) {
-  var state = self.instance_.state;
-  return state === null ? null : state.$$state;
+  return function() {
+    var state = self.instance_.state;
+    return state === null ? null : state.$$state;
+  };
 };
 
 exports.make = function(_unionDict) {
