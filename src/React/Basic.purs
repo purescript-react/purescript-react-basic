@@ -110,9 +110,9 @@ type ComponentSpec props state action =
   ( initialState :: state
   , update       :: Self props state action -> action -> StateUpdate props state action
   , render       :: Self props state action -> JSX
-  , shouldUpdate :: Self props state action -> props -> state -> Boolean
   , didMount     :: Self props state action -> Effect Unit
-  , didUpdate    :: Self props state action -> Effect Unit
+  , shouldUpdate :: Self props state action -> { nextProps :: props, nextState :: state } -> Boolean
+  , didUpdate    :: Self props state action -> { prevProps :: props, prevState :: state } -> Effect Unit
   , willUnmount  :: Self props state action -> Effect Unit
   )
 

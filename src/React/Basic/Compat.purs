@@ -28,7 +28,7 @@ component { displayName, initialState, receiveProps, render } =
   toReactComponent identity (createComponent displayName)
     { initialState: initialState
     , didMount: receiveProps <<< selfToLegacySelf
-    , didUpdate: receiveProps <<< selfToLegacySelf
+    , didUpdate: const <<< receiveProps <<< selfToLegacySelf
     , update: \self stateUpdate -> Update (stateUpdate self.state)
     , render: render <<< selfToLegacySelf
     }

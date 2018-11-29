@@ -20,9 +20,10 @@ exports.createComponent = (function() {
     var shouldUpdate = this.$$spec.shouldUpdate;
     return shouldUpdate === undefined
       ? true
-      : shouldUpdate(this.toSelf())(nextProps.$$props)(
-          nextState === null ? null : nextState.$$state
-        );
+      : shouldUpdate(this.toSelf())({
+        nextProps: nextProps.$$props,
+        nextState: nextState === null ? null : nextState.$$state
+      });
   }
 
   function componentDidMount() {
@@ -32,10 +33,13 @@ exports.createComponent = (function() {
     }
   }
 
-  function componentDidUpdate() {
+  function componentDidUpdate(prevProps, prevState) {
     var didUpdate = this.$$spec.didUpdate;
     if (didUpdate !== undefined) {
-      didUpdate(this.toSelf())();
+      didUpdate(this.toSelf())({
+        prevProps: prevProps.$$props,
+        prevState: prevState === null ? null : prevState.$$state
+      })();
     }
   }
 
