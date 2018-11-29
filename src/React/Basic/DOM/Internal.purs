@@ -89,6 +89,13 @@ type SharedProps specific =
   , onBlur            :: EventHandler
   , onClick           :: EventHandler
   , onFocus           :: EventHandler
+  , onMouseDown       :: EventHandler
+  , onMouseEnter      :: EventHandler
+  , onMouseLeave      :: EventHandler
+  , onMouseMove       :: EventHandler
+  , onMouseOut        :: EventHandler
+  , onMouseOver       :: EventHandler
+  , onMouseUp         :: EventHandler
   -- TODO: add more common event handlers
   | specific
   )
