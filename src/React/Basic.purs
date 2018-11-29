@@ -58,10 +58,10 @@ import Type.Row (class Union)
 -- |   - Side effects requested are only invoked _after_ any corrosponding state update has completed its render cycle and the changes have been applied. This means it is safe to interact with the DOM in a side effect, for example.
 -- | - `render`
 -- |   - Takes a current snapshot of the component (`Self`) and converts it to renderable `JSX`.
--- | - `shouldUpdate`
--- |   - Can be useful for performance optimizations. Rarely necessary.
 -- | - `didMount`
 -- |   - The React component's `componentDidMount` lifecycle. Useful for initiating an action on first mount, such as fetching data from a server.
+-- | - `shouldUpdate`
+-- |   - Can be useful for performance optimizations. Rarely necessary.
 -- | - `didUpdate`
 -- |   - The React component's `componentDidUpdate` lifecycle. Rarely necessary.
 -- | - `willUnmount`
@@ -110,9 +110,9 @@ type ComponentSpec props state action =
   ( initialState :: state
   , update       :: Self props state action -> action -> StateUpdate props state action
   , render       :: Self props state action -> JSX
-  , shouldUpdate :: Self props state action -> props -> state -> Boolean
   , didMount     :: Self props state action -> Effect Unit
-  , didUpdate    :: Self props state action -> Effect Unit
+  , shouldUpdate :: Self props state action -> { nextProps :: props, nextState :: state } -> Boolean
+  , didUpdate    :: Self props state action -> { prevProps :: props, prevState :: state } -> Effect Unit
   , willUnmount  :: Self props state action -> Effect Unit
   )
 
