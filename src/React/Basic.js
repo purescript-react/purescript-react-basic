@@ -16,6 +16,13 @@ exports.createComponent = (function() {
     return self;
   }
 
+  function componentDidMount() {
+    var didMount = this.$$spec.didMount;
+    if (didMount !== undefined) {
+      didMount(this.toSelf())();
+    }
+  }
+
   function shouldComponentUpdate(nextProps, nextState) {
     var shouldUpdate = this.$$spec.shouldUpdate;
     return shouldUpdate === undefined
@@ -24,13 +31,6 @@ exports.createComponent = (function() {
         nextProps: nextProps.$$props,
         nextState: nextState === null ? null : nextState.$$state
       });
-  }
-
-  function componentDidMount() {
-    var didMount = this.$$spec.didMount;
-    if (didMount !== undefined) {
-      didMount(this.toSelf())();
-    }
   }
 
   function componentDidUpdate(prevProps, prevState) {
@@ -140,8 +140,8 @@ exports.make = function(_unionDict) {
         initialState: $$spec.initialState,
         update: $$spec.update,
         render: $$spec.render,
-        shouldUpdate: $$spec.shouldUpdate,
         didMount: $$spec.didMount,
+        shouldUpdate: $$spec.shouldUpdate,
         didUpdate: $$spec.didUpdate,
         willUnmount: $$spec.willUnmount
       };
@@ -191,8 +191,8 @@ exports.toReactComponent = function(_unionDict) {
           initialState: $$spec.initialState,
           update: $$spec.update,
           render: $$spec.render,
-          shouldUpdate: $$spec.shouldUpdate,
           didMount: $$spec.didMount,
+          shouldUpdate: $$spec.shouldUpdate,
           didUpdate: $$spec.didUpdate,
           willUnmount: $$spec.willUnmount
         };
