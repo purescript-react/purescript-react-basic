@@ -48,6 +48,7 @@ import Effect.Unsafe (unsafePerformEffect)
 import React.Basic.Events (EventFn, SyntheticEvent, unsafeEventFn)
 import Unsafe.Coerce (unsafeCoerce)
 import Web.Event.Internal.Types (Event, EventTarget)
+import Web.File.FileList (FileList)
 
 -- | General event fields
 
@@ -110,6 +111,9 @@ targetChecked = unsafeEventFn \e -> toMaybe (unsafeCoerce e).target.checked
 
 targetValue :: EventFn SyntheticEvent (Maybe String)
 targetValue = unsafeEventFn \e -> toMaybe (unsafeCoerce e).target.value
+
+targetFiles :: EventFn SyntheticEvent (Maybe FileList)
+targetFiles = unsafeEventFn \e -> toMaybe (unsafeCoerce e).target.files
 
 timeStamp :: EventFn SyntheticEvent Number
 timeStamp = unsafeEventFn \e -> (unsafeCoerce e).timeStamp
