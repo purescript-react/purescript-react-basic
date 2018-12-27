@@ -112,6 +112,12 @@ targetChecked :: EventFn SyntheticEvent (Maybe Boolean)
 targetValue :: EventFn SyntheticEvent (Maybe String)
 ```
 
+#### `targetFiles`
+
+``` purescript
+targetFiles :: EventFn SyntheticEvent (Maybe FileList)
+```
+
 #### `timeStamp`
 
 ``` purescript

@@ -19,6 +19,7 @@ module React.Basic.DOM.Events
   , relatedTarget
   , targetChecked
   , targetValue
+  , targetFiles
   , timeStamp
   , type_
   , key
