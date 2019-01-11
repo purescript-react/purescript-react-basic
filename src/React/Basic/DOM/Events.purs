@@ -1,7 +1,9 @@
 -- | This module defines safe DOM event function and property accessors.
 
 module React.Basic.DOM.Events
-  ( bubbles
+  ( capture
+  , capture_
+  , bubbles
   , cancelable
   , eventPhase
   , eventPhaseNone
@@ -45,11 +47,27 @@ import Prelude
 
 import Data.Maybe (Maybe)
 import Data.Nullable (toMaybe)
+import Effect (Effect)
 import Effect.Unsafe (unsafePerformEffect)
-import React.Basic.Events (EventFn, SyntheticEvent, unsafeEventFn)
+import React.Basic.Events (EventFn, EventHandler, SyntheticEvent, handler, unsafeEventFn)
 import Unsafe.Coerce (unsafeCoerce)
 import Web.Event.Internal.Types (Event, EventTarget)
 import Web.File.FileList (FileList)
+
+-- | Create a capturing\* `EventHandler` to send an action when an event occurs. For
+-- | more complicated event handlers requiring `Effect`, use `handler` from `React.Basic.Events`.
+-- |
+-- | __\*calls `preventDefault` and `stopPropagation`__
+-- |
+-- | __*See also:* `update`, `capture_`, `monitor`, `React.Basic.Events`__
+capture :: forall a. EventFn SyntheticEvent a -> (a -> Effect Unit) -> EventHandler
+capture eventFn = handler (preventDefault >>> stopPropagation >>> eventFn)
+
+-- | Like `capture`, but for actions which don't need to extract information from the Event.
+-- |
+-- | __*See also:* `update`, `capture`, `monitor_`__
+capture_ :: Effect Unit -> EventHandler
+capture_ cb = capture identity \_ -> cb
 
 -- | General event fields
 

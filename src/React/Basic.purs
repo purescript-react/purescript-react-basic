@@ -2,14 +2,7 @@ module React.Basic
   ( ComponentSpec
   , createComponent
   , Component
-  , StateUpdate(..)
   , Self
-  , send
-  , sendAsync
-  , capture
-  , capture_
-  , monitor
-  , monitor_
   , readProps
   , readState
   , make
@@ -29,14 +22,8 @@ module React.Basic
 
 import Prelude
 
-import Data.Either (Either(..))
-import Data.Function.Uncurried (Fn1, Fn2, runFn1, runFn2)
-import Data.Nullable (Nullable, notNull, null)
+import Data.Function.Uncurried (Fn2, runFn2)
 import Effect (Effect)
-import Effect.Aff (Aff, Error, runAff_)
-import Effect.Uncurried (EffectFn2, runEffectFn2)
-import React.Basic.DOM.Events (preventDefault, stopPropagation)
-import React.Basic.Events (EventFn, EventHandler, SyntheticEvent, handler)
 import Type.Row (class Union)
 
 -- | `ComponentSpec` represents a React-Basic component implementation.
@@ -44,18 +31,11 @@ import Type.Row (class Union)
 -- | These are the properties your component definition may override
 -- | with specific implementations. None are required to be overridden, unless
 -- | an overridden function interacts with `state`, in which case `initialState`
--- | is required (the compiler enforces this). While you _can_ use `state` and
--- | dispatch actions without defining `update`, doing so doesn't make much sense
--- | and will emit a warning.
+-- | is required (the compiler enforces this).
 -- |
 -- | - `initialState`
 -- |   - The component's starting state.
 -- |   - Avoid mirroring prop values in state.
--- | - `update`
--- |   - All state updates go through `update`.
--- |   - `update` is called when `send` is used to dispatch an action.
--- |   - State changes are described using `StateUpdate`. Only `Update` and `UpdateAndSideEffects` will cause rerenders and a call to `didUpdate`.
--- |   - Side effects requested are only invoked _after_ any corrosponding state update has completed its render cycle and the changes have been applied. This means it is safe to interact with the DOM in a side effect, for example.
 -- | - `render`
 -- |   - Takes a current snapshot of the component (`Self`) and converts it to renderable `JSX`.
 -- | - `didMount`
@@ -81,39 +61,31 @@ import Type.Row (class Union)
 -- |   { label :: String
 -- |   }
 -- |
--- | data Action
--- |   = Increment
--- |
 -- | counter :: Props -> JSX
 -- | counter = make component
 -- |   { initialState: { counter: 0 }
 -- |
--- |   , update: \self action -> case action of
--- |       Increment ->
--- |         Update self.state { counter = self.state.counter + 1 }
--- |
 -- |   , render: \self ->
 -- |       R.button
--- |         { onClick: capture_ self Increment
+-- |         { onClick: capture_ $ self.setState \s -> s { counter + 1 }
 -- |         , children: [ R.text (self.props.label <> ": " <> show self.state.counter) ]
 -- |         }
 -- |   }
 -- | ```
 -- |
--- | This example component overrides `initialState`, `update`, and `render`.
+-- | This example component overrides `initialState` and `render`.
 -- |
 -- | __*Note:* A `ComponentSpec` is *not* a valid React component by itself. If you would like to use
 -- |   a React-Basic component from JavaScript, use `toReactComponent`.__
 -- |
 -- | __*See also:* `Component`, `ComponentSpec`, `make`, `makeStateless`__
-type ComponentSpec props state action =
+type ComponentSpec props state =
   ( initialState :: state
-  , update       :: Self props state action -> action -> StateUpdate props state action
-  , render       :: Self props state action -> JSX
-  , didMount     :: Self props state action -> Effect Unit
-  , shouldUpdate :: Self props state action -> { nextProps :: props, nextState :: state } -> Boolean
-  , didUpdate    :: Self props state action -> { prevProps :: props, prevState :: state } -> Effect Unit
-  , willUnmount  :: Self props state action -> Effect Unit
+  , render       :: Self props state -> JSX
+  , didMount     :: Self props state -> Effect Unit
+  , shouldUpdate :: Self props state -> { nextProps :: props, nextState :: state } -> Boolean
+  , didUpdate    :: Self props state -> { prevProps :: props, prevState :: state } -> Effect Unit
+  , willUnmount  :: Self props state -> Effect Unit
   )
 
 -- | Creates a `Component` with a given Display Name.
@@ -158,81 +130,27 @@ foreign import createComponent
 -- |   itself from JavaScript. For JavaScript interop, see `toReactComponent`.__
 data Component props
 
--- | Used by the `update` function to describe the kind of state update and/or side
--- | effects desired.
--- |
--- | __*See also:* `ComponentSpec`, `capture`__
-data StateUpdate props state action
-  = NoUpdate
-  | Update               state
-  | SideEffects                (Self props state action -> Effect Unit)
-  | UpdateAndSideEffects state (Self props state action -> Effect Unit)
-
 -- | `Self` represents the component instance at a particular point in time.
 -- |
 -- | - `props`
 -- |   - A snapshot of `props` taken when this `Self` was created.
 -- | - `state`
 -- |   - A snapshot of `state` taken when this `Self` was created.
+-- | - `setState`
+-- |   - Update the component's state using the given function.
+-- | - `setStateThen`
+-- |   - Update the component's state using the given function. The given effects are performed after any resulting rerenders are completed. Be careful to avoid using stale props or state in the effect callback. Use `readProps` or `readState` to aquire the latest values.
 -- | - `instance_`
 -- |   - Unsafe escape hatch to the underlying component instance (`this` in the JavaScript React paradigm). Avoid as much as possible, but it's still frequently better than rewriting an entire component in JavaScript.
 -- |
 -- | __*See also:* `ComponentSpec`, `send`, `capture`, `readProps`, `readState`__
-type Self props state action =
-  { props     :: props
-  , state     :: state
-  , instance_ :: ReactComponentInstance
+type Self props state =
+  { props        :: props
+  , state        :: state
+  , setState     :: (state -> state) -> Effect Unit
+  , setStateThen :: (state -> state) -> Effect Unit -> Effect Unit
+  , instance_    :: ReactComponentInstance props state
   }
-
--- | Dispatch an `action` into the component to be handled by `update`.
--- |
--- | __*See also:* `update`, `capture`__
-send :: forall props state action. Self props state action -> action -> Effect Unit
-send = runEffectFn2 (runFn1 send_ buildStateUpdate)
-
--- | Convenience function for sending an action when an `Aff` completes.
--- |
--- | __*Note:* Potential failure should be handled in the given `Aff` and converted
--- |   to an action, as the default error handler will simply log the   error to
--- |   the console.__
--- |
--- | __*See also:* `send`__
-sendAsync
-  :: forall props state action
-   . Self props state action
-  -> Aff action
-  -> Effect Unit
-sendAsync self work = runAff_ handle work
-  where
-    handle (Right action) = send self action
-    handle (Left err) = runEffectFn2 warningFailedAsyncAction self err
-
--- | Create a capturing\* `EventHandler` to send an action when an event occurs. For
--- | more complicated event handlers requiring `Effect`, use `handler` from `React.Basic.Events`.
--- |
--- | __\*calls `preventDefault` and `stopPropagation`__
--- |
--- | __*See also:* `update`, `capture_`, `monitor`, `React.Basic.Events`__
-capture :: forall props state action a. Self props state action -> EventFn SyntheticEvent a -> (a -> action) -> EventHandler
-capture self eventFn = monitor self (preventDefault >>> stopPropagation >>> eventFn)
-
--- | Like `capture`, but for actions which don't need to extract information from the Event.
--- |
--- | __*See also:* `update`, `capture`, `monitor_`__
-capture_ :: forall props state action. Self props state action -> action -> EventHandler
-capture_ self action = capture self identity \_ -> action
-
--- | Like `capture`, but does not cancel the event.
--- |
--- | __*See also:* `update`, `capture`, `monitor\_`__
-monitor :: forall props state action a. Self props state action -> EventFn SyntheticEvent a -> (a -> action) -> EventHandler
-monitor self eventFn makeAction = handler eventFn \a -> send self (makeAction a)
-
--- | Like `capture_`, but does not cancel the event.
--- |
--- | __*See also:* `update`, `monitor`, `capture_`, `React.Basic.Events`__
-monitor_ :: forall props state action. Self props state action -> action -> EventHandler
-monitor_ self action = monitor self identity \_ -> action
 
 -- | Read the most up to date `props` directly from the component instance
 -- | associated with this `Self`.
@@ -241,7 +159,7 @@ monitor_ self action = monitor self identity \_ -> action
 -- |   Generally, the `props` snapshot on `Self` is sufficient.
 -- |
 -- | __*See also:* `Self`__
-foreign import readProps :: forall props state action. Self props state action -> Effect props
+foreign import readProps :: forall props state. Self props state -> Effect props
 
 -- | Read the most up to date `state` directly from the component instance
 -- | associated with this `Self`.
@@ -250,7 +168,7 @@ foreign import readProps :: forall props state action. Self props state action -
 -- |   Generally, the `state` snapshot on `Self` is sufficient.
 -- |
 -- | __*See also:* `Self`__
-foreign import readState :: forall props state action. Self props state action -> Effect state
+foreign import readState :: forall props state. Self props state -> Effect state
 
 -- | Turn a `Component` and `ComponentSpec` into a usable render function.
 -- | This is where you will want to provide customized implementations:
@@ -263,20 +181,13 @@ foreign import readState :: forall props state action. Self props state action -
 -- |   { label :: String
 -- |   }
 -- |
--- | data Action
--- |   = Increment
--- |
 -- | counter :: Props -> JSX
 -- | counter = make component
 -- |   { initialState: { counter: 0 }
 -- |
--- |   , update: \self action -> case action of
--- |       Increment ->
--- |         Update self.state { counter = self.state.counter + 1 }
--- |
 -- |   , render: \self ->
 -- |       R.button
--- |         { onClick: capture_ self Increment
+-- |         { onClick: capture_ $ self.setState \s -> s { counter = s.counter + 1 }
 -- |         , children: [ R.text (self.props.label <> ": " <> show self.state.counter) ]
 -- |         }
 -- |   }
@@ -284,10 +195,10 @@ foreign import readState :: forall props state action. Self props state action -
 -- |
 -- | __*See also:* `makeStateless`, `createComponent`, `Component`, `ComponentSpec`__
 foreign import make
-  :: forall spec spec_ props state action
-   . Union spec spec_ (ComponentSpec props state action)
+  :: forall spec spec_ props state
+   . Union spec spec_ (ComponentSpec props state)
   => Component props
-  -> { initialState :: state, render :: Self props state action -> JSX | spec }
+  -> { initialState :: state, render :: Self props state -> JSX | spec }
   -> props
   -> JSX
 
@@ -396,8 +307,8 @@ foreign import displayNameFromComponent
 -- |
 -- | __*See also:* `displayNameFromComponent`, `createComponent`__
 foreign import displayNameFromSelf
-  :: forall props state action
-   . Self props state action
+  :: forall props state
+   . Self props state
   -> String
 
 -- | Represents a traditional React component. Useful for JavaScript interop and
@@ -408,12 +319,12 @@ foreign import displayNameFromSelf
 -- | ```
 -- |
 -- | __*See also:* `element`, `toReactComponent`__
-data ReactComponent props
+foreign import data ReactComponent :: Type -> Type
 
 -- | An opaque representation of a React component's instance (`this` in the JavaScript
 -- | React paradigm). It exists as an escape hatch to unsafe behavior. Use it with
 -- | caution.
-data ReactComponentInstance
+foreign import data ReactComponentInstance :: Type -> Type -> Type
 
 -- | Convert a React-Basic `ComponentSpec` to a JavaScript-friendly React component.
 -- | This function should only be used for JS interop and not normal React-Basic usage.
@@ -425,53 +336,17 @@ data ReactComponentInstance
 -- |
 -- | __*See also:* `ReactComponent`__
 foreign import toReactComponent
-  :: forall spec spec_ jsProps props state action
-   . Union spec spec_ (ComponentSpec props state action)
+  :: forall spec spec_ jsProps props state
+   . Union spec spec_ (ComponentSpec props state)
   => ({ | jsProps } -> props)
   -> Component props
-  -> { render :: Self props state action -> JSX | spec }
+  -> { render :: Self props state -> JSX | spec }
   -> ReactComponent { | jsProps }
 
 
 -- |
 -- | Internal utility or FFI functions
 -- |
-
-buildStateUpdate
-  :: forall props state action
-   . StateUpdate props state action
-  -> { state :: Nullable state
-     , effects :: Nullable (Self props state action -> Effect Unit)
-     }
-buildStateUpdate = case _ of
-  NoUpdate ->
-    { state:   null
-    , effects: null
-    }
-  Update state_ ->
-    { state:   notNull state_
-    , effects: null
-    }
-  SideEffects effects ->
-    { state:   null
-    , effects: notNull effects
-    }
-  UpdateAndSideEffects state_ effects ->
-    { state:   notNull state_
-    , effects: notNull effects
-    }
-
-foreign import send_
-  :: forall props state action
-   . Fn1
-       (StateUpdate props state action
-         -> { state   :: Nullable state
-            , effects :: Nullable (Self props state action -> Effect Unit)
-            })
-       (EffectFn2
-         (Self props state action)
-         action
-         Unit)
 
 foreign import keyed_ :: Fn2 String JSX JSX
 
@@ -482,24 +357,3 @@ foreign import element_
 foreign import elementKeyed_
   :: forall props
    . Fn2 (ReactComponent { | props }) { key :: String | props } JSX
-
-foreign import warningDefaultUpdate
-  :: forall props state action
-   . EffectFn2
-       (Self props state action)
-       action
-       Unit
-
-foreign import warningUnmountedComponentAction
-  :: forall props state action
-   . EffectFn2
-       (Self props state action)
-       action
-       Unit
-
-foreign import warningFailedAsyncAction
-  :: forall props state action
-   . EffectFn2
-       (Self props state action)
-       Error
-       Unit

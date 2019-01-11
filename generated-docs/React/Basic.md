@@ -3,7 +3,7 @@
 #### `ComponentSpec`
 
 ``` purescript
-type ComponentSpec props state action = (initialState :: state, update :: Self props state action -> action -> StateUpdate props state action, render :: Self props state action -> JSX, didMount :: Self props state action -> Effect Unit, shouldUpdate :: Self props state action -> { nextProps :: props, nextState :: state } -> Boolean, didUpdate :: Self props state action -> { prevProps :: props, prevState :: state } -> Effect Unit, willUnmount :: Self props state action -> Effect Unit)
+type ComponentSpec props state = (initialState :: state, render :: Self props state -> JSX, didMount :: Self props state -> Effect Unit, shouldUpdate :: Self props state -> { nextProps :: props, nextState :: state } -> Boolean, didUpdate :: Self props state -> { prevProps :: props, prevState :: state } -> Effect Unit, willUnmount :: Self props state -> Effect Unit)
 ```
 
 `ComponentSpec` represents a React-Basic component implementation.
@@ -11,18 +11,11 @@ type ComponentSpec props state action = (initialState :: state, update :: Self p
 These are the properties your component definition may override
 with specific implementations. None are required to be overridden, unless
 an overridden function interacts with `state`, in which case `initialState`
-is required (the compiler enforces this). While you _can_ use `state` and
-dispatch actions without defining `update`, doing so doesn't make much sense
-and will emit a warning.
+is required (the compiler enforces this).
 
 - `initialState`
   - The component's starting state.
   - Avoid mirroring prop values in state.
-- `update`
-  - All state updates go through `update`.
-  - `update` is called when `send` is used to dispatch an action.
-  - State changes are described using `StateUpdate`. Only `Update` and `UpdateAndSideEffects` will cause rerenders and a call to `didUpdate`.
-  - Side effects requested are only invoked _after_ any corrosponding state update has completed its render cycle and the changes have been applied. This means it is safe to interact with the DOM in a side effect, for example.
 - `render`
   - Takes a current snapshot of the component (`Self`) and converts it to renderable `JSX`.
 - `didMount`
@@ -48,26 +41,19 @@ type Props =
   { label :: String
   }
 
-data Action
-  = Increment
-
 counter :: Props -> JSX
 counter = make component
   { initialState: { counter: 0 }
 
-  , update: \self action -> case action of
-      Increment ->
-        Update self.state { counter = self.state.counter + 1 }
-
   , render: \self ->
       R.button
-        { onClick: capture_ self Increment
+        { onClick: capture_ $ self.setState \s -> s { counter + 1 }
         , children: [ R.text (self.props.label <> ": " <> show self.state.counter) ]
         }
   }
 ```
 
-This example component overrides `initialState`, `update`, and `render`.
+This example component overrides `initialState` and `render`.
 
 __*Note:* A `ComponentSpec` is *not* a valid React component by itself. If you would like to use
   a React-Basic component from JavaScript, use `toReactComponent`.__
@@ -123,25 +109,10 @@ __*For the curious:* This is the "class" React will use to render and
   how to defer behavior to it. It requires very specific props and is not useful by
   itself from JavaScript. For JavaScript interop, see `toReactComponent`.__
 
-#### `StateUpdate`
-
-``` purescript
-data StateUpdate props state action
-  = NoUpdate
-  | Update state
-  | SideEffects (Self props state action -> Effect Unit)
-  | UpdateAndSideEffects state (Self props state action -> Effect Unit)
-```
-
-Used by the `update` function to describe the kind of state update and/or side
-effects desired.
-
-__*See also:* `ComponentSpec`, `capture`__
-
 #### `Self`
 
 ``` purescript
-type Self props state action = { props :: props, state :: state, instance_ :: ReactComponentInstance }
+type Self props state = { props :: props, state :: state, setState :: (state -> state) -> Effect Unit, setStateThen :: (state -> state) -> Effect Unit -> Effect Unit, instance_ :: ReactComponentInstance props state }
 ```
 
 `Self` represents the component instance at a particular point in time.
@@ -150,82 +121,19 @@ type Self props state action = { props :: props, state :: state, instance_ :: Re
   - A snapshot of `props` taken when this `Self` was created.
 - `state`
   - A snapshot of `state` taken when this `Self` was created.
+- `setState`
+  - Update the component's state using the given function.
+- `setStateThen`
+  - Update the component's state using the given function. The given effects are performed after any resulting rerenders are completed. Be careful to avoid using stale props or state in the effect callback. Use `readProps` or `readState` to aquire the latest values.
 - `instance_`
   - Unsafe escape hatch to the underlying component instance (`this` in the JavaScript React paradigm). Avoid as much as possible, but it's still frequently better than rewriting an entire component in JavaScript.
 
 __*See also:* `ComponentSpec`, `send`, `capture`, `readProps`, `readState`__
 
-#### `send`
-
-``` purescript
-send :: forall props state action. Self props state action -> action -> Effect Unit
-```
-
-Dispatch an `action` into the component to be handled by `update`.
-
-__*See also:* `update`, `capture`__
-
-#### `sendAsync`
-
-``` purescript
-sendAsync :: forall props state action. Self props state action -> Aff action -> Effect Unit
-```
-
-Convenience function for sending an action when an `Aff` completes.
-
-__*Note:* Potential failure should be handled in the given `Aff` and converted
-  to an action, as the default error handler will simply log the   error to
-  the console.__
-
-__*See also:* `send`__
-
-#### `capture`
-
-``` purescript
-capture :: forall props state action a. Self props state action -> EventFn SyntheticEvent a -> (a -> action) -> EventHandler
-```
-
-Create a capturing\* `EventHandler` to send an action when an event occurs. For
-more complicated event handlers requiring `Effect`, use `handler` from `React.Basic.Events`.
-
-__\*calls `preventDefault` and `stopPropagation`__
-
-__*See also:* `update`, `capture_`, `monitor`, `React.Basic.Events`__
-
-#### `capture_`
-
-``` purescript
-capture_ :: forall props state action. Self props state action -> action -> EventHandler
-```
-
-Like `capture`, but for actions which don't need to extract information from the Event.
-
-__*See also:* `update`, `capture`, `monitor_`__
-
-#### `monitor`
-
-``` purescript
-monitor :: forall props state action a. Self props state action -> EventFn SyntheticEvent a -> (a -> action) -> EventHandler
-```
-
-Like `capture`, but does not cancel the event.
-
-__*See also:* `update`, `capture`, `monitor\_`__
-
-#### `monitor_`
-
-``` purescript
-monitor_ :: forall props state action. Self props state action -> action -> EventHandler
-```
-
-Like `capture_`, but does not cancel the event.
-
-__*See also:* `update`, `monitor`, `capture_`, `React.Basic.Events`__
-
 #### `readProps`
 
 ``` purescript
-readProps :: forall props state action. Self props state action -> Effect props
+readProps :: forall props state. Self props state -> Effect props
 ```
 
 Read the most up to date `props` directly from the component instance
@@ -239,7 +147,7 @@ __*See also:* `Self`__
 #### `readState`
 
 ``` purescript
-readState :: forall props state action. Self props state action -> Effect state
+readState :: forall props state. Self props state -> Effect state
 ```
 
 Read the most up to date `state` directly from the component instance
@@ -253,7 +161,7 @@ __*See also:* `Self`__
 #### `make`
 
 ``` purescript
-make :: forall spec spec_ props state action. Union spec spec_ (ComponentSpec props state action) => Component props -> { initialState :: state, render :: Self props state action -> JSX | spec } -> props -> JSX
+make :: forall spec spec_ props state. Union spec spec_ (ComponentSpec props state) => Component props -> { initialState :: state, render :: Self props state -> JSX | spec } -> props -> JSX
 ```
 
 Turn a `Component` and `ComponentSpec` into a usable render function.
@@ -267,20 +175,13 @@ type Props =
   { label :: String
   }
 
-data Action
-  = Increment
-
 counter :: Props -> JSX
 counter = make component
   { initialState: { counter: 0 }
 
-  , update: \self action -> case action of
-      Increment ->
-        Update self.state { counter = self.state.counter + 1 }
-
   , render: \self ->
       R.button
-        { onClick: capture_ self Increment
+        { onClick: capture_ $ self.setState \s -> s { counter = s.counter + 1 }
         , children: [ R.text (self.props.label <> ": " <> show self.state.counter) ]
         }
   }
@@ -410,7 +311,7 @@ __*See also:* `displayNameFromSelf`, `createComponent`__
 #### `displayNameFromSelf`
 
 ``` purescript
-displayNameFromSelf :: forall props state action. Self props state action -> String
+displayNameFromSelf :: forall props state. Self props state -> String
 ```
 
 Retrieve the Display Name from a `Self`. Useful for debugging and improving
@@ -421,7 +322,7 @@ __*See also:* `displayNameFromComponent`, `createComponent`__
 #### `ReactComponent`
 
 ``` purescript
-data ReactComponent props
+data ReactComponent :: Type -> Type
 ```
 
 Represents a traditional React component. Useful for JavaScript interop and
@@ -436,7 +337,7 @@ __*See also:* `element`, `toReactComponent`__
 #### `ReactComponentInstance`
 
 ``` purescript
-data ReactComponentInstance
+data ReactComponentInstance :: Type -> Type -> Type
 ```
 
 An opaque representation of a React component's instance (`this` in the JavaScript
@@ -446,7 +347,7 @@ caution.
 #### `toReactComponent`
 
 ``` purescript
-toReactComponent :: forall spec spec_ jsProps props state action. Union spec spec_ (ComponentSpec props state action) => ({  | jsProps } -> props) -> Component props -> { render :: Self props state action -> JSX | spec } -> ReactComponent {  | jsProps }
+toReactComponent :: forall spec spec_ jsProps props state. Union spec spec_ (ComponentSpec props state) => ({  | jsProps } -> props) -> Component props -> { render :: Self props state -> JSX | spec } -> ReactComponent {  | jsProps }
 ```
 
 Convert a React-Basic `ComponentSpec` to a JavaScript-friendly React component.

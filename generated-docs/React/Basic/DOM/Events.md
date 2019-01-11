@@ -2,6 +2,29 @@
 
 This module defines safe DOM event function and property accessors.
 
+#### `capture`
+
+``` purescript
+capture :: forall a. EventFn SyntheticEvent a -> (a -> Effect Unit) -> EventHandler
+```
+
+Create a capturing\* `EventHandler` to send an action when an event occurs. For
+more complicated event handlers requiring `Effect`, use `handler` from `React.Basic.Events`.
+
+__\*calls `preventDefault` and `stopPropagation`__
+
+__*See also:* `update`, `capture_`, `monitor`, `React.Basic.Events`__
+
+#### `capture_`
+
+``` purescript
+capture_ :: Effect Unit -> EventHandler
+```
+
+Like `capture`, but for actions which don't need to extract information from the Event.
+
+__*See also:* `update`, `capture`, `monitor_`__
+
 #### `bubbles`
 
 ``` purescript

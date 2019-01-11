@@ -8,7 +8,7 @@ import Prelude
 import Data.Maybe (Maybe(..), fromMaybe)
 import Effect.Aff (Aff, Fiber, error, killFiber, launchAff, launchAff_)
 import Effect.Class (liftEffect)
-import React.Basic (Component, JSX, StateUpdate(..), createComponent, empty, make, send)
+import React.Basic (Component, JSX, createComponent, empty, make)
 
 component :: Component (Aff JSX)
 component = createComponent "Async"
@@ -23,7 +23,6 @@ async = asyncWithLoader empty
 asyncWithLoader :: JSX -> Aff JSX -> JSX
 asyncWithLoader loader = make component
   { initialState
-  , update
   , render
   , didMount: launch
   -- , didUpdate: No! Implementing `didUpdate` breaks the
@@ -38,24 +37,15 @@ asyncWithLoader loader = make component
       , pendingFiber: pure unit
       }
 
-    update { props, state } = case _ of
-      ReplaceFiber newFiber ->
-        UpdateAndSideEffects
-          state { jsx = Nothing, pendingFiber = newFiber }
-          \_ -> kill state.pendingFiber
-
-      UpdateJSX jsx ->
-        Update
-          state { jsx = Just jsx }
-
     render self =
       fromMaybe loader self.state.jsx
 
     launch self = do
       fiber <- launchAff do
         jsx <- self.props
-        liftEffect $ send self $ UpdateJSX jsx
-      send self $ ReplaceFiber fiber
+        liftEffect $ self.setState _ { jsx = Just jsx }
+      self.setStateThen _ { jsx = Nothing, pendingFiber = fiber } do
+        kill self.state.pendingFiber
 
     cleanup self =
       kill self.state.pendingFiber

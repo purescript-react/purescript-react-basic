@@ -4,6 +4,6 @@
     "react-dom": "^16.4.2"
   },
   "devDependencies": {
-    "browserify": "^16.2.2"
+    "browserify": "16.2.3"
   }
 }

@@ -74,7 +74,7 @@ __*Note:* Relies on `ReactDOM.unmountComponentAtNode`__
 #### `findDOMNode`
 
 ``` purescript
-findDOMNode :: ReactComponentInstance -> Effect (Either Error Node)
+findDOMNode :: forall props state. ReactComponentInstance props state -> Effect (Either Error Node)
 ```
 
 Returns the current DOM node associated with the given
@@ -157,7 +157,7 @@ type Props_var = (children :: Array JSX)
 #### `Props_ul`
 
 ``` purescript
-type Props_ul = (children :: Array JSX, "type" :: String)
+type Props_ul = (children :: Array JSX, type :: String)
 ```
 
 #### `Props_u`
@@ -241,7 +241,7 @@ type Props_table = (children :: Array JSX, summary :: String, width :: String)
 #### `Props_svg`
 
 ``` purescript
-type Props_svg = (accentHeight :: String, accumulate :: String, additive :: String, alignmentBaseline :: String, allowReorder :: String, alphabetic :: String, amplitude :: String, arabicForm :: String, ascent :: String, attributeName :: String, attributeType :: String, autoReverse :: String, azimuth :: String, baseFrequency :: String, baseProfile :: String, baselineShift :: String, bbox :: String, begin :: String, bias :: String, by :: String, calcMode :: String, capHeight :: String, children :: Array JSX, clip :: String, clipPath :: String, clipPathUnits :: String, clipRule :: String, color :: String, colorInterpolation :: String, colorInterpolationFilters :: String, colorProfile :: String, colorRendering :: String, contentScriptType :: String, contentStyleType :: String, cursor :: String, cx :: String, cy :: String, d :: String, decelerate :: String, descent :: String, diffuseConstant :: String, direction :: String, display :: String, divisor :: String, dominantBaseline :: String, dur :: String, dx :: String, dy :: String, edgeMode :: String, elevation :: String, enableBackground :: String, end :: String, exponent :: String, externalResourcesRequired :: String, fill :: String, fillOpacity :: String, fillRule :: String, filter :: String, filterRes :: String, filterUnits :: String, floodColor :: String, floodOpacity :: String, focusable :: String, fontFamily :: String, fontSize :: String, fontSizeAdjust :: String, fontStretch :: String, fontStyle :: String, fontVariant :: String, fontWeight :: String, format :: String, from :: String, fx :: String, fy :: String, g1 :: String, g2 :: String, glyphName :: String, glyphOrientationHorizontal :: String, glyphOrientationVertical :: String, glyphRef :: String, gradientTransform :: String, gradientUnits :: String, hanging :: String, height :: String, horizAdvX :: String, horizOriginX :: String, ideographic :: String, imageRendering :: String, "in" :: String, in2 :: String, intercept :: String, k :: String, k1 :: String, k2 :: String, k3 :: String, k4 :: String, kernelMatrix :: String, kernelUnitLength :: String, kerning :: String, keyPoints :: String, keySplines :: String, keyTimes :: String, lengthAdjust :: String, letterSpacing :: String, lightingColor :: String, limitingConeAngle :: String, local :: String, markerEnd :: String, markerHeight :: String, markerMid :: String, markerStart :: String, markerUnits :: String, markerWidth :: String, mask :: String, maskContentUnits :: String, maskUnits :: String, mathematical :: String, mode :: String, numOctaves :: String, offset :: String, opacity :: String, operator :: String, order :: String, orient :: String, orientation :: String, origin :: String, overflow :: String, overlinePosition :: String, overlineThickness :: String, paintOrder :: String, panose1 :: String, pathLength :: String, patternContentUnits :: String, patternTransform :: String, patternUnits :: String, pointerEvents :: String, points :: String, pointsAtX :: String, pointsAtY :: String, pointsAtZ :: String, preserveAlpha :: String, preserveAspectRatio :: String, primitiveUnits :: String, r :: String, radius :: String, refX :: String, refY :: String, renderingIntent :: String, repeatCount :: String, repeatDur :: String, requiredExtensions :: String, requiredFeatures :: String, restart :: String, result :: String, rotate :: String, rx :: String, ry :: String, scale :: String, seed :: String, shapeRendering :: String, slope :: String, spacing :: String, specularConstant :: String, specularExponent :: String, speed :: String, spreadMethod :: String, startOffset :: String, stdDeviation :: String, stemh :: String, stemv :: String, stitchTiles :: String, stopColor :: String, stopOpacity :: String, strikethroughPosition :: String, strikethroughThickness :: String, string :: String, stroke :: String, strokeDasharray :: String, strokeDashoffset :: String, strokeLinecap :: String, strokeLinejoin :: String, strokeMiterlimit :: String, strokeOpacity :: String, strokeWidth :: String, surfaceScale :: String, systemLanguage :: String, tableValues :: String, targetX :: String, targetY :: String, textAnchor :: String, textDecoration :: String, textLength :: String, textRendering :: String, to :: String, transform :: String, u1 :: String, u2 :: String, underlinePosition :: String, underlineThickness :: String, unicode :: String, unicodeBidi :: String, unicodeRange :: String, unitsPerEm :: String, vAlphabetic :: String, vHanging :: String, vIdeographic :: String, vMathematical :: String, values :: String, vectorEffect :: String, version :: String, vertAdvY :: String, vertOriginX :: String, vertOriginY :: String, viewBox :: String, viewTarget :: String, visibility :: String, width :: String, widths :: String, wordSpacing :: String, writingMode :: String, x :: String, x1 :: String, x2 :: String, xChannelSelector :: String, xHeight :: String, xlinkActuate :: String, xlinkArcrole :: String, xlinkHref :: String, xlinkRole :: String, xlinkShow :: String, xlinkTitle :: String, xlinkType :: String, xmlBase :: String, xmlLang :: String, xmlSpace :: String, xmlns :: String, xmlnsXlink :: String, y :: String, y1 :: String, y2 :: String, yChannelSelector :: String, z :: String, zoomAndPan :: String)
+type Props_svg = (accentHeight :: String, accumulate :: String, additive :: String, alignmentBaseline :: String, allowReorder :: String, alphabetic :: String, amplitude :: String, arabicForm :: String, ascent :: String, attributeName :: String, attributeType :: String, autoReverse :: String, azimuth :: String, baseFrequency :: String, baseProfile :: String, baselineShift :: String, bbox :: String, begin :: String, bias :: String, by :: String, calcMode :: String, capHeight :: String, children :: Array JSX, clip :: String, clipPath :: String, clipPathUnits :: String, clipRule :: String, color :: String, colorInterpolation :: String, colorInterpolationFilters :: String, colorProfile :: String, colorRendering :: String, contentScriptType :: String, contentStyleType :: String, cursor :: String, cx :: String, cy :: String, d :: String, decelerate :: String, descent :: String, diffuseConstant :: String, direction :: String, display :: String, divisor :: String, dominantBaseline :: String, dur :: String, dx :: String, dy :: String, edgeMode :: String, elevation :: String, enableBackground :: String, end :: String, exponent :: String, externalResourcesRequired :: String, fill :: String, fillOpacity :: String, fillRule :: String, filter :: String, filterRes :: String, filterUnits :: String, floodColor :: String, floodOpacity :: String, focusable :: String, fontFamily :: String, fontSize :: String, fontSizeAdjust :: String, fontStretch :: String, fontStyle :: String, fontVariant :: String, fontWeight :: String, format :: String, from :: String, fx :: String, fy :: String, g1 :: String, g2 :: String, glyphName :: String, glyphOrientationHorizontal :: String, glyphOrientationVertical :: String, glyphRef :: String, gradientTransform :: String, gradientUnits :: String, hanging :: String, height :: String, horizAdvX :: String, horizOriginX :: String, ideographic :: String, imageRendering :: String, in :: String, in2 :: String, intercept :: String, k :: String, k1 :: String, k2 :: String, k3 :: String, k4 :: String, kernelMatrix :: String, kernelUnitLength :: String, kerning :: String, keyPoints :: String, keySplines :: String, keyTimes :: String, lengthAdjust :: String, letterSpacing :: String, lightingColor :: String, limitingConeAngle :: String, local :: String, markerEnd :: String, markerHeight :: String, markerMid :: String, markerStart :: String, markerUnits :: String, markerWidth :: String, mask :: String, maskContentUnits :: String, maskUnits :: String, mathematical :: String, mode :: String, numOctaves :: String, offset :: String, opacity :: String, operator :: String, order :: String, orient :: String, orientation :: String, origin :: String, overflow :: String, overlinePosition :: String, overlineThickness :: String, paintOrder :: String, panose1 :: String, pathLength :: String, patternContentUnits :: String, patternTransform :: String, patternUnits :: String, pointerEvents :: String, points :: String, pointsAtX :: String, pointsAtY :: String, pointsAtZ :: String, preserveAlpha :: String, preserveAspectRatio :: String, primitiveUnits :: String, r :: String, radius :: String, refX :: String, refY :: String, renderingIntent :: String, repeatCount :: String, repeatDur :: String, requiredExtensions :: String, requiredFeatures :: String, restart :: String, result :: String, rotate :: String, rx :: String, ry :: String, scale :: String, seed :: String, shapeRendering :: String, slope :: String, spacing :: String, specularConstant :: String, specularExponent :: String, speed :: String, spreadMethod :: String, startOffset :: String, stdDeviation :: String, stemh :: String, stemv :: String, stitchTiles :: String, stopColor :: String, stopOpacity :: String, strikethroughPosition :: String, strikethroughThickness :: String, string :: String, stroke :: String, strokeDasharray :: String, strokeDashoffset :: String, strokeLinecap :: String, strokeLinejoin :: String, strokeMiterlimit :: String, strokeOpacity :: String, strokeWidth :: String, surfaceScale :: String, systemLanguage :: String, tableValues :: String, targetX :: String, targetY :: String, textAnchor :: String, textDecoration :: String, textLength :: String, textRendering :: String, to :: String, transform :: String, u1 :: String, u2 :: String, underlinePosition :: String, underlineThickness :: String, unicode :: String, unicodeBidi :: String, unicodeRange :: String, unitsPerEm :: String, vAlphabetic :: String, vHanging :: String, vIdeographic :: String, vMathematical :: String, values :: String, vectorEffect :: String, version :: String, vertAdvY :: String, vertOriginX :: String, vertOriginY :: String, viewBox :: String, viewTarget :: String, visibility :: String, width :: String, widths :: String, wordSpacing :: String, writingMode :: String, x :: String, x1 :: String, x2 :: String, xChannelSelector :: String, xHeight :: String, xlinkActuate :: String, xlinkArcrole :: String, xlinkHref :: String, xlinkRole :: String, xlinkShow :: String, xlinkTitle :: String, xlinkType :: String, xmlBase :: String, xmlLang :: String, xmlSpace :: String, xmlns :: String, xmlnsXlink :: String, y :: String, y1 :: String, y2 :: String, yChannelSelector :: String, z :: String, zoomAndPan :: String)
 ```
 
 #### `Props_sup`
@@ -265,7 +265,7 @@ type Props_sub = (children :: Array JSX)
 #### `Props_style`
 
 ``` purescript
-type Props_style = (children :: Array JSX, media :: String, nonce :: String, title :: String, "type" :: String)
+type Props_style = (children :: Array JSX, media :: String, nonce :: String, title :: String, type :: String)
 ```
 
 #### `Props_strong`
@@ -283,7 +283,7 @@ type Props_span = (children :: Array JSX)
 #### `Props_source`
 
 ``` purescript
-type Props_source = (media :: String, sizes :: String, src :: String, "type" :: String)
+type Props_source = (media :: String, sizes :: String, src :: String, type :: String)
 ```
 
 #### `Props_small`
@@ -313,7 +313,7 @@ type Props_section = (children :: Array JSX)
 #### `Props_script`
 
 ``` purescript
-type Props_script = (async :: Boolean, children :: Array JSX, defer :: Boolean, integrity :: String, nonce :: String, src :: String, "type" :: String)
+type Props_script = (async :: Boolean, children :: Array JSX, defer :: Boolean, integrity :: String, nonce :: String, src :: String, type :: String)
 ```
 
 #### `Props_samp`
@@ -385,7 +385,7 @@ type Props_picture = (children :: Array JSX)
 #### `Props_param`
 
 ``` purescript
-type Props_param = (name :: String, "type" :: String, value :: String)
+type Props_param = (name :: String, type :: String, value :: String)
 ```
 
 #### `Props_p`
@@ -415,13 +415,13 @@ type Props_optgroup = (children :: Array JSX, disabled :: Boolean, label :: Stri
 #### `Props_ol`
 
 ``` purescript
-type Props_ol = (children :: Array JSX, reversed :: Boolean, start :: Number, "type" :: String)
+type Props_ol = (children :: Array JSX, reversed :: Boolean, start :: Number, type :: String)
 ```
 
 #### `Props_object`
 
 ``` purescript
-type Props_object = (children :: Array JSX, "data" :: String, form :: String, height :: String, name :: String, "type" :: String, width :: String)
+type Props_object = (children :: Array JSX, data :: String, form :: String, height :: String, name :: String, type :: String, width :: String)
 ```
 
 #### `Props_noscript`
@@ -487,13 +487,13 @@ type Props_main = (children :: Array JSX)
 #### `Props_link`
 
 ``` purescript
-type Props_link = (color :: String, href :: String, integrity :: String, media :: String, nonce :: String, rel :: String, scope :: String, sizes :: String, target :: String, title :: String, "type" :: String)
+type Props_link = (color :: String, href :: String, integrity :: String, media :: String, nonce :: String, rel :: String, scope :: String, sizes :: String, target :: String, title :: String, type :: String)
 ```
 
 #### `Props_li`
 
 ``` purescript
-type Props_li = (children :: Array JSX, "type" :: String, value :: String)
+type Props_li = (children :: Array JSX, type :: String, value :: String)
 ```
 
 #### `Props_legend`
@@ -529,7 +529,7 @@ type Props_ins = (children :: Array JSX, cite :: String)
 #### `Props_input`
 
 ``` purescript
-type Props_input = (accept :: String, alt :: String, autoCapitalize :: String, autoCorrect :: String, autoSave :: String, checked :: Boolean, defaultChecked :: String, defaultValue :: String, disabled :: Boolean, form :: String, height :: String, list :: String, max :: Number, min :: Number, multiple :: Boolean, name :: String, onChange :: EventHandler, pattern :: String, placeholder :: String, required :: Boolean, results :: String, size :: Number, src :: String, step :: String, title :: String, "type" :: String, value :: String, width :: String)
+type Props_input = (accept :: String, alt :: String, autoCapitalize :: String, autoCorrect :: String, autoSave :: String, checked :: Boolean, defaultChecked :: String, defaultValue :: String, disabled :: Boolean, form :: String, height :: String, list :: String, max :: Number, min :: Number, multiple :: Boolean, name :: String, onChange :: EventHandler, pattern :: String, placeholder :: String, required :: Boolean, results :: String, size :: Number, src :: String, step :: String, title :: String, type :: String, value :: String, width :: String)
 ```
 
 #### `Props_img`
@@ -649,7 +649,7 @@ type Props_fieldset = (children :: Array JSX, disabled :: Boolean, form :: Strin
 #### `Props_embed`
 
 ``` purescript
-type Props_embed = (height :: String, src :: String, "type" :: String, width :: String)
+type Props_embed = (height :: String, src :: String, type :: String, width :: String)
 ```
 
 #### `Props_em`
@@ -757,7 +757,7 @@ type Props_canvas = (children :: Array JSX, height :: String, width :: String)
 #### `Props_button`
 
 ``` purescript
-type Props_button = (children :: Array JSX, disabled :: Boolean, form :: String, name :: String, "type" :: String, value :: String)
+type Props_button = (children :: Array JSX, disabled :: Boolean, form :: String, name :: String, type :: String, value :: String)
 ```
 
 #### `Props_br`
@@ -823,7 +823,7 @@ type Props_article = (children :: Array JSX)
 #### `Props_area`
 
 ``` purescript
-type Props_area = (alt :: String, coords :: String, download :: String, href :: String, rel :: String, shape :: String, target :: String, "type" :: String)
+type Props_area = (alt :: String, coords :: String, download :: String, href :: String, rel :: String, shape :: String, target :: String, type :: String)
 ```
 
 #### `Props_address`
@@ -841,7 +841,7 @@ type Props_abbr = (children :: Array JSX, title :: String)
 #### `Props_a`
 
 ``` purescript
-type Props_a = (children :: Array JSX, coords :: String, download :: String, href :: String, name :: String, onClick :: EventHandler, rel :: String, shape :: String, target :: String, "type" :: String)
+type Props_a = (children :: Array JSX, coords :: String, download :: String, href :: String, name :: String, onClick :: EventHandler, rel :: String, shape :: String, target :: String, type :: String)
 ```
 
 #### `wbr`
