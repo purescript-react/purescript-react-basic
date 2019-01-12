@@ -6,10 +6,6 @@ module React.Basic
   , Self
   , send
   , sendAsync
-  , capture
-  , capture_
-  , monitor
-  , monitor_
   , readProps
   , readState
   , make
@@ -35,8 +31,6 @@ import Data.Nullable (Nullable, notNull, null)
 import Effect (Effect)
 import Effect.Aff (Aff, Error, runAff_)
 import Effect.Uncurried (EffectFn2, runEffectFn2)
-import React.Basic.DOM.Events (preventDefault, stopPropagation)
-import React.Basic.Events (EventFn, EventHandler, SyntheticEvent, handler)
 import React.Basic.Hooks.Internal as Internal
 import Type.Row (class Union)
 
@@ -207,33 +201,6 @@ sendAsync self work = runAff_ handle work
   where
     handle (Right action) = send self action
     handle (Left err) = runEffectFn2 warningFailedAsyncAction self err
-
--- | Create a capturing\* `EventHandler` to send an action when an event occurs. For
--- | more complicated event handlers requiring `Effect`, use `handler` from `React.Basic.Events`.
--- |
--- | __\*calls `preventDefault` and `stopPropagation`__
--- |
--- | __*See also:* `update`, `capture_`, `monitor`, `React.Basic.Events`__
-capture :: forall props state action a. Self props state action -> EventFn SyntheticEvent a -> (a -> action) -> EventHandler
-capture self eventFn = monitor self (preventDefault >>> stopPropagation >>> eventFn)
-
--- | Like `capture`, but for actions which don't need to extract information from the Event.
--- |
--- | __*See also:* `update`, `capture`, `monitor_`__
-capture_ :: forall props state action. Self props state action -> action -> EventHandler
-capture_ self action = capture self identity \_ -> action
-
--- | Like `capture`, but does not cancel the event.
--- |
--- | __*See also:* `update`, `capture`, `monitor\_`__
-monitor :: forall props state action a. Self props state action -> EventFn SyntheticEvent a -> (a -> action) -> EventHandler
-monitor self eventFn makeAction = handler eventFn \a -> send self (makeAction a)
-
--- | Like `capture_`, but does not cancel the event.
--- |
--- | __*See also:* `update`, `monitor`, `capture_`, `React.Basic.Events`__
-monitor_ :: forall props state action. Self props state action -> action -> EventHandler
-monitor_ self action = monitor self identity \_ -> action
 
 -- | Read the most up to date `props` directly from the component instance
 -- | associated with this `Self`.

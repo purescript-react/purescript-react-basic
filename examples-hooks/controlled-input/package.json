@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "react": "16.7.0-alpha.2",
+    "react-dom": "16.7.0-alpha.2"
+  },
+  "devDependencies": {
+    "browserify": "^16.2.2"
+  }
+}

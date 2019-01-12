@@ -19,7 +19,6 @@ module React.Basic.Hooks
   , UseReducer
   , useReducer
   , UseRef
-  , Ref
   , readRef
   , readRefMaybe
   , writeRef
@@ -60,7 +59,7 @@ import Data.Tuple.Nested (tuple2, (/\))
 import Effect (Effect)
 import Effect.Uncurried (EffectFn1, EffectFn2, EffectFn3, mkEffectFn1, runEffectFn1, runEffectFn2, runEffectFn3)
 import Prelude (bind, pure) as Prelude
-import React.Basic.Hooks.Internal (Component, JSX, empty, keyed, fragment, element, elementKeyed, displayName)
+import React.Basic.Hooks.Internal (Component, JSX, Ref, empty, keyed, fragment, element, elementKeyed, displayName)
 import React.Basic.Hooks.Internal (unsafeComponent) as Internal
 import Unsafe.Coerce (unsafeCoerce)
 
@@ -127,8 +126,6 @@ useReducer initialState reducer = Render do
     initialState
 
 foreign import data UseRef :: Type -> Type -> Type
-
-foreign import data Ref :: Type -> Type
 
 useRef
   :: forall hooks a

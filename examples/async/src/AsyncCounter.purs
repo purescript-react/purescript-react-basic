@@ -5,9 +5,10 @@ import Prelude
 import Effect.Aff (Milliseconds(..), delay)
 import Effect.Class (liftEffect)
 import Effect.Console (log)
-import React.Basic (Component, JSX, StateUpdate(..), capture_, createComponent, fragment, keyed, make)
+import React.Basic (Component, JSX, StateUpdate(..), createComponent, fragment, keyed, make, send)
 import React.Basic.Components.Async (asyncWithLoader)
 import React.Basic.DOM as R
+import React.Basic.DOM.Events (capture_)
 
 component :: Component Props
 component = createComponent "AsyncCounter"
@@ -36,7 +37,7 @@ asyncCounter = make component { initialState, update, render }
             , R.li_ [ R.text "\"done\" should only be logged to the console once for any loading period (in-flight requests get cancelled as the next request starts)" ]
             ]
         , R.button
-            { onClick: capture_ self Increment
+            { onClick: capture_ $ send self Increment
             , children: [ R.text (self.props.label <> ": " <> show self.state.counter) ]
             }
         , R.text " "

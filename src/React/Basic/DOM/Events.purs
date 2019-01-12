@@ -1,7 +1,9 @@
 -- | This module defines safe DOM event function and property accessors.
 
 module React.Basic.DOM.Events
-  ( bubbles
+  ( capture
+  , capture_
+  , bubbles
   , cancelable
   , eventPhase
   , eventPhaseNone
@@ -45,11 +47,18 @@ import Prelude
 
 import Data.Maybe (Maybe)
 import Data.Nullable (toMaybe)
+import Effect (Effect)
 import Effect.Unsafe (unsafePerformEffect)
-import React.Basic.Events (EventFn, SyntheticEvent, unsafeEventFn)
+import React.Basic.Events (EventFn, EventHandler, SyntheticEvent, handler, unsafeEventFn)
 import Unsafe.Coerce (unsafeCoerce)
 import Web.Event.Internal.Types (Event, EventTarget)
 import Web.File.FileList (FileList)
+
+capture :: forall a. EventFn SyntheticEvent a -> (a -> Effect Unit) -> EventHandler
+capture eventFn = handler (preventDefault >>> stopPropagation >>> eventFn)
+
+capture_ :: Effect Unit -> EventHandler
+capture_ = capture identity <<< const
 
 -- | General event fields
 

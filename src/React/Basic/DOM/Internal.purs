@@ -1,8 +1,11 @@
 module React.Basic.DOM.Internal where
 
+import Data.Nullable (Nullable)
 import React.Basic (ReactComponent)
 import React.Basic.Events (EventHandler)
+import React.Basic.Hooks.Internal (Ref)
 import Unsafe.Coerce (unsafeCoerce)
+import Web.DOM (Node)
 
 -- | An abstract type representing records of CSS attributes.
 foreign import data CSS :: Type
@@ -11,6 +14,9 @@ foreign import data CSS :: Type
 type SharedProps specific =
   -- | `key` is not really a DOM attribute - React intercepts it
   ( key               :: String
+
+  -- | `ref` is not really a DOM attribute - React intercepts it
+  , ref :: Ref (Nullable Node)
 
   , about             :: String
   , acceptCharset     :: String

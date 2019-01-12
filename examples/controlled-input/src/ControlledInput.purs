@@ -3,10 +3,10 @@ module ControlledInput where
 import Prelude
 
 import Data.Maybe (Maybe(..), fromMaybe, maybe)
-import React.Basic (Component, JSX, StateUpdate(..), capture, createComponent, make)
+import React.Basic (Component, JSX, StateUpdate(..), createComponent, make, send)
 import React.Basic as React
 import React.Basic.DOM as R
-import React.Basic.DOM.Events (targetValue, timeStamp)
+import React.Basic.DOM.Events (capture, targetValue, timeStamp)
 import React.Basic.Events (merge)
 
 component :: Component Props
@@ -35,8 +35,8 @@ controlledInput = make component
       React.fragment
         [ R.input
             { onChange:
-                capture self (merge { targetValue, timeStamp })
-                  \{ timeStamp, targetValue } -> ValueChanged (fromMaybe "" targetValue) timeStamp
+                capture (merge { targetValue, timeStamp })
+                  \{ timeStamp, targetValue } -> send self $ ValueChanged (fromMaybe "" targetValue) timeStamp
             , value: self.state.value
             }
         , R.p_ [ R.text ("Current value = " <> show self.state.value) ]

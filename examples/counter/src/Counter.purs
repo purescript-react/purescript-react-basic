@@ -2,8 +2,9 @@ module Counter where
 
 import Prelude
 
-import React.Basic (Component, JSX, StateUpdate(..), capture_, createComponent, make)
+import React.Basic (Component, JSX, StateUpdate(..), createComponent, make, send)
 import React.Basic.DOM as R
+import React.Basic.DOM.Events (capture_)
 
 component :: Component Props
 component = createComponent "Counter"
@@ -26,6 +27,6 @@ counter = make component { initialState, update, render }
 
     render self =
       R.button
-        { onClick: capture_ self Increment
+        { onClick: capture_ $ send self Increment
         , children: [ R.text (self.props.label <> ": " <> show self.state.counter) ]
         }

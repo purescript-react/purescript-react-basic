@@ -9,6 +9,9 @@
   "scripts": {
     "build": "pulp build && npm run build:examples",
     "build:examples": "PATH=`echo $PATH | sed -e 's/:\\.\\/node_modules\\/\\.bin//'` find examples -maxdepth 2 -type f -iname makefile -execdir make \\;",
+    "build:examples-hooks": "PATH=`echo $PATH | sed -e 's/:\\.\\/node_modules\\/\\.bin//'` find examples-hooks -maxdepth 2 -type f -iname makefile -execdir make \\;",
+    "audit:examples": "PATH=`echo $PATH | sed -e 's/:\\.\\/node_modules\\/\\.bin//'` find examples -maxdepth 2 -type f -iname makefile -execdir npm audit fix \\;",
+    "audit:examples-hooks": "PATH=`echo $PATH | sed -e 's/:\\.\\/node_modules\\/\\.bin//'` find examples-hooks -maxdepth 2 -type f -iname makefile -execdir npm audit fix \\;",
     "test": "npm run build"
   },
   "repository": {
@@ -23,7 +26,9 @@
   "homepage": "https://github.com/lumihq/purescript-react-basic#readme",
   "devDependencies": {
     "bower": "^1.8.4",
-    "pulp": "^12.2.0",
-    "purescript": "^0.12.0"
+    "pulp": "^12.2.0"
+  },
+  "dependencies": {
+    "purescript": "0.12.1"
   }
 }

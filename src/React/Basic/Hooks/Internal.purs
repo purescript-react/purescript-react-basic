@@ -4,6 +4,7 @@
 module React.Basic.Hooks.Internal
   ( Component
   , unsafeComponent
+  , Ref
   , JSX
   , empty
   , keyed
@@ -24,6 +25,8 @@ newtype Component props hooks = Component (EffectFn1 props JSX)
 
 unsafeComponent :: forall props hooks. EffectFn1 props JSX -> Component props hooks
 unsafeComponent = Component
+
+foreign import data Ref :: Type -> Type
 
 -- | Represents rendered React VDOM (the result of calling `React.createElement`
 -- | in JavaScript).
