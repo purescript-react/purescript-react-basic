@@ -314,7 +314,7 @@ __*See also:* `make`, `createComponent`, `Component`, `ComponentSpec`__
 #### `JSX`
 
 ``` purescript
-data JSX :: Type
+type JSX = JSX
 ```
 
 Represents rendered React VDOM (the result of calling `React.createElement`
@@ -329,12 +329,6 @@ in JavaScript).
 
 __*Hint:* Many useful utility functions already exist for Monoids. For example,
   `guard` can be used to conditionally render a subtree of components.__
-
-##### Instances
-``` purescript
-Semigroup JSX
-Monoid JSX
-```
 
 #### `empty`
 
@@ -421,7 +415,7 @@ __*See also:* `displayNameFromComponent`, `createComponent`__
 #### `ReactComponent`
 
 ``` purescript
-data ReactComponent props
+newtype ReactComponent props
 ```
 
 Represents a traditional React component. Useful for JavaScript interop and

@@ -31,7 +31,7 @@ Supports a common subset of the v2 API to ease the upgrade process
 #### `JSX`
 
 ``` purescript
-data JSX :: Type
+type JSX = JSX
 ```
 
 Represents rendered React VDOM (the result of calling `React.createElement`
@@ -46,12 +46,6 @@ in JavaScript).
 
 __*Hint:* Many useful utility functions already exist for Monoids. For example,
   `guard` can be used to conditionally render a subtree of components.__
-
-##### Instances
-``` purescript
-Semigroup JSX
-Monoid JSX
-```
 
 #### `keyed`
 

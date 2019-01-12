@@ -37,6 +37,7 @@ import Effect.Aff (Aff, Error, runAff_)
 import Effect.Uncurried (EffectFn2, runEffectFn2)
 import React.Basic.DOM.Events (preventDefault, stopPropagation)
 import React.Basic.Events (EventFn, EventHandler, SyntheticEvent, handler)
+import React.Basic.Hooks.Internal as Internal
 import Type.Row (class Union)
 
 -- | `ComponentSpec` represents a React-Basic component implementation.
@@ -328,21 +329,15 @@ makeStateless component render =
 -- |
 -- | __*Hint:* Many useful utility functions already exist for Monoids. For example,
 -- |   `guard` can be used to conditionally render a subtree of components.__
-foreign import data JSX :: Type
-
-instance semigroupJSX :: Semigroup JSX where
-  append a b = fragment [ a, b ]
-
-instance monoidJSX :: Monoid JSX where
-  mempty = empty
+type JSX = Internal.JSX
 
 -- | An empty `JSX` node. This is often useful when you would like to conditionally
 -- | show something, but you don't want to (or can't) modify the `children` prop
 -- | on the parent node.
 -- |
 -- | __*See also:* `JSX`, Monoid `guard`__
-foreign import empty :: JSX
-
+empty :: JSX
+empty = Internal.empty
 -- | Apply a React key to a subtree. React-Basic usually hides React's warning about
 -- | using `key` props on components in an Array, but keys are still important for
 -- | any dynamic lists of child components.
@@ -367,7 +362,7 @@ element
    . ReactComponent { | props }
   -> { | props }
   -> JSX
-element = runFn2 element_
+element (ReactComponent component) = Internal.element component
 
 -- | Create a `JSX` node from a `ReactComponent`, by providing the props and a key.
 -- |
@@ -408,7 +403,7 @@ foreign import displayNameFromSelf
 -- | ```
 -- |
 -- | __*See also:* `element`, `toReactComponent`__
-data ReactComponent props
+newtype ReactComponent props = ReactComponent (Internal.Component props Unit)
 
 -- | An opaque representation of a React component's instance (`this` in the JavaScript
 -- | React paradigm). It exists as an escape hatch to unsafe behavior. Use it with

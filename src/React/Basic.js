@@ -28,9 +28,9 @@ exports.createComponent = (function() {
     return shouldUpdate === undefined
       ? true
       : shouldUpdate(this.toSelf())({
-        nextProps: nextProps.$$props,
-        nextState: nextState === null ? null : nextState.$$state
-      });
+          nextProps: nextProps.$$props,
+          nextState: nextState === null ? null : nextState.$$state
+        });
   }
 
   function componentDidUpdate(prevProps, prevState) {
@@ -155,8 +155,6 @@ exports.make = function(_unionDict) {
     };
   };
 };
-
-exports.empty = null;
 
 exports.keyed_ = function(key, child) {
   return React.createElement(Fragment, { key: key }, child);
