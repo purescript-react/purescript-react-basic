@@ -141,7 +141,7 @@ __*See also:* `ComponentSpec`, `capture`__
 #### `Self`
 
 ``` purescript
-type Self props state action = { props :: props, state :: state, instance_ :: ReactComponentInstance }
+type Self props state action = { props :: props, state :: state, instance_ :: ReactComponentInstance props state action }
 ```
 
 `Self` represents the component instance at a particular point in time.
@@ -421,7 +421,7 @@ __*See also:* `displayNameFromComponent`, `createComponent`__
 #### `ReactComponent`
 
 ``` purescript
-data ReactComponent props
+data ReactComponent :: Type -> Type
 ```
 
 Represents a traditional React component. Useful for JavaScript interop and
@@ -436,7 +436,7 @@ __*See also:* `element`, `toReactComponent`__
 #### `ReactComponentInstance`
 
 ``` purescript
-data ReactComponentInstance
+data ReactComponentInstance :: Type -> Type -> Type -> Type
 ```
 
 An opaque representation of a React component's instance (`this` in the JavaScript
