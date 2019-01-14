@@ -2,6 +2,18 @@
 
 This module defines safe DOM event function and property accessors.
 
+#### `capture`
+
+``` purescript
+capture :: forall a. EventFn SyntheticEvent a -> (a -> Effect Unit) -> EventHandler
+```
+
+#### `capture_`
+
+``` purescript
+capture_ :: Effect Unit -> EventHandler
+```
+
 #### `bubbles`
 
 ``` purescript

@@ -18,6 +18,12 @@ A React component
 unsafeComponent :: forall props hooks. EffectFn1 props JSX -> Component props hooks
 ```
 
+#### `Ref`
+
+``` purescript
+data Ref :: Type -> Type
+```
+
 #### `JSX`
 
 ``` purescript

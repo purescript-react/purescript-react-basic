@@ -141,7 +141,7 @@ __*See also:* `ComponentSpec`, `capture`__
 #### `Self`
 
 ``` purescript
-type Self props state action = { props :: props, state :: state, instance_ :: ReactComponentInstance }
+type Self props state action = { props :: props, state :: state, instance_ :: ReactComponentInstance props state action }
 ```
 
 `Self` represents the component instance at a particular point in time.
@@ -178,49 +178,6 @@ __*Note:* Potential failure should be handled in the given `Aff` and converted
   the console.__
 
 __*See also:* `send`__
-
-#### `capture`
-
-``` purescript
-capture :: forall props state action a. Self props state action -> EventFn SyntheticEvent a -> (a -> action) -> EventHandler
-```
-
-Create a capturing\* `EventHandler` to send an action when an event occurs. For
-more complicated event handlers requiring `Effect`, use `handler` from `React.Basic.Events`.
-
-__\*calls `preventDefault` and `stopPropagation`__
-
-__*See also:* `update`, `capture_`, `monitor`, `React.Basic.Events`__
-
-#### `capture_`
-
-``` purescript
-capture_ :: forall props state action. Self props state action -> action -> EventHandler
-```
-
-Like `capture`, but for actions which don't need to extract information from the Event.
-
-__*See also:* `update`, `capture`, `monitor_`__
-
-#### `monitor`
-
-``` purescript
-monitor :: forall props state action a. Self props state action -> EventFn SyntheticEvent a -> (a -> action) -> EventHandler
-```
-
-Like `capture`, but does not cancel the event.
-
-__*See also:* `update`, `capture`, `monitor\_`__
-
-#### `monitor_`
-
-``` purescript
-monitor_ :: forall props state action. Self props state action -> action -> EventHandler
-```
-
-Like `capture_`, but does not cancel the event.
-
-__*See also:* `update`, `monitor`, `capture_`, `React.Basic.Events`__
 
 #### `readProps`
 
@@ -430,7 +387,7 @@ __*See also:* `element`, `toReactComponent`__
 #### `ReactComponentInstance`
 
 ``` purescript
-data ReactComponentInstance
+data ReactComponentInstance :: Type -> Type -> Type -> Type
 ```
 
 An opaque representation of a React component's instance (`this` in the JavaScript

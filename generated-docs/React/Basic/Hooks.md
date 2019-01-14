@@ -87,12 +87,6 @@ useReducer :: forall hooks state action. ToKey state => state -> (state -> actio
 data UseRef :: Type -> Type -> Type
 ```
 
-#### `Ref`
-
-``` purescript
-data Ref :: Type -> Type
-```
-
 #### `readRef`
 
 ``` purescript
@@ -319,6 +313,12 @@ Shorthand for constructing n-tuples as nested pairs.
 `a /\ b /\ c /\ d /\ unit` becomes `Tuple a (Tuple b (Tuple c (Tuple d unit)))`
 
 ### Re-exported from React.Basic.Hooks.Internal:
+
+#### `Ref`
+
+``` purescript
+data Ref :: Type -> Type
+```
 
 #### `JSX`
 
