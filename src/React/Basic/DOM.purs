@@ -93,7 +93,7 @@ foreign import unmountComponentAtNode_ :: EffectFn1 Element Boolean
 -- | `React.Basic.DOM.Components.Ref` where possible__
 -- |
 -- | __*Note:* Relies on `ReactDOM.findDOMNode`__
-findDOMNode :: ReactComponentInstance -> Effect (Either Error Node)
+findDOMNode :: forall props state action. ReactComponentInstance props state action -> Effect (Either Error Node)
 findDOMNode instance_ = try do
   node <- runEffectFn1 findDOMNode_ instance_
   case toMaybe node of
@@ -101,7 +101,7 @@ findDOMNode instance_ = try do
     Just n  -> pure n
 
 -- | Warning: Relies on `ReactDOM.findDOMNode` which may throw exceptions
-foreign import findDOMNode_ :: EffectFn1 ReactComponentInstance (Nullable Node)
+foreign import findDOMNode_ :: forall props state action. EffectFn1 (ReactComponentInstance props state action) (Nullable Node)
 
 -- | Divert a render tree into a separate DOM node. The node's
 -- | content will be overwritten and managed by React, similar

@@ -181,7 +181,7 @@ data StateUpdate props state action
 type Self props state action =
   { props     :: props
   , state     :: state
-  , instance_ :: ReactComponentInstance
+  , instance_ :: ReactComponentInstance props state action
   }
 
 -- | Dispatch an `action` into the component to be handled by `update`.
@@ -408,12 +408,12 @@ foreign import displayNameFromSelf
 -- | ```
 -- |
 -- | __*See also:* `element`, `toReactComponent`__
-data ReactComponent props
+foreign import data ReactComponent :: Type -> Type
 
 -- | An opaque representation of a React component's instance (`this` in the JavaScript
 -- | React paradigm). It exists as an escape hatch to unsafe behavior. Use it with
 -- | caution.
-data ReactComponentInstance
+foreign import data ReactComponentInstance :: Type -> Type -> Type -> Type
 
 -- | Convert a React-Basic `ComponentSpec` to a JavaScript-friendly React component.
 -- | This function should only be used for JS interop and not normal React-Basic usage.
