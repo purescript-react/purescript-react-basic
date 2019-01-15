@@ -156,19 +156,6 @@ exports.make = function(_unionDict) {
   };
 };
 
-exports.keyed_ = function(key, child) {
-  return React.createElement(Fragment, { key: key }, child);
-};
-
-exports.element_ = function(component, props) {
-  return React.createElement.apply(
-    null,
-    [component, props].concat((props && props.children) || null)
-  );
-};
-
-exports.elementKeyed_ = exports.element_;
-
 exports.fragment = function(children) {
   return React.createElement.apply(null, [Fragment, {}].concat(children));
 };

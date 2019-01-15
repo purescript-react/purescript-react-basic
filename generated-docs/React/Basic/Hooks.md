@@ -12,7 +12,7 @@ PureScript release yet.
 #### `CreateComponent`
 
 ``` purescript
-type CreateComponent props hooks = Effect (Component props hooks)
+type CreateComponent props = Effect (ReactComponent props)
 ```
 
 Alias for convenience. Creating components is effectful because
@@ -22,7 +22,7 @@ or "type".
 #### `component`
 
 ``` purescript
-component :: forall hooks props. String -> (props -> Render Unit hooks JSX) -> CreateComponent props hooks
+component :: forall hooks props. String -> (props -> Render Unit hooks JSX) -> CreateComponent props
 ```
 
 Create a React component given a display name and render function.
@@ -30,7 +30,7 @@ Create a React component given a display name and render function.
 #### `memo`
 
 ``` purescript
-memo :: forall hooks props. CreateComponent hooks props -> CreateComponent hooks props
+memo :: forall props. CreateComponent props -> CreateComponent props
 ```
 
 #### `UseState`
@@ -320,6 +320,14 @@ Shorthand for constructing n-tuples as nested pairs.
 data Ref :: Type -> Type
 ```
 
+#### `ReactComponent`
+
+``` purescript
+newtype ReactComponent props
+```
+
+A React component
+
 #### `JSX`
 
 ``` purescript
@@ -344,14 +352,6 @@ __*Hint:* Many useful utility functions already exist for Monoids. For example,
 Semigroup JSX
 Monoid JSX
 ```
-
-#### `Component`
-
-``` purescript
-newtype Component props hooks
-```
-
-A React component
 
 #### `keyed`
 
@@ -390,33 +390,33 @@ __*See also:* `JSX`, Monoid `guard`__
 #### `elementKeyed`
 
 ``` purescript
-elementKeyed :: forall hooks props. Component {  | props } hooks -> { key :: String | props } -> JSX
+elementKeyed :: forall props. ReactComponent {  | props } -> { key :: String | props } -> JSX
 ```
 
-Create a `JSX` node from a `Component`, by providing the props and a key.
+Create a `JSX` node from a `ReactComponent`, by providing the props and a key.
 
-__*See also:* `Component`, `element`, React's documentation regarding the special `key` prop__
+__*See also:* `ReactComponent`, `element`, React's documentation regarding the special `key` prop__
 
 #### `element`
 
 ``` purescript
-element :: forall hooks props. Component {  | props } hooks -> {  | props } -> JSX
+element :: forall props. ReactComponent {  | props } -> {  | props } -> JSX
 ```
 
-Create a `JSX` node from a `Component`, by providing the props.
+Create a `JSX` node from a `ReactComponent`, by providing the props.
 
 This function is for non-React-Basic React components, such as those
 imported from FFI.
 
-__*See also:* `Component`, `elementKeyed`__
+__*See also:* `ReactComponent`, `elementKeyed`__
 
 #### `displayName`
 
 ``` purescript
-displayName :: forall hooks props. Component props hooks -> String
+displayName :: forall props. ReactComponent props -> String
 ```
 
-Retrieve the Display Name from a `Component`. Useful for debugging and improving
+Retrieve the Display Name from a `ReactComponent`. Useful for debugging and improving
 error messages in logs.
 
 __*See also:* `component`__

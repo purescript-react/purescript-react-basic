@@ -2,8 +2,8 @@
 -- | and is not specific to hooks. Just import these things from one of those
 -- | modules.
 module React.Basic.Hooks.Internal
-  ( Component
-  , unsafeComponent
+  ( ReactComponent
+  , unsafeReactComponent
   , Ref
   , JSX
   , empty
@@ -14,17 +14,16 @@ module React.Basic.Hooks.Internal
   , displayName
   ) where
 
--- | A React component
 import Prelude
 
 import Data.Function.Uncurried (Fn2, runFn2)
 import Effect.Uncurried (EffectFn1)
 
 -- | A React component
-newtype Component props hooks = Component (EffectFn1 props JSX)
+newtype ReactComponent props = ReactComponent (EffectFn1 props JSX)
 
-unsafeComponent :: forall props hooks. EffectFn1 props JSX -> Component props hooks
-unsafeComponent = Component
+unsafeReactComponent :: forall props. EffectFn1 props JSX -> ReactComponent props
+unsafeReactComponent = ReactComponent
 
 foreign import data Ref :: Type -> Type
 
@@ -68,36 +67,36 @@ keyed = runFn2 keyed_
 -- | __*See also:* `JSX`__
 foreign import fragment :: Array JSX -> JSX
 
--- | Create a `JSX` node from a `Component`, by providing the props.
+-- | Create a `JSX` node from a `ReactComponent`, by providing the props.
 -- |
 -- | This function is for non-React-Basic React components, such as those
 -- | imported from FFI.
 -- |
--- | __*See also:* `Component`, `elementKeyed`__
+-- | __*See also:* `ReactComponent`, `elementKeyed`__
 element
-  :: forall hooks props
-   . Component {| props } hooks
+  :: forall props
+   . ReactComponent {| props }
   -> {| props }
   -> JSX
-element (Component c) props = runFn2 element_ c props
+element (ReactComponent c) props = runFn2 element_ c props
 
--- | Create a `JSX` node from a `Component`, by providing the props and a key.
+-- | Create a `JSX` node from a `ReactComponent`, by providing the props and a key.
 -- |
--- | __*See also:* `Component`, `element`, React's documentation regarding the special `key` prop__
+-- | __*See also:* `ReactComponent`, `element`, React's documentation regarding the special `key` prop__
 elementKeyed
-  :: forall hooks props
-   . Component {| props } hooks
+  :: forall props
+   . ReactComponent {| props }
   -> { key :: String | props }
   -> JSX
 elementKeyed = runFn2 elementKeyed_
 
--- | Retrieve the Display Name from a `Component`. Useful for debugging and improving
+-- | Retrieve the Display Name from a `ReactComponent`. Useful for debugging and improving
 -- | error messages in logs.
 -- |
 -- | __*See also:* `component`__
 foreign import displayName
-  :: forall hooks props
-   . Component props hooks
+  :: forall props
+   . ReactComponent props
   -> String
 
 -- |
@@ -111,5 +110,5 @@ foreign import element_
    . Fn2 (EffectFn1 { | props } JSX) { | props } JSX
 
 foreign import elementKeyed_
-  :: forall hooks props
-   . Fn2 (Component {| props } hooks) { key :: String | props } JSX
+  :: forall props
+   . Fn2 (ReactComponent {| props }) { key :: String | props } JSX

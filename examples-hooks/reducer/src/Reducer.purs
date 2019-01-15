@@ -2,7 +2,7 @@ module Reducer where
 
 import Prelude
 
-import React.Basic.Hooks(CreateComponent, UseReducer, component, fragment, useReducer, (/\))
+import React.Basic.Hooks (CreateComponent, component, fragment, useReducer, (/\))
 import React.Basic.Hooks as React
 import React.Basic.DOM as R
 import React.Basic.DOM.Events (capture_)
@@ -11,7 +11,7 @@ data Action
   = Increment
   | Decrement
 
-mkReducer :: CreateComponent {} (UseReducer { counter :: Int } Action Unit)
+mkReducer :: CreateComponent {}
 mkReducer = do
   component "Reducer" \props -> React.do
 

@@ -18,7 +18,7 @@ import Web.HTML.HTMLElement (getBoundingClientRect)
 import Web.HTML.HTMLElement as HTMLElement
 import Web.HTML.Window as Window
 
-mkRefs :: CreateComponent {} (UseNodeDistance (UseNodeDistance (UseNodeDistance Unit)))
+mkRefs :: CreateComponent {}
 mkRefs = do
   component "Refs" \props -> React.do
 

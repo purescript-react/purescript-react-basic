@@ -59,29 +59,29 @@ import Data.Tuple.Nested (tuple2, (/\))
 import Effect (Effect)
 import Effect.Uncurried (EffectFn1, EffectFn2, EffectFn3, mkEffectFn1, runEffectFn1, runEffectFn2, runEffectFn3)
 import Prelude (bind, pure) as Prelude
-import React.Basic.Hooks.Internal (Component, JSX, Ref, empty, keyed, fragment, element, elementKeyed, displayName)
-import React.Basic.Hooks.Internal (unsafeComponent) as Internal
+import React.Basic.Hooks.Internal (ReactComponent, JSX, Ref, empty, keyed, fragment, element, elementKeyed, displayName)
+import React.Basic.Hooks.Internal (unsafeReactComponent) as Internal
 import Unsafe.Coerce (unsafeCoerce)
 
 -- | Alias for convenience. Creating components is effectful because
 -- | React uses the function instance as the component's "identity"
 -- | or "type".
-type CreateComponent props hooks = Effect (Component props hooks)
+type CreateComponent props = Effect (ReactComponent props)
 
 -- | Create a React component given a display name and render function.
 component
   :: forall hooks props
    . String
   -> (props -> Render Unit hooks JSX)
-  -> CreateComponent props hooks
+  -> CreateComponent props
 component name renderFn =
-  let c = Internal.unsafeComponent (mkEffectFn1 (\props -> case renderFn props of Render a -> a))
+  let c = Internal.unsafeReactComponent (mkEffectFn1 (\props -> case renderFn props of Render a -> a))
    in runEffectFn2 unsafeSetDisplayName name c
 
 memo
-  :: forall hooks props
-   . CreateComponent hooks props
-  -> CreateComponent hooks props
+  :: forall props
+   . CreateComponent props
+  -> CreateComponent props
 memo = flip Prelude.bind (runEffectFn1 memo_)
 
 foreign import data UseState :: Type -> Type -> Type
@@ -247,14 +247,14 @@ pure = ipure
 -- |
 
 foreign import memo_
-  :: forall hooks props
+  :: forall props
    . EffectFn1
-       (Component props hooks)
-       (Component props hooks)
+       (ReactComponent props)
+       (ReactComponent props)
 
 foreign import unsafeSetDisplayName
-  :: forall hooks props
-   . EffectFn2 String (Component props hooks) (Component props hooks)
+  :: forall props
+   . EffectFn2 String (ReactComponent props) (ReactComponent props)
 
 foreign import useState_
   :: forall state
@@ -317,7 +317,7 @@ foreign import createContext_
 foreign import contextProvider_
   :: forall a
    . Context a
-  -> Component { value :: a, children :: JSX } Unit
+  -> ReactComponent { value :: a, children :: JSX }
 
 foreign import useMemo_
   :: forall a

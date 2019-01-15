@@ -372,14 +372,14 @@ __*See also:* `displayNameFromComponent`, `createComponent`__
 #### `ReactComponent`
 
 ``` purescript
-newtype ReactComponent props
+type ReactComponent = ReactComponent
 ```
 
-Represents a traditional React component. Useful for JavaScript interop and
+Represents a React component. Useful for JavaScript interop and
 FFI. For example:
 
 ```purs
-foreign import ComponentRequiringJSHacks :: ReactComponent { someProp :: String }
+foreign import ComponentRequiringJSHacks :: ReactComponent { someProp :: String } Unit
 ```
 
 __*See also:* `element`, `toReactComponent`__

@@ -7,7 +7,7 @@ import Data.Foldable (traverse_)
 import Data.Maybe (Maybe(..))
 import Effect (Effect)
 import React.Basic as RB
-import React.Basic.Hooks(CreateComponent, UseReducer, UseState, component, element, elementKeyed, empty, memo, useReducer, useState, (/\))
+import React.Basic.Hooks (CreateComponent, component, element, elementKeyed, empty, memo, useReducer, useState, (/\))
 import React.Basic.Hooks as React
 import React.Basic.DOM as R
 import React.Basic.DOM.Events (capture, capture_, targetValue)
@@ -57,7 +57,7 @@ reducer state = case _ of
   SetFilter filter ->
     state { filter = filter }
 
-mkTodoApp :: CreateComponent {} (UseReducer State Action Unit)
+mkTodoApp :: CreateComponent {}
 mkTodoApp = do
   let initialState = { todos: [], filter: All }
   todoInput <- memo mkTodoInput
@@ -89,7 +89,7 @@ mkTodoApp = do
   where
     todoAppEl = RB.element $ R.unsafeCreateDOMComponent "todo-app"
 
-mkTodoInput :: CreateComponent { dispatch :: Action -> Effect Unit } (UseState String Unit)
+mkTodoInput :: CreateComponent { dispatch :: Action -> Effect Unit }
 mkTodoInput = do
   component "TodoInput" \props -> React.do
     value /\ setValue <- useState ""
@@ -108,7 +108,7 @@ mkTodoInput = do
       , style: R.css { marginBottom: "16px", width: "100%" }
       }
 
-mkTodoRow :: CreateComponent { id :: Int, todo :: Todo, dispatch :: Action -> Effect Unit } Unit
+mkTodoRow :: CreateComponent { id :: Int, todo :: Todo, dispatch :: Action -> Effect Unit }
 mkTodoRow = component "Todo" \props -> React.do
   React.pure $ R.div
     { children:
@@ -137,7 +137,7 @@ mkTodoRow = component "Todo" \props -> React.do
         }
     }
 
-mkTodoFilters :: CreateComponent { filter :: TodoFilter, dispatch :: Action -> Effect Unit } Unit
+mkTodoFilters :: CreateComponent { filter :: TodoFilter, dispatch :: Action -> Effect Unit }
 mkTodoFilters = component "TodoFilters" \props -> React.do
   let
     filterLink f label = R.a

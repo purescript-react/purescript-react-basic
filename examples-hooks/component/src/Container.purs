@@ -7,7 +7,7 @@ import React.Basic.Hooks as React
 import React.Basic.DOM as R
 import ToggleButton (mkToggleButton)
 
-mkToggleButtonContainer :: CreateComponent {} Unit
+mkToggleButtonContainer :: CreateComponent {}
 mkToggleButtonContainer = do
   toggleButton <- mkToggleButton
 

@@ -4,18 +4,18 @@ This module is for types shared by both React.Basic and React.Basic.Hooks
 and is not specific to hooks. Just import these things from one of those
 modules.
 
-#### `Component`
+#### `ReactComponent`
 
 ``` purescript
-newtype Component props hooks
+newtype ReactComponent props
 ```
 
 A React component
 
-#### `unsafeComponent`
+#### `unsafeReactComponent`
 
 ``` purescript
-unsafeComponent :: forall props hooks. EffectFn1 props JSX -> Component props hooks
+unsafeReactComponent :: forall props. EffectFn1 props JSX -> ReactComponent props
 ```
 
 #### `Ref`
@@ -86,33 +86,33 @@ __*See also:* `JSX`__
 #### `element`
 
 ``` purescript
-element :: forall hooks props. Component {  | props } hooks -> {  | props } -> JSX
+element :: forall props. ReactComponent {  | props } -> {  | props } -> JSX
 ```
 
-Create a `JSX` node from a `Component`, by providing the props.
+Create a `JSX` node from a `ReactComponent`, by providing the props.
 
 This function is for non-React-Basic React components, such as those
 imported from FFI.
 
-__*See also:* `Component`, `elementKeyed`__
+__*See also:* `ReactComponent`, `elementKeyed`__
 
 #### `elementKeyed`
 
 ``` purescript
-elementKeyed :: forall hooks props. Component {  | props } hooks -> { key :: String | props } -> JSX
+elementKeyed :: forall props. ReactComponent {  | props } -> { key :: String | props } -> JSX
 ```
 
-Create a `JSX` node from a `Component`, by providing the props and a key.
+Create a `JSX` node from a `ReactComponent`, by providing the props and a key.
 
-__*See also:* `Component`, `element`, React's documentation regarding the special `key` prop__
+__*See also:* `ReactComponent`, `element`, React's documentation regarding the special `key` prop__
 
 #### `displayName`
 
 ``` purescript
-displayName :: forall hooks props. Component props hooks -> String
+displayName :: forall props. ReactComponent props -> String
 ```
 
-Retrieve the Display Name from a `Component`. Useful for debugging and improving
+Retrieve the Display Name from a `ReactComponent`. Useful for debugging and improving
 error messages in logs.
 
 __*See also:* `component`__

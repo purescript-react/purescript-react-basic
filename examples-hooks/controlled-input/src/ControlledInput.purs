@@ -10,8 +10,8 @@ import React.Basic.DOM as R
 import React.Basic.DOM.Events (capture, targetValue, timeStamp)
 import React.Basic.Events (EventHandler, merge)
 
-mkControlledInput :: CreateComponent {} (UseInput () (UseInput () Unit))
-mkControlledInput =
+mkControlledInput :: CreateComponent {}
+mkControlledInput = do
   component "ControlledInput" \props -> React.do
     firstName <- useInput "hello"
     lastName <- useInput "world"

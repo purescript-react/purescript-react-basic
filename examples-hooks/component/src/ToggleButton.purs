@@ -3,12 +3,12 @@ module ToggleButton where
 import Prelude
 
 import Effect.Console (log)
-import React.Basic.Hooks(CreateComponent, UseEffect, UseState, component, toKey, useEffect, useState, (/\))
+import React.Basic.Hooks (CreateComponent, component, toKey, useEffect, useState, (/\))
 import React.Basic.Hooks as React
 import React.Basic.DOM as R
 import React.Basic.DOM.Events (capture_)
 
-mkToggleButton :: CreateComponent { label :: String } (UseEffect (UseState Boolean Unit))
+mkToggleButton :: CreateComponent { label :: String }
 mkToggleButton = do
   component "ToggleButton" \{ label } -> React.do
     on /\ setOn <- useState false

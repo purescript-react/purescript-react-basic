@@ -26,7 +26,7 @@ module React.Basic
 import Prelude
 
 import Data.Either (Either(..))
-import Data.Function.Uncurried (Fn1, Fn2, runFn1, runFn2)
+import Data.Function.Uncurried (Fn1, runFn1)
 import Data.Nullable (Nullable, notNull, null)
 import Effect (Effect)
 import Effect.Aff (Aff, Error, runAff_)
@@ -305,13 +305,14 @@ type JSX = Internal.JSX
 -- | __*See also:* `JSX`, Monoid `guard`__
 empty :: JSX
 empty = Internal.empty
+
 -- | Apply a React key to a subtree. React-Basic usually hides React's warning about
 -- | using `key` props on components in an Array, but keys are still important for
 -- | any dynamic lists of child components.
 -- |
 -- | __*See also:* React's documentation regarding the special `key` prop__
 keyed :: String -> JSX -> JSX
-keyed = runFn2 keyed_
+keyed = Internal.keyed
 
 -- | Render an Array of children without a wrapping component.
 -- |
@@ -326,10 +327,10 @@ foreign import fragment :: Array JSX -> JSX
 -- | __*See also:* `ReactComponent`, `elementKeyed`__
 element
   :: forall props
-   . ReactComponent { | props }
-  -> { | props }
+   . ReactComponent {| props }
+  -> {| props }
   -> JSX
-element (ReactComponent component) = Internal.element component
+element = Internal.element
 
 -- | Create a `JSX` node from a `ReactComponent`, by providing the props and a key.
 -- |
@@ -339,10 +340,10 @@ element (ReactComponent component) = Internal.element component
 -- | __*See also:* `ReactComponent`, `element`, React's documentation regarding the special `key` prop__
 elementKeyed
   :: forall props
-   . ReactComponent { | props }
+   . ReactComponent {| props }
   -> { key :: String | props }
   -> JSX
-elementKeyed = runFn2 elementKeyed_
+elementKeyed = Internal.elementKeyed
 
 -- | Retrieve the Display Name from a `ComponentSpec`. Useful for debugging and improving
 -- | error messages in logs.
@@ -362,15 +363,15 @@ foreign import displayNameFromSelf
    . Self props state action
   -> String
 
--- | Represents a traditional React component. Useful for JavaScript interop and
+-- | Represents a React component. Useful for JavaScript interop and
 -- | FFI. For example:
 -- |
 -- | ```purs
--- | foreign import ComponentRequiringJSHacks :: ReactComponent { someProp :: String }
+-- | foreign import ComponentRequiringJSHacks :: ReactComponent { someProp :: String } Unit
 -- | ```
 -- |
 -- | __*See also:* `element`, `toReactComponent`__
-newtype ReactComponent props = ReactComponent (Internal.Component props Unit)
+type ReactComponent = Internal.ReactComponent
 
 -- | An opaque representation of a React component's instance (`this` in the JavaScript
 -- | React paradigm). It exists as an escape hatch to unsafe behavior. Use it with
@@ -389,10 +390,10 @@ foreign import data ReactComponentInstance :: Type -> Type -> Type -> Type
 foreign import toReactComponent
   :: forall spec spec_ jsProps props state action
    . Union spec spec_ (ComponentSpec props state action)
-  => ({ | jsProps } -> props)
+  => ({| jsProps } -> props)
   -> Component props
   -> { render :: Self props state action -> JSX | spec }
-  -> ReactComponent { | jsProps }
+  -> ReactComponent {| jsProps }
 
 
 -- |
@@ -434,16 +435,6 @@ foreign import send_
          (Self props state action)
          action
          Unit)
-
-foreign import keyed_ :: Fn2 String JSX JSX
-
-foreign import element_
-  :: forall props
-   . Fn2 (ReactComponent { | props }) { | props } JSX
-
-foreign import elementKeyed_
-  :: forall props
-   . Fn2 (ReactComponent { | props }) { key :: String | props } JSX
 
 foreign import warningDefaultUpdate
   :: forall props state action
