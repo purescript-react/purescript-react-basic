@@ -111,6 +111,30 @@ exports.readState = function(self) {
   };
 };
 
+exports.runUpdate_ = function(update, self, action) {
+  var sideEffects = null;
+  self.instance_.setState(
+    function(s) {
+      var setStateSelf = self.instance_.toSelf();
+      setStateSelf.state = s.$$state;
+      var updates = update(setStateSelf, action);
+      if (updates.effects !== null) {
+        sideEffects = updates.effects;
+      }
+      if (updates.state !== null && updates.state !== s.$$state) {
+        return { $$state: updates.state };
+      } else {
+        return null;
+      }
+    },
+    function() {
+      if (sideEffects !== null) {
+        sideEffects();
+      }
+    }
+  );
+};
+
 exports.make = function(_unionDict) {
   return function($$type) {
     return function($$spec) {

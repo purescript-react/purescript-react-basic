@@ -5,6 +5,8 @@ module React.Basic
   , Self
   , readProps
   , readState
+  , StateUpdate(..)
+  , runUpdate
   , make
   , makeStateless
   , JSX
@@ -22,8 +24,10 @@ module React.Basic
 
 import Prelude
 
-import Data.Function.Uncurried (Fn2, runFn2)
+import Data.Function.Uncurried (Fn2, mkFn2, runFn2)
+import Data.Nullable (Nullable, notNull, null)
 import Effect (Effect)
+import Effect.Uncurried (EffectFn3, runEffectFn3)
 import Type.Row (class Union)
 
 -- | `ComponentSpec` represents a React-Basic component implementation.
@@ -169,6 +173,62 @@ foreign import readProps :: forall props state. Self props state -> Effect props
 -- |
 -- | __*See also:* `Self`__
 foreign import readState :: forall props state. Self props state -> Effect state
+
+-- | TODO: Used by the `update` function to describe the kind of state update and/or side
+-- | effects desired.
+-- |
+-- | __*See also:* `ComponentSpec`, `capture`__
+data StateUpdate props state
+  = NoUpdate
+  | Update               state
+  | SideEffects                (Self props state -> Effect Unit)
+  | UpdateAndSideEffects state (Self props state -> Effect Unit)
+
+runUpdate
+  :: forall props state action
+   . (Self props state -> action -> StateUpdate props state)
+  -> Self props state
+  -> action
+  -> Effect Unit
+runUpdate update = runEffectFn3 runUpdate_ (mkFn2 \self action -> buildStateUpdate (update self action))
+
+foreign import runUpdate_
+  :: forall props state action
+   . EffectFn3
+      (Fn2
+        (Self props state)
+        action
+        { state :: Nullable state
+        , effects :: Nullable (Self props state -> Effect Unit)
+        }
+      )
+      (Self props state)
+      action
+      Unit
+
+buildStateUpdate
+  :: forall props state
+   . StateUpdate props state
+  -> { state :: Nullable state
+     , effects :: Nullable (Self props state -> Effect Unit)
+     }
+buildStateUpdate = case _ of
+  NoUpdate ->
+    { state:   null
+    , effects: null
+    }
+  Update state_ ->
+    { state:   notNull state_
+    , effects: null
+    }
+  SideEffects effects ->
+    { state:   null
+    , effects: notNull effects
+    }
+  UpdateAndSideEffects state_ effects ->
+    { state:   notNull state_
+    , effects: notNull effects
+    }
 
 -- | Turn a `Component` and `ComponentSpec` into a usable render function.
 -- | This is where you will want to provide customized implementations:
