@@ -158,6 +158,31 @@ _Note: This function is for specific, asynchronous edge cases.
 
 __*See also:* `Self`__
 
+#### `StateUpdate`
+
+``` purescript
+data StateUpdate props state
+  = NoUpdate
+  | Update state
+  | SideEffects (Self props state -> Effect Unit)
+  | UpdateAndSideEffects state (Self props state -> Effect Unit)
+```
+
+Describes a state update for use with `runUpdate`.
+
+__*See also:* `runUpdate`__
+
+#### `runUpdate`
+
+``` purescript
+runUpdate :: forall props state action. (Self props state -> action -> StateUpdate props state) -> Self props state -> action -> Effect Unit
+```
+
+Creates a send/dispatch function which sends actions through the given
+`update` function.
+
+__*See also:* `StateUpdate`__
+
 #### `make`
 
 ``` purescript
