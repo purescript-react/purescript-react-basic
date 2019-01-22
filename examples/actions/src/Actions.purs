@@ -2,6 +2,7 @@ module Actions where
 
 import Prelude
 
+import Effect.Console (log)
 import React.Basic (Component, JSX, StateUpdate(..), createComponent, make, runUpdate)
 import React.Basic.DOM as R
 import React.Basic.DOM.Events (capture_)
@@ -23,7 +24,9 @@ actions = make component { initialState, render }
 
     update self = case _ of
       Increment ->
-        Update self.state { counter = self.state.counter + 1 }
+        UpdateAndSideEffects
+          (self.state { counter = self.state.counter + 1 })
+          \{ state } -> log $ "Count: " <> show state.counter
 
     send = runUpdate update
 

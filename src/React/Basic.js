@@ -129,7 +129,7 @@ exports.runUpdate_ = function(update, self, action) {
     },
     function() {
       if (sideEffects !== null) {
-        sideEffects();
+        sideEffects(this.toSelf())();
       }
     }
   );
