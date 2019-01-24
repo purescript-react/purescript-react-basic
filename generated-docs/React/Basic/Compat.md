@@ -12,7 +12,7 @@ type Component = ReactComponent
 #### `component`
 
 ``` purescript
-component :: forall props state. { displayName :: String, initialState :: {  | state }, receiveProps :: { props :: {  | props }, state :: {  | state }, setState :: ({  | state } -> {  | state }) -> Effect Unit } -> Effect Unit, render :: { props :: {  | props }, state :: {  | state }, setState :: ({  | state } -> {  | state }) -> Effect Unit } -> JSX } -> ReactComponent {  | props }
+component :: forall props state. { displayName :: String, initialState :: {  | state }, receiveProps :: Self {  | props } {  | state } -> Effect Unit, render :: Self {  | props } {  | state } -> JSX } -> ReactComponent {  | props }
 ```
 
 Supports a common subset of the v2 API to ease the upgrade process
@@ -27,6 +27,27 @@ Supports a common subset of the v2 API to ease the upgrade process
 
 
 ### Re-exported from React.Basic:
+
+#### `Self`
+
+``` purescript
+type Self props state = { props :: props, state :: state, setState :: (state -> state) -> Effect Unit, setStateThen :: (state -> state) -> Effect Unit -> Effect Unit, instance_ :: ReactComponentInstance props state }
+```
+
+`Self` represents the component instance at a particular point in time.
+
+- `props`
+  - A snapshot of `props` taken when this `Self` was created.
+- `state`
+  - A snapshot of `state` taken when this `Self` was created.
+- `setState`
+  - Update the component's state using the given function.
+- `setStateThen`
+  - Update the component's state using the given function. The given effects are performed after any resulting rerenders are completed. Be careful to avoid using stale props or state in the effect callback. Use `readProps` or `readState` to aquire the latest values.
+- `instance_`
+  - Unsafe escape hatch to the underlying component instance (`this` in the JavaScript React paradigm). Avoid as much as possible, but it's still frequently better than rewriting an entire component in JavaScript.
+
+__*See also:* `ComponentSpec`, `send`, `capture`, `readProps`, `readState`__
 
 #### `JSX`
 

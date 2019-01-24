@@ -74,7 +74,7 @@ __*Note:* Relies on `ReactDOM.unmountComponentAtNode`__
 #### `findDOMNode`
 
 ``` purescript
-findDOMNode :: forall props state action. ReactComponentInstance props state action -> Effect (Either Error Node)
+findDOMNode :: forall props state. ReactComponentInstance props state -> Effect (Either Error Node)
 ```
 
 Returns the current DOM node associated with the given

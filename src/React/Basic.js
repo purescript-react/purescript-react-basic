@@ -8,10 +8,24 @@ exports.createComponent = (function() {
   // (`this`-dependent, defined outside `createComponent`
   // for a slight performance boost)
   function toSelf() {
+    var instance = this;
+    var setStateThen = function(update) {
+      return function(effects) {
+        return function() {
+          instance.setState(function(state) {
+            return { $$state: update(state.$$state) };
+          }, effects);
+        };
+      };
+    };
     var self = {
-      props: this.props.$$props,
-      state: this.state === null ? null : this.state.$$state,
-      instance_: this
+      props: instance.props.$$props,
+      state: instance.state === null ? null : instance.state.$$state,
+      setState: function(update) {
+        return setStateThen(update)(undefined);
+      },
+      setStateThen: setStateThen,
+      instance_: instance
     };
     return self;
   }
@@ -28,9 +42,9 @@ exports.createComponent = (function() {
     return shouldUpdate === undefined
       ? true
       : shouldUpdate(this.toSelf())({
-        nextProps: nextProps.$$props,
-        nextState: nextState === null ? null : nextState.$$state
-      });
+          nextProps: nextProps.$$props,
+          nextState: nextState === null ? null : nextState.$$state
+        });
   }
 
   function componentDidUpdate(prevProps, prevState) {
@@ -84,42 +98,6 @@ exports.createComponent = (function() {
   };
 })();
 
-exports.send_ = function(buildStateUpdate) {
-  return function(self, action) {
-    if (!self.instance_.$$mounted) {
-      exports.warningUnmountedComponentAction(self, action);
-      return;
-    }
-    if (self.instance_.$$spec.update === undefined) {
-      exports.warningDefaultUpdate(self, action);
-      return;
-    }
-    var sideEffects = null;
-    self.instance_.setState(
-      function(s) {
-        var setStateContext = self.instance_.toSelf();
-        setStateContext.state = s.$$state;
-        var updates = buildStateUpdate(
-          self.instance_.$$spec.update(setStateContext)(action)
-        );
-        if (updates.effects !== null) {
-          sideEffects = updates.effects;
-        }
-        if (updates.state !== null && updates.state !== s.$$state) {
-          return { $$state: updates.state };
-        } else {
-          return null;
-        }
-      },
-      function() {
-        if (sideEffects !== null) {
-          sideEffects(this.toSelf())();
-        }
-      }
-    );
-  };
-};
-
 exports.readProps = function(self) {
   return function() {
     return self.instance_.props.$$props;
@@ -133,12 +111,35 @@ exports.readState = function(self) {
   };
 };
 
+exports.runUpdate_ = function(update, self, action) {
+  var sideEffects = null;
+  self.instance_.setState(
+    function(s) {
+      var setStateSelf = self.instance_.toSelf();
+      setStateSelf.state = s.$$state;
+      var updates = update(setStateSelf, action);
+      if (updates.effects !== null) {
+        sideEffects = updates.effects;
+      }
+      if (updates.state !== null && updates.state !== s.$$state) {
+        return { $$state: updates.state };
+      } else {
+        return null;
+      }
+    },
+    function() {
+      if (sideEffects !== null) {
+        sideEffects(this.toSelf())();
+      }
+    }
+  );
+};
+
 exports.make = function(_unionDict) {
   return function($$type) {
     return function($$spec) {
       var $$specPadded = {
         initialState: $$spec.initialState,
-        update: $$spec.update,
         render: $$spec.render,
         didMount: $$spec.didMount,
         shouldUpdate: $$spec.shouldUpdate,
@@ -189,7 +190,6 @@ exports.toReactComponent = function(_unionDict) {
       return function($$spec) {
         var $$specPadded = {
           initialState: $$spec.initialState,
-          update: $$spec.update,
           render: $$spec.render,
           didMount: $$spec.didMount,
           shouldUpdate: $$spec.shouldUpdate,
@@ -217,33 +217,4 @@ exports.toReactComponent = function(_unionDict) {
       };
     };
   };
-};
-
-exports.warningDefaultUpdate = function(self, action) {
-  console.error(
-    "A " +
-      exports.displayNameFromSelf(self) +
-      " component received an action but has no `update` function defined. Override the default `update` function to handle this action."
-  );
-  console.error("Self:", self);
-  console.error("Action:", action);
-};
-
-exports.warningUnmountedComponentAction = function(self, action) {
-  console.error(
-    "An unmounted " +
-      exports.displayNameFromSelf(self) +
-      " component received the action below. Actions received by unmounted components usually indicate a memory leak. Make sure to unsubscribe from any async work in `willUnmount`."
-  );
-  console.error("Self:", self);
-  console.error("Action:", action);
-};
-
-exports.warningFailedAsyncAction = function(self, error) {
-  console.error(
-    "An async action failed in a " +
-      exports.displayNameFromSelf(self) +
-      " component."
-  );
-  console.error(error);
 };
