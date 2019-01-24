@@ -9,6 +9,7 @@
   "scripts": {
     "build": "pulp build && npm run build:examples",
     "build:examples": "PATH=`echo $PATH | sed -e 's/:\\.\\/node_modules\\/\\.bin//'` find examples -maxdepth 2 -type f -iname makefile -execdir make \\;",
+    "audit:examples": "PATH=`echo $PATH | sed -e 's/:\\.\\/node_modules\\/\\.bin//'` find examples -maxdepth 2 -type f -iname makefile -execdir npm audit fix \\;",
     "test": "npm run build"
   },
   "repository": {
