@@ -10,16 +10,92 @@ import React.Basic.DOM.Internal (SharedProps, unsafeCreateDOMComponent)
 import React.Basic.Events (EventHandler)
 
 type Props_a =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
   , coords :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
   , download :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
   , href :: String
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
   , name :: String
+  , noValidate :: Boolean
   , onClick :: EventHandler
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
   , rel :: String
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
   , shape :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
   , target :: String
+  , title :: String
   , type :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 a
@@ -33,8 +109,84 @@ a_ :: Array JSX -> JSX
 a_ children = a { children }
 
 type Props_abbr =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
   , title :: String
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 abbr
@@ -48,7 +200,83 @@ abbr_ :: Array JSX -> JSX
 abbr_ children = abbr { children }
 
 type Props_address =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 address
@@ -62,14 +290,90 @@ address_ :: Array JSX -> JSX
 address_ children = address { children }
 
 type Props_area =
-  ( alt :: String
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , alt :: String
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
   , coords :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
   , download :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
   , href :: String
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
   , rel :: String
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
   , shape :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
   , target :: String
+  , title :: String
   , type :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 area
@@ -80,7 +384,83 @@ area
 area = element (unsafeCreateDOMComponent "area")
 
 type Props_article =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 article
@@ -94,7 +474,83 @@ article_ :: Array JSX -> JSX
 article_ children = article { children }
 
 type Props_aside =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 aside
@@ -108,12 +564,88 @@ aside_ :: Array JSX -> JSX
 aside_ children = aside { children }
 
 type Props_audio =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
   , controls :: Boolean
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
   , loop :: Boolean
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
   , muted :: Boolean
+  , noValidate :: Boolean
+  , prefix :: String
   , preload :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
   , src :: String
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 audio
@@ -127,7 +659,83 @@ audio_ :: Array JSX -> JSX
 audio_ children = audio { children }
 
 type Props_b =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 b
@@ -141,8 +749,84 @@ b_ :: Array JSX -> JSX
 b_ children = b { children }
 
 type Props_base =
-  ( href :: String
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , href :: String
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
   , target :: String
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 base
@@ -153,7 +837,83 @@ base
 base = element (unsafeCreateDOMComponent "base")
 
 type Props_bdi =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 bdi
@@ -167,8 +927,84 @@ bdi_ :: Array JSX -> JSX
 bdi_ children = bdi { children }
 
 type Props_bdo =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
   , dir :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 bdo
@@ -182,8 +1018,84 @@ bdo_ :: Array JSX -> JSX
 bdo_ children = bdo { children }
 
 type Props_blockquote =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
   , cite :: String
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 blockquote
@@ -197,7 +1109,83 @@ blockquote_ :: Array JSX -> JSX
 blockquote_ children = blockquote { children }
 
 type Props_body =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 body
@@ -210,7 +1198,84 @@ body = element (unsafeCreateDOMComponent "body")
 body_ :: Array JSX -> JSX
 body_ children = body { children }
 
-type Props_br =()
+type Props_br =
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
+  )
 
 br
   :: forall attrs attrs_
@@ -220,12 +1285,88 @@ br
 br = element (unsafeCreateDOMComponent "br")
 
 type Props_button =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
   , disabled :: Boolean
+  , draggable :: Boolean
+  , encType :: String
   , form :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
   , name :: String
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
   , type :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
   , value :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 button
@@ -239,9 +1380,85 @@ button_ :: Array JSX -> JSX
 button_ children = button { children }
 
 type Props_canvas =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
   , height :: String
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
   , width :: String
+  , wmode :: String
   )
 
 canvas
@@ -255,7 +1472,83 @@ canvas_ :: Array JSX -> JSX
 canvas_ children = canvas { children }
 
 type Props_caption =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 caption
@@ -269,7 +1562,83 @@ caption_ :: Array JSX -> JSX
 caption_ children = caption { children }
 
 type Props_cite =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 cite
@@ -283,7 +1652,83 @@ cite_ :: Array JSX -> JSX
 cite_ children = cite { children }
 
 type Props_code =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 code
@@ -297,8 +1742,84 @@ code_ :: Array JSX -> JSX
 code_ children = code { children }
 
 type Props_col =
-  ( span :: Number
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , span :: Number
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
   , width :: String
+  , wmode :: String
   )
 
 col
@@ -309,9 +1830,85 @@ col
 col = element (unsafeCreateDOMComponent "col")
 
 type Props_colgroup =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
   , span :: Number
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
   , width :: String
+  , wmode :: String
   )
 
 colgroup
@@ -325,8 +1922,84 @@ colgroup_ :: Array JSX -> JSX
 colgroup_ children = colgroup { children }
 
 type Props_data =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
   , value :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 data'
@@ -340,7 +2013,83 @@ data_ :: Array JSX -> JSX
 data_ children = data' { children }
 
 type Props_datalist =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 datalist
@@ -354,7 +2103,83 @@ datalist_ :: Array JSX -> JSX
 datalist_ children = datalist { children }
 
 type Props_dd =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 dd
@@ -368,8 +2193,84 @@ dd_ :: Array JSX -> JSX
 dd_ children = dd { children }
 
 type Props_del =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
   , cite :: String
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 del
@@ -383,8 +2284,84 @@ del_ :: Array JSX -> JSX
 del_ children = del { children }
 
 type Props_details =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
   , open :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 details
@@ -398,8 +2375,84 @@ details_ :: Array JSX -> JSX
 details_ children = details { children }
 
 type Props_dfn =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
   , title :: String
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 dfn
@@ -413,8 +2466,84 @@ dfn_ :: Array JSX -> JSX
 dfn_ children = dfn { children }
 
 type Props_dialog =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
   , open :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 dialog
@@ -428,7 +2557,83 @@ dialog_ :: Array JSX -> JSX
 dialog_ children = dialog { children }
 
 type Props_div =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 div
@@ -442,7 +2647,83 @@ div_ :: Array JSX -> JSX
 div_ children = div { children }
 
 type Props_dl =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 dl
@@ -456,7 +2737,83 @@ dl_ :: Array JSX -> JSX
 dl_ children = dl { children }
 
 type Props_dt =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 dt
@@ -470,7 +2827,83 @@ dt_ :: Array JSX -> JSX
 dt_ children = dt { children }
 
 type Props_em =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 em
@@ -484,10 +2917,86 @@ em_ :: Array JSX -> JSX
 em_ children = em { children }
 
 type Props_embed =
-  ( height :: String
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , height :: String
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
   , src :: String
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
   , type :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
   , width :: String
+  , wmode :: String
   )
 
 embed
@@ -498,10 +3007,86 @@ embed
 embed = element (unsafeCreateDOMComponent "embed")
 
 type Props_fieldset =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
   , disabled :: Boolean
+  , draggable :: Boolean
+  , encType :: String
   , form :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
   , name :: String
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 fieldset
@@ -515,7 +3100,83 @@ fieldset_ :: Array JSX -> JSX
 fieldset_ children = fieldset { children }
 
 type Props_figcaption =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 figcaption
@@ -529,7 +3190,83 @@ figcaption_ :: Array JSX -> JSX
 figcaption_ children = figcaption { children }
 
 type Props_figure =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 figure
@@ -543,7 +3280,83 @@ figure_ :: Array JSX -> JSX
 figure_ children = figure { children }
 
 type Props_footer =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 footer
@@ -557,16 +3370,92 @@ footer_ :: Array JSX -> JSX
 footer_ children = footer { children }
 
 type Props_form =
-  ( accept :: String
+  ( about :: String
+  , accept :: String
+  , acceptCharset :: String
+  , accessKey :: String
   , action :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
   , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
   , method :: String
+  , minLength :: Number
   , name :: String
+  , noValidate :: Boolean
   , onChange :: EventHandler
   , onInput :: EventHandler
   , onInvalid :: EventHandler
   , onSubmit :: EventHandler
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
   , target :: String
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 form
@@ -580,7 +3469,83 @@ form_ :: Array JSX -> JSX
 form_ children = form { children }
 
 type Props_h1 =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 h1
@@ -594,7 +3559,83 @@ h1_ :: Array JSX -> JSX
 h1_ children = h1 { children }
 
 type Props_h2 =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 h2
@@ -608,7 +3649,83 @@ h2_ :: Array JSX -> JSX
 h2_ children = h2 { children }
 
 type Props_h3 =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 h3
@@ -622,7 +3739,83 @@ h3_ :: Array JSX -> JSX
 h3_ children = h3 { children }
 
 type Props_h4 =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 h4
@@ -636,7 +3829,83 @@ h4_ :: Array JSX -> JSX
 h4_ children = h4 { children }
 
 type Props_h5 =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 h5
@@ -650,7 +3919,83 @@ h5_ :: Array JSX -> JSX
 h5_ children = h5 { children }
 
 type Props_h6 =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 h6
@@ -664,8 +4009,84 @@ h6_ :: Array JSX -> JSX
 h6_ children = h6 { children }
 
 type Props_head =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
   , profile :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 head
@@ -679,7 +4100,83 @@ head_ :: Array JSX -> JSX
 head_ children = head { children }
 
 type Props_header =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 header
@@ -693,7 +4190,83 @@ header_ :: Array JSX -> JSX
 header_ children = header { children }
 
 type Props_hgroup =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 hgroup
@@ -707,8 +4280,84 @@ hgroup_ :: Array JSX -> JSX
 hgroup_ children = hgroup { children }
 
 type Props_hr =
-  ( size :: Number
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , size :: Number
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
   , width :: String
+  , wmode :: String
   )
 
 hr
@@ -719,8 +4368,84 @@ hr
 hr = element (unsafeCreateDOMComponent "hr")
 
 type Props_html =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
   , manifest :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 html
@@ -734,7 +4459,83 @@ html_ :: Array JSX -> JSX
 html_ children = html { children }
 
 type Props_i =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 i
@@ -748,13 +4549,89 @@ i_ :: Array JSX -> JSX
 i_ children = i { children }
 
 type Props_iframe =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
   , height :: String
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
   , name :: String
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
   , sandbox :: String
+  , scoped :: Boolean
   , scrolling :: String
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
   , src :: String
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
   , width :: String
+  , wmode :: String
   )
 
 iframe
@@ -768,12 +4645,88 @@ iframe_ :: Array JSX -> JSX
 iframe_ children = iframe { children }
 
 type Props_img =
-  ( alt :: String
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , alt :: String
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
   , height :: String
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
   , name :: String
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
   , sizes :: String
+  , spellCheck :: Boolean
   , src :: String
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
   , width :: String
+  , wmode :: String
   )
 
 img
@@ -784,34 +4737,110 @@ img
 img = element (unsafeCreateDOMComponent "img")
 
 type Props_input =
-  ( accept :: String
+  ( about :: String
+  , accept :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
   , alt :: String
   , autoCapitalize :: String
+  , autoComplete :: Boolean
   , autoCorrect :: String
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
   , autoSave :: String
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
   , checked :: Boolean
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
   , defaultChecked :: String
   , defaultValue :: String
+  , dir :: String
   , disabled :: Boolean
+  , draggable :: Boolean
+  , encType :: String
   , form :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
   , height :: String
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
   , list :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
   , max :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
   , min :: Number
+  , minLength :: Number
   , multiple :: Boolean
   , name :: String
+  , noValidate :: Boolean
   , onChange :: EventHandler
   , pattern :: String
   , placeholder :: String
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
   , required :: Boolean
+  , resource :: String
   , results :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
   , size :: Number
+  , spellCheck :: Boolean
   , src :: String
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
   , step :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
   , title :: String
   , type :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
   , value :: String
+  , vocab :: String
   , width :: String
+  , wmode :: String
   )
 
 input
@@ -822,8 +4851,84 @@ input
 input = element (unsafeCreateDOMComponent "input")
 
 type Props_ins =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
   , cite :: String
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 ins
@@ -837,7 +4942,83 @@ ins_ :: Array JSX -> JSX
 ins_ children = ins { children }
 
 type Props_kbd =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 kbd
@@ -851,11 +5032,87 @@ kbd_ :: Array JSX -> JSX
 kbd_ children = kbd { children }
 
 type Props_keygen =
-  ( challenge :: String
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , challenge :: String
+  , charSet :: String
   , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
   , disabled :: Boolean
+  , draggable :: Boolean
+  , encType :: String
   , form :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
   , name :: String
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 keygen
@@ -869,8 +5126,84 @@ keygen_ :: Array JSX -> JSX
 keygen_ children = keygen { children }
 
 type Props_label =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
   , form :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 label
@@ -884,7 +5217,83 @@ label_ :: Array JSX -> JSX
 label_ children = label { children }
 
 type Props_legend =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 legend
@@ -898,9 +5307,85 @@ legend_ :: Array JSX -> JSX
 legend_ children = legend { children }
 
 type Props_li =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
   , type :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
   , value :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 li
@@ -914,17 +5399,93 @@ li_ :: Array JSX -> JSX
 li_ children = li { children }
 
 type Props_link =
-  ( color :: String
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , color :: String
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
   , href :: String
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
   , integrity :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
   , media :: String
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
   , nonce :: String
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
   , rel :: String
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
   , scope :: String
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
   , sizes :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
   , target :: String
   , title :: String
+  , title :: String
   , type :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 link
@@ -935,7 +5496,83 @@ link
 link = element (unsafeCreateDOMComponent "link")
 
 type Props_main =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 main
@@ -949,8 +5586,84 @@ main_ :: Array JSX -> JSX
 main_ children = main { children }
 
 type Props_map =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
   , name :: String
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 map
@@ -964,7 +5677,83 @@ map_ :: Array JSX -> JSX
 map_ children = map { children }
 
 type Props_mark =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 mark
@@ -978,7 +5767,83 @@ mark_ :: Array JSX -> JSX
 mark_ children = mark { children }
 
 type Props_math =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 math
@@ -992,7 +5857,83 @@ math_ :: Array JSX -> JSX
 math_ children = math { children }
 
 type Props_menu =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 menu
@@ -1006,7 +5947,83 @@ menu_ :: Array JSX -> JSX
 menu_ children = menu { children }
 
 type Props_menuitem =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 menuitem
@@ -1020,8 +6037,84 @@ menuitem_ :: Array JSX -> JSX
 menuitem_ children = menuitem { children }
 
 type Props_meta =
-  ( content :: String
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , content :: String
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
   , name :: String
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 meta
@@ -1032,13 +6125,89 @@ meta
 meta = element (unsafeCreateDOMComponent "meta")
 
 type Props_meter =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
   , high :: String
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
   , low :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
   , max :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
   , min :: Number
+  , minLength :: Number
+  , noValidate :: Boolean
   , optimum :: String
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
   , value :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 meter
@@ -1052,7 +6221,83 @@ meter_ :: Array JSX -> JSX
 meter_ children = meter { children }
 
 type Props_nav =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 nav
@@ -1066,7 +6311,83 @@ nav_ :: Array JSX -> JSX
 nav_ children = nav { children }
 
 type Props_noscript =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 noscript
@@ -1080,13 +6401,89 @@ noscript_ :: Array JSX -> JSX
 noscript_ children = noscript { children }
 
 type Props_object =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
   , data :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
   , form :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
   , height :: String
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
   , name :: String
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
   , type :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
   , width :: String
+  , wmode :: String
   )
 
 object
@@ -1100,10 +6497,86 @@ object_ :: Array JSX -> JSX
 object_ children = object { children }
 
 type Props_ol =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
   , reversed :: Boolean
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
   , start :: Number
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
   , type :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 ol
@@ -1117,9 +6590,85 @@ ol_ :: Array JSX -> JSX
 ol_ children = ol { children }
 
 type Props_optgroup =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
   , disabled :: Boolean
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
   , label :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 optgroup
@@ -1133,11 +6682,87 @@ optgroup_ :: Array JSX -> JSX
 optgroup_ children = optgroup { children }
 
 type Props_option =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
   , disabled :: Boolean
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
   , label :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
   , selected :: Boolean
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
   , value :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 option
@@ -1151,9 +6776,85 @@ option_ :: Array JSX -> JSX
 option_ children = option { children }
 
 type Props_output =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
   , form :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
   , name :: String
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 output
@@ -1167,7 +6868,83 @@ output_ :: Array JSX -> JSX
 output_ children = output { children }
 
 type Props_p =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 p
@@ -1181,9 +6958,85 @@ p_ :: Array JSX -> JSX
 p_ children = p { children }
 
 type Props_param =
-  ( name :: String
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , name :: String
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
   , type :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
   , value :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 param
@@ -1194,7 +7047,83 @@ param
 param = element (unsafeCreateDOMComponent "param")
 
 type Props_picture =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 picture
@@ -1208,8 +7137,84 @@ picture_ :: Array JSX -> JSX
 picture_ children = picture { children }
 
 type Props_pre =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
   , width :: String
+  , wmode :: String
   )
 
 pre
@@ -1223,9 +7228,85 @@ pre_ :: Array JSX -> JSX
 pre_ children = pre { children }
 
 type Props_progress =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
   , max :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
   , value :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 progress
@@ -1239,8 +7320,84 @@ progress_ :: Array JSX -> JSX
 progress_ children = progress { children }
 
 type Props_q =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
   , cite :: String
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 q
@@ -1254,7 +7411,83 @@ q_ :: Array JSX -> JSX
 q_ children = q { children }
 
 type Props_rb =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 rb
@@ -1268,7 +7501,83 @@ rb_ :: Array JSX -> JSX
 rb_ children = rb { children }
 
 type Props_rp =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 rp
@@ -1282,7 +7591,83 @@ rp_ :: Array JSX -> JSX
 rp_ children = rp { children }
 
 type Props_rt =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 rt
@@ -1296,7 +7681,83 @@ rt_ :: Array JSX -> JSX
 rt_ children = rt { children }
 
 type Props_rtc =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 rtc
@@ -1310,7 +7771,83 @@ rtc_ :: Array JSX -> JSX
 rtc_ children = rtc { children }
 
 type Props_ruby =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 ruby
@@ -1324,7 +7861,83 @@ ruby_ :: Array JSX -> JSX
 ruby_ children = ruby { children }
 
 type Props_s =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 s
@@ -1338,7 +7951,83 @@ s_ :: Array JSX -> JSX
 s_ children = s { children }
 
 type Props_samp =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 samp
@@ -1352,13 +8041,89 @@ samp_ :: Array JSX -> JSX
 samp_ children = samp { children }
 
 type Props_script =
-  ( async :: Boolean
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , async :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
   , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
   , defer :: Boolean
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
   , integrity :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
   , nonce :: String
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
   , src :: String
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
   , type :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 script
@@ -1372,7 +8137,83 @@ script_ :: Array JSX -> JSX
 script_ children = script { children }
 
 type Props_section =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 section
@@ -1386,16 +8227,92 @@ section_ :: Array JSX -> JSX
 section_ children = section { children }
 
 type Props_select =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
   , defaultValue :: String
+  , dir :: String
   , disabled :: Boolean
+  , draggable :: Boolean
+  , encType :: String
   , form :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
   , multiple :: Boolean
   , name :: String
+  , noValidate :: Boolean
   , onChange :: EventHandler
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
   , required :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
   , size :: Number
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
   , value :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 select
@@ -1409,8 +8326,84 @@ select_ :: Array JSX -> JSX
 select_ children = select { children }
 
 type Props_slot =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
   , name :: String
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 slot
@@ -1424,7 +8417,83 @@ slot_ :: Array JSX -> JSX
 slot_ children = slot { children }
 
 type Props_small =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 small
@@ -1438,10 +8507,86 @@ small_ :: Array JSX -> JSX
 small_ children = small { children }
 
 type Props_source =
-  ( media :: String
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , media :: String
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
   , sizes :: String
+  , spellCheck :: Boolean
   , src :: String
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
   , type :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 source
@@ -1452,7 +8597,83 @@ source
 source = element (unsafeCreateDOMComponent "source")
 
 type Props_span =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 span
@@ -1466,7 +8687,83 @@ span_ :: Array JSX -> JSX
 span_ children = span { children }
 
 type Props_strong =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 strong
@@ -1480,11 +8777,87 @@ strong_ :: Array JSX -> JSX
 strong_ children = strong { children }
 
 type Props_style =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
   , media :: String
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
   , nonce :: String
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
   , title :: String
   , type :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 style
@@ -1498,7 +8871,83 @@ style_ :: Array JSX -> JSX
 style_ children = style { children }
 
 type Props_sub =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 sub
@@ -1512,7 +8961,83 @@ sub_ :: Array JSX -> JSX
 sub_ children = sub { children }
 
 type Props_summary =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 summary
@@ -1526,7 +9051,83 @@ summary_ :: Array JSX -> JSX
 summary_ children = summary { children }
 
 type Props_sup =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 sup
@@ -1540,17 +9141,25 @@ sup_ :: Array JSX -> JSX
 sup_ children = sup { children }
 
 type Props_svg =
-  ( accentHeight :: String
+  ( about :: String
+  , accentHeight :: String
+  , acceptCharset :: String
+  , accessKey :: String
   , accumulate :: String
   , additive :: String
   , alignmentBaseline :: String
+  , allowFullScreen :: Boolean
   , allowReorder :: String
+  , allowTransparency :: Boolean
   , alphabetic :: String
   , amplitude :: String
   , arabicForm :: String
   , ascent :: String
   , attributeName :: String
   , attributeType :: String
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
   , autoReverse :: String
   , azimuth :: String
   , baseFrequency :: String
@@ -1562,35 +9171,51 @@ type Props_svg =
   , by :: String
   , calcMode :: String
   , capHeight :: String
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
   , children :: Array JSX
+  , classID :: String
+  , className :: String
   , clip :: String
   , clipPath :: String
   , clipPathUnits :: String
   , clipRule :: String
+  , colSpan :: Number
   , color :: String
   , colorInterpolation :: String
   , colorInterpolationFilters :: String
   , colorProfile :: String
   , colorRendering :: String
+  , contentEditable :: Boolean
   , contentScriptType :: String
   , contentStyleType :: String
+  , contextMenu :: String
+  , crossOrigin :: String
   , cursor :: String
   , cx :: String
   , cy :: String
   , d :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
   , decelerate :: String
   , descent :: String
   , diffuseConstant :: String
+  , dir :: String
   , direction :: String
   , display :: String
   , divisor :: String
   , dominantBaseline :: String
+  , draggable :: Boolean
   , dur :: String
   , dx :: String
   , dy :: String
   , edgeMode :: String
   , elevation :: String
   , enableBackground :: String
+  , encType :: String
   , end :: String
   , exponent :: String
   , externalResourcesRequired :: String
@@ -1610,7 +9235,13 @@ type Props_svg =
   , fontStyle :: String
   , fontVariant :: String
   , fontWeight :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
   , format :: String
+  , frameBorder :: Number
   , from :: String
   , fx :: String
   , fy :: String
@@ -1624,13 +9255,27 @@ type Props_svg =
   , gradientUnits :: String
   , hanging :: String
   , height :: String
+  , hidden :: Boolean
   , horizAdvX :: String
   , horizOriginX :: String
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
   , ideographic :: String
   , imageRendering :: String
   , in :: String
   , in2 :: String
+  , inlist :: String
+  , inputMode :: String
   , intercept :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
   , k :: String
   , k1 :: String
   , k2 :: String
@@ -1639,14 +9284,19 @@ type Props_svg =
   , kernelMatrix :: String
   , kernelUnitLength :: String
   , kerning :: String
+  , keyParams :: String
   , keyPoints :: String
   , keySplines :: String
   , keyTimes :: String
+  , keyType :: String
+  , lang :: String
   , lengthAdjust :: String
   , letterSpacing :: String
   , lightingColor :: String
   , limitingConeAngle :: String
   , local :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
   , markerEnd :: String
   , markerHeight :: String
   , markerMid :: String
@@ -1657,7 +9307,11 @@ type Props_svg =
   , maskContentUnits :: String
   , maskUnits :: String
   , mathematical :: String
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
   , mode :: String
+  , noValidate :: Boolean
   , numOctaves :: String
   , offset :: String
   , opacity :: String
@@ -1680,11 +9334,15 @@ type Props_svg =
   , pointsAtX :: String
   , pointsAtY :: String
   , pointsAtZ :: String
+  , prefix :: String
   , preserveAlpha :: String
   , preserveAspectRatio :: String
   , primitiveUnits :: String
+  , property :: String
   , r :: String
+  , radioGroup :: String
   , radius :: String
+  , readOnly :: Boolean
   , refX :: String
   , refY :: String
   , renderingIntent :: String
@@ -1692,12 +9350,18 @@ type Props_svg =
   , repeatDur :: String
   , requiredExtensions :: String
   , requiredFeatures :: String
+  , resource :: String
   , restart :: String
   , result :: String
+  , role :: String
   , rotate :: String
+  , rowSpan :: Number
   , rx :: String
   , ry :: String
   , scale :: String
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
   , seed :: String
   , shapeRendering :: String
   , slope :: String
@@ -1705,7 +9369,11 @@ type Props_svg =
   , specularConstant :: String
   , specularExponent :: String
   , speed :: String
+  , spellCheck :: Boolean
   , spreadMethod :: String
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
   , startOffset :: String
   , stdDeviation :: String
   , stemh :: String
@@ -1724,8 +9392,11 @@ type Props_svg =
   , strokeMiterlimit :: String
   , strokeOpacity :: String
   , strokeWidth :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
   , surfaceScale :: String
   , systemLanguage :: String
+  , tabIndex :: Number
   , tableValues :: String
   , targetX :: String
   , targetY :: String
@@ -1733,8 +9404,10 @@ type Props_svg =
   , textDecoration :: String
   , textLength :: String
   , textRendering :: String
+  , title :: String
   , to :: String
   , transform :: String
+  , typeof :: String
   , u1 :: String
   , u2 :: String
   , underlinePosition :: String
@@ -1743,6 +9416,8 @@ type Props_svg =
   , unicodeBidi :: String
   , unicodeRange :: String
   , unitsPerEm :: String
+  , unselectable :: Boolean
+  , useMap :: String
   , vAlphabetic :: String
   , vHanging :: String
   , vIdeographic :: String
@@ -1756,8 +9431,10 @@ type Props_svg =
   , viewBox :: String
   , viewTarget :: String
   , visibility :: String
+  , vocab :: String
   , width :: String
   , widths :: String
+  , wmode :: String
   , wordSpacing :: String
   , writingMode :: String
   , x :: String
@@ -1796,9 +9473,85 @@ svg_ :: Array JSX -> JSX
 svg_ children = svg { children }
 
 type Props_table =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
   , summary :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
   , width :: String
+  , wmode :: String
   )
 
 table
@@ -1812,7 +9565,83 @@ table_ :: Array JSX -> JSX
 table_ children = table { children }
 
 type Props_tbody =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 tbody
@@ -1826,11 +9655,87 @@ tbody_ :: Array JSX -> JSX
 tbody_ children = tbody { children }
 
 type Props_td =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
   , headers :: String
   , height :: String
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
   , scope :: String
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
   , width :: String
+  , wmode :: String
   )
 
 td
@@ -1844,7 +9749,83 @@ td_ :: Array JSX -> JSX
 td_ children = td { children }
 
 type Props_template =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 template
@@ -1858,19 +9839,95 @@ template_ :: Array JSX -> JSX
 template_ children = template { children }
 
 type Props_textarea =
-  ( autoCapitalize :: String
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoCapitalize :: String
+  , autoComplete :: Boolean
   , autoCorrect :: String
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
   , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
   , cols :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
   , defaultValue :: String
+  , dir :: String
   , disabled :: Boolean
+  , draggable :: Boolean
+  , encType :: String
   , form :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
   , name :: String
+  , noValidate :: Boolean
   , onChange :: EventHandler
   , placeholder :: String
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
   , required :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
   , rows :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
   , value :: String
+  , vocab :: String
+  , wmode :: String
   , wrap :: String
   )
 
@@ -1885,7 +9942,83 @@ textarea_ :: Array JSX -> JSX
 textarea_ children = textarea { children }
 
 type Props_tfoot =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 tfoot
@@ -1899,11 +10032,87 @@ tfoot_ :: Array JSX -> JSX
 tfoot_ children = tfoot { children }
 
 type Props_th =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
   , headers :: String
   , height :: String
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
   , scope :: String
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
   , width :: String
+  , wmode :: String
   )
 
 th
@@ -1917,7 +10126,83 @@ th_ :: Array JSX -> JSX
 th_ children = th { children }
 
 type Props_thead =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 thead
@@ -1931,7 +10216,83 @@ thead_ :: Array JSX -> JSX
 thead_ children = thead { children }
 
 type Props_time =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 time
@@ -1945,7 +10306,83 @@ time_ :: Array JSX -> JSX
 time_ children = time { children }
 
 type Props_title =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 title
@@ -1959,7 +10396,83 @@ title_ :: Array JSX -> JSX
 title_ children = title { children }
 
 type Props_tr =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 tr
@@ -1973,10 +10486,86 @@ tr_ :: Array JSX -> JSX
 tr_ children = tr { children }
 
 type Props_track =
-  ( default :: Boolean
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , default :: Boolean
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
   , kind :: String
   , label :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
   , src :: String
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 track
@@ -1987,7 +10576,83 @@ track
 track = element (unsafeCreateDOMComponent "track")
 
 type Props_u =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 u
@@ -2001,8 +10666,84 @@ u_ :: Array JSX -> JSX
 u_ children = u { children }
 
 type Props_ul =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
   , type :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 ul
@@ -2016,7 +10757,83 @@ ul_ :: Array JSX -> JSX
 ul_ children = ul { children }
 
 type Props_var =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
   )
 
 var
@@ -2030,16 +10847,92 @@ var_ :: Array JSX -> JSX
 var_ children = var { children }
 
 type Props_video =
-  ( children :: Array JSX
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , children :: Array JSX
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
   , controls :: Boolean
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
   , height :: String
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
   , loop :: Boolean
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
   , muted :: Boolean
+  , noValidate :: Boolean
   , playsInline :: Boolean
   , poster :: String
+  , prefix :: String
   , preload :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
   , src :: String
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
   , width :: String
+  , wmode :: String
   )
 
 video
@@ -2052,7 +10945,84 @@ video = element (unsafeCreateDOMComponent "video")
 video_ :: Array JSX -> JSX
 video_ children = video { children }
 
-type Props_wbr =()
+type Props_wbr =
+  ( about :: String
+  , acceptCharset :: String
+  , accessKey :: String
+  , allowFullScreen :: Boolean
+  , allowTransparency :: Boolean
+  , autoComplete :: Boolean
+  , autoFocus :: Boolean
+  , autoPlay :: Boolean
+  , capture :: Boolean
+  , cellPadding :: Number
+  , cellSpacing :: Number
+  , charSet :: String
+  , classID :: String
+  , className :: String
+  , colSpan :: Number
+  , contentEditable :: Boolean
+  , contextMenu :: String
+  , crossOrigin :: String
+  , dangerouslySetInnerHTML :: String
+  , datatype :: String
+  , dateTime :: String
+  , dir :: String
+  , draggable :: Boolean
+  , encType :: String
+  , formAction :: String
+  , formEncType :: String
+  , formMethod :: String
+  , formNoValidate :: Boolean
+  , formTarget :: String
+  , frameBorder :: Number
+  , hidden :: Boolean
+  , hrefLang :: String
+  , htmlFor :: String
+  , httpEquiv :: String
+  , icon :: String
+  , id :: String
+  , inlist :: String
+  , inputMode :: String
+  , is :: String
+  , itemID :: String
+  , itemProp :: String
+  , itemRef :: String
+  , itemScope :: Boolean
+  , itemType :: String
+  , keyParams :: String
+  , keyType :: String
+  , lang :: String
+  , marginHeight :: Number
+  , marginWidth :: Number
+  , maxLength :: Number
+  , mediaGroup :: String
+  , minLength :: Number
+  , noValidate :: Boolean
+  , prefix :: String
+  , property :: String
+  , radioGroup :: String
+  , readOnly :: Boolean
+  , resource :: String
+  , role :: String
+  , rowSpan :: Number
+  , scoped :: Boolean
+  , seamless :: Boolean
+  , security :: String
+  , spellCheck :: Boolean
+  , srcDoc :: JSX
+  , srcLang :: String
+  , srcSet :: String
+  , style :: String
+  , suppressContentEditableWarning :: Boolean
+  , tabIndex :: Number
+  , title :: String
+  , typeof :: String
+  , unselectable :: Boolean
+  , useMap :: String
+  , vocab :: String
+  , wmode :: String
+  )
 
 wbr
   :: forall attrs attrs_

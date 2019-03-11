@@ -28,7 +28,7 @@ const domTypes = props.elements.html
     const symbol = reserved.includes(e) ? `${e}'` : e;
     return `
     type Props_${e} =${printRecord(
-      (noChildren ? [] : ["children"]).concat(props[e] || []).sort()
+      (noChildren ? [] : ["children"]).concat(props[e] || [], props["*"] || []).sort()
     )}
 
     ${symbol}

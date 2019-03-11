@@ -1,43 +1,73 @@
 module.exports.props = require("react-html-attributes");
 module.exports.voids = ["area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"];
 module.exports.types = {
+  //"about": TODO what is this?
   "allowFullScreen": "Boolean",
+  "allowTransparency": "Boolean",
   "async": "Boolean",
+  "autoComplete": "Boolean",
+  "autoFocus": "Boolean",
   "autoPlay": "Boolean",
   "capture": "Boolean",
+  "cellPadding": "Number",
+  "cellSpacing": "Number",
   "checked": "Boolean",
   "children": "Array JSX",
   "cols": "Number",
+  "colSpan": "Number",
+  "contentEditable": "Boolean",
   "controls": "Boolean",
+  //"dangerouslySetInnerHTML": TODO this is a function, how to handle?
+  //"datatype": TODO what is this?
   "default": "Boolean",
   "defer": "Boolean",
   "disabled": "Boolean",
+  "draggable": "Boolean",
   "formNoValidate": "Boolean",
+  "frameBorder": "Number",
   "hidden": "Boolean",
+  //"inlist": TODO what is this?
   "itemScope": "Boolean",
+  //"keyParams": TODO what is this?
   "loop": "Boolean",
+  "marginHeight": "Number",
+  "marginWidth": "Number",
+  "maxLength": "Number",
   "max": "Number",
+  "minLength": "Number",
   "min": "Number",
   "multiple": "Boolean",
   "muted": "Boolean",
+  "noValidate": "Boolean",
+  "onBlur": "EventHandler",
+  "onChange": "EventHandler",
   "onClick": "EventHandler",
+  "onFocus": "EventHandler",
   "onInput": "EventHandler",
   "onInvalid": "EventHandler",
+  "onKeyDown": "EventHandler",
+  "onKeyPress": "EventHandler",
+  "onKeyUp": "EventHandler",
   "onSubmit": "EventHandler",
-  "noValidate": "Boolean",
-  "onChange": "EventHandler",
   "open": "Boolean",
   "playsInline": "Boolean",
+  //"property": TODO what is this?
   "readOnly": "Boolean",
   "required": "Boolean",
+  //"resource": TODO what is this?
   "reversed": "Boolean",
-  "rowSpan": "Number",
   "rows": "Number",
+  "rowSpan": "Number",
   "scoped": "Boolean",
   "seamless": "Boolean",
   "selected": "Boolean",
   "size": "Number",
   "span": "Number",
-  "start": "Number"
+  "spellCheck": "Boolean",
+  "srcDoc": "JSX",
+  "start": "Number",
+  "suppressContentEditableWarning": "Boolean",
+  "tabIndex": "Number",
+  "unselectable": "Boolean"
 };
 module.exports.reserved = ["module", "data", "type", "newtype", "class", "instance", "where", "derive", "if", "then", "else", "case", "of"];
