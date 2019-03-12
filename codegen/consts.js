@@ -17,7 +17,7 @@ module.exports.types = {
   "colSpan": "Number",
   "contentEditable": "Boolean",
   "controls": "Boolean",
-  //"dangerouslySetInnerHTML": TODO this is a function, how to handle?
+  "dangerouslySetInnerHTML": "{ __html :: String }",
   //"datatype": TODO what is this?
   "default": "Boolean",
   "defer": "Boolean",

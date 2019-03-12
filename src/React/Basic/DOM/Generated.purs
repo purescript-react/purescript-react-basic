@@ -30,7 +30,7 @@ type Props_a =
   , contextMenu :: String
   , coords :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -128,7 +128,7 @@ type Props_abbr =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -219,7 +219,7 @@ type Props_address =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -310,7 +310,7 @@ type Props_area =
   , contextMenu :: String
   , coords :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -403,7 +403,7 @@ type Props_article =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -493,7 +493,7 @@ type Props_aside =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -584,7 +584,7 @@ type Props_audio =
   , contextMenu :: String
   , controls :: Boolean
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -678,7 +678,7 @@ type Props_b =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -767,7 +767,7 @@ type Props_base =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -856,7 +856,7 @@ type Props_bdi =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -946,7 +946,7 @@ type Props_bdo =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -1038,7 +1038,7 @@ type Props_blockquote =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -1128,7 +1128,7 @@ type Props_body =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -1217,7 +1217,7 @@ type Props_br =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -1304,7 +1304,7 @@ type Props_button =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -1399,7 +1399,7 @@ type Props_canvas =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -1491,7 +1491,7 @@ type Props_caption =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -1581,7 +1581,7 @@ type Props_cite =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -1671,7 +1671,7 @@ type Props_code =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -1760,7 +1760,7 @@ type Props_col =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -1849,7 +1849,7 @@ type Props_colgroup =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -1941,7 +1941,7 @@ type Props_data =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -2032,7 +2032,7 @@ type Props_datalist =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -2122,7 +2122,7 @@ type Props_dd =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -2213,7 +2213,7 @@ type Props_del =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -2303,7 +2303,7 @@ type Props_details =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -2394,7 +2394,7 @@ type Props_dfn =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -2485,7 +2485,7 @@ type Props_dialog =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -2576,7 +2576,7 @@ type Props_div =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -2666,7 +2666,7 @@ type Props_dl =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -2756,7 +2756,7 @@ type Props_dt =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -2846,7 +2846,7 @@ type Props_em =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -2935,7 +2935,7 @@ type Props_embed =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -3026,7 +3026,7 @@ type Props_fieldset =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -3119,7 +3119,7 @@ type Props_figcaption =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -3209,7 +3209,7 @@ type Props_figure =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -3299,7 +3299,7 @@ type Props_footer =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -3391,7 +3391,7 @@ type Props_form =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -3488,7 +3488,7 @@ type Props_h1 =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -3578,7 +3578,7 @@ type Props_h2 =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -3668,7 +3668,7 @@ type Props_h3 =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -3758,7 +3758,7 @@ type Props_h4 =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -3848,7 +3848,7 @@ type Props_h5 =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -3938,7 +3938,7 @@ type Props_h6 =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -4028,7 +4028,7 @@ type Props_head =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -4119,7 +4119,7 @@ type Props_header =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -4209,7 +4209,7 @@ type Props_hgroup =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -4298,7 +4298,7 @@ type Props_hr =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -4387,7 +4387,7 @@ type Props_html =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -4478,7 +4478,7 @@ type Props_i =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -4568,7 +4568,7 @@ type Props_iframe =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -4664,7 +4664,7 @@ type Props_img =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -4761,7 +4761,7 @@ type Props_input =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , defaultChecked :: String
@@ -4871,7 +4871,7 @@ type Props_ins =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -4961,7 +4961,7 @@ type Props_kbd =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -5052,7 +5052,7 @@ type Props_keygen =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -5145,7 +5145,7 @@ type Props_label =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -5236,7 +5236,7 @@ type Props_legend =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -5326,7 +5326,7 @@ type Props_li =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -5418,7 +5418,7 @@ type Props_link =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -5515,7 +5515,7 @@ type Props_main =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -5605,7 +5605,7 @@ type Props_map =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -5696,7 +5696,7 @@ type Props_mark =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -5786,7 +5786,7 @@ type Props_math =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -5876,7 +5876,7 @@ type Props_menu =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -5966,7 +5966,7 @@ type Props_menuitem =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -6056,7 +6056,7 @@ type Props_meta =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -6144,7 +6144,7 @@ type Props_meter =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -6240,7 +6240,7 @@ type Props_nav =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -6330,7 +6330,7 @@ type Props_noscript =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -6420,7 +6420,7 @@ type Props_object =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , data :: String
   , datatype :: String
   , dateTime :: String
@@ -6516,7 +6516,7 @@ type Props_ol =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -6609,7 +6609,7 @@ type Props_optgroup =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -6701,7 +6701,7 @@ type Props_option =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -6795,7 +6795,7 @@ type Props_output =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -6887,7 +6887,7 @@ type Props_p =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -6976,7 +6976,7 @@ type Props_param =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -7066,7 +7066,7 @@ type Props_picture =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -7156,7 +7156,7 @@ type Props_pre =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -7247,7 +7247,7 @@ type Props_progress =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -7340,7 +7340,7 @@ type Props_q =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -7430,7 +7430,7 @@ type Props_rb =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -7520,7 +7520,7 @@ type Props_rp =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -7610,7 +7610,7 @@ type Props_rt =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -7700,7 +7700,7 @@ type Props_rtc =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -7790,7 +7790,7 @@ type Props_ruby =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -7880,7 +7880,7 @@ type Props_s =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -7970,7 +7970,7 @@ type Props_samp =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -8061,7 +8061,7 @@ type Props_script =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , defer :: Boolean
@@ -8156,7 +8156,7 @@ type Props_section =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -8246,7 +8246,7 @@ type Props_select =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , defaultValue :: String
@@ -8345,7 +8345,7 @@ type Props_slot =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -8436,7 +8436,7 @@ type Props_small =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -8525,7 +8525,7 @@ type Props_source =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -8616,7 +8616,7 @@ type Props_span =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -8706,7 +8706,7 @@ type Props_strong =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -8796,7 +8796,7 @@ type Props_style =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -8890,7 +8890,7 @@ type Props_sub =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -8980,7 +8980,7 @@ type Props_summary =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -9070,7 +9070,7 @@ type Props_sup =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -9197,7 +9197,7 @@ type Props_svg =
   , cx :: String
   , cy :: String
   , d :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , decelerate :: String
@@ -9492,7 +9492,7 @@ type Props_table =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -9584,7 +9584,7 @@ type Props_tbody =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -9674,7 +9674,7 @@ type Props_td =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -9768,7 +9768,7 @@ type Props_template =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -9861,7 +9861,7 @@ type Props_textarea =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , defaultValue :: String
@@ -9961,7 +9961,7 @@ type Props_tfoot =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -10051,7 +10051,7 @@ type Props_th =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -10145,7 +10145,7 @@ type Props_thead =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -10235,7 +10235,7 @@ type Props_time =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -10325,7 +10325,7 @@ type Props_title =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -10415,7 +10415,7 @@ type Props_tr =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -10504,7 +10504,7 @@ type Props_track =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , default :: Boolean
@@ -10595,7 +10595,7 @@ type Props_u =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -10685,7 +10685,7 @@ type Props_ul =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -10776,7 +10776,7 @@ type Props_var =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -10867,7 +10867,7 @@ type Props_video =
   , contextMenu :: String
   , controls :: Boolean
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
@@ -10964,7 +10964,7 @@ type Props_wbr =
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
-  , dangerouslySetInnerHTML :: String
+  , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
   , dir :: String
