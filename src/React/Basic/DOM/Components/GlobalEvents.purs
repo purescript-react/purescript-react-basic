@@ -35,12 +35,9 @@ import Prelude
 
 import Data.Foldable (foldr)
 import Effect (Effect)
-import Effect.Unsafe (unsafePerformEffect)
 import React.Basic (JSX, ReactComponent, element)
 import Web.Event.Event (EventType)
 import Web.Event.Internal.Types (Event, EventTarget)
-import Web.HTML (window)
-import Web.HTML.Window as Window
 
 type EventHandlerOptions =
   { capture :: Boolean
@@ -100,7 +97,7 @@ windowEvents
        }
   -> JSX
   -> JSX
-windowEvents = globalEvents $ unsafePerformEffect $ map Window.toEventTarget window
+windowEvents = globalEvents unsafeWindowEventTarget
 
 windowEvent
   :: { eventType :: EventType
@@ -110,6 +107,8 @@ windowEvent
   -> JSX
   -> JSX
 windowEvent = windowEvents <<< pure
+
+foreign import unsafeWindowEventTarget :: EventTarget
 
 -- | Hide "unused ffi export" warning.
 -- | The export is required to prevent

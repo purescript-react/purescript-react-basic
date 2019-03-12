@@ -88,3 +88,11 @@ GlobalEvent.prototype.render = function() {
 };
 
 exports.globalEvent_ = GlobalEvent;
+
+exports.unsafeWindowEventTarget = (function() {
+  if (typeof window === "undefined") {
+    return undefined;
+  } else {
+    return window;
+  }
+})();
