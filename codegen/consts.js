@@ -1,7 +1,6 @@
 module.exports.props = require("react-html-attributes");
 module.exports.voids = ["area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"];
 module.exports.types = {
-  //"about": TODO what is this?
   "allowFullScreen": "Boolean",
   "allowTransparency": "Boolean",
   "async": "Boolean",
@@ -18,7 +17,6 @@ module.exports.types = {
   "contentEditable": "Boolean",
   "controls": "Boolean",
   "dangerouslySetInnerHTML": "{ __html :: String }",
-  //"datatype": TODO what is this?
   "default": "Boolean",
   "defer": "Boolean",
   "disabled": "Boolean",
@@ -26,9 +24,7 @@ module.exports.types = {
   "formNoValidate": "Boolean",
   "frameBorder": "Number",
   "hidden": "Boolean",
-  //"inlist": TODO what is this?
   "itemScope": "Boolean",
-  //"keyParams": TODO what is this?
   "loop": "Boolean",
   "marginHeight": "Number",
   "marginWidth": "Number",
@@ -51,10 +47,8 @@ module.exports.types = {
   "onSubmit": "EventHandler",
   "open": "Boolean",
   "playsInline": "Boolean",
-  //"property": TODO what is this?
   "readOnly": "Boolean",
   "required": "Boolean",
-  //"resource": TODO what is this?
   "reversed": "Boolean",
   "rows": "Number",
   "rowSpan": "Number",
