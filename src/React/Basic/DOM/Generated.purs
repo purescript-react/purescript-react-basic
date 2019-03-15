@@ -19,13 +19,13 @@ type Props_a =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , coords :: String
@@ -42,7 +42,7 @@ type Props_a =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , href :: String
   , hrefLang :: String
@@ -61,11 +61,11 @@ type Props_a =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , name :: String
   , noValidate :: Boolean
   , onClick :: EventHandler
@@ -76,7 +76,7 @@ type Props_a =
   , rel :: String
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -87,7 +87,7 @@ type Props_a =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , target :: String
   , title :: String
   , type :: String
@@ -118,13 +118,13 @@ type Props_abbr =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -139,7 +139,7 @@ type Props_abbr =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -157,11 +157,11 @@ type Props_abbr =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -169,7 +169,7 @@ type Props_abbr =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -179,7 +179,7 @@ type Props_abbr =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , title :: String
   , typeof :: String
@@ -209,13 +209,13 @@ type Props_address =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -230,7 +230,7 @@ type Props_address =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -248,11 +248,11 @@ type Props_address =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -260,7 +260,7 @@ type Props_address =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -270,7 +270,7 @@ type Props_address =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -300,12 +300,12 @@ type Props_area =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , coords :: String
@@ -322,7 +322,7 @@ type Props_area =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , href :: String
   , hrefLang :: String
@@ -341,11 +341,11 @@ type Props_area =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -354,7 +354,7 @@ type Props_area =
   , rel :: String
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -365,7 +365,7 @@ type Props_area =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , target :: String
   , title :: String
   , type :: String
@@ -393,13 +393,13 @@ type Props_article =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -414,7 +414,7 @@ type Props_article =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -432,11 +432,11 @@ type Props_article =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -444,7 +444,7 @@ type Props_article =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -454,7 +454,7 @@ type Props_article =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -483,13 +483,13 @@ type Props_aside =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -504,7 +504,7 @@ type Props_aside =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -522,11 +522,11 @@ type Props_aside =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -534,7 +534,7 @@ type Props_aside =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -544,7 +544,7 @@ type Props_aside =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -573,13 +573,13 @@ type Props_audio =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , controls :: Boolean
@@ -595,7 +595,7 @@ type Props_audio =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -614,11 +614,11 @@ type Props_audio =
   , keyType :: String
   , lang :: String
   , loop :: Boolean
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , muted :: Boolean
   , noValidate :: Boolean
   , prefix :: String
@@ -628,7 +628,7 @@ type Props_audio =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -639,7 +639,7 @@ type Props_audio =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -668,13 +668,13 @@ type Props_b =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -689,7 +689,7 @@ type Props_b =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -707,11 +707,11 @@ type Props_b =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -719,7 +719,7 @@ type Props_b =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -729,7 +729,7 @@ type Props_b =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -758,12 +758,12 @@ type Props_base =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -778,7 +778,7 @@ type Props_base =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , href :: String
   , hrefLang :: String
@@ -797,11 +797,11 @@ type Props_base =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -809,7 +809,7 @@ type Props_base =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -819,7 +819,7 @@ type Props_base =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , target :: String
   , title :: String
   , typeof :: String
@@ -846,13 +846,13 @@ type Props_bdi =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -867,7 +867,7 @@ type Props_bdi =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -885,11 +885,11 @@ type Props_bdi =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -897,7 +897,7 @@ type Props_bdi =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -907,7 +907,7 @@ type Props_bdi =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -936,13 +936,13 @@ type Props_bdo =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -958,7 +958,7 @@ type Props_bdo =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -976,11 +976,11 @@ type Props_bdo =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -988,7 +988,7 @@ type Props_bdo =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -998,7 +998,7 @@ type Props_bdo =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -1027,14 +1027,14 @@ type Props_blockquote =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , cite :: String
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -1049,7 +1049,7 @@ type Props_blockquote =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -1067,11 +1067,11 @@ type Props_blockquote =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -1079,7 +1079,7 @@ type Props_blockquote =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -1089,7 +1089,7 @@ type Props_blockquote =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -1118,13 +1118,13 @@ type Props_body =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -1139,7 +1139,7 @@ type Props_body =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -1157,11 +1157,11 @@ type Props_body =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -1169,7 +1169,7 @@ type Props_body =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -1179,7 +1179,7 @@ type Props_body =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -1208,12 +1208,12 @@ type Props_br =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -1228,7 +1228,7 @@ type Props_br =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -1246,11 +1246,11 @@ type Props_br =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -1258,7 +1258,7 @@ type Props_br =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -1268,7 +1268,7 @@ type Props_br =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -1294,13 +1294,13 @@ type Props_button =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -1317,7 +1317,7 @@ type Props_button =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -1335,11 +1335,11 @@ type Props_button =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , name :: String
   , noValidate :: Boolean
   , prefix :: String
@@ -1348,7 +1348,7 @@ type Props_button =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -1358,7 +1358,7 @@ type Props_button =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , type :: String
   , typeof :: String
@@ -1389,13 +1389,13 @@ type Props_canvas =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -1410,7 +1410,7 @@ type Props_canvas =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , height :: String
   , hidden :: Boolean
   , hrefLang :: String
@@ -1429,11 +1429,11 @@ type Props_canvas =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -1441,7 +1441,7 @@ type Props_canvas =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -1451,7 +1451,7 @@ type Props_canvas =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -1481,13 +1481,13 @@ type Props_caption =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -1502,7 +1502,7 @@ type Props_caption =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -1520,11 +1520,11 @@ type Props_caption =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -1532,7 +1532,7 @@ type Props_caption =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -1542,7 +1542,7 @@ type Props_caption =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -1571,13 +1571,13 @@ type Props_cite =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -1592,7 +1592,7 @@ type Props_cite =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -1610,11 +1610,11 @@ type Props_cite =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -1622,7 +1622,7 @@ type Props_cite =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -1632,7 +1632,7 @@ type Props_cite =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -1661,13 +1661,13 @@ type Props_code =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -1682,7 +1682,7 @@ type Props_code =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -1700,11 +1700,11 @@ type Props_code =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -1712,7 +1712,7 @@ type Props_code =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -1722,7 +1722,7 @@ type Props_code =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -1751,12 +1751,12 @@ type Props_col =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -1771,7 +1771,7 @@ type Props_col =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -1789,11 +1789,11 @@ type Props_col =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -1801,18 +1801,18 @@ type Props_col =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
-  , span :: Number
+  , span :: Int
   , spellCheck :: Boolean
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -1839,13 +1839,13 @@ type Props_colgroup =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -1860,7 +1860,7 @@ type Props_colgroup =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -1878,11 +1878,11 @@ type Props_colgroup =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -1890,18 +1890,18 @@ type Props_colgroup =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
-  , span :: Number
+  , span :: Int
   , spellCheck :: Boolean
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -1931,13 +1931,13 @@ type Props_data =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -1952,7 +1952,7 @@ type Props_data =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -1970,11 +1970,11 @@ type Props_data =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -1982,7 +1982,7 @@ type Props_data =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -1992,7 +1992,7 @@ type Props_data =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -2022,13 +2022,13 @@ type Props_datalist =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -2043,7 +2043,7 @@ type Props_datalist =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -2061,11 +2061,11 @@ type Props_datalist =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -2073,7 +2073,7 @@ type Props_datalist =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -2083,7 +2083,7 @@ type Props_datalist =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -2112,13 +2112,13 @@ type Props_dd =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -2133,7 +2133,7 @@ type Props_dd =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -2151,11 +2151,11 @@ type Props_dd =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -2163,7 +2163,7 @@ type Props_dd =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -2173,7 +2173,7 @@ type Props_dd =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -2202,14 +2202,14 @@ type Props_del =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , cite :: String
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -2224,7 +2224,7 @@ type Props_del =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -2242,11 +2242,11 @@ type Props_del =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -2254,7 +2254,7 @@ type Props_del =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -2264,7 +2264,7 @@ type Props_del =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -2293,13 +2293,13 @@ type Props_details =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -2314,7 +2314,7 @@ type Props_details =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -2332,11 +2332,11 @@ type Props_details =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , open :: Boolean
   , prefix :: String
@@ -2345,7 +2345,7 @@ type Props_details =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -2355,7 +2355,7 @@ type Props_details =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -2384,13 +2384,13 @@ type Props_dfn =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -2405,7 +2405,7 @@ type Props_dfn =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -2423,11 +2423,11 @@ type Props_dfn =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -2435,7 +2435,7 @@ type Props_dfn =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -2445,7 +2445,7 @@ type Props_dfn =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , title :: String
   , typeof :: String
@@ -2475,13 +2475,13 @@ type Props_dialog =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -2496,7 +2496,7 @@ type Props_dialog =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -2514,11 +2514,11 @@ type Props_dialog =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , open :: Boolean
   , prefix :: String
@@ -2527,7 +2527,7 @@ type Props_dialog =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -2537,7 +2537,7 @@ type Props_dialog =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -2566,13 +2566,13 @@ type Props_div =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -2587,7 +2587,7 @@ type Props_div =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -2605,11 +2605,11 @@ type Props_div =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -2617,7 +2617,7 @@ type Props_div =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -2627,7 +2627,7 @@ type Props_div =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -2656,13 +2656,13 @@ type Props_dl =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -2677,7 +2677,7 @@ type Props_dl =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -2695,11 +2695,11 @@ type Props_dl =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -2707,7 +2707,7 @@ type Props_dl =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -2717,7 +2717,7 @@ type Props_dl =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -2746,13 +2746,13 @@ type Props_dt =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -2767,7 +2767,7 @@ type Props_dt =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -2785,11 +2785,11 @@ type Props_dt =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -2797,7 +2797,7 @@ type Props_dt =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -2807,7 +2807,7 @@ type Props_dt =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -2836,13 +2836,13 @@ type Props_em =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -2857,7 +2857,7 @@ type Props_em =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -2875,11 +2875,11 @@ type Props_em =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -2887,7 +2887,7 @@ type Props_em =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -2897,7 +2897,7 @@ type Props_em =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -2926,12 +2926,12 @@ type Props_embed =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -2946,7 +2946,7 @@ type Props_embed =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , height :: String
   , hidden :: Boolean
   , hrefLang :: String
@@ -2965,11 +2965,11 @@ type Props_embed =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -2977,7 +2977,7 @@ type Props_embed =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -2988,7 +2988,7 @@ type Props_embed =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , type :: String
   , typeof :: String
@@ -3016,13 +3016,13 @@ type Props_fieldset =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -3039,7 +3039,7 @@ type Props_fieldset =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -3057,11 +3057,11 @@ type Props_fieldset =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , name :: String
   , noValidate :: Boolean
   , prefix :: String
@@ -3070,7 +3070,7 @@ type Props_fieldset =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -3080,7 +3080,7 @@ type Props_fieldset =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -3109,13 +3109,13 @@ type Props_figcaption =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -3130,7 +3130,7 @@ type Props_figcaption =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -3148,11 +3148,11 @@ type Props_figcaption =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -3160,7 +3160,7 @@ type Props_figcaption =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -3170,7 +3170,7 @@ type Props_figcaption =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -3199,13 +3199,13 @@ type Props_figure =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -3220,7 +3220,7 @@ type Props_figure =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -3238,11 +3238,11 @@ type Props_figure =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -3250,7 +3250,7 @@ type Props_figure =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -3260,7 +3260,7 @@ type Props_figure =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -3289,13 +3289,13 @@ type Props_footer =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -3310,7 +3310,7 @@ type Props_footer =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -3328,11 +3328,11 @@ type Props_footer =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -3340,7 +3340,7 @@ type Props_footer =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -3350,7 +3350,7 @@ type Props_footer =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -3381,13 +3381,13 @@ type Props_form =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -3402,7 +3402,7 @@ type Props_form =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -3420,12 +3420,12 @@ type Props_form =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
   , method :: String
-  , minLength :: Number
+  , minLength :: Int
   , name :: String
   , noValidate :: Boolean
   , onChange :: EventHandler
@@ -3438,7 +3438,7 @@ type Props_form =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -3448,7 +3448,7 @@ type Props_form =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , target :: String
   , title :: String
   , typeof :: String
@@ -3478,13 +3478,13 @@ type Props_h1 =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -3499,7 +3499,7 @@ type Props_h1 =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -3517,11 +3517,11 @@ type Props_h1 =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -3529,7 +3529,7 @@ type Props_h1 =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -3539,7 +3539,7 @@ type Props_h1 =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -3568,13 +3568,13 @@ type Props_h2 =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -3589,7 +3589,7 @@ type Props_h2 =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -3607,11 +3607,11 @@ type Props_h2 =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -3619,7 +3619,7 @@ type Props_h2 =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -3629,7 +3629,7 @@ type Props_h2 =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -3658,13 +3658,13 @@ type Props_h3 =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -3679,7 +3679,7 @@ type Props_h3 =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -3697,11 +3697,11 @@ type Props_h3 =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -3709,7 +3709,7 @@ type Props_h3 =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -3719,7 +3719,7 @@ type Props_h3 =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -3748,13 +3748,13 @@ type Props_h4 =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -3769,7 +3769,7 @@ type Props_h4 =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -3787,11 +3787,11 @@ type Props_h4 =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -3799,7 +3799,7 @@ type Props_h4 =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -3809,7 +3809,7 @@ type Props_h4 =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -3838,13 +3838,13 @@ type Props_h5 =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -3859,7 +3859,7 @@ type Props_h5 =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -3877,11 +3877,11 @@ type Props_h5 =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -3889,7 +3889,7 @@ type Props_h5 =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -3899,7 +3899,7 @@ type Props_h5 =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -3928,13 +3928,13 @@ type Props_h6 =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -3949,7 +3949,7 @@ type Props_h6 =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -3967,11 +3967,11 @@ type Props_h6 =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -3979,7 +3979,7 @@ type Props_h6 =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -3989,7 +3989,7 @@ type Props_h6 =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -4018,13 +4018,13 @@ type Props_head =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -4039,7 +4039,7 @@ type Props_head =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -4057,11 +4057,11 @@ type Props_head =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , profile :: String
@@ -4070,7 +4070,7 @@ type Props_head =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -4080,7 +4080,7 @@ type Props_head =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -4109,13 +4109,13 @@ type Props_header =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -4130,7 +4130,7 @@ type Props_header =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -4148,11 +4148,11 @@ type Props_header =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -4160,7 +4160,7 @@ type Props_header =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -4170,7 +4170,7 @@ type Props_header =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -4199,13 +4199,13 @@ type Props_hgroup =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -4220,7 +4220,7 @@ type Props_hgroup =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -4238,11 +4238,11 @@ type Props_hgroup =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -4250,7 +4250,7 @@ type Props_hgroup =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -4260,7 +4260,7 @@ type Props_hgroup =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -4289,12 +4289,12 @@ type Props_hr =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -4309,7 +4309,7 @@ type Props_hr =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -4327,11 +4327,11 @@ type Props_hr =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -4339,18 +4339,18 @@ type Props_hr =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
-  , size :: Number
+  , size :: String
   , spellCheck :: Boolean
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -4377,13 +4377,13 @@ type Props_html =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -4398,7 +4398,7 @@ type Props_html =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -4417,11 +4417,11 @@ type Props_html =
   , keyType :: String
   , lang :: String
   , manifest :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -4429,7 +4429,7 @@ type Props_html =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -4439,7 +4439,7 @@ type Props_html =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -4468,13 +4468,13 @@ type Props_i =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -4489,7 +4489,7 @@ type Props_i =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -4507,11 +4507,11 @@ type Props_i =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -4519,7 +4519,7 @@ type Props_i =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -4529,7 +4529,7 @@ type Props_i =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -4558,13 +4558,13 @@ type Props_iframe =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -4579,7 +4579,7 @@ type Props_iframe =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , height :: String
   , hidden :: Boolean
   , hrefLang :: String
@@ -4598,11 +4598,11 @@ type Props_iframe =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , name :: String
   , noValidate :: Boolean
   , prefix :: String
@@ -4611,7 +4611,7 @@ type Props_iframe =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , sandbox :: String
   , scoped :: Boolean
   , scrolling :: String
@@ -4624,7 +4624,7 @@ type Props_iframe =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -4655,12 +4655,12 @@ type Props_img =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -4675,7 +4675,7 @@ type Props_img =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , height :: String
   , hidden :: Boolean
   , hrefLang :: String
@@ -4694,11 +4694,11 @@ type Props_img =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , name :: String
   , noValidate :: Boolean
   , prefix :: String
@@ -4707,7 +4707,7 @@ type Props_img =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -4719,7 +4719,7 @@ type Props_img =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -4751,13 +4751,13 @@ type Props_input =
   , autoPlay :: Boolean
   , autoSave :: String
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , checked :: Boolean
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -4776,7 +4776,7 @@ type Props_input =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , height :: String
   , hidden :: Boolean
   , hrefLang :: String
@@ -4796,13 +4796,13 @@ type Props_input =
   , keyType :: String
   , lang :: String
   , list :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , max :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , max :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , min :: Number
-  , minLength :: Number
+  , min :: String
+  , minLength :: Int
   , multiple :: Boolean
   , name :: String
   , noValidate :: Boolean
@@ -4817,11 +4817,11 @@ type Props_input =
   , resource :: String
   , results :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
-  , size :: Number
+  , size :: Int
   , spellCheck :: Boolean
   , src :: String
   , srcDoc :: JSX
@@ -4830,7 +4830,7 @@ type Props_input =
   , step :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , title :: String
   , type :: String
@@ -4860,14 +4860,14 @@ type Props_ins =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , cite :: String
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -4882,7 +4882,7 @@ type Props_ins =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -4900,11 +4900,11 @@ type Props_ins =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -4912,7 +4912,7 @@ type Props_ins =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -4922,7 +4922,7 @@ type Props_ins =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -4951,13 +4951,13 @@ type Props_kbd =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -4972,7 +4972,7 @@ type Props_kbd =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -4990,11 +4990,11 @@ type Props_kbd =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -5002,7 +5002,7 @@ type Props_kbd =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -5012,7 +5012,7 @@ type Props_kbd =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -5041,14 +5041,14 @@ type Props_keygen =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , challenge :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -5065,7 +5065,7 @@ type Props_keygen =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -5083,11 +5083,11 @@ type Props_keygen =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , name :: String
   , noValidate :: Boolean
   , prefix :: String
@@ -5096,7 +5096,7 @@ type Props_keygen =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -5106,7 +5106,7 @@ type Props_keygen =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -5135,13 +5135,13 @@ type Props_label =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -5157,7 +5157,7 @@ type Props_label =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -5175,11 +5175,11 @@ type Props_label =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -5187,7 +5187,7 @@ type Props_label =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -5197,7 +5197,7 @@ type Props_label =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -5226,13 +5226,13 @@ type Props_legend =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -5247,7 +5247,7 @@ type Props_legend =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -5265,11 +5265,11 @@ type Props_legend =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -5277,7 +5277,7 @@ type Props_legend =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -5287,7 +5287,7 @@ type Props_legend =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -5316,13 +5316,13 @@ type Props_li =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -5337,7 +5337,7 @@ type Props_li =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -5355,11 +5355,11 @@ type Props_li =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -5367,7 +5367,7 @@ type Props_li =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -5377,7 +5377,7 @@ type Props_li =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , type :: String
   , typeof :: String
@@ -5408,12 +5408,12 @@ type Props_link =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , color :: String
   , contentEditable :: Boolean
   , contextMenu :: String
@@ -5429,7 +5429,7 @@ type Props_link =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , href :: String
   , hrefLang :: String
@@ -5449,12 +5449,12 @@ type Props_link =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , media :: String
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , nonce :: String
   , prefix :: String
@@ -5464,7 +5464,7 @@ type Props_link =
   , rel :: String
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scope :: String
   , scoped :: Boolean
   , seamless :: Boolean
@@ -5476,7 +5476,7 @@ type Props_link =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , target :: String
   , title :: String
   , title :: String
@@ -5505,13 +5505,13 @@ type Props_main =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -5526,7 +5526,7 @@ type Props_main =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -5544,11 +5544,11 @@ type Props_main =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -5556,7 +5556,7 @@ type Props_main =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -5566,7 +5566,7 @@ type Props_main =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -5595,13 +5595,13 @@ type Props_map =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -5616,7 +5616,7 @@ type Props_map =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -5634,11 +5634,11 @@ type Props_map =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , name :: String
   , noValidate :: Boolean
   , prefix :: String
@@ -5647,7 +5647,7 @@ type Props_map =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -5657,7 +5657,7 @@ type Props_map =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -5686,13 +5686,13 @@ type Props_mark =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -5707,7 +5707,7 @@ type Props_mark =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -5725,11 +5725,11 @@ type Props_mark =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -5737,7 +5737,7 @@ type Props_mark =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -5747,7 +5747,7 @@ type Props_mark =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -5776,13 +5776,13 @@ type Props_math =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -5797,7 +5797,7 @@ type Props_math =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -5815,11 +5815,11 @@ type Props_math =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -5827,7 +5827,7 @@ type Props_math =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -5837,7 +5837,7 @@ type Props_math =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -5866,13 +5866,13 @@ type Props_menu =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -5887,7 +5887,7 @@ type Props_menu =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -5905,11 +5905,11 @@ type Props_menu =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -5917,7 +5917,7 @@ type Props_menu =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -5927,7 +5927,7 @@ type Props_menu =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -5956,13 +5956,13 @@ type Props_menuitem =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -5977,7 +5977,7 @@ type Props_menuitem =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -5995,11 +5995,11 @@ type Props_menuitem =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -6007,7 +6007,7 @@ type Props_menuitem =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -6017,7 +6017,7 @@ type Props_menuitem =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -6046,12 +6046,12 @@ type Props_meta =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , content :: String
   , contentEditable :: Boolean
   , contextMenu :: String
@@ -6067,7 +6067,7 @@ type Props_meta =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -6085,11 +6085,11 @@ type Props_meta =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , name :: String
   , noValidate :: Boolean
   , prefix :: String
@@ -6098,7 +6098,7 @@ type Props_meta =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -6108,7 +6108,7 @@ type Props_meta =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -6134,13 +6134,13 @@ type Props_meter =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -6155,7 +6155,7 @@ type Props_meter =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , high :: String
   , hrefLang :: String
@@ -6175,13 +6175,13 @@ type Props_meter =
   , keyType :: String
   , lang :: String
   , low :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
+  , marginHeight :: String
+  , marginWidth :: String
   , max :: Number
-  , maxLength :: Number
+  , maxLength :: Int
   , mediaGroup :: String
   , min :: Number
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , optimum :: String
   , prefix :: String
@@ -6190,7 +6190,7 @@ type Props_meter =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -6200,7 +6200,7 @@ type Props_meter =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -6230,13 +6230,13 @@ type Props_nav =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -6251,7 +6251,7 @@ type Props_nav =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -6269,11 +6269,11 @@ type Props_nav =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -6281,7 +6281,7 @@ type Props_nav =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -6291,7 +6291,7 @@ type Props_nav =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -6320,13 +6320,13 @@ type Props_noscript =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -6341,7 +6341,7 @@ type Props_noscript =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -6359,11 +6359,11 @@ type Props_noscript =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -6371,7 +6371,7 @@ type Props_noscript =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -6381,7 +6381,7 @@ type Props_noscript =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -6410,13 +6410,13 @@ type Props_object =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -6433,7 +6433,7 @@ type Props_object =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , height :: String
   , hidden :: Boolean
   , hrefLang :: String
@@ -6452,11 +6452,11 @@ type Props_object =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , name :: String
   , noValidate :: Boolean
   , prefix :: String
@@ -6465,7 +6465,7 @@ type Props_object =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -6475,7 +6475,7 @@ type Props_object =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , type :: String
   , typeof :: String
@@ -6506,13 +6506,13 @@ type Props_ol =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -6527,7 +6527,7 @@ type Props_ol =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -6545,11 +6545,11 @@ type Props_ol =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -6558,7 +6558,7 @@ type Props_ol =
   , resource :: String
   , reversed :: Boolean
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -6566,10 +6566,10 @@ type Props_ol =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , start :: Number
+  , start :: Int
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , type :: String
   , typeof :: String
@@ -6599,13 +6599,13 @@ type Props_optgroup =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -6621,7 +6621,7 @@ type Props_optgroup =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -6640,11 +6640,11 @@ type Props_optgroup =
   , keyType :: String
   , label :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -6652,7 +6652,7 @@ type Props_optgroup =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -6662,7 +6662,7 @@ type Props_optgroup =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -6691,13 +6691,13 @@ type Props_option =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -6713,7 +6713,7 @@ type Props_option =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -6732,11 +6732,11 @@ type Props_option =
   , keyType :: String
   , label :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -6744,7 +6744,7 @@ type Props_option =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -6755,7 +6755,7 @@ type Props_option =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -6785,13 +6785,13 @@ type Props_output =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -6807,7 +6807,7 @@ type Props_output =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -6825,11 +6825,11 @@ type Props_output =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , name :: String
   , noValidate :: Boolean
   , prefix :: String
@@ -6838,7 +6838,7 @@ type Props_output =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -6848,7 +6848,7 @@ type Props_output =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -6877,13 +6877,13 @@ type Props_p =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -6898,7 +6898,7 @@ type Props_p =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -6916,11 +6916,11 @@ type Props_p =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -6928,7 +6928,7 @@ type Props_p =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -6938,7 +6938,7 @@ type Props_p =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -6967,12 +6967,12 @@ type Props_param =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -6987,7 +6987,7 @@ type Props_param =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -7005,11 +7005,11 @@ type Props_param =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , name :: String
   , noValidate :: Boolean
   , prefix :: String
@@ -7018,7 +7018,7 @@ type Props_param =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -7028,7 +7028,7 @@ type Props_param =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , type :: String
   , typeof :: String
@@ -7056,13 +7056,13 @@ type Props_picture =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -7077,7 +7077,7 @@ type Props_picture =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -7095,11 +7095,11 @@ type Props_picture =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -7107,7 +7107,7 @@ type Props_picture =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -7117,7 +7117,7 @@ type Props_picture =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -7146,13 +7146,13 @@ type Props_pre =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -7167,7 +7167,7 @@ type Props_pre =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -7185,11 +7185,11 @@ type Props_pre =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -7197,7 +7197,7 @@ type Props_pre =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -7207,7 +7207,7 @@ type Props_pre =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -7237,13 +7237,13 @@ type Props_progress =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -7258,7 +7258,7 @@ type Props_progress =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -7276,12 +7276,12 @@ type Props_progress =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
+  , marginHeight :: String
+  , marginWidth :: String
   , max :: Number
-  , maxLength :: Number
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -7289,7 +7289,7 @@ type Props_progress =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -7299,7 +7299,7 @@ type Props_progress =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -7329,14 +7329,14 @@ type Props_q =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , cite :: String
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -7351,7 +7351,7 @@ type Props_q =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -7369,11 +7369,11 @@ type Props_q =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -7381,7 +7381,7 @@ type Props_q =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -7391,7 +7391,7 @@ type Props_q =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -7420,13 +7420,13 @@ type Props_rb =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -7441,7 +7441,7 @@ type Props_rb =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -7459,11 +7459,11 @@ type Props_rb =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -7471,7 +7471,7 @@ type Props_rb =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -7481,7 +7481,7 @@ type Props_rb =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -7510,13 +7510,13 @@ type Props_rp =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -7531,7 +7531,7 @@ type Props_rp =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -7549,11 +7549,11 @@ type Props_rp =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -7561,7 +7561,7 @@ type Props_rp =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -7571,7 +7571,7 @@ type Props_rp =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -7600,13 +7600,13 @@ type Props_rt =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -7621,7 +7621,7 @@ type Props_rt =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -7639,11 +7639,11 @@ type Props_rt =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -7651,7 +7651,7 @@ type Props_rt =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -7661,7 +7661,7 @@ type Props_rt =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -7690,13 +7690,13 @@ type Props_rtc =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -7711,7 +7711,7 @@ type Props_rtc =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -7729,11 +7729,11 @@ type Props_rtc =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -7741,7 +7741,7 @@ type Props_rtc =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -7751,7 +7751,7 @@ type Props_rtc =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -7780,13 +7780,13 @@ type Props_ruby =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -7801,7 +7801,7 @@ type Props_ruby =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -7819,11 +7819,11 @@ type Props_ruby =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -7831,7 +7831,7 @@ type Props_ruby =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -7841,7 +7841,7 @@ type Props_ruby =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -7870,13 +7870,13 @@ type Props_s =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -7891,7 +7891,7 @@ type Props_s =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -7909,11 +7909,11 @@ type Props_s =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -7921,7 +7921,7 @@ type Props_s =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -7931,7 +7931,7 @@ type Props_s =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -7960,13 +7960,13 @@ type Props_samp =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -7981,7 +7981,7 @@ type Props_samp =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -7999,11 +7999,11 @@ type Props_samp =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -8011,7 +8011,7 @@ type Props_samp =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -8021,7 +8021,7 @@ type Props_samp =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -8051,13 +8051,13 @@ type Props_script =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -8073,7 +8073,7 @@ type Props_script =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -8092,11 +8092,11 @@ type Props_script =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , nonce :: String
   , prefix :: String
@@ -8105,7 +8105,7 @@ type Props_script =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -8116,7 +8116,7 @@ type Props_script =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , type :: String
   , typeof :: String
@@ -8146,13 +8146,13 @@ type Props_section =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -8167,7 +8167,7 @@ type Props_section =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -8185,11 +8185,11 @@ type Props_section =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -8197,7 +8197,7 @@ type Props_section =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -8207,7 +8207,7 @@ type Props_section =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -8236,13 +8236,13 @@ type Props_select =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -8260,7 +8260,7 @@ type Props_select =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -8278,11 +8278,11 @@ type Props_select =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , multiple :: Boolean
   , name :: String
   , noValidate :: Boolean
@@ -8294,18 +8294,18 @@ type Props_select =
   , required :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
-  , size :: Number
+  , size :: Int
   , spellCheck :: Boolean
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -8335,13 +8335,13 @@ type Props_slot =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -8356,7 +8356,7 @@ type Props_slot =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -8374,11 +8374,11 @@ type Props_slot =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , name :: String
   , noValidate :: Boolean
   , prefix :: String
@@ -8387,7 +8387,7 @@ type Props_slot =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -8397,7 +8397,7 @@ type Props_slot =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -8426,13 +8426,13 @@ type Props_small =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -8447,7 +8447,7 @@ type Props_small =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -8465,11 +8465,11 @@ type Props_small =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -8477,7 +8477,7 @@ type Props_small =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -8487,7 +8487,7 @@ type Props_small =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -8516,12 +8516,12 @@ type Props_source =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -8536,7 +8536,7 @@ type Props_source =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -8554,12 +8554,12 @@ type Props_source =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , media :: String
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -8567,7 +8567,7 @@ type Props_source =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -8579,7 +8579,7 @@ type Props_source =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , type :: String
   , typeof :: String
@@ -8606,13 +8606,13 @@ type Props_span =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -8627,7 +8627,7 @@ type Props_span =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -8645,11 +8645,11 @@ type Props_span =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -8657,7 +8657,7 @@ type Props_span =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -8667,7 +8667,7 @@ type Props_span =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -8696,13 +8696,13 @@ type Props_strong =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -8717,7 +8717,7 @@ type Props_strong =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -8735,11 +8735,11 @@ type Props_strong =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -8747,7 +8747,7 @@ type Props_strong =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -8757,7 +8757,7 @@ type Props_strong =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -8786,13 +8786,13 @@ type Props_style =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -8807,7 +8807,7 @@ type Props_style =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -8825,12 +8825,12 @@ type Props_style =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , media :: String
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , nonce :: String
   , prefix :: String
@@ -8839,7 +8839,7 @@ type Props_style =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -8849,7 +8849,7 @@ type Props_style =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , title :: String
   , type :: String
@@ -8880,13 +8880,13 @@ type Props_sub =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -8901,7 +8901,7 @@ type Props_sub =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -8919,11 +8919,11 @@ type Props_sub =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -8931,7 +8931,7 @@ type Props_sub =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -8941,7 +8941,7 @@ type Props_sub =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -8970,13 +8970,13 @@ type Props_summary =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -8991,7 +8991,7 @@ type Props_summary =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -9009,11 +9009,11 @@ type Props_summary =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -9021,7 +9021,7 @@ type Props_summary =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -9031,7 +9031,7 @@ type Props_summary =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -9060,13 +9060,13 @@ type Props_sup =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -9081,7 +9081,7 @@ type Props_sup =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -9099,11 +9099,11 @@ type Props_sup =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -9111,7 +9111,7 @@ type Props_sup =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -9121,7 +9121,7 @@ type Props_sup =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -9172,8 +9172,8 @@ type Props_svg =
   , calcMode :: String
   , capHeight :: String
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
@@ -9182,7 +9182,7 @@ type Props_svg =
   , clipPath :: String
   , clipPathUnits :: String
   , clipRule :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , color :: String
   , colorInterpolation :: String
   , colorInterpolationFilters :: String
@@ -9241,7 +9241,7 @@ type Props_svg =
   , formNoValidate :: Boolean
   , formTarget :: String
   , format :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , from :: String
   , fx :: String
   , fy :: String
@@ -9295,8 +9295,8 @@ type Props_svg =
   , lightingColor :: String
   , limitingConeAngle :: String
   , local :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
+  , marginHeight :: String
+  , marginWidth :: String
   , markerEnd :: String
   , markerHeight :: String
   , markerMid :: String
@@ -9307,9 +9307,9 @@ type Props_svg =
   , maskContentUnits :: String
   , maskUnits :: String
   , mathematical :: String
-  , maxLength :: Number
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , mode :: String
   , noValidate :: Boolean
   , numOctaves :: String
@@ -9355,7 +9355,7 @@ type Props_svg =
   , result :: String
   , role :: String
   , rotate :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , rx :: String
   , ry :: String
   , scale :: String
@@ -9396,7 +9396,7 @@ type Props_svg =
   , suppressContentEditableWarning :: Boolean
   , surfaceScale :: String
   , systemLanguage :: String
-  , tabIndex :: Number
+  , tabIndex :: Int
   , tableValues :: String
   , targetX :: String
   , targetY :: String
@@ -9482,13 +9482,13 @@ type Props_table =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -9503,7 +9503,7 @@ type Props_table =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -9521,11 +9521,11 @@ type Props_table =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -9533,7 +9533,7 @@ type Props_table =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -9544,7 +9544,7 @@ type Props_table =
   , style :: String
   , summary :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -9574,13 +9574,13 @@ type Props_tbody =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -9595,7 +9595,7 @@ type Props_tbody =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -9613,11 +9613,11 @@ type Props_tbody =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -9625,7 +9625,7 @@ type Props_tbody =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -9635,7 +9635,7 @@ type Props_tbody =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -9664,13 +9664,13 @@ type Props_td =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -9685,7 +9685,7 @@ type Props_td =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , headers :: String
   , height :: String
   , hidden :: Boolean
@@ -9705,11 +9705,11 @@ type Props_td =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -9717,7 +9717,7 @@ type Props_td =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scope :: String
   , scoped :: Boolean
   , seamless :: Boolean
@@ -9728,7 +9728,7 @@ type Props_td =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -9758,13 +9758,13 @@ type Props_template =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -9779,7 +9779,7 @@ type Props_template =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -9797,11 +9797,11 @@ type Props_template =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -9809,7 +9809,7 @@ type Props_template =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -9819,7 +9819,7 @@ type Props_template =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -9850,14 +9850,14 @@ type Props_textarea =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
-  , cols :: Number
+  , colSpan :: Int
+  , cols :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -9875,7 +9875,7 @@ type Props_textarea =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -9893,11 +9893,11 @@ type Props_textarea =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , name :: String
   , noValidate :: Boolean
   , onChange :: EventHandler
@@ -9909,8 +9909,8 @@ type Props_textarea =
   , required :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
-  , rows :: Number
+  , rowSpan :: Int
+  , rows :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -9920,7 +9920,7 @@ type Props_textarea =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -9951,13 +9951,13 @@ type Props_tfoot =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -9972,7 +9972,7 @@ type Props_tfoot =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -9990,11 +9990,11 @@ type Props_tfoot =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -10002,7 +10002,7 @@ type Props_tfoot =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -10012,7 +10012,7 @@ type Props_tfoot =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -10041,13 +10041,13 @@ type Props_th =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -10062,7 +10062,7 @@ type Props_th =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , headers :: String
   , height :: String
   , hidden :: Boolean
@@ -10082,11 +10082,11 @@ type Props_th =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -10094,7 +10094,7 @@ type Props_th =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scope :: String
   , scoped :: Boolean
   , seamless :: Boolean
@@ -10105,7 +10105,7 @@ type Props_th =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -10135,13 +10135,13 @@ type Props_thead =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -10156,7 +10156,7 @@ type Props_thead =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -10174,11 +10174,11 @@ type Props_thead =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -10186,7 +10186,7 @@ type Props_thead =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -10196,7 +10196,7 @@ type Props_thead =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -10225,13 +10225,13 @@ type Props_time =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -10246,7 +10246,7 @@ type Props_time =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -10264,11 +10264,11 @@ type Props_time =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -10276,7 +10276,7 @@ type Props_time =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -10286,7 +10286,7 @@ type Props_time =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -10315,13 +10315,13 @@ type Props_title =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -10336,7 +10336,7 @@ type Props_title =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -10354,11 +10354,11 @@ type Props_title =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -10366,7 +10366,7 @@ type Props_title =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -10376,7 +10376,7 @@ type Props_title =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -10405,13 +10405,13 @@ type Props_tr =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -10426,7 +10426,7 @@ type Props_tr =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -10444,11 +10444,11 @@ type Props_tr =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -10456,7 +10456,7 @@ type Props_tr =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -10466,7 +10466,7 @@ type Props_tr =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -10495,12 +10495,12 @@ type Props_track =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -10516,7 +10516,7 @@ type Props_track =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -10536,11 +10536,11 @@ type Props_track =
   , kind :: String
   , label :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -10548,7 +10548,7 @@ type Props_track =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -10559,7 +10559,7 @@ type Props_track =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -10585,13 +10585,13 @@ type Props_u =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -10606,7 +10606,7 @@ type Props_u =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -10624,11 +10624,11 @@ type Props_u =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -10636,7 +10636,7 @@ type Props_u =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -10646,7 +10646,7 @@ type Props_u =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -10675,13 +10675,13 @@ type Props_ul =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -10696,7 +10696,7 @@ type Props_ul =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -10714,11 +10714,11 @@ type Props_ul =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -10726,7 +10726,7 @@ type Props_ul =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -10736,7 +10736,7 @@ type Props_ul =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , type :: String
   , typeof :: String
@@ -10766,13 +10766,13 @@ type Props_var =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -10787,7 +10787,7 @@ type Props_var =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -10805,11 +10805,11 @@ type Props_var =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -10817,7 +10817,7 @@ type Props_var =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -10827,7 +10827,7 @@ type Props_var =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -10856,13 +10856,13 @@ type Props_video =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , children :: Array JSX
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , controls :: Boolean
@@ -10878,7 +10878,7 @@ type Props_video =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , height :: String
   , hidden :: Boolean
   , hrefLang :: String
@@ -10898,11 +10898,11 @@ type Props_video =
   , keyType :: String
   , lang :: String
   , loop :: Boolean
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , muted :: Boolean
   , noValidate :: Boolean
   , playsInline :: Boolean
@@ -10914,7 +10914,7 @@ type Props_video =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -10925,7 +10925,7 @@ type Props_video =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean
@@ -10955,12 +10955,12 @@ type Props_wbr =
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
-  , cellPadding :: Number
-  , cellSpacing :: Number
+  , cellPadding :: String
+  , cellSpacing :: String
   , charSet :: String
   , classID :: String
   , className :: String
-  , colSpan :: Number
+  , colSpan :: Int
   , contentEditable :: Boolean
   , contextMenu :: String
   , crossOrigin :: String
@@ -10975,7 +10975,7 @@ type Props_wbr =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , frameBorder :: Number
+  , frameBorder :: String
   , hidden :: Boolean
   , hrefLang :: String
   , htmlFor :: String
@@ -10993,11 +10993,11 @@ type Props_wbr =
   , keyParams :: String
   , keyType :: String
   , lang :: String
-  , marginHeight :: Number
-  , marginWidth :: Number
-  , maxLength :: Number
+  , marginHeight :: String
+  , marginWidth :: String
+  , maxLength :: Int
   , mediaGroup :: String
-  , minLength :: Number
+  , minLength :: Int
   , noValidate :: Boolean
   , prefix :: String
   , property :: String
@@ -11005,7 +11005,7 @@ type Props_wbr =
   , readOnly :: Boolean
   , resource :: String
   , role :: String
-  , rowSpan :: Number
+  , rowSpan :: Int
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
@@ -11015,7 +11015,7 @@ type Props_wbr =
   , srcSet :: String
   , style :: String
   , suppressContentEditableWarning :: Boolean
-  , tabIndex :: Number
+  , tabIndex :: Int
   , title :: String
   , typeof :: String
   , unselectable :: Boolean

@@ -1,5 +1,5 @@
 const fs = require("fs");
-const { props, voids, types, reserved } = require("./consts");
+const { props, voids, types, typesByElement, reserved } = require("./consts");
 const genFile = "../src/React/Basic/DOM/Generated.purs";
 
 const header = `-- | ----------------------------------------
@@ -15,10 +15,22 @@ import React.Basic.Events (EventHandler)
 
 `;
 
-const printRecord = elProps =>
+const propType = (e, p) => {
+  const elPropTypes = typesByElement[p];
+  if (elPropTypes) {
+    if (types[p]) {
+      throw new TypeError(`${p} appears in both types and typesByElement`);
+    }
+    return elPropTypes[e] || elPropTypes["*"] || "String";
+  } else {
+    return types[p] || "String";
+  }
+}
+
+const printRecord = (e, elProps) =>
   elProps.length
     ? `
-  ( ${elProps.map(p => `${p} :: ${types[p] || "String"}`).join("\n  , ")}
+  ( ${elProps.map(p => `${p} :: ${propType(e, p)}`).join("\n  , ")}
   )`
     : "()";
 
@@ -27,7 +39,7 @@ const domTypes = props.elements.html
     const noChildren = voids.includes(e);
     const symbol = reserved.includes(e) ? `${e}'` : e;
     return `
-    type Props_${e} =${printRecord(
+    type Props_${e} =${printRecord(e,
       (noChildren ? [] : ["children"]).concat(props[e] || [], props["*"] || []).sort()
     )}
 

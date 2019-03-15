@@ -1,5 +1,28 @@
 module.exports.props = require("react-html-attributes");
 module.exports.voids = ["area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"];
+// The types for certain attributes differ according to their containing element.
+// These appear in the typesByElement object, using "*" as a default element
+// (required only if the default attribute type is other than `String`).
+// For clarity, it is an error for any attribute to be in both `types` and `typesByElement`.
+module.exports.typesByElement = {
+  "cols": {
+    "textarea": "Int",
+  },
+  "max": {
+    "meter": "Number",
+    "progress": "Number"
+  },
+  "min": {
+    "meter": "Number"
+  },
+  "rows": {
+    "textarea": "Int"
+  },
+  "size" : {
+    "input": "Int",
+    "select": "Int"
+  }
+};
 module.exports.types = {
   "allowFullScreen": "Boolean",
   "allowTransparency": "Boolean",
@@ -8,12 +31,9 @@ module.exports.types = {
   "autoFocus": "Boolean",
   "autoPlay": "Boolean",
   "capture": "Boolean",
-  "cellPadding": "Number",
-  "cellSpacing": "Number",
   "checked": "Boolean",
   "children": "Array JSX",
-  "cols": "Number",
-  "colSpan": "Number",
+  "colSpan": "Int",
   "contentEditable": "Boolean",
   "controls": "Boolean",
   "dangerouslySetInnerHTML": "{ __html :: String }",
@@ -22,16 +42,11 @@ module.exports.types = {
   "disabled": "Boolean",
   "draggable": "Boolean",
   "formNoValidate": "Boolean",
-  "frameBorder": "Number",
   "hidden": "Boolean",
   "itemScope": "Boolean",
   "loop": "Boolean",
-  "marginHeight": "Number",
-  "marginWidth": "Number",
-  "maxLength": "Number",
-  "max": "Number",
-  "minLength": "Number",
-  "min": "Number",
+  "maxLength": "Int",
+  "minLength": "Int",
   "multiple": "Boolean",
   "muted": "Boolean",
   "noValidate": "Boolean",
@@ -50,18 +65,16 @@ module.exports.types = {
   "readOnly": "Boolean",
   "required": "Boolean",
   "reversed": "Boolean",
-  "rows": "Number",
-  "rowSpan": "Number",
+  "rowSpan": "Int",
   "scoped": "Boolean",
   "seamless": "Boolean",
   "selected": "Boolean",
-  "size": "Number",
-  "span": "Number",
+  "span": "Int",
   "spellCheck": "Boolean",
   "srcDoc": "JSX",
-  "start": "Number",
+  "start": "Int",
   "suppressContentEditableWarning": "Boolean",
-  "tabIndex": "Number",
+  "tabIndex": "Int",
   "unselectable": "Boolean"
 };
 module.exports.reserved = ["module", "data", "type", "newtype", "class", "instance", "where", "derive", "if", "then", "else", "case", "of"];
