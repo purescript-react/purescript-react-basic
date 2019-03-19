@@ -11,7 +11,7 @@ foreign import data CSS :: Type
 -- The string props are from MDN, and the
 -- event handlers are the same as in SharedProps
 -- (the same events should work for SVG elements)
-type SharedSVGProps =
+type SharedSVGProps specific =
   ( id :: String
   , className :: String
   , style :: String
@@ -26,6 +26,7 @@ type SharedSVGProps =
   , onMouseOut        :: EventHandler
   , onMouseOver       :: EventHandler
   , onMouseUp         :: EventHandler
+  | specific
   )
 
 unsafeCreateDOMComponent :: forall props. String -> ReactComponent props
