@@ -10643,35 +10643,16 @@ sup_ children = sup { children }
 
 type Props_svg =
   ( about :: String
-  , accentHeight :: String
   , acceptCharset :: String
   , accessKey :: String
-  , accumulate :: String
-  , additive :: String
   , alignmentBaseline :: String
   , allowFullScreen :: Boolean
-  , allowReorder :: String
   , allowTransparency :: Boolean
-  , alphabetic :: String
-  , amplitude :: String
-  , arabicForm :: String
-  , ascent :: String
-  , attributeName :: String
-  , attributeType :: String
   , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
-  , autoReverse :: String
-  , azimuth :: String
-  , baseFrequency :: String
   , baseProfile :: String
   , baselineShift :: String
-  , bbox :: String
-  , begin :: String
-  , bias :: String
-  , by :: String
-  , calcMode :: String
-  , capHeight :: String
   , capture :: Boolean
   , cellPadding :: String
   , cellSpacing :: String
@@ -10681,7 +10662,6 @@ type Props_svg =
   , className :: String
   , clip :: String
   , clipPath :: String
-  , clipPathUnits :: String
   , clipRule :: String
   , colSpan :: Int
   , color :: String
@@ -10695,39 +10675,24 @@ type Props_svg =
   , contextMenu :: String
   , crossOrigin :: String
   , cursor :: String
-  , cx :: String
-  , cy :: String
-  , d :: String
   , dangerouslySetInnerHTML :: { __html :: String }
   , datatype :: String
   , dateTime :: String
-  , decelerate :: String
-  , descent :: String
-  , diffuseConstant :: String
   , dir :: String
   , direction :: String
   , display :: String
-  , divisor :: String
   , dominantBaseline :: String
   , draggable :: Boolean
-  , dur :: String
-  , dx :: String
-  , dy :: String
-  , edgeMode :: String
-  , elevation :: String
   , enableBackground :: String
   , encType :: String
-  , end :: String
-  , exponent :: String
   , externalResourcesRequired :: String
   , fill :: String
   , fillOpacity :: String
   , fillRule :: String
   , filter :: String
-  , filterRes :: String
-  , filterUnits :: String
   , floodColor :: String
   , floodOpacity :: String
+  , focusHighlight :: String
   , focusable :: String
   , fontFamily :: String
   , fontSize :: String
@@ -10741,81 +10706,52 @@ type Props_svg =
   , formMethod :: String
   , formNoValidate :: Boolean
   , formTarget :: String
-  , format :: String
   , frameBorder :: String
-  , from :: String
-  , fx :: String
-  , fy :: String
-  , g1 :: String
-  , g2 :: String
-  , glyphName :: String
   , glyphOrientationHorizontal :: String
   , glyphOrientationVertical :: String
-  , glyphRef :: String
-  , gradientTransform :: String
-  , gradientUnits :: String
-  , hanging :: String
   , height :: String
   , hidden :: Boolean
-  , horizAdvX :: String
-  , horizOriginX :: String
   , hrefLang :: String
   , htmlFor :: String
   , httpEquiv :: String
   , icon :: String
   , id :: String
-  , ideographic :: String
   , imageRendering :: String
-  , in :: String
-  , in2 :: String
   , inlist :: String
   , inputMode :: String
-  , intercept :: String
   , is :: String
   , itemID :: String
   , itemProp :: String
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
-  , k :: String
-  , k1 :: String
-  , k2 :: String
-  , k3 :: String
-  , k4 :: String
-  , kernelMatrix :: String
-  , kernelUnitLength :: String
   , kerning :: String
   , key :: String
   , keyParams :: String
-  , keyPoints :: String
-  , keySplines :: String
-  , keyTimes :: String
   , keyType :: String
   , lang :: String
-  , lengthAdjust :: String
   , letterSpacing :: String
   , lightingColor :: String
-  , limitingConeAngle :: String
-  , local :: String
   , marginHeight :: String
   , marginWidth :: String
   , markerEnd :: String
-  , markerHeight :: String
   , markerMid :: String
   , markerStart :: String
-  , markerUnits :: String
-  , markerWidth :: String
   , mask :: String
-  , maskContentUnits :: String
-  , maskUnits :: String
-  , mathematical :: String
   , maxLength :: Int
   , mediaGroup :: String
   , minLength :: Int
-  , mode :: String
+  , navDown :: String
+  , navDownLeft :: String
+  , navDownRight :: String
+  , navLeft :: String
+  , navNext :: String
+  , navPrev :: String
+  , navRight :: String
+  , navUp :: String
+  , navUpLeft :: String
+  , navUpRight :: String
   , noValidate :: Boolean
-  , numOctaves :: String
-  , offset :: String
   , onBlur :: EventHandler
   , onClick :: EventHandler
   , onFocus :: EventHandler
@@ -10830,76 +10766,32 @@ type Props_svg =
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
   , opacity :: String
-  , operator :: String
-  , order :: String
-  , orient :: String
-  , orientation :: String
-  , origin :: String
   , overflow :: String
-  , overlinePosition :: String
-  , overlineThickness :: String
-  , paintOrder :: String
-  , panose1 :: String
-  , pathLength :: String
-  , patternContentUnits :: String
-  , patternTransform :: String
-  , patternUnits :: String
+  , playbackOrder :: String
+  , playbackorder :: String
   , pointerEvents :: String
-  , points :: String
-  , pointsAtX :: String
-  , pointsAtY :: String
-  , pointsAtZ :: String
   , prefix :: String
-  , preserveAlpha :: String
   , preserveAspectRatio :: String
-  , primitiveUnits :: String
   , property :: String
-  , r :: String
   , radioGroup :: String
-  , radius :: String
   , readOnly :: Boolean
   , ref :: Ref (Nullable Node)
-  , refX :: String
-  , refY :: String
-  , renderingIntent :: String
-  , repeatCount :: String
-  , repeatDur :: String
   , requiredExtensions :: String
   , requiredFeatures :: String
   , resource :: String
-  , restart :: String
-  , result :: String
   , role :: String
-  , rotate :: String
   , rowSpan :: Int
-  , rx :: String
-  , ry :: String
-  , scale :: String
   , scoped :: Boolean
   , seamless :: Boolean
   , security :: String
-  , seed :: String
   , shapeRendering :: String
-  , slope :: String
-  , spacing :: String
-  , specularConstant :: String
-  , specularExponent :: String
-  , speed :: String
+  , snapshotTime :: String
   , spellCheck :: Boolean
-  , spreadMethod :: String
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , startOffset :: String
-  , stdDeviation :: String
-  , stemh :: String
-  , stemv :: String
-  , stitchTiles :: String
   , stopColor :: String
   , stopOpacity :: String
-  , strikethroughPosition :: String
-  , strikethroughThickness :: String
-  , string :: String
   , stroke :: String
   , strokeDasharray :: String
   , strokeDashoffset :: String
@@ -10910,71 +10802,31 @@ type Props_svg =
   , strokeWidth :: String
   , style :: CSS
   , suppressContentEditableWarning :: Boolean
-  , surfaceScale :: String
+  , syncBehaviorDefault :: String
+  , syncToleranceDefault :: String
   , systemLanguage :: String
   , tabIndex :: Int
-  , tableValues :: String
-  , targetX :: String
-  , targetY :: String
   , textAnchor :: String
   , textDecoration :: String
-  , textLength :: String
   , textRendering :: String
+  , timelineBegin :: String
+  , timelinebegin :: String
   , title :: String
-  , to :: String
   , transform :: String
   , typeof :: String
-  , u1 :: String
-  , u2 :: String
-  , underlinePosition :: String
-  , underlineThickness :: String
-  , unicode :: String
   , unicodeBidi :: String
-  , unicodeRange :: String
-  , unitsPerEm :: String
   , unselectable :: Boolean
   , useMap :: String
-  , vAlphabetic :: String
-  , vHanging :: String
-  , vIdeographic :: String
-  , vMathematical :: String
-  , values :: String
-  , vectorEffect :: String
   , version :: String
-  , vertAdvY :: String
-  , vertOriginX :: String
-  , vertOriginY :: String
   , viewBox :: String
-  , viewTarget :: String
   , visibility :: String
   , vocab :: String
   , width :: String
-  , widths :: String
   , wmode :: String
   , wordSpacing :: String
   , writingMode :: String
   , x :: String
-  , x1 :: String
-  , x2 :: String
-  , xChannelSelector :: String
-  , xHeight :: String
-  , xlinkActuate :: String
-  , xlinkArcrole :: String
-  , xlinkHref :: String
-  , xlinkRole :: String
-  , xlinkShow :: String
-  , xlinkTitle :: String
-  , xlinkType :: String
-  , xmlBase :: String
-  , xmlLang :: String
-  , xmlSpace :: String
-  , xmlns :: String
-  , xmlnsXlink :: String
   , y :: String
-  , y1 :: String
-  , y2 :: String
-  , yChannelSelector :: String
-  , z :: String
   , zoomAndPan :: String
   )
 
