@@ -1,10 +1,32 @@
 module React.Basic.DOM.Internal where
 
 import React.Basic (ReactComponent)
+import React.Basic.Events (EventHandler)
 import Unsafe.Coerce (unsafeCoerce)
 
 -- | An abstract type representing records of CSS attributes.
 foreign import data CSS :: Type
+
+-- Standard props shared by all SVG elements.
+-- The string props are from MDN, and the
+-- event handlers are the same as in SharedProps
+-- (the same events should work for SVG elements)
+type SharedSVGProps =
+  ( id :: String
+  , className :: String
+  , style :: String
+  , tabIndex :: String
+  , onBlur            :: EventHandler
+  , onClick           :: EventHandler
+  , onFocus           :: EventHandler
+  , onMouseDown       :: EventHandler
+  , onMouseEnter      :: EventHandler
+  , onMouseLeave      :: EventHandler
+  , onMouseMove       :: EventHandler
+  , onMouseOut        :: EventHandler
+  , onMouseOver       :: EventHandler
+  , onMouseUp         :: EventHandler
+  )
 
 unsafeCreateDOMComponent :: forall props. String -> ReactComponent props
 unsafeCreateDOMComponent = unsafeCoerce

@@ -1,7 +1,8 @@
 // For now, we are using a local copy of react-html-attributes.
 // Eventually, the relative path here should be removed, and
 // the version number of react-html-attributes should be bumped.
-module.exports.props = require("./react-html-attributes");
+module.exports.htmlProps = require("./react-html-attributes");
+module.exports.svgProps = require("svg-element-attributes");
 
 module.exports.voids = ["area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"];
 // The types for certain attributes differ according to their containing element.

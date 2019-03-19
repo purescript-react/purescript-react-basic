@@ -1,8 +1,10 @@
 const fs = require("fs");
-const { props, voids, types, typesByElement, reserved } = require("./consts");
-const genFile = "../src/React/Basic/DOM/Generated.purs";
+const { htmlProps, svgProps, voids, types, typesByElement, reserved } = require("./consts");
+const changeCase = require('change-case')
+const htmlGenFile = "../src/React/Basic/DOM/Generated.purs";
+const svgGenFile = "../src/React/Basic/DOM/SVG.purs";
 
-const header = `-- | ----------------------------------------
+const htmlHeader = `-- | ----------------------------------------
 -- | THIS FILE IS GENERATED -- DO NOT EDIT IT
 -- | ----------------------------------------
 
@@ -29,6 +31,38 @@ const propType = (e, p) => {
   }
 }
 
+const svgHeader = `-- | ----------------------------------------
+-- | THIS FILE IS GENERATED -- DO NOT EDIT IT
+-- | ----------------------------------------
+
+module React.Basic.DOM.SVG where
+
+import Prim.Row (class Union)
+import React.Basic (JSX, element)
+import React.Basic.DOM.Internal (SharedSVGProps, unsafeCreateDOMComponent)
+import React.Basic.Events (EventHandler)
+
+`;
+
+const ignoredSvgPropKeys = [
+  '*', 'elements',
+  // These are all deprecated according to MDN, and I'm not sure what the
+  // React representation should be for the hyphenated ones if they are
+  // supported all, so let's exclude them
+  "font", "glyph", "hkern", "missing-glyph", "vkern",
+  "font-face", "font-face-format", "font-face-name", "font-face-src", "font-face-uri",
+  "altGlyph", "altGlyphDef", "altGlyphItem", "glyphRef",
+  "tref", "color-profile", "cursor",
+]
+
+const camelCaseSvgProps = {}
+Object.keys(svgProps).forEach(elName => {
+  if (!ignoredSvgPropKeys.includes(elName)) {
+    const elAttrs = svgProps[elName].map(changeCase.camelCase);
+    camelCaseSvgProps[elName] = elAttrs;
+  }
+});
+
 const printRecord = (e, elProps) =>
   elProps.length
     ? `
@@ -36,10 +70,13 @@ const printRecord = (e, elProps) =>
   )`
     : "()";
 
-const domTypes = props.elements.html
-  .map(e => {
+const generatePropTypes = (elements, props, sharedPropType) => 
+  elements.map(e => {
     const noChildren = voids.includes(e);
     const symbol = reserved.includes(e) ? `${e}'` : e;
+
+    const propType = sharedPropType ? `(${sharedPropType} Props_${e})` : `Props_${e}`
+
     return `
     type Props_${e} =${printRecord(e,
       (noChildren ? [] : ["children"]).concat(props[e] || [], props["*"] || []).sort()
@@ -47,7 +84,7 @@ const domTypes = props.elements.html
 
     ${symbol}
       :: forall attrs attrs_
-       . Union attrs attrs_ Props_${e}
+       . Union attrs attrs_ ${propType}
       => Record attrs
       -> JSX
     ${symbol} = element (unsafeCreateDOMComponent "${e}")${
@@ -59,10 +96,14 @@ const domTypes = props.elements.html
     ${e}_ children = ${symbol} { children }`
     }
 `;
-  })
-  .map(x => x.replace(/^\n\ {4}/, "").replace(/\n\ {4}/g, "\n"))
+  }).map(x => x.replace(/^\n\ {4}/, "").replace(/\n\ {4}/g, "\n"))
   .join("\n");
 
-console.log(`Writing "${genFile}" ...`);
-fs.writeFileSync(genFile, header + domTypes);
+const htmlTagTypes = generatePropTypes(htmlProps.elements.html, htmlProps, null);
+const svgTagTypes = generatePropTypes(Object.keys(camelCaseSvgProps), camelCaseSvgProps, 'SharedSVGProps');
+
+console.log(`Writing "${htmlGenFile}" ...`);
+fs.writeFileSync(htmlGenFile, htmlHeader + htmlTagTypes);
+console.log(`Writing "${svgGenFile}" ...`);
+fs.writeFileSync(svgGenFile, svgHeader + svgTagTypes);
 console.log("Done.");
