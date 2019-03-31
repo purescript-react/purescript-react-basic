@@ -40,7 +40,6 @@ module React.Basic.DOM.SVG where
 import Prim.Row (class Union)
 import React.Basic (JSX, element)
 import React.Basic.DOM.Internal (SharedSVGProps, unsafeCreateDOMComponent)
-import React.Basic.Events (EventHandler)
 
 `;
 
