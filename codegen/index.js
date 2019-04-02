@@ -58,6 +58,8 @@ const camelCaseSvgProps = {}
 Object.keys(svgProps).forEach(elName => {
   if (!ignoredSvgPropKeys.includes(elName)) {
     const elAttrs = svgProps[elName].map(changeCase.camelCase);
+    // style is already included in SharedSVGProps
+    delete elAttrs['style'];
     camelCaseSvgProps[elName] = elAttrs;
   }
 });

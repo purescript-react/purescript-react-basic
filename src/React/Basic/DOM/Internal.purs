@@ -14,7 +14,7 @@ foreign import data CSS :: Type
 type SharedSVGProps specific =
   ( id :: String
   , className :: String
-  , style :: String
+  , style :: CSS
   , tabIndex :: String
   , onBlur            :: EventHandler
   , onClick           :: EventHandler
