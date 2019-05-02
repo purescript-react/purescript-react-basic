@@ -44,6 +44,7 @@
     "itemRef",
     "itemScope",
     "itemType",
+    "key",
     "keyParams",
     "keyType",
     "lang",
@@ -54,10 +55,18 @@
     "minLength",
     "noValidate",
     "onBlur",
+    "onClick",
     "onFocus",
     "onKeyDown",
     "onKeyPress",
     "onKeyUp",
+    "onMouseDown",
+    "onMouseEnter",
+    "onMouseLeave",
+    "onMouseMove",
+    "onMouseOut",
+    "onMouseOver",
+    "onMouseUp",
     "prefix",
     "property",
     "radioGroup",
@@ -90,8 +99,7 @@
     "rel",
     "shape",
     "target",
-    "type",
-    "onClick"
+    "type"
   ],
   "abbr": [
     "title"

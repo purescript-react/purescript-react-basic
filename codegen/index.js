@@ -10,7 +10,7 @@ module React.Basic.DOM.Generated where
 
 import Prim.Row (class Union)
 import React.Basic (JSX, element)
-import React.Basic.DOM.Internal (SharedProps, unsafeCreateDOMComponent)
+import React.Basic.DOM.Internal (CSS, unsafeCreateDOMComponent)
 import React.Basic.Events (EventHandler)
 
 `;
@@ -45,7 +45,7 @@ const domTypes = props.elements.html
 
     ${symbol}
       :: forall attrs attrs_
-       . Union attrs attrs_ (SharedProps Props_${e})
+       . Union attrs attrs_ Props_${e}
       => Record attrs
       -> JSX
     ${symbol} = element (unsafeCreateDOMComponent "${e}")${

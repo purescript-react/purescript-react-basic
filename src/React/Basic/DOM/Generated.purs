@@ -6,7 +6,7 @@ module React.Basic.DOM.Generated where
 
 import Prim.Row (class Union)
 import React.Basic (JSX, element)
-import React.Basic.DOM.Internal (SharedProps, unsafeCreateDOMComponent)
+import React.Basic.DOM.Internal (CSS, unsafeCreateDOMComponent)
 import React.Basic.Events (EventHandler)
 
 type Props_a =
@@ -58,6 +58,7 @@ type Props_a =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -74,6 +75,13 @@ type Props_a =
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -90,7 +98,7 @@ type Props_a =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , target :: String
@@ -105,7 +113,7 @@ type Props_a =
 
 a
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_a)
+   . Union attrs attrs_ Props_a
   => Record attrs
   -> JSX
 a = element (unsafeCreateDOMComponent "a")
@@ -159,6 +167,7 @@ type Props_abbr =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -169,10 +178,18 @@ type Props_abbr =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -187,7 +204,7 @@ type Props_abbr =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -201,7 +218,7 @@ type Props_abbr =
 
 abbr
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_abbr)
+   . Union attrs attrs_ Props_abbr
   => Record attrs
   -> JSX
 abbr = element (unsafeCreateDOMComponent "abbr")
@@ -255,6 +272,7 @@ type Props_address =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -265,10 +283,18 @@ type Props_address =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -283,7 +309,7 @@ type Props_address =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -296,7 +322,7 @@ type Props_address =
 
 address
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_address)
+   . Union attrs attrs_ Props_address
   => Record attrs
   -> JSX
 address = element (unsafeCreateDOMComponent "address")
@@ -353,6 +379,7 @@ type Props_area =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -363,10 +390,18 @@ type Props_area =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -383,7 +418,7 @@ type Props_area =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , target :: String
@@ -398,7 +433,7 @@ type Props_area =
 
 area
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_area)
+   . Union attrs attrs_ Props_area
   => Record attrs
   -> JSX
 area = element (unsafeCreateDOMComponent "area")
@@ -449,6 +484,7 @@ type Props_article =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -459,10 +495,18 @@ type Props_article =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -477,7 +521,7 @@ type Props_article =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -490,7 +534,7 @@ type Props_article =
 
 article
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_article)
+   . Union attrs attrs_ Props_article
   => Record attrs
   -> JSX
 article = element (unsafeCreateDOMComponent "article")
@@ -544,6 +588,7 @@ type Props_aside =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -554,10 +599,18 @@ type Props_aside =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -572,7 +625,7 @@ type Props_aside =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -585,7 +638,7 @@ type Props_aside =
 
 aside
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_aside)
+   . Union attrs attrs_ Props_aside
   => Record attrs
   -> JSX
 aside = element (unsafeCreateDOMComponent "aside")
@@ -640,6 +693,7 @@ type Props_audio =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -652,10 +706,18 @@ type Props_audio =
   , muted :: Boolean
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , preload :: String
   , property :: String
@@ -672,7 +734,7 @@ type Props_audio =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -685,7 +747,7 @@ type Props_audio =
 
 audio
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_audio)
+   . Union attrs attrs_ Props_audio
   => Record attrs
   -> JSX
 audio = element (unsafeCreateDOMComponent "audio")
@@ -739,6 +801,7 @@ type Props_b =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -749,10 +812,18 @@ type Props_b =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -767,7 +838,7 @@ type Props_b =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -780,7 +851,7 @@ type Props_b =
 
 b
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_b)
+   . Union attrs attrs_ Props_b
   => Record attrs
   -> JSX
 b = element (unsafeCreateDOMComponent "b")
@@ -834,6 +905,7 @@ type Props_base =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -844,10 +916,18 @@ type Props_base =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -862,7 +942,7 @@ type Props_base =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , target :: String
@@ -876,7 +956,7 @@ type Props_base =
 
 base
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_base)
+   . Union attrs attrs_ Props_base
   => Record attrs
   -> JSX
 base = element (unsafeCreateDOMComponent "base")
@@ -927,6 +1007,7 @@ type Props_bdi =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -937,10 +1018,18 @@ type Props_bdi =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -955,7 +1044,7 @@ type Props_bdi =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -968,7 +1057,7 @@ type Props_bdi =
 
 bdi
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_bdi)
+   . Union attrs attrs_ Props_bdi
   => Record attrs
   -> JSX
 bdi = element (unsafeCreateDOMComponent "bdi")
@@ -1023,6 +1112,7 @@ type Props_bdo =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -1033,10 +1123,18 @@ type Props_bdo =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -1051,7 +1149,7 @@ type Props_bdo =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -1064,7 +1162,7 @@ type Props_bdo =
 
 bdo
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_bdo)
+   . Union attrs attrs_ Props_bdo
   => Record attrs
   -> JSX
 bdo = element (unsafeCreateDOMComponent "bdo")
@@ -1119,6 +1217,7 @@ type Props_blockquote =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -1129,10 +1228,18 @@ type Props_blockquote =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -1147,7 +1254,7 @@ type Props_blockquote =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -1160,7 +1267,7 @@ type Props_blockquote =
 
 blockquote
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_blockquote)
+   . Union attrs attrs_ Props_blockquote
   => Record attrs
   -> JSX
 blockquote = element (unsafeCreateDOMComponent "blockquote")
@@ -1214,6 +1321,7 @@ type Props_body =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -1224,10 +1332,18 @@ type Props_body =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -1242,7 +1358,7 @@ type Props_body =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -1255,7 +1371,7 @@ type Props_body =
 
 body
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_body)
+   . Union attrs attrs_ Props_body
   => Record attrs
   -> JSX
 body = element (unsafeCreateDOMComponent "body")
@@ -1308,6 +1424,7 @@ type Props_br =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -1318,10 +1435,18 @@ type Props_br =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -1336,7 +1461,7 @@ type Props_br =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -1349,7 +1474,7 @@ type Props_br =
 
 br
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_br)
+   . Union attrs attrs_ Props_br
   => Record attrs
   -> JSX
 br = element (unsafeCreateDOMComponent "br")
@@ -1402,6 +1527,7 @@ type Props_button =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -1413,10 +1539,18 @@ type Props_button =
   , name :: String
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -1431,7 +1565,7 @@ type Props_button =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -1446,7 +1580,7 @@ type Props_button =
 
 button
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_button)
+   . Union attrs attrs_ Props_button
   => Record attrs
   -> JSX
 button = element (unsafeCreateDOMComponent "button")
@@ -1501,6 +1635,7 @@ type Props_canvas =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -1511,10 +1646,18 @@ type Props_canvas =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -1529,7 +1672,7 @@ type Props_canvas =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -1543,7 +1686,7 @@ type Props_canvas =
 
 canvas
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_canvas)
+   . Union attrs attrs_ Props_canvas
   => Record attrs
   -> JSX
 canvas = element (unsafeCreateDOMComponent "canvas")
@@ -1597,6 +1740,7 @@ type Props_caption =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -1607,10 +1751,18 @@ type Props_caption =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -1625,7 +1777,7 @@ type Props_caption =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -1638,7 +1790,7 @@ type Props_caption =
 
 caption
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_caption)
+   . Union attrs attrs_ Props_caption
   => Record attrs
   -> JSX
 caption = element (unsafeCreateDOMComponent "caption")
@@ -1692,6 +1844,7 @@ type Props_cite =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -1702,10 +1855,18 @@ type Props_cite =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -1720,7 +1881,7 @@ type Props_cite =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -1733,7 +1894,7 @@ type Props_cite =
 
 cite
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_cite)
+   . Union attrs attrs_ Props_cite
   => Record attrs
   -> JSX
 cite = element (unsafeCreateDOMComponent "cite")
@@ -1787,6 +1948,7 @@ type Props_code =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -1797,10 +1959,18 @@ type Props_code =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -1815,7 +1985,7 @@ type Props_code =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -1828,7 +1998,7 @@ type Props_code =
 
 code
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_code)
+   . Union attrs attrs_ Props_code
   => Record attrs
   -> JSX
 code = element (unsafeCreateDOMComponent "code")
@@ -1881,6 +2051,7 @@ type Props_col =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -1891,10 +2062,18 @@ type Props_col =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -1910,7 +2089,7 @@ type Props_col =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -1924,7 +2103,7 @@ type Props_col =
 
 col
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_col)
+   . Union attrs attrs_ Props_col
   => Record attrs
   -> JSX
 col = element (unsafeCreateDOMComponent "col")
@@ -1975,6 +2154,7 @@ type Props_colgroup =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -1985,10 +2165,18 @@ type Props_colgroup =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -2004,7 +2192,7 @@ type Props_colgroup =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -2018,7 +2206,7 @@ type Props_colgroup =
 
 colgroup
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_colgroup)
+   . Union attrs attrs_ Props_colgroup
   => Record attrs
   -> JSX
 colgroup = element (unsafeCreateDOMComponent "colgroup")
@@ -2072,6 +2260,7 @@ type Props_data =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -2082,10 +2271,18 @@ type Props_data =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -2100,7 +2297,7 @@ type Props_data =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -2114,7 +2311,7 @@ type Props_data =
 
 data'
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_data)
+   . Union attrs attrs_ Props_data
   => Record attrs
   -> JSX
 data' = element (unsafeCreateDOMComponent "data")
@@ -2168,6 +2365,7 @@ type Props_datalist =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -2178,10 +2376,18 @@ type Props_datalist =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -2196,7 +2402,7 @@ type Props_datalist =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -2209,7 +2415,7 @@ type Props_datalist =
 
 datalist
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_datalist)
+   . Union attrs attrs_ Props_datalist
   => Record attrs
   -> JSX
 datalist = element (unsafeCreateDOMComponent "datalist")
@@ -2263,6 +2469,7 @@ type Props_dd =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -2273,10 +2480,18 @@ type Props_dd =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -2291,7 +2506,7 @@ type Props_dd =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -2304,7 +2519,7 @@ type Props_dd =
 
 dd
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_dd)
+   . Union attrs attrs_ Props_dd
   => Record attrs
   -> JSX
 dd = element (unsafeCreateDOMComponent "dd")
@@ -2359,6 +2574,7 @@ type Props_del =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -2369,10 +2585,18 @@ type Props_del =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -2387,7 +2611,7 @@ type Props_del =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -2400,7 +2624,7 @@ type Props_del =
 
 del
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_del)
+   . Union attrs attrs_ Props_del
   => Record attrs
   -> JSX
 del = element (unsafeCreateDOMComponent "del")
@@ -2454,6 +2678,7 @@ type Props_details =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -2464,10 +2689,18 @@ type Props_details =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , open :: Boolean
   , prefix :: String
   , property :: String
@@ -2483,7 +2716,7 @@ type Props_details =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -2496,7 +2729,7 @@ type Props_details =
 
 details
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_details)
+   . Union attrs attrs_ Props_details
   => Record attrs
   -> JSX
 details = element (unsafeCreateDOMComponent "details")
@@ -2550,6 +2783,7 @@ type Props_dfn =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -2560,10 +2794,18 @@ type Props_dfn =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -2578,7 +2820,7 @@ type Props_dfn =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -2592,7 +2834,7 @@ type Props_dfn =
 
 dfn
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_dfn)
+   . Union attrs attrs_ Props_dfn
   => Record attrs
   -> JSX
 dfn = element (unsafeCreateDOMComponent "dfn")
@@ -2646,6 +2888,7 @@ type Props_dialog =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -2656,10 +2899,18 @@ type Props_dialog =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , open :: Boolean
   , prefix :: String
   , property :: String
@@ -2675,7 +2926,7 @@ type Props_dialog =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -2688,7 +2939,7 @@ type Props_dialog =
 
 dialog
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_dialog)
+   . Union attrs attrs_ Props_dialog
   => Record attrs
   -> JSX
 dialog = element (unsafeCreateDOMComponent "dialog")
@@ -2742,6 +2993,7 @@ type Props_div =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -2752,10 +3004,18 @@ type Props_div =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -2770,7 +3030,7 @@ type Props_div =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -2783,7 +3043,7 @@ type Props_div =
 
 div
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_div)
+   . Union attrs attrs_ Props_div
   => Record attrs
   -> JSX
 div = element (unsafeCreateDOMComponent "div")
@@ -2837,6 +3097,7 @@ type Props_dl =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -2847,10 +3108,18 @@ type Props_dl =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -2865,7 +3134,7 @@ type Props_dl =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -2878,7 +3147,7 @@ type Props_dl =
 
 dl
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_dl)
+   . Union attrs attrs_ Props_dl
   => Record attrs
   -> JSX
 dl = element (unsafeCreateDOMComponent "dl")
@@ -2932,6 +3201,7 @@ type Props_dt =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -2942,10 +3212,18 @@ type Props_dt =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -2960,7 +3238,7 @@ type Props_dt =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -2973,7 +3251,7 @@ type Props_dt =
 
 dt
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_dt)
+   . Union attrs attrs_ Props_dt
   => Record attrs
   -> JSX
 dt = element (unsafeCreateDOMComponent "dt")
@@ -3027,6 +3305,7 @@ type Props_em =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -3037,10 +3316,18 @@ type Props_em =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -3055,7 +3342,7 @@ type Props_em =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -3068,7 +3355,7 @@ type Props_em =
 
 em
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_em)
+   . Union attrs attrs_ Props_em
   => Record attrs
   -> JSX
 em = element (unsafeCreateDOMComponent "em")
@@ -3122,6 +3409,7 @@ type Props_embed =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -3132,10 +3420,18 @@ type Props_embed =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -3151,7 +3447,7 @@ type Props_embed =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -3166,7 +3462,7 @@ type Props_embed =
 
 embed
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_embed)
+   . Union attrs attrs_ Props_embed
   => Record attrs
   -> JSX
 embed = element (unsafeCreateDOMComponent "embed")
@@ -3219,6 +3515,7 @@ type Props_fieldset =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -3230,10 +3527,18 @@ type Props_fieldset =
   , name :: String
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -3248,7 +3553,7 @@ type Props_fieldset =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -3261,7 +3566,7 @@ type Props_fieldset =
 
 fieldset
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_fieldset)
+   . Union attrs attrs_ Props_fieldset
   => Record attrs
   -> JSX
 fieldset = element (unsafeCreateDOMComponent "fieldset")
@@ -3315,6 +3620,7 @@ type Props_figcaption =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -3325,10 +3631,18 @@ type Props_figcaption =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -3343,7 +3657,7 @@ type Props_figcaption =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -3356,7 +3670,7 @@ type Props_figcaption =
 
 figcaption
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_figcaption)
+   . Union attrs attrs_ Props_figcaption
   => Record attrs
   -> JSX
 figcaption = element (unsafeCreateDOMComponent "figcaption")
@@ -3410,6 +3724,7 @@ type Props_figure =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -3420,10 +3735,18 @@ type Props_figure =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -3438,7 +3761,7 @@ type Props_figure =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -3451,7 +3774,7 @@ type Props_figure =
 
 figure
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_figure)
+   . Union attrs attrs_ Props_figure
   => Record attrs
   -> JSX
 figure = element (unsafeCreateDOMComponent "figure")
@@ -3505,6 +3828,7 @@ type Props_footer =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -3515,10 +3839,18 @@ type Props_footer =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -3533,7 +3865,7 @@ type Props_footer =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -3546,7 +3878,7 @@ type Props_footer =
 
 footer
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_footer)
+   . Union attrs attrs_ Props_footer
   => Record attrs
   -> JSX
 footer = element (unsafeCreateDOMComponent "footer")
@@ -3602,6 +3934,7 @@ type Props_form =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -3615,12 +3948,20 @@ type Props_form =
   , noValidate :: Boolean
   , onBlur :: EventHandler
   , onChange :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onInput :: EventHandler
   , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , onSubmit :: EventHandler
   , prefix :: String
   , property :: String
@@ -3636,7 +3977,7 @@ type Props_form =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , target :: String
@@ -3650,7 +3991,7 @@ type Props_form =
 
 form
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_form)
+   . Union attrs attrs_ Props_form
   => Record attrs
   -> JSX
 form = element (unsafeCreateDOMComponent "form")
@@ -3704,6 +4045,7 @@ type Props_h1 =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -3714,10 +4056,18 @@ type Props_h1 =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -3732,7 +4082,7 @@ type Props_h1 =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -3745,7 +4095,7 @@ type Props_h1 =
 
 h1
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_h1)
+   . Union attrs attrs_ Props_h1
   => Record attrs
   -> JSX
 h1 = element (unsafeCreateDOMComponent "h1")
@@ -3799,6 +4149,7 @@ type Props_h2 =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -3809,10 +4160,18 @@ type Props_h2 =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -3827,7 +4186,7 @@ type Props_h2 =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -3840,7 +4199,7 @@ type Props_h2 =
 
 h2
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_h2)
+   . Union attrs attrs_ Props_h2
   => Record attrs
   -> JSX
 h2 = element (unsafeCreateDOMComponent "h2")
@@ -3894,6 +4253,7 @@ type Props_h3 =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -3904,10 +4264,18 @@ type Props_h3 =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -3922,7 +4290,7 @@ type Props_h3 =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -3935,7 +4303,7 @@ type Props_h3 =
 
 h3
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_h3)
+   . Union attrs attrs_ Props_h3
   => Record attrs
   -> JSX
 h3 = element (unsafeCreateDOMComponent "h3")
@@ -3989,6 +4357,7 @@ type Props_h4 =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -3999,10 +4368,18 @@ type Props_h4 =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -4017,7 +4394,7 @@ type Props_h4 =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -4030,7 +4407,7 @@ type Props_h4 =
 
 h4
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_h4)
+   . Union attrs attrs_ Props_h4
   => Record attrs
   -> JSX
 h4 = element (unsafeCreateDOMComponent "h4")
@@ -4084,6 +4461,7 @@ type Props_h5 =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -4094,10 +4472,18 @@ type Props_h5 =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -4112,7 +4498,7 @@ type Props_h5 =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -4125,7 +4511,7 @@ type Props_h5 =
 
 h5
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_h5)
+   . Union attrs attrs_ Props_h5
   => Record attrs
   -> JSX
 h5 = element (unsafeCreateDOMComponent "h5")
@@ -4179,6 +4565,7 @@ type Props_h6 =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -4189,10 +4576,18 @@ type Props_h6 =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -4207,7 +4602,7 @@ type Props_h6 =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -4220,7 +4615,7 @@ type Props_h6 =
 
 h6
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_h6)
+   . Union attrs attrs_ Props_h6
   => Record attrs
   -> JSX
 h6 = element (unsafeCreateDOMComponent "h6")
@@ -4274,6 +4669,7 @@ type Props_head =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -4284,10 +4680,18 @@ type Props_head =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , profile :: String
   , property :: String
@@ -4303,7 +4707,7 @@ type Props_head =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -4316,7 +4720,7 @@ type Props_head =
 
 head
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_head)
+   . Union attrs attrs_ Props_head
   => Record attrs
   -> JSX
 head = element (unsafeCreateDOMComponent "head")
@@ -4370,6 +4774,7 @@ type Props_header =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -4380,10 +4785,18 @@ type Props_header =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -4398,7 +4811,7 @@ type Props_header =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -4411,7 +4824,7 @@ type Props_header =
 
 header
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_header)
+   . Union attrs attrs_ Props_header
   => Record attrs
   -> JSX
 header = element (unsafeCreateDOMComponent "header")
@@ -4465,6 +4878,7 @@ type Props_hgroup =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -4475,10 +4889,18 @@ type Props_hgroup =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -4493,7 +4915,7 @@ type Props_hgroup =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -4506,7 +4928,7 @@ type Props_hgroup =
 
 hgroup
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_hgroup)
+   . Union attrs attrs_ Props_hgroup
   => Record attrs
   -> JSX
 hgroup = element (unsafeCreateDOMComponent "hgroup")
@@ -4559,6 +4981,7 @@ type Props_hr =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -4569,10 +4992,18 @@ type Props_hr =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -4588,7 +5019,7 @@ type Props_hr =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -4602,7 +5033,7 @@ type Props_hr =
 
 hr
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_hr)
+   . Union attrs attrs_ Props_hr
   => Record attrs
   -> JSX
 hr = element (unsafeCreateDOMComponent "hr")
@@ -4653,6 +5084,7 @@ type Props_html =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -4664,10 +5096,18 @@ type Props_html =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -4682,7 +5122,7 @@ type Props_html =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -4695,7 +5135,7 @@ type Props_html =
 
 html
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_html)
+   . Union attrs attrs_ Props_html
   => Record attrs
   -> JSX
 html = element (unsafeCreateDOMComponent "html")
@@ -4749,6 +5189,7 @@ type Props_i =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -4759,10 +5200,18 @@ type Props_i =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -4777,7 +5226,7 @@ type Props_i =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -4790,7 +5239,7 @@ type Props_i =
 
 i
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_i)
+   . Union attrs attrs_ Props_i
   => Record attrs
   -> JSX
 i = element (unsafeCreateDOMComponent "i")
@@ -4845,6 +5294,7 @@ type Props_iframe =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -4856,10 +5306,18 @@ type Props_iframe =
   , name :: String
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -4877,7 +5335,7 @@ type Props_iframe =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -4891,7 +5349,7 @@ type Props_iframe =
 
 iframe
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_iframe)
+   . Union attrs attrs_ Props_iframe
   => Record attrs
   -> JSX
 iframe = element (unsafeCreateDOMComponent "iframe")
@@ -4946,6 +5404,7 @@ type Props_img =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -4957,10 +5416,18 @@ type Props_img =
   , name :: String
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -4977,7 +5444,7 @@ type Props_img =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -4991,7 +5458,7 @@ type Props_img =
 
 img
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_img)
+   . Union attrs attrs_ Props_img
   => Record attrs
   -> JSX
 img = element (unsafeCreateDOMComponent "img")
@@ -5052,6 +5519,7 @@ type Props_input =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -5068,10 +5536,18 @@ type Props_input =
   , noValidate :: Boolean
   , onBlur :: EventHandler
   , onChange :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , pattern :: String
   , placeholder :: String
   , prefix :: String
@@ -5093,7 +5569,7 @@ type Props_input =
   , srcLang :: String
   , srcSet :: String
   , step :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -5110,7 +5586,7 @@ type Props_input =
 
 input
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_input)
+   . Union attrs attrs_ Props_input
   => Record attrs
   -> JSX
 input = element (unsafeCreateDOMComponent "input")
@@ -5162,6 +5638,7 @@ type Props_ins =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -5172,10 +5649,18 @@ type Props_ins =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -5190,7 +5675,7 @@ type Props_ins =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -5203,7 +5688,7 @@ type Props_ins =
 
 ins
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_ins)
+   . Union attrs attrs_ Props_ins
   => Record attrs
   -> JSX
 ins = element (unsafeCreateDOMComponent "ins")
@@ -5257,6 +5742,7 @@ type Props_kbd =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -5267,10 +5753,18 @@ type Props_kbd =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -5285,7 +5779,7 @@ type Props_kbd =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -5298,7 +5792,7 @@ type Props_kbd =
 
 kbd
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_kbd)
+   . Union attrs attrs_ Props_kbd
   => Record attrs
   -> JSX
 kbd = element (unsafeCreateDOMComponent "kbd")
@@ -5355,6 +5849,7 @@ type Props_keygen =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -5366,10 +5861,18 @@ type Props_keygen =
   , name :: String
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -5384,7 +5887,7 @@ type Props_keygen =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -5397,7 +5900,7 @@ type Props_keygen =
 
 keygen
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_keygen)
+   . Union attrs attrs_ Props_keygen
   => Record attrs
   -> JSX
 keygen = element (unsafeCreateDOMComponent "keygen")
@@ -5452,6 +5955,7 @@ type Props_label =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -5462,10 +5966,18 @@ type Props_label =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -5480,7 +5992,7 @@ type Props_label =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -5493,7 +6005,7 @@ type Props_label =
 
 label
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_label)
+   . Union attrs attrs_ Props_label
   => Record attrs
   -> JSX
 label = element (unsafeCreateDOMComponent "label")
@@ -5547,6 +6059,7 @@ type Props_legend =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -5557,10 +6070,18 @@ type Props_legend =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -5575,7 +6096,7 @@ type Props_legend =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -5588,7 +6109,7 @@ type Props_legend =
 
 legend
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_legend)
+   . Union attrs attrs_ Props_legend
   => Record attrs
   -> JSX
 legend = element (unsafeCreateDOMComponent "legend")
@@ -5642,6 +6163,7 @@ type Props_li =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -5652,10 +6174,18 @@ type Props_li =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -5670,7 +6200,7 @@ type Props_li =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -5685,7 +6215,7 @@ type Props_li =
 
 li
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_li)
+   . Union attrs attrs_ Props_li
   => Record attrs
   -> JSX
 li = element (unsafeCreateDOMComponent "li")
@@ -5741,6 +6271,7 @@ type Props_link =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -5753,10 +6284,18 @@ type Props_link =
   , noValidate :: Boolean
   , nonce :: String
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -5774,7 +6313,7 @@ type Props_link =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , target :: String
@@ -5790,7 +6329,7 @@ type Props_link =
 
 link
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_link)
+   . Union attrs attrs_ Props_link
   => Record attrs
   -> JSX
 link = element (unsafeCreateDOMComponent "link")
@@ -5841,6 +6380,7 @@ type Props_main =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -5851,10 +6391,18 @@ type Props_main =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -5869,7 +6417,7 @@ type Props_main =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -5882,7 +6430,7 @@ type Props_main =
 
 main
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_main)
+   . Union attrs attrs_ Props_main
   => Record attrs
   -> JSX
 main = element (unsafeCreateDOMComponent "main")
@@ -5936,6 +6484,7 @@ type Props_map =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -5947,10 +6496,18 @@ type Props_map =
   , name :: String
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -5965,7 +6522,7 @@ type Props_map =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -5978,7 +6535,7 @@ type Props_map =
 
 map
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_map)
+   . Union attrs attrs_ Props_map
   => Record attrs
   -> JSX
 map = element (unsafeCreateDOMComponent "map")
@@ -6032,6 +6589,7 @@ type Props_mark =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -6042,10 +6600,18 @@ type Props_mark =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -6060,7 +6626,7 @@ type Props_mark =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -6073,7 +6639,7 @@ type Props_mark =
 
 mark
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_mark)
+   . Union attrs attrs_ Props_mark
   => Record attrs
   -> JSX
 mark = element (unsafeCreateDOMComponent "mark")
@@ -6127,6 +6693,7 @@ type Props_math =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -6137,10 +6704,18 @@ type Props_math =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -6155,7 +6730,7 @@ type Props_math =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -6168,7 +6743,7 @@ type Props_math =
 
 math
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_math)
+   . Union attrs attrs_ Props_math
   => Record attrs
   -> JSX
 math = element (unsafeCreateDOMComponent "math")
@@ -6222,6 +6797,7 @@ type Props_menu =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -6232,10 +6808,18 @@ type Props_menu =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -6250,7 +6834,7 @@ type Props_menu =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -6263,7 +6847,7 @@ type Props_menu =
 
 menu
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_menu)
+   . Union attrs attrs_ Props_menu
   => Record attrs
   -> JSX
 menu = element (unsafeCreateDOMComponent "menu")
@@ -6317,6 +6901,7 @@ type Props_menuitem =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -6327,10 +6912,18 @@ type Props_menuitem =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -6345,7 +6938,7 @@ type Props_menuitem =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -6358,7 +6951,7 @@ type Props_menuitem =
 
 menuitem
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_menuitem)
+   . Union attrs attrs_ Props_menuitem
   => Record attrs
   -> JSX
 menuitem = element (unsafeCreateDOMComponent "menuitem")
@@ -6412,6 +7005,7 @@ type Props_meta =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -6423,10 +7017,18 @@ type Props_meta =
   , name :: String
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -6441,7 +7043,7 @@ type Props_meta =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -6454,7 +7056,7 @@ type Props_meta =
 
 meta
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_meta)
+   . Union attrs attrs_ Props_meta
   => Record attrs
   -> JSX
 meta = element (unsafeCreateDOMComponent "meta")
@@ -6506,6 +7108,7 @@ type Props_meter =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -6519,10 +7122,18 @@ type Props_meter =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , optimum :: String
   , prefix :: String
   , property :: String
@@ -6538,7 +7149,7 @@ type Props_meter =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -6552,7 +7163,7 @@ type Props_meter =
 
 meter
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_meter)
+   . Union attrs attrs_ Props_meter
   => Record attrs
   -> JSX
 meter = element (unsafeCreateDOMComponent "meter")
@@ -6606,6 +7217,7 @@ type Props_nav =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -6616,10 +7228,18 @@ type Props_nav =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -6634,7 +7254,7 @@ type Props_nav =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -6647,7 +7267,7 @@ type Props_nav =
 
 nav
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_nav)
+   . Union attrs attrs_ Props_nav
   => Record attrs
   -> JSX
 nav = element (unsafeCreateDOMComponent "nav")
@@ -6701,6 +7321,7 @@ type Props_noscript =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -6711,10 +7332,18 @@ type Props_noscript =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -6729,7 +7358,7 @@ type Props_noscript =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -6742,7 +7371,7 @@ type Props_noscript =
 
 noscript
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_noscript)
+   . Union attrs attrs_ Props_noscript
   => Record attrs
   -> JSX
 noscript = element (unsafeCreateDOMComponent "noscript")
@@ -6799,6 +7428,7 @@ type Props_object =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -6810,10 +7440,18 @@ type Props_object =
   , name :: String
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -6828,7 +7466,7 @@ type Props_object =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -6843,7 +7481,7 @@ type Props_object =
 
 object
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_object)
+   . Union attrs attrs_ Props_object
   => Record attrs
   -> JSX
 object = element (unsafeCreateDOMComponent "object")
@@ -6897,6 +7535,7 @@ type Props_ol =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -6907,10 +7546,18 @@ type Props_ol =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -6927,7 +7574,7 @@ type Props_ol =
   , srcLang :: String
   , srcSet :: String
   , start :: Int
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -6941,7 +7588,7 @@ type Props_ol =
 
 ol
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_ol)
+   . Union attrs attrs_ Props_ol
   => Record attrs
   -> JSX
 ol = element (unsafeCreateDOMComponent "ol")
@@ -6996,6 +7643,7 @@ type Props_optgroup =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , label :: String
@@ -7007,10 +7655,18 @@ type Props_optgroup =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -7025,7 +7681,7 @@ type Props_optgroup =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -7038,7 +7694,7 @@ type Props_optgroup =
 
 optgroup
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_optgroup)
+   . Union attrs attrs_ Props_optgroup
   => Record attrs
   -> JSX
 optgroup = element (unsafeCreateDOMComponent "optgroup")
@@ -7093,6 +7749,7 @@ type Props_option =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , label :: String
@@ -7104,10 +7761,18 @@ type Props_option =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -7123,7 +7788,7 @@ type Props_option =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -7137,7 +7802,7 @@ type Props_option =
 
 option
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_option)
+   . Union attrs attrs_ Props_option
   => Record attrs
   -> JSX
 option = element (unsafeCreateDOMComponent "option")
@@ -7192,6 +7857,7 @@ type Props_output =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -7203,10 +7869,18 @@ type Props_output =
   , name :: String
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -7221,7 +7895,7 @@ type Props_output =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -7234,7 +7908,7 @@ type Props_output =
 
 output
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_output)
+   . Union attrs attrs_ Props_output
   => Record attrs
   -> JSX
 output = element (unsafeCreateDOMComponent "output")
@@ -7288,6 +7962,7 @@ type Props_p =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -7298,10 +7973,18 @@ type Props_p =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -7316,7 +7999,7 @@ type Props_p =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -7329,7 +8012,7 @@ type Props_p =
 
 p
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_p)
+   . Union attrs attrs_ Props_p
   => Record attrs
   -> JSX
 p = element (unsafeCreateDOMComponent "p")
@@ -7382,6 +8065,7 @@ type Props_param =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -7393,10 +8077,18 @@ type Props_param =
   , name :: String
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -7411,7 +8103,7 @@ type Props_param =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -7426,7 +8118,7 @@ type Props_param =
 
 param
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_param)
+   . Union attrs attrs_ Props_param
   => Record attrs
   -> JSX
 param = element (unsafeCreateDOMComponent "param")
@@ -7477,6 +8169,7 @@ type Props_picture =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -7487,10 +8180,18 @@ type Props_picture =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -7505,7 +8206,7 @@ type Props_picture =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -7518,7 +8219,7 @@ type Props_picture =
 
 picture
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_picture)
+   . Union attrs attrs_ Props_picture
   => Record attrs
   -> JSX
 picture = element (unsafeCreateDOMComponent "picture")
@@ -7572,6 +8273,7 @@ type Props_pre =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -7582,10 +8284,18 @@ type Props_pre =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -7600,7 +8310,7 @@ type Props_pre =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -7614,7 +8324,7 @@ type Props_pre =
 
 pre
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_pre)
+   . Union attrs attrs_ Props_pre
   => Record attrs
   -> JSX
 pre = element (unsafeCreateDOMComponent "pre")
@@ -7668,6 +8378,7 @@ type Props_progress =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -7679,10 +8390,18 @@ type Props_progress =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -7697,7 +8416,7 @@ type Props_progress =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -7711,7 +8430,7 @@ type Props_progress =
 
 progress
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_progress)
+   . Union attrs attrs_ Props_progress
   => Record attrs
   -> JSX
 progress = element (unsafeCreateDOMComponent "progress")
@@ -7766,6 +8485,7 @@ type Props_q =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -7776,10 +8496,18 @@ type Props_q =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -7794,7 +8522,7 @@ type Props_q =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -7807,7 +8535,7 @@ type Props_q =
 
 q
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_q)
+   . Union attrs attrs_ Props_q
   => Record attrs
   -> JSX
 q = element (unsafeCreateDOMComponent "q")
@@ -7861,6 +8589,7 @@ type Props_rb =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -7871,10 +8600,18 @@ type Props_rb =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -7889,7 +8626,7 @@ type Props_rb =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -7902,7 +8639,7 @@ type Props_rb =
 
 rb
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_rb)
+   . Union attrs attrs_ Props_rb
   => Record attrs
   -> JSX
 rb = element (unsafeCreateDOMComponent "rb")
@@ -7956,6 +8693,7 @@ type Props_rp =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -7966,10 +8704,18 @@ type Props_rp =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -7984,7 +8730,7 @@ type Props_rp =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -7997,7 +8743,7 @@ type Props_rp =
 
 rp
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_rp)
+   . Union attrs attrs_ Props_rp
   => Record attrs
   -> JSX
 rp = element (unsafeCreateDOMComponent "rp")
@@ -8051,6 +8797,7 @@ type Props_rt =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -8061,10 +8808,18 @@ type Props_rt =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -8079,7 +8834,7 @@ type Props_rt =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -8092,7 +8847,7 @@ type Props_rt =
 
 rt
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_rt)
+   . Union attrs attrs_ Props_rt
   => Record attrs
   -> JSX
 rt = element (unsafeCreateDOMComponent "rt")
@@ -8146,6 +8901,7 @@ type Props_rtc =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -8156,10 +8912,18 @@ type Props_rtc =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -8174,7 +8938,7 @@ type Props_rtc =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -8187,7 +8951,7 @@ type Props_rtc =
 
 rtc
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_rtc)
+   . Union attrs attrs_ Props_rtc
   => Record attrs
   -> JSX
 rtc = element (unsafeCreateDOMComponent "rtc")
@@ -8241,6 +9005,7 @@ type Props_ruby =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -8251,10 +9016,18 @@ type Props_ruby =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -8269,7 +9042,7 @@ type Props_ruby =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -8282,7 +9055,7 @@ type Props_ruby =
 
 ruby
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_ruby)
+   . Union attrs attrs_ Props_ruby
   => Record attrs
   -> JSX
 ruby = element (unsafeCreateDOMComponent "ruby")
@@ -8336,6 +9109,7 @@ type Props_s =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -8346,10 +9120,18 @@ type Props_s =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -8364,7 +9146,7 @@ type Props_s =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -8377,7 +9159,7 @@ type Props_s =
 
 s
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_s)
+   . Union attrs attrs_ Props_s
   => Record attrs
   -> JSX
 s = element (unsafeCreateDOMComponent "s")
@@ -8431,6 +9213,7 @@ type Props_samp =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -8441,10 +9224,18 @@ type Props_samp =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -8459,7 +9250,7 @@ type Props_samp =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -8472,7 +9263,7 @@ type Props_samp =
 
 samp
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_samp)
+   . Union attrs attrs_ Props_samp
   => Record attrs
   -> JSX
 samp = element (unsafeCreateDOMComponent "samp")
@@ -8529,6 +9320,7 @@ type Props_script =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -8540,10 +9332,18 @@ type Props_script =
   , noValidate :: Boolean
   , nonce :: String
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -8559,7 +9359,7 @@ type Props_script =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -8573,7 +9373,7 @@ type Props_script =
 
 script
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_script)
+   . Union attrs attrs_ Props_script
   => Record attrs
   -> JSX
 script = element (unsafeCreateDOMComponent "script")
@@ -8627,6 +9427,7 @@ type Props_section =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -8637,10 +9438,18 @@ type Props_section =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -8655,7 +9464,7 @@ type Props_section =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -8668,7 +9477,7 @@ type Props_section =
 
 section
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_section)
+   . Union attrs attrs_ Props_section
   => Record attrs
   -> JSX
 section = element (unsafeCreateDOMComponent "section")
@@ -8725,6 +9534,7 @@ type Props_select =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -8738,10 +9548,18 @@ type Props_select =
   , noValidate :: Boolean
   , onBlur :: EventHandler
   , onChange :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -8758,7 +9576,7 @@ type Props_select =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -8772,7 +9590,7 @@ type Props_select =
 
 select
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_select)
+   . Union attrs attrs_ Props_select
   => Record attrs
   -> JSX
 select = element (unsafeCreateDOMComponent "select")
@@ -8826,6 +9644,7 @@ type Props_slot =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -8837,10 +9656,18 @@ type Props_slot =
   , name :: String
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -8855,7 +9682,7 @@ type Props_slot =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -8868,7 +9695,7 @@ type Props_slot =
 
 slot
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_slot)
+   . Union attrs attrs_ Props_slot
   => Record attrs
   -> JSX
 slot = element (unsafeCreateDOMComponent "slot")
@@ -8922,6 +9749,7 @@ type Props_small =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -8932,10 +9760,18 @@ type Props_small =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -8950,7 +9786,7 @@ type Props_small =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -8963,7 +9799,7 @@ type Props_small =
 
 small
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_small)
+   . Union attrs attrs_ Props_small
   => Record attrs
   -> JSX
 small = element (unsafeCreateDOMComponent "small")
@@ -9016,6 +9852,7 @@ type Props_source =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -9027,10 +9864,18 @@ type Props_source =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -9047,7 +9892,7 @@ type Props_source =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -9061,7 +9906,7 @@ type Props_source =
 
 source
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_source)
+   . Union attrs attrs_ Props_source
   => Record attrs
   -> JSX
 source = element (unsafeCreateDOMComponent "source")
@@ -9112,6 +9957,7 @@ type Props_span =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -9122,10 +9968,18 @@ type Props_span =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -9140,7 +9994,7 @@ type Props_span =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -9153,7 +10007,7 @@ type Props_span =
 
 span
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_span)
+   . Union attrs attrs_ Props_span
   => Record attrs
   -> JSX
 span = element (unsafeCreateDOMComponent "span")
@@ -9207,6 +10061,7 @@ type Props_strong =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -9217,10 +10072,18 @@ type Props_strong =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -9235,7 +10098,7 @@ type Props_strong =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -9248,7 +10111,7 @@ type Props_strong =
 
 strong
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_strong)
+   . Union attrs attrs_ Props_strong
   => Record attrs
   -> JSX
 strong = element (unsafeCreateDOMComponent "strong")
@@ -9302,6 +10165,7 @@ type Props_style =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -9314,10 +10178,18 @@ type Props_style =
   , noValidate :: Boolean
   , nonce :: String
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -9332,7 +10204,7 @@ type Props_style =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -9347,7 +10219,7 @@ type Props_style =
 
 style
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_style)
+   . Union attrs attrs_ Props_style
   => Record attrs
   -> JSX
 style = element (unsafeCreateDOMComponent "style")
@@ -9401,6 +10273,7 @@ type Props_sub =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -9411,10 +10284,18 @@ type Props_sub =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -9429,7 +10310,7 @@ type Props_sub =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -9442,7 +10323,7 @@ type Props_sub =
 
 sub
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_sub)
+   . Union attrs attrs_ Props_sub
   => Record attrs
   -> JSX
 sub = element (unsafeCreateDOMComponent "sub")
@@ -9496,6 +10377,7 @@ type Props_summary =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -9506,10 +10388,18 @@ type Props_summary =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -9524,7 +10414,7 @@ type Props_summary =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -9537,7 +10427,7 @@ type Props_summary =
 
 summary
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_summary)
+   . Union attrs attrs_ Props_summary
   => Record attrs
   -> JSX
 summary = element (unsafeCreateDOMComponent "summary")
@@ -9591,6 +10481,7 @@ type Props_sup =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -9601,10 +10492,18 @@ type Props_sup =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -9619,7 +10518,7 @@ type Props_sup =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -9632,7 +10531,7 @@ type Props_sup =
 
 sup
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_sup)
+   . Union attrs attrs_ Props_sup
   => Record attrs
   -> JSX
 sup = element (unsafeCreateDOMComponent "sup")
@@ -9784,6 +10683,7 @@ type Props_svg =
   , kernelMatrix :: String
   , kernelUnitLength :: String
   , kerning :: String
+  , key :: String
   , keyParams :: String
   , keyPoints :: String
   , keySplines :: String
@@ -9815,10 +10715,18 @@ type Props_svg =
   , numOctaves :: String
   , offset :: String
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , opacity :: String
   , operator :: String
   , order :: String
@@ -9897,7 +10805,7 @@ type Props_svg =
   , strokeMiterlimit :: String
   , strokeOpacity :: String
   , strokeWidth :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , surfaceScale :: String
   , systemLanguage :: String
@@ -9969,7 +10877,7 @@ type Props_svg =
 
 svg
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_svg)
+   . Union attrs attrs_ Props_svg
   => Record attrs
   -> JSX
 svg = element (unsafeCreateDOMComponent "svg")
@@ -10023,6 +10931,7 @@ type Props_table =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -10033,10 +10942,18 @@ type Props_table =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -10051,7 +10968,7 @@ type Props_table =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , summary :: String
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
@@ -10066,7 +10983,7 @@ type Props_table =
 
 table
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_table)
+   . Union attrs attrs_ Props_table
   => Record attrs
   -> JSX
 table = element (unsafeCreateDOMComponent "table")
@@ -10120,6 +11037,7 @@ type Props_tbody =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -10130,10 +11048,18 @@ type Props_tbody =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -10148,7 +11074,7 @@ type Props_tbody =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -10161,7 +11087,7 @@ type Props_tbody =
 
 tbody
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_tbody)
+   . Union attrs attrs_ Props_tbody
   => Record attrs
   -> JSX
 tbody = element (unsafeCreateDOMComponent "tbody")
@@ -10217,6 +11143,7 @@ type Props_td =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -10227,10 +11154,18 @@ type Props_td =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -10246,7 +11181,7 @@ type Props_td =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -10260,7 +11195,7 @@ type Props_td =
 
 td
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_td)
+   . Union attrs attrs_ Props_td
   => Record attrs
   -> JSX
 td = element (unsafeCreateDOMComponent "td")
@@ -10314,6 +11249,7 @@ type Props_template =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -10324,10 +11260,18 @@ type Props_template =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -10342,7 +11286,7 @@ type Props_template =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -10355,7 +11299,7 @@ type Props_template =
 
 template
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_template)
+   . Union attrs attrs_ Props_template
   => Record attrs
   -> JSX
 template = element (unsafeCreateDOMComponent "template")
@@ -10415,6 +11359,7 @@ type Props_textarea =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -10427,10 +11372,18 @@ type Props_textarea =
   , noValidate :: Boolean
   , onBlur :: EventHandler
   , onChange :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , placeholder :: String
   , prefix :: String
   , property :: String
@@ -10448,7 +11401,7 @@ type Props_textarea =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -10463,7 +11416,7 @@ type Props_textarea =
 
 textarea
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_textarea)
+   . Union attrs attrs_ Props_textarea
   => Record attrs
   -> JSX
 textarea = element (unsafeCreateDOMComponent "textarea")
@@ -10517,6 +11470,7 @@ type Props_tfoot =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -10527,10 +11481,18 @@ type Props_tfoot =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -10545,7 +11507,7 @@ type Props_tfoot =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -10558,7 +11520,7 @@ type Props_tfoot =
 
 tfoot
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_tfoot)
+   . Union attrs attrs_ Props_tfoot
   => Record attrs
   -> JSX
 tfoot = element (unsafeCreateDOMComponent "tfoot")
@@ -10614,6 +11576,7 @@ type Props_th =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -10624,10 +11587,18 @@ type Props_th =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -10643,7 +11614,7 @@ type Props_th =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -10657,7 +11628,7 @@ type Props_th =
 
 th
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_th)
+   . Union attrs attrs_ Props_th
   => Record attrs
   -> JSX
 th = element (unsafeCreateDOMComponent "th")
@@ -10711,6 +11682,7 @@ type Props_thead =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -10721,10 +11693,18 @@ type Props_thead =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -10739,7 +11719,7 @@ type Props_thead =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -10752,7 +11732,7 @@ type Props_thead =
 
 thead
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_thead)
+   . Union attrs attrs_ Props_thead
   => Record attrs
   -> JSX
 thead = element (unsafeCreateDOMComponent "thead")
@@ -10806,6 +11786,7 @@ type Props_time =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -10816,10 +11797,18 @@ type Props_time =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -10834,7 +11823,7 @@ type Props_time =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -10847,7 +11836,7 @@ type Props_time =
 
 time
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_time)
+   . Union attrs attrs_ Props_time
   => Record attrs
   -> JSX
 time = element (unsafeCreateDOMComponent "time")
@@ -10901,6 +11890,7 @@ type Props_title =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -10911,10 +11901,18 @@ type Props_title =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -10929,7 +11927,7 @@ type Props_title =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -10942,7 +11940,7 @@ type Props_title =
 
 title
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_title)
+   . Union attrs attrs_ Props_title
   => Record attrs
   -> JSX
 title = element (unsafeCreateDOMComponent "title")
@@ -10996,6 +11994,7 @@ type Props_tr =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -11006,10 +12005,18 @@ type Props_tr =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -11024,7 +12031,7 @@ type Props_tr =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -11037,7 +12044,7 @@ type Props_tr =
 
 tr
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_tr)
+   . Union attrs attrs_ Props_tr
   => Record attrs
   -> JSX
 tr = element (unsafeCreateDOMComponent "tr")
@@ -11091,6 +12098,7 @@ type Props_track =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , kind :: String
@@ -11103,10 +12111,18 @@ type Props_track =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -11122,7 +12138,7 @@ type Props_track =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -11135,7 +12151,7 @@ type Props_track =
 
 track
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_track)
+   . Union attrs attrs_ Props_track
   => Record attrs
   -> JSX
 track = element (unsafeCreateDOMComponent "track")
@@ -11186,6 +12202,7 @@ type Props_u =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -11196,10 +12213,18 @@ type Props_u =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -11214,7 +12239,7 @@ type Props_u =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -11227,7 +12252,7 @@ type Props_u =
 
 u
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_u)
+   . Union attrs attrs_ Props_u
   => Record attrs
   -> JSX
 u = element (unsafeCreateDOMComponent "u")
@@ -11281,6 +12306,7 @@ type Props_ul =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -11291,10 +12317,18 @@ type Props_ul =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -11309,7 +12343,7 @@ type Props_ul =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -11323,7 +12357,7 @@ type Props_ul =
 
 ul
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_ul)
+   . Union attrs attrs_ Props_ul
   => Record attrs
   -> JSX
 ul = element (unsafeCreateDOMComponent "ul")
@@ -11377,6 +12411,7 @@ type Props_var =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -11387,10 +12422,18 @@ type Props_var =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -11405,7 +12448,7 @@ type Props_var =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -11418,7 +12461,7 @@ type Props_var =
 
 var
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_var)
+   . Union attrs attrs_ Props_var
   => Record attrs
   -> JSX
 var = element (unsafeCreateDOMComponent "var")
@@ -11474,6 +12517,7 @@ type Props_video =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -11486,10 +12530,18 @@ type Props_video =
   , muted :: Boolean
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , playsInline :: Boolean
   , poster :: String
   , prefix :: String
@@ -11508,7 +12560,7 @@ type Props_video =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -11522,7 +12574,7 @@ type Props_video =
 
 video
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_video)
+   . Union attrs attrs_ Props_video
   => Record attrs
   -> JSX
 video = element (unsafeCreateDOMComponent "video")
@@ -11575,6 +12627,7 @@ type Props_wbr =
   , itemRef :: String
   , itemScope :: Boolean
   , itemType :: String
+  , key :: String
   , keyParams :: String
   , keyType :: String
   , lang :: String
@@ -11585,10 +12638,18 @@ type Props_wbr =
   , minLength :: Int
   , noValidate :: Boolean
   , onBlur :: EventHandler
+  , onClick :: EventHandler
   , onFocus :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onMouseDown :: EventHandler
+  , onMouseEnter :: EventHandler
+  , onMouseLeave :: EventHandler
+  , onMouseMove :: EventHandler
+  , onMouseOut :: EventHandler
+  , onMouseOver :: EventHandler
+  , onMouseUp :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -11603,7 +12664,7 @@ type Props_wbr =
   , srcDoc :: JSX
   , srcLang :: String
   , srcSet :: String
-  , style :: String
+  , style :: CSS
   , suppressContentEditableWarning :: Boolean
   , tabIndex :: Int
   , title :: String
@@ -11616,7 +12677,7 @@ type Props_wbr =
 
 wbr
   :: forall attrs attrs_
-   . Union attrs attrs_ (SharedProps Props_wbr)
+   . Union attrs attrs_ Props_wbr
   => Record attrs
   -> JSX
 wbr = element (unsafeCreateDOMComponent "wbr")
