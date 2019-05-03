@@ -12,7 +12,7 @@ type Component = ReactComponent
 #### `component`
 
 ``` purescript
-component :: forall props state. { displayName :: String, initialState :: {  | state }, receiveProps :: Self {  | props } {  | state } -> Effect Unit, render :: Self {  | props } {  | state } -> JSX } -> ReactComponent {  | props }
+component :: forall props state. { displayName :: String, initialState :: Record state, receiveProps :: Self (Record props) (Record state) -> Effect Unit, render :: Self (Record props) (Record state) -> JSX } -> ReactComponent (Record props)
 ```
 
 Supports a common subset of the v2 API to ease the upgrade process
@@ -20,7 +20,7 @@ Supports a common subset of the v2 API to ease the upgrade process
 #### `stateless`
 
 ``` purescript
-stateless :: forall props. { displayName :: String, render :: {  | props } -> JSX } -> ReactComponent {  | props }
+stateless :: forall props. { displayName :: String, render :: Record props -> JSX } -> ReactComponent (Record props)
 ```
 
 Supports a common subset of the v2 API to ease the upgrade process
@@ -31,7 +31,7 @@ Supports a common subset of the v2 API to ease the upgrade process
 #### `Self`
 
 ``` purescript
-type Self props state = { props :: props, state :: state, setState :: (state -> state) -> Effect Unit, setStateThen :: (state -> state) -> Effect Unit -> Effect Unit, instance_ :: ReactComponentInstance props state }
+type Self props state = { instance_ :: ReactComponentInstance props state, props :: props, setState :: (state -> state) -> Effect Unit, setStateThen :: (state -> state) -> Effect Unit -> Effect Unit, state :: state }
 ```
 
 `Self` represents the component instance at a particular point in time.
@@ -111,7 +111,7 @@ __*See also:* `JSX`, Monoid `guard`__
 #### `elementKeyed`
 
 ``` purescript
-elementKeyed :: forall props. ReactComponent {  | props } -> { key :: String | props } -> JSX
+elementKeyed :: forall props. ReactComponent (Record props) -> { key :: String | props } -> JSX
 ```
 
 Create a `JSX` node from a `ReactComponent`, by providing the props and a key.
@@ -124,7 +124,7 @@ __*See also:* `ReactComponent`, `element`, React's documentation regarding the s
 #### `element`
 
 ``` purescript
-element :: forall props. ReactComponent {  | props } -> {  | props } -> JSX
+element :: forall props. ReactComponent (Record props) -> Record props -> JSX
 ```
 
 Create a `JSX` node from a `ReactComponent`, by providing the props.
