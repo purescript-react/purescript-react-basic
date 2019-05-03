@@ -4,8 +4,10 @@
 
 module React.Basic.DOM.Generated where
 
+import Data.Nullable (Nullable)
 import Prim.Row (class Union)
-import React.Basic (JSX, element)
+import Web.DOM (Node)
+import React.Basic (JSX, Ref, element)
 import React.Basic.DOM.Internal (CSS, unsafeCreateDOMComponent)
 import React.Basic.Events (EventHandler)
 
@@ -86,6 +88,7 @@ type Props_a =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , rel :: String
   , resource :: String
   , role :: String
@@ -194,6 +197,7 @@ type Props_abbr =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -299,6 +303,7 @@ type Props_address =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -406,6 +411,7 @@ type Props_area =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , rel :: String
   , resource :: String
   , role :: String
@@ -511,6 +517,7 @@ type Props_article =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -615,6 +622,7 @@ type Props_aside =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -723,6 +731,7 @@ type Props_audio =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -828,6 +837,7 @@ type Props_b =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -932,6 +942,7 @@ type Props_base =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -1034,6 +1045,7 @@ type Props_bdi =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -1139,6 +1151,7 @@ type Props_bdo =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -1244,6 +1257,7 @@ type Props_blockquote =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -1348,6 +1362,7 @@ type Props_body =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -1451,6 +1466,7 @@ type Props_br =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -1555,6 +1571,7 @@ type Props_button =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -1662,6 +1679,7 @@ type Props_canvas =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -1767,6 +1785,7 @@ type Props_caption =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -1871,6 +1890,7 @@ type Props_cite =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -1975,6 +1995,7 @@ type Props_code =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -2078,6 +2099,7 @@ type Props_col =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -2181,6 +2203,7 @@ type Props_colgroup =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -2287,6 +2310,7 @@ type Props_data =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -2392,6 +2416,7 @@ type Props_datalist =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -2496,6 +2521,7 @@ type Props_dd =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -2601,6 +2627,7 @@ type Props_del =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -2706,6 +2733,7 @@ type Props_details =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -2810,6 +2838,7 @@ type Props_dfn =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -2916,6 +2945,7 @@ type Props_dialog =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -3020,6 +3050,7 @@ type Props_div =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -3124,6 +3155,7 @@ type Props_dl =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -3228,6 +3260,7 @@ type Props_dt =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -3332,6 +3365,7 @@ type Props_em =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -3436,6 +3470,7 @@ type Props_embed =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -3543,6 +3578,7 @@ type Props_fieldset =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -3647,6 +3683,7 @@ type Props_figcaption =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -3751,6 +3788,7 @@ type Props_figure =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -3855,6 +3893,7 @@ type Props_footer =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -3967,6 +4006,7 @@ type Props_form =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -4072,6 +4112,7 @@ type Props_h1 =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -4176,6 +4217,7 @@ type Props_h2 =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -4280,6 +4322,7 @@ type Props_h3 =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -4384,6 +4427,7 @@ type Props_h4 =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -4488,6 +4532,7 @@ type Props_h5 =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -4592,6 +4637,7 @@ type Props_h6 =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -4697,6 +4743,7 @@ type Props_head =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -4801,6 +4848,7 @@ type Props_header =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -4905,6 +4953,7 @@ type Props_hgroup =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -5008,6 +5057,7 @@ type Props_hr =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -5112,6 +5162,7 @@ type Props_html =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -5216,6 +5267,7 @@ type Props_i =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -5322,6 +5374,7 @@ type Props_iframe =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -5432,6 +5485,7 @@ type Props_img =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -5554,6 +5608,7 @@ type Props_input =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , required :: Boolean
   , resource :: String
   , results :: String
@@ -5665,6 +5720,7 @@ type Props_ins =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -5769,6 +5825,7 @@ type Props_kbd =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -5877,6 +5934,7 @@ type Props_keygen =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -5982,6 +6040,7 @@ type Props_label =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -6086,6 +6145,7 @@ type Props_legend =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -6190,6 +6250,7 @@ type Props_li =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -6300,6 +6361,7 @@ type Props_link =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , rel :: String
   , resource :: String
   , role :: String
@@ -6407,6 +6469,7 @@ type Props_main =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -6512,6 +6575,7 @@ type Props_map =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -6616,6 +6680,7 @@ type Props_mark =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -6720,6 +6785,7 @@ type Props_math =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -6824,6 +6890,7 @@ type Props_menu =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -6928,6 +6995,7 @@ type Props_menuitem =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -7033,6 +7101,7 @@ type Props_meta =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -7139,6 +7208,7 @@ type Props_meter =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -7244,6 +7314,7 @@ type Props_nav =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -7348,6 +7419,7 @@ type Props_noscript =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -7456,6 +7528,7 @@ type Props_object =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -7562,6 +7635,7 @@ type Props_ol =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , reversed :: Boolean
   , role :: String
@@ -7671,6 +7745,7 @@ type Props_optgroup =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -7777,6 +7852,7 @@ type Props_option =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -7885,6 +7961,7 @@ type Props_output =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -7989,6 +8066,7 @@ type Props_p =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -8093,6 +8171,7 @@ type Props_param =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -8196,6 +8275,7 @@ type Props_picture =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -8300,6 +8380,7 @@ type Props_pre =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -8406,6 +8487,7 @@ type Props_progress =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -8512,6 +8594,7 @@ type Props_q =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -8616,6 +8699,7 @@ type Props_rb =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -8720,6 +8804,7 @@ type Props_rp =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -8824,6 +8909,7 @@ type Props_rt =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -8928,6 +9014,7 @@ type Props_rtc =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -9032,6 +9119,7 @@ type Props_ruby =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -9136,6 +9224,7 @@ type Props_s =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -9240,6 +9329,7 @@ type Props_samp =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -9348,6 +9438,7 @@ type Props_script =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -9454,6 +9545,7 @@ type Props_section =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -9564,6 +9656,7 @@ type Props_select =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , required :: Boolean
   , resource :: String
   , role :: String
@@ -9672,6 +9765,7 @@ type Props_slot =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -9776,6 +9870,7 @@ type Props_small =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -9880,6 +9975,7 @@ type Props_source =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -9984,6 +10080,7 @@ type Props_span =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -10088,6 +10185,7 @@ type Props_strong =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -10194,6 +10292,7 @@ type Props_style =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -10300,6 +10399,7 @@ type Props_sub =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -10404,6 +10504,7 @@ type Props_summary =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -10508,6 +10609,7 @@ type Props_sup =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -10756,6 +10858,7 @@ type Props_svg =
   , radioGroup :: String
   , radius :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , refX :: String
   , refY :: String
   , renderingIntent :: String
@@ -10958,6 +11061,7 @@ type Props_table =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -11064,6 +11168,7 @@ type Props_tbody =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -11170,6 +11275,7 @@ type Props_td =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -11276,6 +11382,7 @@ type Props_template =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -11389,6 +11496,7 @@ type Props_textarea =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , required :: Boolean
   , resource :: String
   , role :: String
@@ -11497,6 +11605,7 @@ type Props_tfoot =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -11603,6 +11712,7 @@ type Props_th =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -11709,6 +11819,7 @@ type Props_thead =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -11813,6 +11924,7 @@ type Props_time =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -11917,6 +12029,7 @@ type Props_title =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -12021,6 +12134,7 @@ type Props_tr =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -12127,6 +12241,7 @@ type Props_track =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -12229,6 +12344,7 @@ type Props_u =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -12333,6 +12449,7 @@ type Props_ul =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -12438,6 +12555,7 @@ type Props_var =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -12549,6 +12667,7 @@ type Props_video =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int
@@ -12654,6 +12773,7 @@ type Props_wbr =
   , property :: String
   , radioGroup :: String
   , readOnly :: Boolean
+  , ref :: Ref (Nullable Node)
   , resource :: String
   , role :: String
   , rowSpan :: Int

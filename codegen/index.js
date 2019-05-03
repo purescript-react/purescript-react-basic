@@ -8,8 +8,10 @@ const header = `-- | ----------------------------------------
 
 module React.Basic.DOM.Generated where
 
+import Data.Nullable (Nullable)
 import Prim.Row (class Union)
-import React.Basic (JSX, element)
+import Web.DOM (Node)
+import React.Basic (JSX, Ref, element)
 import React.Basic.DOM.Internal (CSS, unsafeCreateDOMComponent)
 import React.Basic.Events (EventHandler)
 

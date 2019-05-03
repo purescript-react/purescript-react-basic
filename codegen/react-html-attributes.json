@@ -71,6 +71,7 @@
     "property",
     "radioGroup",
     "readOnly",
+    "ref",
     "resource",
     "role",
     "rowSpan",
