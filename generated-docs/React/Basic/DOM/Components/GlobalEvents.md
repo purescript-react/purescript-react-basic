@@ -40,25 +40,25 @@ defaultOptions :: EventHandlerOptions
 #### `globalEvent`
 
 ``` purescript
-globalEvent :: EventTarget -> { eventType :: EventType, options :: EventHandlerOptions, handler :: Event -> Effect Unit } -> JSX -> JSX
+globalEvent :: EventTarget -> { eventType :: EventType, handler :: Event -> Effect Unit, options :: EventHandlerOptions } -> JSX -> JSX
 ```
 
 #### `globalEvents`
 
 ``` purescript
-globalEvents :: EventTarget -> Array { eventType :: EventType, options :: EventHandlerOptions, handler :: Event -> Effect Unit } -> JSX -> JSX
+globalEvents :: EventTarget -> Array { eventType :: EventType, handler :: Event -> Effect Unit, options :: EventHandlerOptions } -> JSX -> JSX
 ```
 
 #### `windowEvent`
 
 ``` purescript
-windowEvent :: { eventType :: EventType, options :: EventHandlerOptions, handler :: Event -> Effect Unit } -> JSX -> JSX
+windowEvent :: { eventType :: EventType, handler :: Event -> Effect Unit, options :: EventHandlerOptions } -> JSX -> JSX
 ```
 
 #### `windowEvents`
 
 ``` purescript
-windowEvents :: Array { eventType :: EventType, options :: EventHandlerOptions, handler :: Event -> Effect Unit } -> JSX -> JSX
+windowEvents :: Array { eventType :: EventType, handler :: Event -> Effect Unit, options :: EventHandlerOptions } -> JSX -> JSX
 ```
 
 

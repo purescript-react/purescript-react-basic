@@ -3,7 +3,7 @@
 #### `ComponentSpec`
 
 ``` purescript
-type ComponentSpec props state = (initialState :: state, render :: Self props state -> JSX, didMount :: Self props state -> Effect Unit, shouldUpdate :: Self props state -> { nextProps :: props, nextState :: state } -> Boolean, didUpdate :: Self props state -> { prevProps :: props, prevState :: state } -> Effect Unit, willUnmount :: Self props state -> Effect Unit)
+type ComponentSpec props state = (didMount :: Self props state -> Effect Unit, didUpdate :: Self props state -> { prevProps :: props, prevState :: state } -> Effect Unit, initialState :: state, render :: Self props state -> JSX, shouldUpdate :: Self props state -> { nextProps :: props, nextState :: state } -> Boolean, willUnmount :: Self props state -> Effect Unit)
 ```
 
 `ComponentSpec` represents a React-Basic component implementation.
@@ -112,7 +112,7 @@ __*For the curious:* This is the "class" React will use to render and
 #### `Self`
 
 ``` purescript
-type Self props state = { props :: props, state :: state, setState :: (state -> state) -> Effect Unit, setStateThen :: (state -> state) -> Effect Unit -> Effect Unit, instance_ :: ReactComponentInstance props state }
+type Self props state = { instance_ :: ReactComponentInstance props state, props :: props, setState :: (state -> state) -> Effect Unit, setStateThen :: (state -> state) -> Effect Unit -> Effect Unit, state :: state }
 ```
 
 `Self` represents the component instance at a particular point in time.
@@ -299,7 +299,7 @@ __*See also:* `JSX`__
 #### `element`
 
 ``` purescript
-element :: forall props. ReactComponent {  | props } -> {  | props } -> JSX
+element :: forall props. ReactComponent (Record props) -> Record props -> JSX
 ```
 
 Create a `JSX` node from a `ReactComponent`, by providing the props.
@@ -312,7 +312,7 @@ __*See also:* `ReactComponent`, `elementKeyed`__
 #### `elementKeyed`
 
 ``` purescript
-elementKeyed :: forall props. ReactComponent {  | props } -> { key :: String | props } -> JSX
+elementKeyed :: forall props. ReactComponent (Record props) -> { key :: String | props } -> JSX
 ```
 
 Create a `JSX` node from a `ReactComponent`, by providing the props and a key.
@@ -372,7 +372,7 @@ caution.
 #### `toReactComponent`
 
 ``` purescript
-toReactComponent :: forall spec spec_ jsProps props state. Union spec spec_ (ComponentSpec props state) => ({  | jsProps } -> props) -> Component props -> { render :: Self props state -> JSX | spec } -> ReactComponent {  | jsProps }
+toReactComponent :: forall spec spec_ jsProps props state. Union spec spec_ (ComponentSpec props state) => (Record jsProps -> props) -> Component props -> { render :: Self props state -> JSX | spec } -> ReactComponent (Record jsProps)
 ```
 
 Convert a React-Basic `ComponentSpec` to a JavaScript-friendly React component.
@@ -384,5 +384,11 @@ __*Note:* Like `createComponent`, `toReactComponent` is side effecting in that
   and applying any type classes to the `props`.__
 
 __*See also:* `ReactComponent`__
+
+#### `Ref`
+
+``` purescript
+data Ref :: Type -> Type
+```
 
 

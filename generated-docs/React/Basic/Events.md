@@ -93,7 +93,7 @@ syntheticEvent :: EventFn SyntheticEvent SyntheticEvent
 #### `merge`
 
 ``` purescript
-merge :: forall a fns fns_list r. RowToList fns fns_list => Merge fns_list fns a r => {  | fns } -> EventFn a ({  | r })
+merge :: forall a fns fns_list r. RowToList fns fns_list => Merge fns_list fns a r => Record fns -> EventFn a (Record r)
 ```
 
 Merge multiple `EventFn` operations and collect their results.
@@ -110,7 +110,7 @@ input { onChange: handler (merge { targetValue, timeStamp })
 
 ``` purescript
 class Merge (rl :: RowList) fns a r | rl -> fns, rl a -> r where
-  mergeImpl :: RLProxy rl -> {  | fns } -> EventFn a ({  | r })
+  mergeImpl :: RLProxy rl -> Record fns -> EventFn a (Record r)
 ```
 
 ##### Instances

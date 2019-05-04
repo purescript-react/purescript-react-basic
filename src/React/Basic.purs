@@ -20,6 +20,7 @@ module React.Basic
   , ReactComponent
   , ReactComponentInstance
   , toReactComponent
+  , Ref
   ) where
 
 import Prelude
@@ -420,3 +421,5 @@ foreign import element_
 foreign import elementKeyed_
   :: forall props
    . Fn2 (ReactComponent { | props }) { key :: String | props } JSX
+
+foreign import data Ref :: Type -> Type
