@@ -19,7 +19,7 @@ import Effect.Uncurried (EffectFn1, mkEffectFn1)
 import Prim.Row as Row
 import Prim.RowList (kind RowList, class RowToList, Cons, Nil)
 import Record (delete, get, insert)
-import Type.Row (RLProxy(..))
+import Type.Data.RowList (RLProxy(..))
 
 -- | An event handler, which receives a `SyntheticEvent` and performs some
 -- | effects in return.
