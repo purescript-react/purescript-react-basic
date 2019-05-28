@@ -28,7 +28,7 @@ import Data.Function.Uncurried (Fn2, mkFn2, runFn2)
 import Data.Nullable (Nullable, notNull, null)
 import Effect (Effect)
 import Effect.Uncurried (EffectFn3, runEffectFn3)
-import Type.Row (class Union)
+import Prim.Row (class Union)
 
 -- | `ComponentSpec` represents a React-Basic component implementation.
 -- |
