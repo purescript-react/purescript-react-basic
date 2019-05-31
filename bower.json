@@ -13,10 +13,10 @@
     "purescript-exceptions": "^4.0.0",
     "purescript-functions": "^4.0.0",
     "purescript-nullable": "^4.1.0",
-    "purescript-record": "^1.0.0",
+    "purescript-record": ">= 1.0.0 <3.0.0",
     "purescript-unsafe-coerce": "^4.0.0",
-    "purescript-web-dom": "^1.0.0",
-    "purescript-web-html": "^1.0.0",
-    "purescript-web-events": "^1.0.0"
+    "purescript-web-dom": ">=1.0.0 <3.0.0",
+    "purescript-web-html": ">=1.0.0 <3.0.0",
+    "purescript-web-events": ">=1.0.0 <3.0.0"
   }
 }
