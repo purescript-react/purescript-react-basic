@@ -21,6 +21,12 @@ module React.Basic
   , ReactComponentInstance
   , toReactComponent
   , Ref
+  , ReactContext
+  , createContext
+  , contextConsumer
+  , contextProvider
+  , provider
+  , consumer
   ) where
 
 import Prelude
@@ -369,6 +375,53 @@ foreign import toReactComponent
   -> { render :: Self props state -> JSX | spec }
   -> ReactComponent { | jsProps }
 
+foreign import data ReactContext :: Type -> Type
+
+-- | Create a `ReactContext` given a default value. Use `provider` and `consumer`
+-- | to provide and consume context values. Alternatively, use `contextProvider`
+-- | and `contextConsumer` directly if a `ReactComponent` is required for interop.
+-- |
+-- | ```purs
+-- | render self =
+-- |   R.div_
+-- |   [ R.button
+-- |     { onClick: capture_ $ self.setState \s -> s { counter = s.counter + 1 }
+-- |     , children: [ R.text "Tick!" ]
+-- |     }
+-- |   , provider countContext self.state.counter
+-- |     [ consumer countContext \counter ->
+-- |        [ R.text $ "Ticks: " <> (show counter)
+-- |        ]
+-- |     ]
+-- |   ]
+-- | ```
+-- |
+-- | __*See also:* `provider`, `consumer`, React's documentation regarding Context__
+foreign import createContext :: forall a. a -> Effect (ReactContext a)
+
+foreign import contextProvider
+  :: forall a
+   . ReactContext a
+  -> ReactComponent { value :: a, children :: Array JSX }
+
+foreign import contextConsumer
+  :: forall a
+   . ReactContext a
+  -> ReactComponent { children :: a -> Array JSX }
+
+-- | Create a provider `JSX` given a context value and children.
+-- |
+-- | __*See also:* `createContext`, `consumer`__
+provider :: forall a. ReactContext a -> a -> Array JSX -> JSX
+provider context value children =
+  element (contextProvider context) { value, children }
+
+-- | Create a consumer `JSX` from a context value to children.
+-- |
+-- | __*See also:* `createContext`, `producer`__
+consumer :: forall a. ReactContext a -> (a -> Array JSX) -> JSX
+consumer context children =
+  element (contextConsumer context) { children }
 
 -- |
 -- | Internal utility or FFI functions

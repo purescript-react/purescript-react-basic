@@ -218,3 +218,17 @@ exports.toReactComponent = function(_unionDict) {
     };
   };
 };
+
+exports.createContext = function(defaultValue) {
+  return function () {
+    return React.createContext(defaultValue);
+  };
+};
+
+exports.contextProvider = function(context) {
+  return context.Provider;
+};
+
+exports.contextConsumer = function(context) {
+  return context.Consumer;
+};
