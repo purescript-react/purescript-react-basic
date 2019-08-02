@@ -220,9 +220,15 @@ exports.toReactComponent = function(_unionDict) {
 };
 
 exports.createContext = function(defaultValue) {
-  var context = React.createContext(defaultValue);
-  return {
-    consumer: context.Consumer,
-    provider: context.Provider
+  return function () {
+    return React.createContext(defaultValue);
   };
+};
+
+exports.contextProvider = function(context) {
+  return context.Provider;
+};
+
+exports.contextConsumer = function(context) {
+  return context.Consumer;
 };
