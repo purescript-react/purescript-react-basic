@@ -218,3 +218,11 @@ exports.toReactComponent = function(_unionDict) {
     };
   };
 };
+
+exports.createContext = function(defaultValue) {
+  var context = React.createContext(defaultValue);
+  return {
+    consumer: context.Consumer,
+    provider: context.Provider
+  };
+};
