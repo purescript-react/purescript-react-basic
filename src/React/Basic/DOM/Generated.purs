@@ -10826,6 +10826,18 @@ type Props_svg =
   , wordSpacing :: String
   , writingMode :: String
   , x :: String
+  , xlinkActuate :: String
+  , xlinkArcrole :: String
+  , xlinkHref :: String
+  , xlinkRole :: String
+  , xlinkShow :: String
+  , xlinkTitle :: String
+  , xlinkType :: String
+  , xmlBase :: String
+  , xmlLang :: String
+  , xmlSpace :: String
+  , xmlns :: String
+  , xmlnsXlink :: String
   , y :: String
   , zoomAndPan :: String
   )

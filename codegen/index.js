@@ -67,7 +67,20 @@ Object.keys(svgProps).forEach(elName => {
 // The attribute list for <svg> in react-html-attributes
 // is wrong (it contains the union of the attributes of all
 // svg elements)
-htmlProps['svg'] = camelCaseSvgProps['svg'];
+htmlProps['svg'] = camelCaseSvgProps['svg'].concat([
+  "xlinkActuate",
+  "xlinkArcrole",
+  "xlinkHref",
+  "xlinkRole",
+  "xlinkShow",
+  "xlinkTitle",
+  "xlinkType",
+  "xmlBase",
+  "xmlLang",
+  "xmlSpace",
+  "xmlns",
+  "xmlnsXlink"
+]);
 
 const printRecord = (e, elProps) =>
   elProps.length
