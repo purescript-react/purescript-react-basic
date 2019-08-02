@@ -358,6 +358,9 @@ foreign import data ReactComponent :: Type -> Type
 -- | caution.
 foreign import data ReactComponentInstance :: Type -> Type -> Type
 
+-- | A React Ref, as created by `React.createRef`
+foreign import data Ref :: Type -> Type
+
 -- | Convert a React-Basic `ComponentSpec` to a JavaScript-friendly React component.
 -- | This function should only be used for JS interop and not normal React-Basic usage.
 -- |
@@ -474,5 +477,3 @@ foreign import element_
 foreign import elementKeyed_
   :: forall props
    . Fn2 (ReactComponent { | props }) { key :: String | props } JSX
-
-foreign import data Ref :: Type -> Type
