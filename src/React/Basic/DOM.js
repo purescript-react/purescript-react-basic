@@ -23,5 +23,5 @@ exports.createPortal_ = function(jsx, node) {
 };
 
 exports.mergeStyles = function(styles) {
-  return Object.assign.apply(null, [ {} ].concat(styles));
+  return Object.assign.apply(null, [{}].concat(styles));
 };

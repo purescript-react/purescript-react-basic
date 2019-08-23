@@ -11,6 +11,7 @@ const htmlHeader = `-- | ----------------------------------------
 module React.Basic.DOM.Generated where
 
 import Data.Nullable (Nullable)
+import Foreign.Object (Object)
 import Prim.Row (class Union)
 import Web.DOM (Node)
 import React.Basic (JSX, Ref, element)
@@ -37,6 +38,7 @@ const svgHeader = `-- | ----------------------------------------
 
 module React.Basic.DOM.SVG where
 
+import Foreign.Object (Object)
 import Prim.Row (class Union)
 import React.Basic (JSX, element)
 import React.Basic.DOM.Internal (SharedSVGProps, unsafeCreateDOMComponent)
@@ -98,7 +100,7 @@ const generatePropTypes = (elements, props, sharedPropType) =>
 
     return `
     type Props_${e} =${printRecord(e,
-      (noChildren ? [] : ["children"]).concat(props[e] || [], props["*"] || []).sort()
+      (noChildren ? [] : ["children", "_data"]).concat(props[e] || [], props["*"] || []).sort()
     )}
 
     ${symbol}

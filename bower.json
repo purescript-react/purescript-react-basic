@@ -1,7 +1,12 @@
 {
   "name": "purescript-react-basic",
   "license": "Apache-2.0",
-  "ignore": ["**/.*", "node_modules", "bower_components", "output"],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "output"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/lumihq/purescript-react-basic.git"
@@ -17,6 +22,7 @@
     "purescript-unsafe-coerce": "^4.0.0",
     "purescript-web-dom": ">=1.0.0 <4.0.0",
     "purescript-web-html": ">=1.0.0 <3.0.0",
-    "purescript-web-events": ">=1.0.0 <3.0.0"
+    "purescript-web-events": ">=1.0.0 <3.0.0",
+    "purescript-foreign-object": "^2.0.3"
   }
 }

@@ -37,7 +37,7 @@ asyncCounter = make component { initialState, render }
         , keyed (show self.state) $
             asyncWithLoader (R.text "Loading...") do
               liftEffect $ log "start"
-              delay $ Milliseconds 2000.0
+              delay $ Milliseconds 1000.0
               liftEffect $ log "done"
               pure $ R.text $ "Done: " <> show self.state
         ]

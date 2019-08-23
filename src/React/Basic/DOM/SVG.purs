@@ -4,12 +4,14 @@
 
 module React.Basic.DOM.SVG where
 
+import Foreign.Object (Object)
 import Prim.Row (class Union)
 import React.Basic (JSX, element)
 import React.Basic.DOM.Internal (SharedSVGProps, unsafeCreateDOMComponent)
 
 type Props_a =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -108,7 +110,8 @@ a_ :: Array JSX -> JSX
 a_ children = a { children }
 
 type Props_animate =
-  ( accumulate :: String
+  ( _data :: Object String
+  , accumulate :: String
   , additive :: String
   , alignmentBaseline :: String
   , attributeName :: String
@@ -207,7 +210,8 @@ animate_ :: Array JSX -> JSX
 animate_ children = animate { children }
 
 type Props_animateColor =
-  ( accumulate :: String
+  ( _data :: Object String
+  , accumulate :: String
   , additive :: String
   , alignmentBaseline :: String
   , attributeName :: String
@@ -305,7 +309,8 @@ animateColor_ :: Array JSX -> JSX
 animateColor_ children = animateColor { children }
 
 type Props_animateMotion =
-  ( accumulate :: String
+  ( _data :: Object String
+  , accumulate :: String
   , additive :: String
   , begin :: String
   , by :: String
@@ -348,7 +353,8 @@ animateMotion_ :: Array JSX -> JSX
 animateMotion_ children = animateMotion { children }
 
 type Props_animateTransform =
-  ( accumulate :: String
+  ( _data :: Object String
+  , accumulate :: String
   , additive :: String
   , attributeName :: String
   , attributeType :: String
@@ -390,7 +396,8 @@ animateTransform_ :: Array JSX -> JSX
 animateTransform_ children = animateTransform { children }
 
 type Props_animation =
-  ( begin :: String
+  ( _data :: Object String
+  , begin :: String
   , children :: Array JSX
   , dur :: String
   , end :: String
@@ -441,7 +448,8 @@ animation_ :: Array JSX -> JSX
 animation_ children = animation { children }
 
 type Props_audio =
-  ( begin :: String
+  ( _data :: Object String
+  , begin :: String
   , children :: Array JSX
   , dur :: String
   , end :: String
@@ -474,7 +482,8 @@ audio_ :: Array JSX -> JSX
 audio_ children = audio { children }
 
 type Props_canvas =
-  ( children :: Array JSX
+  ( _data :: Object String
+  , children :: Array JSX
   , preserveAspectRatio :: String
   , requiredExtensions :: String
   , systemLanguage :: String
@@ -491,7 +500,8 @@ canvas_ :: Array JSX -> JSX
 canvas_ children = canvas { children }
 
 type Props_circle =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -587,7 +597,8 @@ circle_ :: Array JSX -> JSX
 circle_ children = circle { children }
 
 type Props_clipPath =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -666,7 +677,8 @@ clipPath_ :: Array JSX -> JSX
 clipPath_ children = clipPath { children }
 
 type Props_defs =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -744,7 +756,8 @@ defs_ :: Array JSX -> JSX
 defs_ children = defs { children }
 
 type Props_desc =
-  ( children :: Array JSX
+  ( _data :: Object String
+  , children :: Array JSX
   , requiredExtensions :: String
   , requiredFeatures :: String
   , requiredFonts :: String
@@ -763,7 +776,8 @@ desc_ :: Array JSX -> JSX
 desc_ children = desc { children }
 
 type Props_discard =
-  ( begin :: String
+  ( _data :: Object String
+  , begin :: String
   , children :: Array JSX
   , href :: String
   , requiredExtensions :: String
@@ -784,7 +798,8 @@ discard_ :: Array JSX -> JSX
 discard_ children = discard { children }
 
 type Props_ellipse =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -881,7 +896,8 @@ ellipse_ :: Array JSX -> JSX
 ellipse_ children = ellipse { children }
 
 type Props_feBlend =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -962,7 +978,8 @@ feBlend_ :: Array JSX -> JSX
 feBlend_ children = feBlend { children }
 
 type Props_feColorMatrix =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -1043,7 +1060,8 @@ feColorMatrix_ :: Array JSX -> JSX
 feColorMatrix_ children = feColorMatrix { children }
 
 type Props_feComponentTransfer =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -1122,7 +1140,8 @@ feComponentTransfer_ :: Array JSX -> JSX
 feComponentTransfer_ children = feComponentTransfer { children }
 
 type Props_feComposite =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -1207,7 +1226,8 @@ feComposite_ :: Array JSX -> JSX
 feComposite_ children = feComposite { children }
 
 type Props_feConvolveMatrix =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , bias :: String
   , children :: Array JSX
@@ -1295,7 +1315,8 @@ feConvolveMatrix_ :: Array JSX -> JSX
 feConvolveMatrix_ children = feConvolveMatrix { children }
 
 type Props_feDiffuseLighting =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -1377,7 +1398,8 @@ feDiffuseLighting_ :: Array JSX -> JSX
 feDiffuseLighting_ children = feDiffuseLighting { children }
 
 type Props_feDisplacementMap =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -1460,7 +1482,8 @@ feDisplacementMap_ :: Array JSX -> JSX
 feDisplacementMap_ children = feDisplacementMap { children }
 
 type Props_feDistantLight =
-  ( azimuth :: String
+  ( _data :: Object String
+  , azimuth :: String
   , children :: Array JSX
   , elevation :: String
   )
@@ -1476,7 +1499,8 @@ feDistantLight_ :: Array JSX -> JSX
 feDistantLight_ children = feDistantLight { children }
 
 type Props_feDropShadow =
-  ( children :: Array JSX
+  ( _data :: Object String
+  , children :: Array JSX
   , dx :: String
   , dy :: String
   , height :: String
@@ -1499,7 +1523,8 @@ feDropShadow_ :: Array JSX -> JSX
 feDropShadow_ children = feDropShadow { children }
 
 type Props_feFlood =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -1577,7 +1602,8 @@ feFlood_ :: Array JSX -> JSX
 feFlood_ children = feFlood { children }
 
 type Props_feFuncA =
-  ( amplitude :: String
+  ( _data :: Object String
+  , amplitude :: String
   , children :: Array JSX
   , exponent :: String
   , intercept :: String
@@ -1598,7 +1624,8 @@ feFuncA_ :: Array JSX -> JSX
 feFuncA_ children = feFuncA { children }
 
 type Props_feFuncB =
-  ( amplitude :: String
+  ( _data :: Object String
+  , amplitude :: String
   , children :: Array JSX
   , exponent :: String
   , intercept :: String
@@ -1619,7 +1646,8 @@ feFuncB_ :: Array JSX -> JSX
 feFuncB_ children = feFuncB { children }
 
 type Props_feFuncG =
-  ( amplitude :: String
+  ( _data :: Object String
+  , amplitude :: String
   , children :: Array JSX
   , exponent :: String
   , intercept :: String
@@ -1640,7 +1668,8 @@ feFuncG_ :: Array JSX -> JSX
 feFuncG_ children = feFuncG { children }
 
 type Props_feFuncR =
-  ( amplitude :: String
+  ( _data :: Object String
+  , amplitude :: String
   , children :: Array JSX
   , exponent :: String
   , intercept :: String
@@ -1661,7 +1690,8 @@ feFuncR_ :: Array JSX -> JSX
 feFuncR_ children = feFuncR { children }
 
 type Props_feGaussianBlur =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -1742,7 +1772,8 @@ feGaussianBlur_ :: Array JSX -> JSX
 feGaussianBlur_ children = feGaussianBlur { children }
 
 type Props_feImage =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -1824,7 +1855,8 @@ feImage_ :: Array JSX -> JSX
 feImage_ children = feImage { children }
 
 type Props_feMerge =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -1902,7 +1934,8 @@ feMerge_ :: Array JSX -> JSX
 feMerge_ children = feMerge { children }
 
 type Props_feMergeNode =
-  ( children :: Array JSX
+  ( _data :: Object String
+  , children :: Array JSX
   , in :: String
   )
 
@@ -1917,7 +1950,8 @@ feMergeNode_ :: Array JSX -> JSX
 feMergeNode_ children = feMergeNode { children }
 
 type Props_feMorphology =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -1998,7 +2032,8 @@ feMorphology_ :: Array JSX -> JSX
 feMorphology_ children = feMorphology { children }
 
 type Props_feOffset =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -2079,7 +2114,8 @@ feOffset_ :: Array JSX -> JSX
 feOffset_ children = feOffset { children }
 
 type Props_fePointLight =
-  ( children :: Array JSX
+  ( _data :: Object String
+  , children :: Array JSX
   , x :: String
   , y :: String
   , z :: String
@@ -2096,7 +2132,8 @@ fePointLight_ :: Array JSX -> JSX
 fePointLight_ children = fePointLight { children }
 
 type Props_feSpecularLighting =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -2179,7 +2216,8 @@ feSpecularLighting_ :: Array JSX -> JSX
 feSpecularLighting_ children = feSpecularLighting { children }
 
 type Props_feSpotLight =
-  ( children :: Array JSX
+  ( _data :: Object String
+  , children :: Array JSX
   , limitingConeAngle :: String
   , pointsAtX :: String
   , pointsAtY :: String
@@ -2201,7 +2239,8 @@ feSpotLight_ :: Array JSX -> JSX
 feSpotLight_ children = feSpotLight { children }
 
 type Props_feTile =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -2280,7 +2319,8 @@ feTile_ :: Array JSX -> JSX
 feTile_ children = feTile { children }
 
 type Props_feTurbulence =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baseFrequency :: String
   , baselineShift :: String
   , children :: Array JSX
@@ -2363,7 +2403,8 @@ feTurbulence_ :: Array JSX -> JSX
 feTurbulence_ children = feTurbulence { children }
 
 type Props_filter =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -2444,7 +2485,8 @@ filter_ :: Array JSX -> JSX
 filter_ children = filter { children }
 
 type Props_foreignObject =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -2540,7 +2582,8 @@ foreignObject_ :: Array JSX -> JSX
 foreignObject_ children = foreignObject { children }
 
 type Props_g =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -2632,7 +2675,8 @@ g_ :: Array JSX -> JSX
 g_ children = g { children }
 
 type Props_handler =
-  ( children :: Array JSX
+  ( _data :: Object String
+  , children :: Array JSX
   , externalResourcesRequired :: String
   , type :: String
   )
@@ -2648,7 +2692,8 @@ handler_ :: Array JSX -> JSX
 handler_ children = handler { children }
 
 type Props_iframe =
-  ( children :: Array JSX
+  ( _data :: Object String
+  , children :: Array JSX
   , requiredExtensions :: String
   , systemLanguage :: String
   )
@@ -2664,7 +2709,8 @@ iframe_ :: Array JSX -> JSX
 iframe_ children = iframe { children }
 
 type Props_image =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -2764,7 +2810,8 @@ image_ :: Array JSX -> JSX
 image_ children = image { children }
 
 type Props_line =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -2861,7 +2908,8 @@ line_ :: Array JSX -> JSX
 line_ children = line { children }
 
 type Props_linearGradient =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -2943,7 +2991,8 @@ linearGradient_ :: Array JSX -> JSX
 linearGradient_ children = linearGradient { children }
 
 type Props_listener =
-  ( children :: Array JSX
+  ( _data :: Object String
+  , children :: Array JSX
   , defaultAction :: String
   , event :: String
   , handler :: String
@@ -2964,7 +3013,8 @@ listener_ :: Array JSX -> JSX
 listener_ children = listener { children }
 
 type Props_marker =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -3046,7 +3096,8 @@ marker_ :: Array JSX -> JSX
 marker_ children = marker { children }
 
 type Props_mask =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -3129,7 +3180,8 @@ mask_ :: Array JSX -> JSX
 mask_ children = mask { children }
 
 type Props_metadata =
-  ( children :: Array JSX
+  ( _data :: Object String
+  , children :: Array JSX
   , requiredExtensions :: String
   , requiredFeatures :: String
   , requiredFonts :: String
@@ -3148,7 +3200,8 @@ metadata_ :: Array JSX -> JSX
 metadata_ children = metadata { children }
 
 type Props_mpath =
-  ( children :: Array JSX
+  ( _data :: Object String
+  , children :: Array JSX
   , externalResourcesRequired :: String
   , href :: String
   )
@@ -3164,7 +3217,8 @@ mpath_ :: Array JSX -> JSX
 mpath_ children = mpath { children }
 
 type Props_path =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -3258,7 +3312,8 @@ path_ :: Array JSX -> JSX
 path_ children = path { children }
 
 type Props_pattern =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -3345,7 +3400,8 @@ pattern_ :: Array JSX -> JSX
 pattern_ children = pattern { children }
 
 type Props_polygon =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -3439,7 +3495,8 @@ polygon_ :: Array JSX -> JSX
 polygon_ children = polygon { children }
 
 type Props_polyline =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -3533,7 +3590,8 @@ polyline_ :: Array JSX -> JSX
 polyline_ children = polyline { children }
 
 type Props_prefetch =
-  ( bandwidth :: String
+  ( _data :: Object String
+  , bandwidth :: String
   , children :: Array JSX
   , mediaCharacterEncoding :: String
   , mediaContentEncodings :: String
@@ -3552,7 +3610,8 @@ prefetch_ :: Array JSX -> JSX
 prefetch_ children = prefetch { children }
 
 type Props_radialGradient =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -3636,7 +3695,8 @@ radialGradient_ :: Array JSX -> JSX
 radialGradient_ children = radialGradient { children }
 
 type Props_rect =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -3735,7 +3795,8 @@ rect_ :: Array JSX -> JSX
 rect_ children = rect { children }
 
 type Props_script =
-  ( children :: Array JSX
+  ( _data :: Object String
+  , children :: Array JSX
   , crossorigin :: String
   , externalResourcesRequired :: String
   , href :: String
@@ -3753,7 +3814,8 @@ script_ :: Array JSX -> JSX
 script_ children = script { children }
 
 type Props_set =
-  ( attributeName :: String
+  ( _data :: Object String
+  , attributeName :: String
   , attributeType :: String
   , begin :: String
   , children :: Array JSX
@@ -3786,7 +3848,8 @@ set_ :: Array JSX -> JSX
 set_ children = set { children }
 
 type Props_stop =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -3860,7 +3923,8 @@ stop_ :: Array JSX -> JSX
 stop_ children = stop { children }
 
 type Props_style =
-  ( children :: Array JSX
+  ( _data :: Object String
+  , children :: Array JSX
   , media :: String
   , title :: String
   , type :: String
@@ -3877,7 +3941,8 @@ style_ :: Array JSX -> JSX
 style_ children = style { children }
 
 type Props_svg =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baseProfile :: String
   , baselineShift :: String
   , children :: Array JSX
@@ -3985,7 +4050,8 @@ svg_ :: Array JSX -> JSX
 svg_ children = svg { children }
 
 type Props_switch =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -4077,7 +4143,8 @@ switch_ :: Array JSX -> JSX
 switch_ children = switch { children }
 
 type Props_symbol =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -4155,7 +4222,8 @@ symbol_ :: Array JSX -> JSX
 symbol_ children = symbol { children }
 
 type Props_tbreak =
-  ( children :: Array JSX
+  ( _data :: Object String
+  , children :: Array JSX
   , requiredExtensions :: String
   , requiredFeatures :: String
   , requiredFonts :: String
@@ -4174,7 +4242,8 @@ tbreak_ :: Array JSX -> JSX
 tbreak_ children = tbreak { children }
 
 type Props_text =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -4274,7 +4343,8 @@ text_ :: Array JSX -> JSX
 text_ children = text { children }
 
 type Props_textArea =
-  ( children :: Array JSX
+  ( _data :: Object String
+  , children :: Array JSX
   , editable :: String
   , focusHighlight :: String
   , focusable :: String
@@ -4311,7 +4381,8 @@ textArea_ :: Array JSX -> JSX
 textArea_ children = textArea { children }
 
 type Props_textPath =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -4396,7 +4467,8 @@ textPath_ :: Array JSX -> JSX
 textPath_ children = textPath { children }
 
 type Props_title =
-  ( children :: Array JSX
+  ( _data :: Object String
+  , children :: Array JSX
   , requiredExtensions :: String
   , requiredFeatures :: String
   , requiredFonts :: String
@@ -4415,7 +4487,8 @@ title_ :: Array JSX -> JSX
 title_ children = title { children }
 
 type Props_tspan =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -4513,7 +4586,8 @@ tspan_ :: Array JSX -> JSX
 tspan_ children = tspan { children }
 
 type Props_unknown =
-  ( children :: Array JSX
+  ( _data :: Object String
+  , children :: Array JSX
   , requiredExtensions :: String
   , systemLanguage :: String
   )
@@ -4529,7 +4603,8 @@ unknown_ :: Array JSX -> JSX
 unknown_ children = unknown { children }
 
 type Props_use =
-  ( alignmentBaseline :: String
+  ( _data :: Object String
+  , alignmentBaseline :: String
   , baselineShift :: String
   , children :: Array JSX
   , clip :: String
@@ -4626,7 +4701,8 @@ use_ :: Array JSX -> JSX
 use_ children = use { children }
 
 type Props_video =
-  ( begin :: String
+  ( _data :: Object String
+  , begin :: String
   , children :: Array JSX
   , dur :: String
   , end :: String
@@ -4680,7 +4756,8 @@ video_ :: Array JSX -> JSX
 video_ children = video { children }
 
 type Props_view =
-  ( children :: Array JSX
+  ( _data :: Object String
+  , children :: Array JSX
   , externalResourcesRequired :: String
   , preserveAspectRatio :: String
   , viewBox :: String
