@@ -29,6 +29,7 @@ module.exports.typesByElement = {
   }
 };
 module.exports.types = {
+  "_data": "Object String",
   "allowFullScreen": "Boolean",
   "allowTransparency": "Boolean",
   "async": "Boolean",

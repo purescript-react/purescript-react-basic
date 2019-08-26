@@ -1,6 +1,7 @@
 "use strict";
 
 var React = require("react");
+var createElement = React.createElement;
 var Fragment = React.Fragment || "div";
 
 exports.createComponent = (function() {
@@ -160,20 +161,36 @@ exports.make = function(_unionDict) {
 exports.empty = null;
 
 exports.keyed_ = function(key, child) {
-  return React.createElement(Fragment, { key: key }, child);
+  return createElement(Fragment, { key: key }, child);
 };
 
-exports.element_ = function(component, props) {
-  return React.createElement.apply(
+function flattenDataProp(component, props) {
+  var data = null;
+  if (typeof component === "string" && props._data != null) {
+    data = { _data: undefined };
+    Object.entries(props._data).forEach(function(entry) {
+      data["data-" + entry[0]] = entry[1];
+    });
+  }
+  return data == null ? props : Object.assign({}, props, data);
+}
+
+exports.element_ = function(component, props, areChildrenDynamic) {
+  var args = [component, flattenDataProp(component, props)];
+  return createElement.apply(
     null,
-    [component, props].concat((props && props.children) || null)
+    areChildrenDynamic || props.children == null
+      ? args
+      : args.concat(props.children)
   );
 };
 
-exports.elementKeyed_ = exports.element_;
+exports.elementKeyed_ = function(component, props) {
+  return exports.element_(component, props, true);
+};
 
 exports.fragment = function(children) {
-  return React.createElement.apply(null, [Fragment, {}].concat(children));
+  return createElement.apply(null, [Fragment, null].concat(children));
 };
 
 exports.displayNameFromComponent = function($$type) {
@@ -210,7 +227,7 @@ exports.toReactComponent = function(_unionDict) {
             $$props: fromJSProps(this.props),
             $$spec: $$specPadded
           };
-          return React.createElement($$type, props);
+          return createElement($$type, props);
         };
 
         return Component;
@@ -220,7 +237,7 @@ exports.toReactComponent = function(_unionDict) {
 };
 
 exports.createContext = function(defaultValue) {
-  return function () {
+  return function() {
     return React.createContext(defaultValue);
   };
 };

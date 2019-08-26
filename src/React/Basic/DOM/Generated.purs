@@ -5,6 +5,7 @@
 module React.Basic.DOM.Generated where
 
 import Data.Nullable (Nullable)
+import Foreign.Object (Object)
 import Prim.Row (class Union)
 import Web.DOM (Node)
 import React.Basic (JSX, Ref, element)
@@ -12,7 +13,8 @@ import React.Basic.DOM.Internal (CSS, unsafeCreateDOMComponent)
 import React.Basic.Events (EventHandler)
 
 type Props_a =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -125,7 +127,8 @@ a_ :: Array JSX -> JSX
 a_ children = a { children }
 
 type Props_abbr =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -231,7 +234,8 @@ abbr_ :: Array JSX -> JSX
 abbr_ children = abbr { children }
 
 type Props_address =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -445,7 +449,8 @@ area
 area = element (unsafeCreateDOMComponent "area")
 
 type Props_article =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -550,7 +555,8 @@ article_ :: Array JSX -> JSX
 article_ children = article { children }
 
 type Props_aside =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -655,7 +661,8 @@ aside_ :: Array JSX -> JSX
 aside_ children = aside { children }
 
 type Props_audio =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -765,7 +772,8 @@ audio_ :: Array JSX -> JSX
 audio_ children = audio { children }
 
 type Props_b =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -973,7 +981,8 @@ base
 base = element (unsafeCreateDOMComponent "base")
 
 type Props_bdi =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -1078,7 +1087,8 @@ bdi_ :: Array JSX -> JSX
 bdi_ children = bdi { children }
 
 type Props_bdo =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -1184,7 +1194,8 @@ bdo_ :: Array JSX -> JSX
 bdo_ children = bdo { children }
 
 type Props_blockquote =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -1290,7 +1301,8 @@ blockquote_ :: Array JSX -> JSX
 blockquote_ children = blockquote { children }
 
 type Props_body =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -1496,7 +1508,8 @@ br
 br = element (unsafeCreateDOMComponent "br")
 
 type Props_button =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -1606,7 +1619,8 @@ button_ :: Array JSX -> JSX
 button_ children = button { children }
 
 type Props_canvas =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -1713,7 +1727,8 @@ canvas_ :: Array JSX -> JSX
 canvas_ children = canvas { children }
 
 type Props_caption =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -1818,7 +1833,8 @@ caption_ :: Array JSX -> JSX
 caption_ children = caption { children }
 
 type Props_cite =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -1923,7 +1939,8 @@ cite_ :: Array JSX -> JSX
 cite_ children = cite { children }
 
 type Props_code =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -2131,7 +2148,8 @@ col
 col = element (unsafeCreateDOMComponent "col")
 
 type Props_colgroup =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -2238,7 +2256,8 @@ colgroup_ :: Array JSX -> JSX
 colgroup_ children = colgroup { children }
 
 type Props_data =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -2344,7 +2363,8 @@ data_ :: Array JSX -> JSX
 data_ children = data' { children }
 
 type Props_datalist =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -2449,7 +2469,8 @@ datalist_ :: Array JSX -> JSX
 datalist_ children = datalist { children }
 
 type Props_dd =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -2554,7 +2575,8 @@ dd_ :: Array JSX -> JSX
 dd_ children = dd { children }
 
 type Props_del =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -2660,7 +2682,8 @@ del_ :: Array JSX -> JSX
 del_ children = del { children }
 
 type Props_details =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -2766,7 +2789,8 @@ details_ :: Array JSX -> JSX
 details_ children = details { children }
 
 type Props_dfn =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -2872,7 +2896,8 @@ dfn_ :: Array JSX -> JSX
 dfn_ children = dfn { children }
 
 type Props_dialog =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -2978,7 +3003,8 @@ dialog_ :: Array JSX -> JSX
 dialog_ children = dialog { children }
 
 type Props_div =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -3083,7 +3109,8 @@ div_ :: Array JSX -> JSX
 div_ children = div { children }
 
 type Props_dl =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -3188,7 +3215,8 @@ dl_ :: Array JSX -> JSX
 dl_ children = dl { children }
 
 type Props_dt =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -3293,7 +3321,8 @@ dt_ :: Array JSX -> JSX
 dt_ children = dt { children }
 
 type Props_em =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -3503,7 +3532,8 @@ embed
 embed = element (unsafeCreateDOMComponent "embed")
 
 type Props_fieldset =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -3611,7 +3641,8 @@ fieldset_ :: Array JSX -> JSX
 fieldset_ children = fieldset { children }
 
 type Props_figcaption =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -3716,7 +3747,8 @@ figcaption_ :: Array JSX -> JSX
 figcaption_ children = figcaption { children }
 
 type Props_figure =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -3821,7 +3853,8 @@ figure_ :: Array JSX -> JSX
 figure_ children = figure { children }
 
 type Props_footer =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -3926,7 +3959,8 @@ footer_ :: Array JSX -> JSX
 footer_ children = footer { children }
 
 type Props_form =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , accept :: String
   , acceptCharset :: String
   , accessKey :: String
@@ -4040,7 +4074,8 @@ form_ :: Array JSX -> JSX
 form_ children = form { children }
 
 type Props_h1 =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -4145,7 +4180,8 @@ h1_ :: Array JSX -> JSX
 h1_ children = h1 { children }
 
 type Props_h2 =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -4250,7 +4286,8 @@ h2_ :: Array JSX -> JSX
 h2_ children = h2 { children }
 
 type Props_h3 =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -4355,7 +4392,8 @@ h3_ :: Array JSX -> JSX
 h3_ children = h3 { children }
 
 type Props_h4 =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -4460,7 +4498,8 @@ h4_ :: Array JSX -> JSX
 h4_ children = h4 { children }
 
 type Props_h5 =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -4565,7 +4604,8 @@ h5_ :: Array JSX -> JSX
 h5_ children = h5 { children }
 
 type Props_h6 =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -4670,7 +4710,8 @@ h6_ :: Array JSX -> JSX
 h6_ children = h6 { children }
 
 type Props_head =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -4776,7 +4817,8 @@ head_ :: Array JSX -> JSX
 head_ children = head { children }
 
 type Props_header =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -4881,7 +4923,8 @@ header_ :: Array JSX -> JSX
 header_ children = header { children }
 
 type Props_hgroup =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -5089,7 +5132,8 @@ hr
 hr = element (unsafeCreateDOMComponent "hr")
 
 type Props_html =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -5195,7 +5239,8 @@ html_ :: Array JSX -> JSX
 html_ children = html { children }
 
 type Props_i =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -5300,7 +5345,8 @@ i_ :: Array JSX -> JSX
 i_ children = i { children }
 
 type Props_iframe =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -5647,7 +5693,8 @@ input
 input = element (unsafeCreateDOMComponent "input")
 
 type Props_ins =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -5753,7 +5800,8 @@ ins_ :: Array JSX -> JSX
 ins_ children = ins { children }
 
 type Props_kbd =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -5858,7 +5906,8 @@ kbd_ :: Array JSX -> JSX
 kbd_ children = kbd { children }
 
 type Props_keygen =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -5967,7 +6016,8 @@ keygen_ :: Array JSX -> JSX
 keygen_ children = keygen { children }
 
 type Props_label =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -6073,7 +6123,8 @@ label_ :: Array JSX -> JSX
 label_ children = label { children }
 
 type Props_legend =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -6178,7 +6229,8 @@ legend_ :: Array JSX -> JSX
 legend_ children = legend { children }
 
 type Props_li =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -6397,7 +6449,8 @@ link
 link = element (unsafeCreateDOMComponent "link")
 
 type Props_main =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -6502,7 +6555,8 @@ main_ :: Array JSX -> JSX
 main_ children = main { children }
 
 type Props_map =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -6608,7 +6662,8 @@ map_ :: Array JSX -> JSX
 map_ children = map { children }
 
 type Props_mark =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -6713,7 +6768,8 @@ mark_ :: Array JSX -> JSX
 mark_ children = mark { children }
 
 type Props_math =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -6818,7 +6874,8 @@ math_ :: Array JSX -> JSX
 math_ children = math { children }
 
 type Props_menu =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -6923,7 +6980,8 @@ menu_ :: Array JSX -> JSX
 menu_ children = menu { children }
 
 type Props_menuitem =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -7131,7 +7189,8 @@ meta
 meta = element (unsafeCreateDOMComponent "meta")
 
 type Props_meter =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -7242,7 +7301,8 @@ meter_ :: Array JSX -> JSX
 meter_ children = meter { children }
 
 type Props_nav =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -7347,7 +7407,8 @@ nav_ :: Array JSX -> JSX
 nav_ children = nav { children }
 
 type Props_noscript =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -7452,7 +7513,8 @@ noscript_ :: Array JSX -> JSX
 noscript_ children = noscript { children }
 
 type Props_object =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -7563,7 +7625,8 @@ object_ :: Array JSX -> JSX
 object_ children = object { children }
 
 type Props_ol =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -7671,7 +7734,8 @@ ol_ :: Array JSX -> JSX
 ol_ children = ol { children }
 
 type Props_optgroup =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -7778,7 +7842,8 @@ optgroup_ :: Array JSX -> JSX
 optgroup_ children = optgroup { children }
 
 type Props_option =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -7887,7 +7952,8 @@ option_ :: Array JSX -> JSX
 option_ children = option { children }
 
 type Props_output =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -7994,7 +8060,8 @@ output_ :: Array JSX -> JSX
 output_ children = output { children }
 
 type Props_p =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -8203,7 +8270,8 @@ param
 param = element (unsafeCreateDOMComponent "param")
 
 type Props_picture =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -8308,7 +8376,8 @@ picture_ :: Array JSX -> JSX
 picture_ children = picture { children }
 
 type Props_pre =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -8414,7 +8483,8 @@ pre_ :: Array JSX -> JSX
 pre_ children = pre { children }
 
 type Props_progress =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -8521,7 +8591,8 @@ progress_ :: Array JSX -> JSX
 progress_ children = progress { children }
 
 type Props_q =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -8627,7 +8698,8 @@ q_ :: Array JSX -> JSX
 q_ children = q { children }
 
 type Props_rb =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -8732,7 +8804,8 @@ rb_ :: Array JSX -> JSX
 rb_ children = rb { children }
 
 type Props_rp =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -8837,7 +8910,8 @@ rp_ :: Array JSX -> JSX
 rp_ children = rp { children }
 
 type Props_rt =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -8942,7 +9016,8 @@ rt_ :: Array JSX -> JSX
 rt_ children = rt { children }
 
 type Props_rtc =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -9047,7 +9122,8 @@ rtc_ :: Array JSX -> JSX
 rtc_ children = rtc { children }
 
 type Props_ruby =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -9152,7 +9228,8 @@ ruby_ :: Array JSX -> JSX
 ruby_ children = ruby { children }
 
 type Props_s =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -9257,7 +9334,8 @@ s_ :: Array JSX -> JSX
 s_ children = s { children }
 
 type Props_samp =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -9362,7 +9440,8 @@ samp_ :: Array JSX -> JSX
 samp_ children = samp { children }
 
 type Props_script =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -9473,7 +9552,8 @@ script_ :: Array JSX -> JSX
 script_ children = script { children }
 
 type Props_section =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -9578,7 +9658,8 @@ section_ :: Array JSX -> JSX
 section_ children = section { children }
 
 type Props_select =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -9692,7 +9773,8 @@ select_ :: Array JSX -> JSX
 select_ children = select { children }
 
 type Props_slot =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -9798,7 +9880,8 @@ slot_ :: Array JSX -> JSX
 slot_ children = slot { children }
 
 type Props_small =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -10008,7 +10091,8 @@ source
 source = element (unsafeCreateDOMComponent "source")
 
 type Props_span =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -10113,7 +10197,8 @@ span_ :: Array JSX -> JSX
 span_ children = span { children }
 
 type Props_strong =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -10218,7 +10303,8 @@ strong_ :: Array JSX -> JSX
 strong_ children = strong { children }
 
 type Props_style =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -10327,7 +10413,8 @@ style_ :: Array JSX -> JSX
 style_ children = style { children }
 
 type Props_sub =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -10432,7 +10519,8 @@ sub_ :: Array JSX -> JSX
 sub_ children = sub { children }
 
 type Props_summary =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -10537,7 +10625,8 @@ summary_ :: Array JSX -> JSX
 summary_ children = summary { children }
 
 type Props_sup =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -10642,7 +10731,8 @@ sup_ :: Array JSX -> JSX
 sup_ children = sup { children }
 
 type Props_svg =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , alignmentBaseline :: String
@@ -10853,7 +10943,8 @@ svg_ :: Array JSX -> JSX
 svg_ children = svg { children }
 
 type Props_table =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -10960,7 +11051,8 @@ table_ :: Array JSX -> JSX
 table_ children = table { children }
 
 type Props_tbody =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -11065,7 +11157,8 @@ tbody_ :: Array JSX -> JSX
 tbody_ children = tbody { children }
 
 type Props_td =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -11174,7 +11267,8 @@ td_ :: Array JSX -> JSX
 td_ children = td { children }
 
 type Props_template =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -11279,7 +11373,8 @@ template_ :: Array JSX -> JSX
 template_ children = template { children }
 
 type Props_textarea =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -11397,7 +11492,8 @@ textarea_ :: Array JSX -> JSX
 textarea_ children = textarea { children }
 
 type Props_tfoot =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -11502,7 +11598,8 @@ tfoot_ :: Array JSX -> JSX
 tfoot_ children = tfoot { children }
 
 type Props_th =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -11611,7 +11708,8 @@ th_ :: Array JSX -> JSX
 th_ children = th { children }
 
 type Props_thead =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -11716,7 +11814,8 @@ thead_ :: Array JSX -> JSX
 thead_ children = thead { children }
 
 type Props_time =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -11821,7 +11920,8 @@ time_ :: Array JSX -> JSX
 time_ children = time { children }
 
 type Props_title =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -11926,7 +12026,8 @@ title_ :: Array JSX -> JSX
 title_ children = title { children }
 
 type Props_tr =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -12136,7 +12237,8 @@ track
 track = element (unsafeCreateDOMComponent "track")
 
 type Props_u =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -12241,7 +12343,8 @@ u_ :: Array JSX -> JSX
 u_ children = u { children }
 
 type Props_ul =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -12347,7 +12450,8 @@ ul_ :: Array JSX -> JSX
 ul_ children = ul { children }
 
 type Props_var =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
@@ -12452,7 +12556,8 @@ var_ :: Array JSX -> JSX
 var_ children = var { children }
 
 type Props_video =
-  ( about :: String
+  ( _data :: Object String
+  , about :: String
   , acceptCharset :: String
   , accessKey :: String
   , allowFullScreen :: Boolean
