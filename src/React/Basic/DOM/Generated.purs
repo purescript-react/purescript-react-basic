@@ -73,12 +73,33 @@ type Props_a =
   , minLength :: Int
   , name :: String
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -86,6 +107,23 @@ type Props_a =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -183,12 +221,33 @@ type Props_abbr =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -196,6 +255,23 @@ type Props_abbr =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -290,12 +366,33 @@ type Props_address =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -303,6 +400,23 @@ type Props_address =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -398,12 +512,33 @@ type Props_area =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -411,6 +546,23 @@ type Props_area =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -505,12 +657,33 @@ type Props_article =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -518,6 +691,23 @@ type Props_article =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -611,12 +801,33 @@ type Props_aside =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -624,6 +835,23 @@ type Props_aside =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -720,12 +948,44 @@ type Props_audio =
   , minLength :: Int
   , muted :: Boolean
   , noValidate :: Boolean
+  , onAbort :: EventHandler
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
+  , onCanPlay :: EventHandler
+  , onCanPlayThrough :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
+  , onDurationChange :: EventHandler
+  , onEmptied :: EventHandler
+  , onEncrypted :: EventHandler
+  , onEnded :: EventHandler
+  , onError :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLoadStart :: EventHandler
+  , onLoadedData :: EventHandler
+  , onLoadedMetadata :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -733,6 +993,36 @@ type Props_audio =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPause :: EventHandler
+  , onPlay :: EventHandler
+  , onPlaying :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onProgress :: EventHandler
+  , onRateChange :: EventHandler
+  , onScroll :: EventHandler
+  , onSeeked :: EventHandler
+  , onSeeking :: EventHandler
+  , onSelect :: EventHandler
+  , onStalled :: EventHandler
+  , onSubmit :: EventHandler
+  , onSuspend :: EventHandler
+  , onTimeUpdate :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onVolumeChange :: EventHandler
+  , onWaiting :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , preload :: String
   , property :: String
@@ -828,12 +1118,33 @@ type Props_b =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -841,6 +1152,23 @@ type Props_b =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -933,12 +1261,33 @@ type Props_base =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -946,6 +1295,23 @@ type Props_base =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -1037,12 +1403,33 @@ type Props_bdi =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -1050,6 +1437,23 @@ type Props_bdi =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -1144,12 +1548,33 @@ type Props_bdo =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -1157,6 +1582,23 @@ type Props_bdo =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -1251,12 +1693,33 @@ type Props_blockquote =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -1264,6 +1727,23 @@ type Props_blockquote =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -1357,12 +1837,33 @@ type Props_body =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -1370,6 +1871,23 @@ type Props_body =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -1461,12 +1979,33 @@ type Props_br =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -1474,6 +2013,23 @@ type Props_br =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -1567,12 +2123,33 @@ type Props_button =
   , minLength :: Int
   , name :: String
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -1580,6 +2157,23 @@ type Props_button =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -1676,12 +2270,33 @@ type Props_canvas =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -1689,6 +2304,23 @@ type Props_canvas =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -1783,12 +2415,33 @@ type Props_caption =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -1796,6 +2449,23 @@ type Props_caption =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -1889,12 +2559,33 @@ type Props_cite =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -1902,6 +2593,23 @@ type Props_cite =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -1995,12 +2703,33 @@ type Props_code =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -2008,6 +2737,23 @@ type Props_code =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -2099,12 +2845,33 @@ type Props_col =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -2112,6 +2879,23 @@ type Props_col =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -2204,12 +2988,33 @@ type Props_colgroup =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -2217,6 +3022,23 @@ type Props_colgroup =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -2312,12 +3134,33 @@ type Props_data =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -2325,6 +3168,23 @@ type Props_data =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -2419,12 +3279,33 @@ type Props_datalist =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -2432,6 +3313,23 @@ type Props_datalist =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -2525,12 +3423,33 @@ type Props_dd =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -2538,6 +3457,23 @@ type Props_dd =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -2632,12 +3568,33 @@ type Props_del =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -2645,6 +3602,23 @@ type Props_del =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -2738,12 +3712,33 @@ type Props_details =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -2751,6 +3746,23 @@ type Props_details =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , open :: Boolean
   , prefix :: String
   , property :: String
@@ -2845,12 +3857,33 @@ type Props_dfn =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -2858,6 +3891,23 @@ type Props_dfn =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -2952,12 +4002,33 @@ type Props_dialog =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -2965,6 +4036,23 @@ type Props_dialog =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , open :: Boolean
   , prefix :: String
   , property :: String
@@ -3059,12 +4147,33 @@ type Props_div =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -3072,6 +4181,23 @@ type Props_div =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -3165,12 +4291,33 @@ type Props_dl =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -3178,6 +4325,23 @@ type Props_dl =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -3271,12 +4435,33 @@ type Props_dt =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -3284,6 +4469,23 @@ type Props_dt =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -3377,12 +4579,33 @@ type Props_em =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -3390,6 +4613,23 @@ type Props_em =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -3482,12 +4722,33 @@ type Props_embed =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -3495,6 +4756,23 @@ type Props_embed =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -3591,12 +4869,33 @@ type Props_fieldset =
   , minLength :: Int
   , name :: String
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -3604,6 +4903,23 @@ type Props_fieldset =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -3697,12 +5013,33 @@ type Props_figcaption =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -3710,6 +5047,23 @@ type Props_figcaption =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -3803,12 +5157,33 @@ type Props_figure =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -3816,6 +5191,23 @@ type Props_figure =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -3909,12 +5301,33 @@ type Props_footer =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -3922,6 +5335,23 @@ type Props_footer =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -4019,15 +5449,36 @@ type Props_form =
   , minLength :: Int
   , name :: String
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onChange :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
   , onInput :: EventHandler
+  , onInvalid :: EventHandler
   , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -4035,7 +5486,24 @@ type Props_form =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
   , onSubmit :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -4130,12 +5598,33 @@ type Props_h1 =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -4143,6 +5632,23 @@ type Props_h1 =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -4236,12 +5742,33 @@ type Props_h2 =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -4249,6 +5776,23 @@ type Props_h2 =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -4342,12 +5886,33 @@ type Props_h3 =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -4355,6 +5920,23 @@ type Props_h3 =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -4448,12 +6030,33 @@ type Props_h4 =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -4461,6 +6064,23 @@ type Props_h4 =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -4554,12 +6174,33 @@ type Props_h5 =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -4567,6 +6208,23 @@ type Props_h5 =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -4660,12 +6318,33 @@ type Props_h6 =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -4673,6 +6352,23 @@ type Props_h6 =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -4766,12 +6462,33 @@ type Props_head =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -4779,6 +6496,23 @@ type Props_head =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , profile :: String
   , property :: String
@@ -4873,12 +6607,33 @@ type Props_header =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -4886,6 +6641,23 @@ type Props_header =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -4979,12 +6751,33 @@ type Props_hgroup =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -4992,6 +6785,23 @@ type Props_hgroup =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -5083,12 +6893,33 @@ type Props_hr =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -5096,6 +6927,23 @@ type Props_hr =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -5189,12 +7037,33 @@ type Props_html =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -5202,6 +7071,23 @@ type Props_html =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -5295,12 +7181,33 @@ type Props_i =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -5308,6 +7215,23 @@ type Props_i =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -5403,12 +7327,33 @@ type Props_iframe =
   , minLength :: Int
   , name :: String
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -5416,6 +7361,23 @@ type Props_iframe =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -5514,12 +7476,34 @@ type Props_img =
   , minLength :: Int
   , name :: String
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLoad :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -5527,6 +7511,23 @@ type Props_img =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -5634,13 +7635,34 @@ type Props_input =
   , multiple :: Boolean
   , name :: String
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onChange :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -5648,6 +7670,23 @@ type Props_input =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , pattern :: String
   , placeholder :: String
   , prefix :: String
@@ -5750,12 +7789,33 @@ type Props_ins =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -5763,6 +7823,23 @@ type Props_ins =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -5856,12 +7933,33 @@ type Props_kbd =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -5869,6 +7967,23 @@ type Props_kbd =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -5966,12 +8081,33 @@ type Props_keygen =
   , minLength :: Int
   , name :: String
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -5979,6 +8115,23 @@ type Props_keygen =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -6073,12 +8226,33 @@ type Props_label =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -6086,6 +8260,23 @@ type Props_label =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -6179,12 +8370,33 @@ type Props_legend =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -6192,6 +8404,23 @@ type Props_legend =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -6285,12 +8514,33 @@ type Props_li =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -6298,6 +8548,23 @@ type Props_li =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -6396,12 +8663,33 @@ type Props_link =
   , minLength :: Int
   , noValidate :: Boolean
   , nonce :: String
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -6409,6 +8697,23 @@ type Props_link =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -6505,12 +8810,33 @@ type Props_main =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -6518,6 +8844,23 @@ type Props_main =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -6612,12 +8955,33 @@ type Props_map =
   , minLength :: Int
   , name :: String
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -6625,6 +8989,23 @@ type Props_map =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -6718,12 +9099,33 @@ type Props_mark =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -6731,6 +9133,23 @@ type Props_mark =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -6824,12 +9243,33 @@ type Props_math =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -6837,6 +9277,23 @@ type Props_math =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -6930,12 +9387,33 @@ type Props_menu =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -6943,6 +9421,23 @@ type Props_menu =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -7036,12 +9531,33 @@ type Props_menuitem =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -7049,6 +9565,23 @@ type Props_menuitem =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -7142,12 +9675,33 @@ type Props_meta =
   , minLength :: Int
   , name :: String
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -7155,6 +9709,23 @@ type Props_meta =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -7249,12 +9820,33 @@ type Props_meter =
   , min :: Number
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -7262,6 +9854,23 @@ type Props_meter =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , optimum :: String
   , prefix :: String
   , property :: String
@@ -7357,12 +9966,33 @@ type Props_nav =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -7370,6 +10000,23 @@ type Props_nav =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -7463,12 +10110,33 @@ type Props_noscript =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -7476,6 +10144,23 @@ type Props_noscript =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -7573,12 +10258,33 @@ type Props_object =
   , minLength :: Int
   , name :: String
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -7586,6 +10292,23 @@ type Props_object =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -7681,12 +10404,33 @@ type Props_ol =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -7694,6 +10438,23 @@ type Props_ol =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -7792,12 +10553,33 @@ type Props_optgroup =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -7805,6 +10587,23 @@ type Props_optgroup =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -7900,12 +10699,33 @@ type Props_option =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -7913,6 +10733,23 @@ type Props_option =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -8010,12 +10847,33 @@ type Props_output =
   , minLength :: Int
   , name :: String
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -8023,6 +10881,23 @@ type Props_output =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -8116,12 +10991,33 @@ type Props_p =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -8129,6 +11025,23 @@ type Props_p =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -8221,12 +11134,33 @@ type Props_param =
   , minLength :: Int
   , name :: String
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -8234,6 +11168,23 @@ type Props_param =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -8326,12 +11277,33 @@ type Props_picture =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -8339,6 +11311,23 @@ type Props_picture =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -8432,12 +11421,33 @@ type Props_pre =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -8445,6 +11455,23 @@ type Props_pre =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -8540,12 +11567,33 @@ type Props_progress =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -8553,6 +11601,23 @@ type Props_progress =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -8648,12 +11713,33 @@ type Props_q =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -8661,6 +11747,23 @@ type Props_q =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -8754,12 +11857,33 @@ type Props_rb =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -8767,6 +11891,23 @@ type Props_rb =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -8860,12 +12001,33 @@ type Props_rp =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -8873,6 +12035,23 @@ type Props_rp =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -8966,12 +12145,33 @@ type Props_rt =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -8979,6 +12179,23 @@ type Props_rt =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -9072,12 +12289,33 @@ type Props_rtc =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -9085,6 +12323,23 @@ type Props_rtc =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -9178,12 +12433,33 @@ type Props_ruby =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -9191,6 +12467,23 @@ type Props_ruby =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -9284,12 +12577,33 @@ type Props_s =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -9297,6 +12611,23 @@ type Props_s =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -9390,12 +12721,33 @@ type Props_samp =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -9403,6 +12755,23 @@ type Props_samp =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -9500,12 +12869,33 @@ type Props_script =
   , minLength :: Int
   , noValidate :: Boolean
   , nonce :: String
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -9513,6 +12903,23 @@ type Props_script =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -9608,12 +13015,33 @@ type Props_section =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -9621,6 +13049,23 @@ type Props_section =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -9719,13 +13164,34 @@ type Props_select =
   , multiple :: Boolean
   , name :: String
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onChange :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -9733,6 +13199,23 @@ type Props_select =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -9830,12 +13313,33 @@ type Props_slot =
   , minLength :: Int
   , name :: String
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -9843,6 +13347,23 @@ type Props_slot =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -9936,12 +13457,33 @@ type Props_small =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -9949,6 +13491,23 @@ type Props_small =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -10041,12 +13600,33 @@ type Props_source =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -10054,6 +13634,23 @@ type Props_source =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -10147,12 +13744,33 @@ type Props_span =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -10160,6 +13778,23 @@ type Props_span =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -10253,12 +13888,33 @@ type Props_strong =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -10266,6 +13922,23 @@ type Props_strong =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -10361,12 +14034,33 @@ type Props_style =
   , minLength :: Int
   , noValidate :: Boolean
   , nonce :: String
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -10374,6 +14068,23 @@ type Props_style =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -10469,12 +14180,33 @@ type Props_sub =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -10482,6 +14214,23 @@ type Props_sub =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -10575,12 +14324,33 @@ type Props_summary =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -10588,6 +14358,23 @@ type Props_summary =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -10681,12 +14468,33 @@ type Props_sup =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -10694,6 +14502,23 @@ type Props_sup =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -10842,12 +14667,33 @@ type Props_svg =
   , navUpLeft :: String
   , navUpRight :: String
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -10855,6 +14701,23 @@ type Props_svg =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , opacity :: String
   , overflow :: String
   , playbackOrder :: String
@@ -10999,12 +14862,33 @@ type Props_table =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -11012,6 +14896,23 @@ type Props_table =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -11107,12 +15008,33 @@ type Props_tbody =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -11120,6 +15042,23 @@ type Props_tbody =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -11215,12 +15154,33 @@ type Props_td =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -11228,6 +15188,23 @@ type Props_td =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -11323,12 +15300,33 @@ type Props_template =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -11336,6 +15334,23 @@ type Props_template =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -11436,13 +15451,34 @@ type Props_textarea =
   , minLength :: Int
   , name :: String
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onChange :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -11450,6 +15486,23 @@ type Props_textarea =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , placeholder :: String
   , prefix :: String
   , property :: String
@@ -11548,12 +15601,33 @@ type Props_tfoot =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -11561,6 +15635,23 @@ type Props_tfoot =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -11656,12 +15747,33 @@ type Props_th =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -11669,6 +15781,23 @@ type Props_th =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -11764,12 +15893,33 @@ type Props_thead =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -11777,6 +15927,23 @@ type Props_thead =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -11870,12 +16037,33 @@ type Props_time =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -11883,6 +16071,23 @@ type Props_time =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -11976,12 +16181,33 @@ type Props_title =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -11989,6 +16215,23 @@ type Props_title =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -12082,12 +16325,33 @@ type Props_tr =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -12095,6 +16359,23 @@ type Props_tr =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -12189,12 +16470,33 @@ type Props_track =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -12202,6 +16504,23 @@ type Props_track =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -12293,12 +16612,33 @@ type Props_u =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -12306,6 +16646,23 @@ type Props_u =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -12399,12 +16756,33 @@ type Props_ul =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -12412,6 +16790,23 @@ type Props_ul =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -12506,12 +16901,33 @@ type Props_var =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -12519,6 +16935,23 @@ type Props_var =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
@@ -12616,12 +17049,44 @@ type Props_video =
   , minLength :: Int
   , muted :: Boolean
   , noValidate :: Boolean
+  , onAbort :: EventHandler
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
+  , onCanPlay :: EventHandler
+  , onCanPlayThrough :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
+  , onDurationChange :: EventHandler
+  , onEmptied :: EventHandler
+  , onEncrypted :: EventHandler
+  , onEnded :: EventHandler
+  , onError :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLoadStart :: EventHandler
+  , onLoadedData :: EventHandler
+  , onLoadedMetadata :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -12629,6 +17094,36 @@ type Props_video =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPause :: EventHandler
+  , onPlay :: EventHandler
+  , onPlaying :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onProgress :: EventHandler
+  , onRateChange :: EventHandler
+  , onScroll :: EventHandler
+  , onSeeked :: EventHandler
+  , onSeeking :: EventHandler
+  , onSelect :: EventHandler
+  , onStalled :: EventHandler
+  , onSubmit :: EventHandler
+  , onSuspend :: EventHandler
+  , onTimeUpdate :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onVolumeChange :: EventHandler
+  , onWaiting :: EventHandler
+  , onWheel :: EventHandler
   , playsInline :: Boolean
   , poster :: String
   , prefix :: String
@@ -12725,12 +17220,33 @@ type Props_wbr =
   , mediaGroup :: String
   , minLength :: Int
   , noValidate :: Boolean
+  , onAnimationEnd :: EventHandler
+  , onAnimationIteration :: EventHandler
+  , onAnimationStart :: EventHandler
   , onBlur :: EventHandler
   , onClick :: EventHandler
+  , onCompositionEnd :: EventHandler
+  , onCompositionStart :: EventHandler
+  , onCompositionUpdate :: EventHandler
+  , onContextMenu :: EventHandler
+  , onCopy :: EventHandler
+  , onCut :: EventHandler
+  , onDoubleClick :: EventHandler
+  , onDrag :: EventHandler
+  , onDragEnd :: EventHandler
+  , onDragEnter :: EventHandler
+  , onDragExit :: EventHandler
+  , onDragLeave :: EventHandler
+  , onDragOver :: EventHandler
+  , onDragStart :: EventHandler
+  , onDrop :: EventHandler
   , onFocus :: EventHandler
+  , onGotPointerCapture :: EventHandler
+  , onInvalid :: EventHandler
   , onKeyDown :: EventHandler
   , onKeyPress :: EventHandler
   , onKeyUp :: EventHandler
+  , onLostPointerCapture :: EventHandler
   , onMouseDown :: EventHandler
   , onMouseEnter :: EventHandler
   , onMouseLeave :: EventHandler
@@ -12738,6 +17254,23 @@ type Props_wbr =
   , onMouseOut :: EventHandler
   , onMouseOver :: EventHandler
   , onMouseUp :: EventHandler
+  , onPaste :: EventHandler
+  , onPointerCancel :: EventHandler
+  , onPointerDown :: EventHandler
+  , onPointerEnter :: EventHandler
+  , onPointerLeave :: EventHandler
+  , onPointerMove :: EventHandler
+  , onPointerOut :: EventHandler
+  , onPointerOver :: EventHandler
+  , onPointerUp :: EventHandler
+  , onSelect :: EventHandler
+  , onSubmit :: EventHandler
+  , onTouchCancel :: EventHandler
+  , onTouchEnd :: EventHandler
+  , onTouchMove :: EventHandler
+  , onTouchStart :: EventHandler
+  , onTransitionEnd :: EventHandler
+  , onWheel :: EventHandler
   , prefix :: String
   , property :: String
   , radioGroup :: String
