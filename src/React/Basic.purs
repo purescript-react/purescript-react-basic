@@ -245,9 +245,9 @@ foreign import make
 -- | ```
 -- |
 -- | __*Note:* The only difference between a stateless React-Basic component and
--- |   a plain `props -> JSX` function is the presense of the component name
+-- |   a plain `Props -> JSX` function is the presense of the component name
 -- |   in React's dev tools and error stacks. It's just a conceptual boundary.
--- |   If this isn't important simply write a `props -> JSX` function.__
+-- |   If this isn't important simply write a `Props -> JSX` function.__
 -- |
 -- | __*See also:* `make`, `createComponent`, `Component`, `ComponentSpec`__
 makeStateless
