@@ -1,10 +1,10 @@
 -- | This module defines safe DOM event function and property accessors.
-
 module React.Basic.DOM.Events
   ( capture
   , capture_
   , bubbles
   , cancelable
+  , compositionData
   , eventPhase
   , eventPhaseNone
   , eventPhaseCapturing
@@ -44,7 +44,6 @@ module React.Basic.DOM.Events
   ) where
 
 import Prelude
-
 import Data.Maybe (Maybe)
 import Data.Nullable (toMaybe)
 import Effect (Effect)
@@ -53,6 +52,7 @@ import React.Basic.Events (EventFn, EventHandler, SyntheticEvent, handler, unsaf
 import Unsafe.Coerce (unsafeCoerce)
 import Web.Event.Internal.Types (Event, EventTarget)
 import Web.File.FileList (FileList)
+import Web.HTML.Event.DataTransfer (DataTransfer)
 
 -- | Create a capturing\* `EventHandler` to send an action when an event occurs. For
 -- | more complicated event handlers requiring `Effect`, use `handler` from `React.Basic.Events`.
@@ -141,7 +141,6 @@ type_ :: EventFn SyntheticEvent String
 type_ = unsafeEventFn \e -> (unsafeCoerce e)."type"
 
 -- | Keyboard event fields
-
 key :: EventFn SyntheticEvent (Maybe String)
 key = unsafeEventFn \e -> toMaybe (unsafeCoerce e).key
 
@@ -161,7 +160,6 @@ locale :: EventFn SyntheticEvent (Maybe String)
 locale = unsafeEventFn \e -> toMaybe (unsafeCoerce e).locale
 
 -- | Mouse event fields
-
 detail :: EventFn SyntheticEvent (Maybe Int)
 detail = unsafeEventFn \e -> toMaybe (unsafeCoerce e).detail
 
@@ -184,7 +182,6 @@ buttons :: EventFn SyntheticEvent (Maybe Int)
 buttons = unsafeEventFn \e -> toMaybe (unsafeCoerce e).buttons
 
 -- \ Shared keyboard + mouse fields
-
 ctrlKey :: EventFn SyntheticEvent (Maybe Boolean)
 ctrlKey = unsafeEventFn \e -> toMaybe (unsafeCoerce e).ctrlKey
 
@@ -196,3 +193,11 @@ altKey = unsafeEventFn \e -> toMaybe (unsafeCoerce e).altKey
 
 metaKey :: EventFn SyntheticEvent (Maybe Boolean)
 metaKey = unsafeEventFn \e -> toMaybe (unsafeCoerce e).metaKey
+
+-- \ Clipboard Events
+clipboardData :: EventFn SyntheticEvent (Maybe DataTransfer)
+clipboardData = unsafeEventFn \e -> toMaybe (unsafeCoerce e).clipboardData
+
+-- \ Composition Events
+compositionData :: EventFn SyntheticEvent (Maybe String)
+compositionData = unsafeEventFn \e -> toMaybe (unsafeCoerce e).data
