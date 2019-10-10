@@ -14,7 +14,7 @@ import Data.Nullable (Nullable)
 import Foreign.Object (Object)
 import Prim.Row (class Union)
 import Web.DOM (Node)
-import React.Basic (JSX, Ref, element)
+import React.Basic (JSX, ReactComponent, Ref, element)
 import React.Basic.DOM.Internal (CSS, unsafeCreateDOMComponent)
 import React.Basic.Events (EventHandler)
 
@@ -38,9 +38,11 @@ const svgHeader = `-- | ----------------------------------------
 
 module React.Basic.DOM.SVG where
 
+import Data.Nullable (Nullable)
 import Foreign.Object (Object)
 import Prim.Row (class Union)
-import React.Basic (JSX, element)
+import Web.DOM (Node)
+import React.Basic (JSX, ReactComponent, Ref, element)
 import React.Basic.DOM.Internal (SharedSVGProps, unsafeCreateDOMComponent)
 
 `;
@@ -69,20 +71,7 @@ Object.keys(svgProps).forEach(elName => {
 // The attribute list for <svg> in react-html-attributes
 // is wrong (it contains the union of the attributes of all
 // svg elements)
-htmlProps['svg'] = camelCaseSvgProps['svg'].concat([
-  "xlinkActuate",
-  "xlinkArcrole",
-  "xlinkHref",
-  "xlinkRole",
-  "xlinkShow",
-  "xlinkTitle",
-  "xlinkType",
-  "xmlBase",
-  "xmlLang",
-  "xmlSpace",
-  "xmlns",
-  "xmlnsXlink"
-]);
+delete htmlProps['svg'];
 
 const printRecord = (e, elProps) =>
   elProps.length
@@ -91,7 +80,9 @@ const printRecord = (e, elProps) =>
   )`
     : "()";
 
-const generatePropTypes = (elements, props, sharedPropType) => 
+const reactProps = ["ref", "key", "_data"];
+
+const generatePropTypes = (elements, props, sharedPropType) =>
   elements.map(e => {
     const noChildren = voids.includes(e);
     const symbol = reserved.includes(e) ? `${e}'` : e;
@@ -100,7 +91,12 @@ const generatePropTypes = (elements, props, sharedPropType) =>
 
     return `
     type Props_${e} =${printRecord(e,
-      (noChildren ? [] : ["children", "_data"]).concat(props[e] || [], props["*"] || []).sort()
+      ( noChildren
+        ? reactProps
+        : reactProps.concat("children")
+      )
+        .concat(props[e] || [], props["*"] || [])
+        .sort()
     )}
 
     ${symbol}
@@ -108,7 +104,13 @@ const generatePropTypes = (elements, props, sharedPropType) =>
        . Union attrs attrs_ ${propType}
       => Record attrs
       -> JSX
-    ${symbol} = element (unsafeCreateDOMComponent "${e}")${
+    ${symbol} = element ${symbol}'
+
+    ${symbol}'
+      :: forall attrs attrs_
+       . Union attrs attrs_ ${propType}
+      => ReactComponent (Record attrs)
+    ${symbol}' = unsafeCreateDOMComponent "${e}"${
       noChildren
         ? ""
         : `
