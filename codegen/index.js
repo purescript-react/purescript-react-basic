@@ -71,7 +71,8 @@ Object.keys(svgProps).forEach(elName => {
 // The attribute list for <svg> in react-html-attributes
 // is wrong (it contains the union of the attributes of all
 // svg elements)
-delete htmlProps['svg'];
+delete htmlProps.elements.html[htmlProps.elements.html.indexOf("svg")];
+delete htmlProps["svg"];
 
 const printRecord = (e, elProps) =>
   elProps.length
