@@ -301,9 +301,6 @@ foreign import fragment :: Array JSX -> JSX
 
 -- | Create a `JSX` node from a `ReactComponent`, by providing the props.
 -- |
--- | This function is for non-React-Basic React components, such as those
--- | imported from FFI.
--- |
 -- | __*See also:* `ReactComponent`, `elementKeyed`__
 element
   :: forall props
@@ -313,9 +310,6 @@ element
 element = runFn2 element_
 
 -- | Create a `JSX` node from a `ReactComponent`, by providing the props and a key.
--- |
--- | This function is for non-React-Basic React components, such as those
--- | imported from FFI.
 -- |
 -- | __*See also:* `ReactComponent`, `element`, React's documentation regarding the special `key` prop__
 elementKeyed
