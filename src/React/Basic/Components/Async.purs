@@ -13,10 +13,6 @@ import React.Basic (Component, JSX, createComponent, empty, make)
 component :: Component (Aff JSX)
 component = createComponent "Async"
 
-data FetchAction
-  = ReplaceFiber (Fiber Unit)
-  | UpdateJSX JSX
-
 async :: Aff JSX -> JSX
 async = asyncWithLoader empty
 
