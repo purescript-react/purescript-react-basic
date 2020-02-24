@@ -139,7 +139,7 @@ foreign import createComponent
 -- |   identify the component. It receives the `ComponentSpec` as a prop and knows
 -- |   how to defer behavior to it. It requires very specific props and is not useful by
 -- |   itself from JavaScript. For JavaScript interop, see `toReactComponent`.__
-data Component props
+foreign import data Component :: Type -> Type
 
 -- | `Self` represents the component instance at a particular point in time.
 -- |
