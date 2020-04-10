@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "browserify": "16.2.3"
+  },
+  "scripts": {
+    "build": "spago bundle-app --to output/bundle.js && browserify output/bundle.js -o html/index.js"
+  }
+}

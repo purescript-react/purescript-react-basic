@@ -5,25 +5,16 @@ import Prelude
 import Data.Int as Int
 import Data.Maybe (maybe)
 import Effect (Effect)
-import Prim.Row as Row
 import React.Basic (Component, JSX, createComponent, make, runUpdate)
 import React.Basic as React
 import React.Basic.DOM as R
 import React.Basic.DOM.Events (capture, targetValue)
-import Record (merge)
 
 component :: Component Props
 component = createComponent "Form"
 
-type PropsRow =
-  ( onChange :: State -> Effect Unit
-  )
-
-type Props = { | PropsRow }
-
-defaultProps :: Props
-defaultProps =
-  { onChange: \_ -> pure unit
+type Props = {
+  onChange :: State -> Effect Unit
   }
 
 type State =
@@ -35,13 +26,9 @@ data Action
   = UpdateXCount Int
   | UpdateYCount Int
 
-form ::
-  forall attrs attrs_.
-  Row.Union attrs PropsRow attrs_ =>
-  Row.Nub attrs_ PropsRow =>
-  { | attrs } -> JSX
+form :: Props -> JSX
 form props =
-  make component { initialState, render } $ merge props defaultProps
+  make component { initialState, render } props
 
   where
    initialState =

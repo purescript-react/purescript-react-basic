@@ -1,4 +1,4 @@
-# Handler Example
+# Optional Props Example
 
 ## Building
 
