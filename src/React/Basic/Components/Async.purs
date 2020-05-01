@@ -6,7 +6,7 @@ module React.Basic.Components.Async
 import Prelude
 
 import Data.Maybe (Maybe(..), fromMaybe)
-import Effect.Aff (Aff, Fiber, error, killFiber, launchAff, launchAff_)
+import Effect.Aff (Aff, error, killFiber, launchAff, launchAff_)
 import Effect.Class (liftEffect)
 import React.Basic (Component, JSX, createComponent, empty, make)
 
