@@ -5,7 +5,6 @@
     "accessKey",
     "allowFullScreen",
     "allowTransparency",
-    "autoComplete",
     "autoFocus",
     "autoPlay",
     "capture",
@@ -252,6 +251,7 @@
   "form": [
     "accept",
     "action",
+    "autoComplete",
     "method",
     "name",
     "target",
@@ -300,6 +300,7 @@
     "accept",
     "alt",
     "autoCapitalize",
+    "autoComplete",
     "autoCorrect",
     "autoSave",
     "checked",
@@ -421,6 +422,7 @@
     "type"
   ],
   "select": [
+    "autoComplete",
     "defaultValue",
     "disabled",
     "form",
@@ -458,6 +460,7 @@
   ],
   "textarea": [
     "autoCapitalize",
+    "autoComplete",
     "autoCorrect",
     "cols",
     "defaultValue",

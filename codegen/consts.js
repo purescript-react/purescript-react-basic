@@ -33,7 +33,6 @@ module.exports.types = {
   "allowFullScreen": "Boolean",
   "allowTransparency": "Boolean",
   "async": "Boolean",
-  "autoComplete": "Boolean",
   "autoFocus": "Boolean",
   "autoPlay": "Boolean",
   "capture": "Boolean",

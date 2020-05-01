@@ -19,7 +19,6 @@ type Props_a =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -177,7 +176,6 @@ type Props_abbr =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -328,7 +326,6 @@ type Props_address =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -479,7 +476,6 @@ type Props_area =
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
   , alt :: String
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -632,7 +628,6 @@ type Props_article =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -782,7 +777,6 @@ type Props_aside =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -932,7 +926,6 @@ type Props_audio =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -1111,7 +1104,6 @@ type Props_b =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -1261,7 +1253,6 @@ type Props_base =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -1409,7 +1400,6 @@ type Props_bdi =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -1559,7 +1549,6 @@ type Props_bdo =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -1710,7 +1699,6 @@ type Props_blockquote =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -1861,7 +1849,6 @@ type Props_body =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -2011,7 +1998,6 @@ type Props_br =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -2157,7 +2143,6 @@ type Props_button =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -2312,7 +2297,6 @@ type Props_canvas =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -2464,7 +2448,6 @@ type Props_caption =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -2614,7 +2597,6 @@ type Props_cite =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -2764,7 +2746,6 @@ type Props_code =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -2914,7 +2895,6 @@ type Props_col =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -3062,7 +3042,6 @@ type Props_colgroup =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -3214,7 +3193,6 @@ type Props_data =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -3365,7 +3343,6 @@ type Props_datalist =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -3515,7 +3492,6 @@ type Props_dd =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -3665,7 +3641,6 @@ type Props_del =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -3816,7 +3791,6 @@ type Props_details =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -3967,7 +3941,6 @@ type Props_dfn =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -4118,7 +4091,6 @@ type Props_dialog =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -4269,7 +4241,6 @@ type Props_div =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -4419,7 +4390,6 @@ type Props_dl =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -4569,7 +4539,6 @@ type Props_dt =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -4719,7 +4688,6 @@ type Props_em =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -4869,7 +4837,6 @@ type Props_embed =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -5019,7 +4986,6 @@ type Props_fieldset =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -5172,7 +5138,6 @@ type Props_figcaption =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -5322,7 +5287,6 @@ type Props_figure =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -5472,7 +5436,6 @@ type Props_footer =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -5624,7 +5587,7 @@ type Props_form =
   , action :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
+  , autoComplete :: String
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -5781,7 +5744,6 @@ type Props_h1 =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -5931,7 +5893,6 @@ type Props_h2 =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -6081,7 +6042,6 @@ type Props_h3 =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -6231,7 +6191,6 @@ type Props_h4 =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -6381,7 +6340,6 @@ type Props_h5 =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -6531,7 +6489,6 @@ type Props_h6 =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -6681,7 +6638,6 @@ type Props_head =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -6832,7 +6788,6 @@ type Props_header =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -6982,7 +6937,6 @@ type Props_hgroup =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -7132,7 +7086,6 @@ type Props_hr =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -7280,7 +7233,6 @@ type Props_html =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -7431,7 +7383,6 @@ type Props_i =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -7581,7 +7532,6 @@ type Props_iframe =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -7738,7 +7688,6 @@ type Props_img =
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
   , alt :: String
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -7893,7 +7842,7 @@ type Props_input =
   , allowTransparency :: Boolean
   , alt :: String
   , autoCapitalize :: String
-  , autoComplete :: Boolean
+  , autoComplete :: String
   , autoCorrect :: String
   , autoFocus :: Boolean
   , autoPlay :: Boolean
@@ -8064,7 +8013,6 @@ type Props_ins =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -8215,7 +8163,6 @@ type Props_kbd =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -8365,7 +8312,6 @@ type Props_keygen =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -8519,7 +8465,6 @@ type Props_label =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -8670,7 +8615,6 @@ type Props_legend =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -8820,7 +8764,6 @@ type Props_li =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -8972,7 +8915,6 @@ type Props_link =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -9129,7 +9071,6 @@ type Props_main =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -9279,7 +9220,6 @@ type Props_map =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -9430,7 +9370,6 @@ type Props_mark =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -9580,7 +9519,6 @@ type Props_math =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -9730,7 +9668,6 @@ type Props_menu =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -9880,7 +9817,6 @@ type Props_menuitem =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -10030,7 +9966,6 @@ type Props_meta =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -10178,7 +10113,6 @@ type Props_meter =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -10334,7 +10268,6 @@ type Props_nav =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -10484,7 +10417,6 @@ type Props_noscript =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -10634,7 +10566,6 @@ type Props_object =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -10790,7 +10721,6 @@ type Props_ol =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -10943,7 +10873,6 @@ type Props_optgroup =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -11095,7 +11024,6 @@ type Props_option =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -11249,7 +11177,6 @@ type Props_output =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -11401,7 +11328,6 @@ type Props_p =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -11551,7 +11477,6 @@ type Props_param =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -11700,7 +11625,6 @@ type Props_picture =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -11850,7 +11774,6 @@ type Props_pre =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -12001,7 +11924,6 @@ type Props_progress =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -12153,7 +12075,6 @@ type Props_q =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -12304,7 +12225,6 @@ type Props_rb =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -12454,7 +12374,6 @@ type Props_rp =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -12604,7 +12523,6 @@ type Props_rt =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -12754,7 +12672,6 @@ type Props_rtc =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -12904,7 +12821,6 @@ type Props_ruby =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -13054,7 +12970,6 @@ type Props_s =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -13204,7 +13119,6 @@ type Props_samp =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -13355,7 +13269,6 @@ type Props_script =
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
   , async :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -13510,7 +13423,6 @@ type Props_section =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -13660,7 +13572,7 @@ type Props_select =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
+  , autoComplete :: String
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -13819,7 +13731,6 @@ type Props_slot =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -13970,7 +13881,6 @@ type Props_small =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -14120,7 +14030,6 @@ type Props_source =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -14270,7 +14179,6 @@ type Props_span =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -14420,7 +14328,6 @@ type Props_strong =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -14570,7 +14477,6 @@ type Props_style =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -14724,7 +14630,6 @@ type Props_sub =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -14874,7 +14779,6 @@ type Props_summary =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -15024,7 +14928,6 @@ type Props_sup =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -15175,7 +15078,6 @@ type Props_table =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -15327,7 +15229,6 @@ type Props_tbody =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -15477,7 +15378,6 @@ type Props_td =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -15631,7 +15531,6 @@ type Props_template =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -15782,7 +15681,7 @@ type Props_textarea =
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
   , autoCapitalize :: String
-  , autoComplete :: Boolean
+  , autoComplete :: String
   , autoCorrect :: String
   , autoFocus :: Boolean
   , autoPlay :: Boolean
@@ -15944,7 +15843,6 @@ type Props_tfoot =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -16094,7 +15992,6 @@ type Props_th =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -16248,7 +16145,6 @@ type Props_thead =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -16398,7 +16294,6 @@ type Props_time =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -16548,7 +16443,6 @@ type Props_title =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -16698,7 +16592,6 @@ type Props_tr =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -16848,7 +16741,6 @@ type Props_track =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -16998,7 +16890,6 @@ type Props_u =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -17148,7 +17039,6 @@ type Props_ul =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -17299,7 +17189,6 @@ type Props_var =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -17449,7 +17338,6 @@ type Props_video =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
@@ -17599,7 +17487,6 @@ type Props_wbr =
   , accessKey :: String
   , allowFullScreen :: Boolean
   , allowTransparency :: Boolean
-  , autoComplete :: Boolean
   , autoFocus :: Boolean
   , autoPlay :: Boolean
   , capture :: Boolean
