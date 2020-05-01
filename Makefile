@@ -1,12 +1,12 @@
 all: build examples
 
-build: bower_components node_modules
+build: bower npm
 	npm run build
 
-bower_components: node_modules
+bower: npm
 	npx bower --allow-root install
 
-node_modules:
+npm:
 	npm install
 
-.PHONY: build
+.PHONY: build bower npm all
