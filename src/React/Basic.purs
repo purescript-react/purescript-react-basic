@@ -11,6 +11,7 @@ module React.Basic
   , makeStateless
   , JSX
   , empty
+  , fromArray
   , keyed
   , fragment
   , element
@@ -36,6 +37,7 @@ import Data.Nullable (Nullable, notNull, null)
 import Effect (Effect)
 import Effect.Uncurried (EffectFn3, runEffectFn3)
 import Prim.Row (class Union)
+import Unsafe.Coerce (unsafeCoerce)
 
 -- | `ComponentSpec` represents a React-Basic component implementation.
 -- |
@@ -285,6 +287,13 @@ instance monoidJSX :: Monoid JSX where
 -- |
 -- | __*See also:* `JSX`, Monoid `guard`__
 foreign import empty :: JSX
+
+-- | Coerce an array of `JSX` as a `JSX` itself. Note that when working with nested
+-- | Arrays of JSX, it is important to set the key for child components.
+-- |
+-- | __*See also:* `keyed`, `elementKeyed`, `fragment`__
+fromArray :: Array JSX -> JSX
+fromArray = unsafeCoerce
 
 -- | Apply a React key to a subtree. React-Basic usually hides React's warning about
 -- | using `key` props on components in an Array, but keys are still important for
