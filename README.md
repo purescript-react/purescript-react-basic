@@ -1,40 +1,51 @@
 # purescript-react-basic
 
-[![Build Status](https://travis-ci.org/lumihq/purescript-react-basic.svg?branch=master)](https://travis-ci.org/lumihq/purescript-react-basic)
+[![Build Status](https://travis-ci.org/lumihq/purescript-react-basic.svg?branch=main)](https://travis-ci.org/lumihq/purescript-react-basic)
 
-This package implements an opinionated set of bindings over [React](https://reactjs.org), optimizing for correctness and simplifying basic use cases.
-
-_A note about React hooks: Hooks are arriving in stable React soon. The API presented here is the more traditional `setState`+lifecycles style React's had for a long time. If you'd like to experiment with the hooks API in react-basic, have a look at [react-basic-hooks](https://github.com/spicydonuts/purescript-react-basic-hooks). It can be installed and used along side this library, but don't forget it's a preview release!_
-
-## Features
-
-- All React DOM elements and attributes are supported (soon, events are a work in progress).
-- An intuitive API for specifying props - simple records, no arrays of key value pairs.
-- Attributes are optional, but type-checked. It is a type error to specify `href` as an integer, for example.
-- Both `setState` and an action/update pattern for local component state, inspired by [ReasonReact](https://reasonml.github.io/reason-react/).
-- React lifecycles are available, but not in your way when you don't need them.
+There's a brief section on getting started below. For a more complete guide, check out the React Basic [docs](https://react-basic-starter.github.io/)! (work in progress)
 
 ## Getting Started
 
-You can install this package using Bower:
+This library contains the core types and tools used by the rest of the React Basic ecosystem. To use React Basic in your applications you'll also need to choose one or more _implementations_ as well as a target environment!
+
+_Note: The Hooks and Classic implementations can both be used in the same project_
+
+Implementations:
+
+- [`react-basic-hooks`](https://github.com/spicydonuts/purescript-react-basic-hooks)
+  - PureScript types for building components using React hooks, as well as creating custom hooks.
+- [`react-basic-classic`](https://github.com/lumihq/purescript-react-basic-classic) _(this implementation was previously included in the `React.Basic` module)_
+  - PureScript types for the more traditional class-based React API. Very similar to the Reason-React API.
+
+Environments:
+
+- [`react-basic-dom`](https://github.com/lumihq/purescript-react-basic-dom)
+- [`react-basic-native`](https://github.com/f-f/purescript-react-basic-native)
+
+For example, to use the `react-basic` hooks implementation for web development in a `spago` app:
 
 ```sh
-bower install --save purescript-react-basic
+npm i -S react react-dom
+spago install react-basic react-basic-dom react-basic-hooks
 ```
 
-Or clone/fork the [starter project](https://github.com/lumihq/react-basic-starter).
+Or using `bower`:
 
-See [the documentation](https://pursuit.purescript.org/packages/purescript-react-basic/docs/React.Basic) for an overview of the API or take a look at these examples:
+```sh
+npm i -S react react-dom
+bower i -S purescript-react-basic purescript-react-basic-dom purescript-react-basic-hooks
+```
 
-- [A counter](./examples/counter/src/Counter.purs)
-- [A controlled input](./examples/controlled-input/src/ControlledInput.purs)
-- [Components](./examples/component/src/ToggleButton.purs) in [components](./examples/component/src/Container.purs)
-- [Using action/update](./examples/actions/src/Actions.purs)
+## Upgrading from React Basic v14
 
-## Migrating from v7 to v8
+The `React.Basic.DOM` modules have been moved to [`react-basic-dom`](https://github.com/lumihq/purescript-react-basic-dom). This doesn't require any code changes, but you will need to add this dependency to your projects.
 
-v8 removes the required `update` function from the component spec and replaces `send self Action` with the `self.setState` API. Existing components using `update` can create a `send` function using the `runUpdate` function added in v8. See [the actions example](./examples/actions/src/Actions.purs) for an example of this. Alternatively, [this comment](https://github.com/lumihq/purescript-react-basic/pull/73#issuecomment-456486249) shows a few other possible upgrade paths.
+The component implementation previously in `React.Basic` has been extracted to [`react-basic-classic`](https://github.com/lumihq/purescript-react-basic-classic), which now provides the `React.Basic.Classic` module. Just install that library and find/replace `^import\sReact\.Basic\s` with `import React.Basic.Classic`.
 
-## Migrating from v2/v3
+If you were using the `React.Basic.Compat` module, that module has been moved to [`react-basic-compat`](https://github.com/lumihq/purescript-react-basic-compat).
 
-`React.Basic.Compat` is a new (but deprecated) module. It matches most of the old API and types (except `setStateThen` and `isFirstMount`) to make upgrading easier and more gradual. You can find `^import\sReact\.Basic\b` and replace with `import React.Basic.Compat`, upgrade the package version, and proceed from there one component at a time (or only new components). See the documentation link above for more info on the new API.
+If you were using [`react-basic-hooks`](https://github.com/spicydonuts/purescript-react-basic-hooks) exclusively everything should work as-is.
+
+## Where did the examples folder go?
+
+Because this library no longer contains a specific implementation and the example structure contained a fair bit of boilerplate, they've been removed in favor of a consolidated documentation site (linked above). This is still a work in progress but you can refer to the [v14 examples](https://github.com/lumihq/purescript-react-basic/tree/v14.0.0/examples) in the meantime.

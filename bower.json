@@ -12,17 +12,8 @@
     "url": "https://github.com/lumihq/purescript-react-basic.git"
   },
   "dependencies": {
-    "purescript-aff": "^5.0.2",
-    "purescript-console": "^4.1.0",
-    "purescript-effect": "^2.0.0",
-    "purescript-exceptions": "^4.0.0",
-    "purescript-functions": "^4.0.0",
-    "purescript-nullable": "^4.1.0",
-    "purescript-record": ">=1.0.0 <3.0.0",
-    "purescript-unsafe-coerce": "^4.0.0",
-    "purescript-web-dom": ">=1.0.0 <4.0.0",
-    "purescript-web-html": ">=1.0.0 <3.0.0",
-    "purescript-web-events": ">=1.0.0 <3.0.0",
-    "purescript-foreign-object": "^2.0.3"
+    "purescript-effect": "^2.0.1",
+    "purescript-record": "^2.0.2",
+    "purescript-prelude": "^4.1.1"
   }
 }
