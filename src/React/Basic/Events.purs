@@ -12,7 +12,6 @@ module React.Basic.Events
   ) where
 
 import Prelude
-
 import Data.Symbol (class IsSymbol, SProxy(SProxy))
 import Effect (Effect)
 import Effect.Uncurried (EffectFn1, mkEffectFn1)
@@ -23,7 +22,8 @@ import Type.Data.RowList (RLProxy(..))
 
 -- | An event handler, which receives a `SyntheticEvent` and performs some
 -- | effects in return.
-type EventHandler = EffectFn1 SyntheticEvent Unit
+type EventHandler
+  = EffectFn1 SyntheticEvent Unit
 
 -- | Event data that we receive from React.
 foreign import data SyntheticEvent :: Type
@@ -38,7 +38,8 @@ foreign import data SyntheticEvent :: Type
 -- |                     \value -> setState \_ -> { value }
 -- |       }
 -- | ```
-newtype EventFn a b = EventFn (a -> b)
+newtype EventFn a b
+  = EventFn (a -> b)
 
 -- | Unsafely create an `EventFn`. This function should be avoided as it can allow
 -- | a `SyntheticEvent` to escape its scope. Accessing a React event's properties is only
@@ -49,6 +50,7 @@ unsafeEventFn :: forall a b. (a -> b) -> EventFn a b
 unsafeEventFn = EventFn
 
 derive newtype instance semigroupoidBuilder :: Semigroupoid EventFn
+
 derive newtype instance categoryBuilder :: Category EventFn
 
 -- | Create an `EventHandler`, given an `EventFn` and a callback.
@@ -83,22 +85,25 @@ class Merge (rl :: RowList) fns a r | rl -> fns, rl a -> r where
 instance mergeNil :: Merge Nil () a () where
   mergeImpl _ _ = EventFn \_ -> {}
 
-instance mergeCons
-    :: ( IsSymbol l
-       , Row.Cons l (EventFn a b) fns_rest fns
-       , Row.Cons l b r_rest r
-       , Row.Lacks l fns_rest
-       , Row.Lacks l r_rest
-       , Merge rest fns_rest a r_rest
-       )
-    => Merge (Cons l (EventFn a b) rest) fns a r
-  where
-    mergeImpl _ fns = EventFn \a ->
-        let EventFn inner = mergeImpl (RLProxy :: RLProxy rest) (delete l fns)
-            EventFn f = get l fns
-         in insert l (f a) (inner a)
-      where
-        l = SProxy :: SProxy l
+instance mergeCons ::
+  ( IsSymbol l
+  , Row.Cons l (EventFn a b) fns_rest fns
+  , Row.Cons l b r_rest r
+  , Row.Lacks l fns_rest
+  , Row.Lacks l r_rest
+  , Merge rest fns_rest a r_rest
+  ) =>
+  Merge (Cons l (EventFn a b) rest) fns a r where
+  mergeImpl _ fns =
+    EventFn \a ->
+      let
+        EventFn inner = mergeImpl (RLProxy :: RLProxy rest) (delete l fns)
+
+        EventFn f = get l fns
+      in
+        insert l (f a) (inner a)
+    where
+    l = SProxy :: SProxy l
 
 -- | Merge multiple `EventFn` operations and collect their results.
 -- |
@@ -109,10 +114,10 @@ instance mergeCons
 -- |                     \{ targetValue, timeStamp } -> setState \_ -> { ... }
 -- |       }
 -- | ```
-merge
-  :: forall a fns fns_list r
-   . RowToList fns fns_list
-  => Merge fns_list fns a r
-  => Record fns
-  -> EventFn a (Record r)
+merge ::
+  forall a fns fns_list r.
+  RowToList fns fns_list =>
+  Merge fns_list fns a r =>
+  Record fns ->
+  EventFn a (Record r)
 merge = mergeImpl (RLProxy :: RLProxy fns_list)

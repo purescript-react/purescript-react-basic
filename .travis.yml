@@ -1,11 +1,15 @@
 dist: trusty
 sudo: required
 language: node_js
-node_js: 10
+node_js:
+  - node
+  - "lts/*"
+
+cache: npm
 
 install:
-  - npm install
+  - npm ci
+  - npx bower install
 
 script:
-  - npx bower install
-  - npm run build
+  - npx pulp build
