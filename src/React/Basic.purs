@@ -141,6 +141,8 @@ foreign import createComponent
 -- |   itself from JavaScript. For JavaScript interop, see `toReactComponent`.__
 foreign import data Component :: Type -> Type
 
+type role Component representational
+
 -- | `Self` represents the component instance at a particular point in time.
 -- |
 -- | - `props`
@@ -347,13 +349,19 @@ foreign import displayNameFromSelf
 -- | __*See also:* `element`, `toReactComponent`__
 foreign import data ReactComponent :: Type -> Type
 
+type role ReactComponent representational
+
 -- | An opaque representation of a React component's instance (`this` in the JavaScript
 -- | React paradigm). It exists as an escape hatch to unsafe behavior. Use it with
 -- | caution.
 foreign import data ReactComponentInstance :: Type -> Type -> Type
 
+type role ReactComponentInstance representational representational
+
 -- | A React Ref, as created by `React.createRef`
 foreign import data Ref :: Type -> Type
+
+type role Ref representational
 
 -- | Convert a React-Basic `ComponentSpec` to a JavaScript-friendly React component.
 -- | This function should only be used for JS interop and not normal React-Basic usage.
@@ -373,6 +381,8 @@ foreign import toReactComponent
   -> ReactComponent { | jsProps }
 
 foreign import data ReactContext :: Type -> Type
+
+type role ReactContext representational
 
 -- | Create a `ReactContext` given a default value. Use `provider` and `consumer`
 -- | to provide and consume context values. Alternatively, use `contextProvider`
