@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/lumihq/purescript-react-basic.svg?branch=main)](https://travis-ci.org/lumihq/purescript-react-basic)
 
-There's a brief section on getting started below. For a more complete guide, check out the React Basic [docs](https://react-basic-starter.github.io/)! (work in progress)
+There's a brief section on getting started below. For a more complete guide, check out the React Basic ~[docs](https://react-basic-starter.github.io/)! (work in progress)~ _(sorry, not sure when the docs will be done but here's a "real world" example app which is a great starting point! [jonasbuntinx/purescript-react-realworld](https://github.com/jonasbuntinx/purescript-react-realworld) -- I also recommend the [PureScript Discourse forum](https://discourse.purescript.org/search?q=react-basic) for specific questions, and am usually fairly responsive to blocking issues here on GitHub, including the repositories below. Finally, check out the [purescript-cookbook](https://github.com/JordanMartinez/purescript-cookbook/tree/master/recipes) repo for small examples of specific use cases, like `TextFieldsReactHooks`.)_
 
 ## Getting Started
 
