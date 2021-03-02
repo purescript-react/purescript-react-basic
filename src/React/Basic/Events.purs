@@ -16,7 +16,7 @@ import Data.Symbol (class IsSymbol, SProxy(SProxy))
 import Effect (Effect)
 import Effect.Uncurried (EffectFn1, mkEffectFn1)
 import Prim.Row as Row
-import Prim.RowList (kind RowList, class RowToList, Cons, Nil)
+import Prim.RowList (class RowToList, RowList, Cons, Nil)
 import Record (delete, get, insert)
 import Type.Data.RowList (RLProxy(..))
 
@@ -79,7 +79,7 @@ handler_ = mkEffectFn1 <<< const
 syntheticEvent :: EventFn SyntheticEvent SyntheticEvent
 syntheticEvent = identity
 
-class Merge (rl :: RowList) fns a r | rl -> fns, rl a -> r where
+class Merge (rl :: RowList Type) fns a r | rl -> fns, rl a -> r where
   mergeImpl :: RLProxy rl -> Record fns -> EventFn a (Record r)
 
 instance mergeNil :: Merge Nil () a () where

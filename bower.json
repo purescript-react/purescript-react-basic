@@ -12,8 +12,8 @@
     "url": "https://github.com/lumihq/purescript-react-basic.git"
   },
   "dependencies": {
-    "purescript-effect": "^2.0.1",
-    "purescript-record": "^2.0.2",
-    "purescript-prelude": "^4.1.1"
+    "purescript-effect": "^3.0.0",
+    "purescript-record": "^3.0.0",
+    "purescript-prelude": "^5.0.0"
   }
 }
