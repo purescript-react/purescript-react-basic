@@ -9,7 +9,7 @@ cache: npm
 
 install:
   - npm ci
-  - npx bower install
+  - npm run deps
 
 script:
-  - npx pulp build
+  - npm run build
