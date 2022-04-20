@@ -12,7 +12,7 @@ module React.Basic.Events
   ) where
 
 import Prelude
-import Data.Symbol (class IsSymbol, SProxy(SProxy))
+import Data.Symbol (class IsSymbol)
 import Effect (Effect)
 import Effect.Uncurried (EffectFn1, mkEffectFn1)
 import Prim.Row as Row
@@ -103,7 +103,7 @@ instance mergeCons ::
       in
         insert l (f a) (inner a)
     where
-    l = SProxy :: SProxy l
+    l = Proxy :: Proxy l
 
 -- | Merge multiple `EventFn` operations and collect their results.
 -- |
