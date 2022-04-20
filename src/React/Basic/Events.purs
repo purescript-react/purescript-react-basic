@@ -18,7 +18,7 @@ import Effect.Uncurried (EffectFn1, mkEffectFn1)
 import Prim.Row as Row
 import Prim.RowList (class RowToList, RowList, Cons, Nil)
 import Record (delete, get, insert)
-import Type.Data.RowList (RLProxy(..))
+import Type.Proxy (Proxy(..))
 
 -- | An event handler, which receives a `SyntheticEvent` and performs some
 -- | effects in return.
@@ -80,7 +80,7 @@ syntheticEvent :: EventFn SyntheticEvent SyntheticEvent
 syntheticEvent = identity
 
 class Merge (rl :: RowList Type) fns a r | rl -> fns, rl a -> r where
-  mergeImpl :: RLProxy rl -> Record fns -> EventFn a (Record r)
+  mergeImpl :: Proxy rl -> Record fns -> EventFn a (Record r)
 
 instance mergeNil :: Merge Nil () a () where
   mergeImpl _ _ = EventFn \_ -> {}
@@ -97,7 +97,7 @@ instance mergeCons ::
   mergeImpl _ fns =
     EventFn \a ->
       let
-        EventFn inner = mergeImpl (RLProxy :: RLProxy rest) (delete l fns)
+        EventFn inner = mergeImpl (Proxy :: Proxy rest) (delete l fns)
 
         EventFn f = get l fns
       in
@@ -120,4 +120,4 @@ merge ::
   Merge fns_list fns a r =>
   Record fns ->
   EventFn a (Record r)
-merge = mergeImpl (RLProxy :: RLProxy fns_list)
+merge = mergeImpl (Proxy :: Proxy fns_list)
