@@ -4,7 +4,7 @@ import React from "react";
 const createElement = React.createElement;
 const Fragment = React.Fragment;
 
-export var empty = null;
+export const empty = null;
 
 export function keyed(key) {
   return (child) =>
