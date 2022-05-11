@@ -1,5 +1,3 @@
-"use strict";
-
 import React from "react";
 const createElement = React.createElement;
 const Fragment = React.Fragment;
