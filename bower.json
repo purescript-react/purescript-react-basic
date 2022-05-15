@@ -1,21 +1,21 @@
 {
-  "name": "purescript-react-basic",
-  "license": [
-    "Apache-2.0"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/lumihq/purescript-react-basic"
-  },
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "output"
-  ],
-  "dependencies": {
-    "purescript-effect": "^4.0.0",
-    "purescript-prelude": "^6.0.0",
-    "purescript-record": "^4.0.0"
-  }
+    "name": "purescript-react-basic",
+    "license": [
+        "Apache-2.0"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/lumihq/purescript-react-basic"
+    },
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "output"
+    ],
+    "dependencies": {
+        "purescript-effect": "^v4.0.0",
+        "purescript-prelude": "^v6.0.0",
+        "purescript-record": "^v4.0.0"
+    }
 }
