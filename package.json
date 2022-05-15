@@ -24,12 +24,7 @@
     "react": "^18.1.0"
   },
   "scripts": {
-    "deps": "run-s deps:*",
-    "deps:spago": "spago install",
-    "deps:pulp": "bower install",
-    "build": "run-s build:*",
-    "build:spago": "spago build",
-    "build:pulp": "pulp build -o output-pulp",
+    "build": "spago build",
     "clean": "rm -rf .spago bower_components output output-pulp node_modules"
   }
 }
