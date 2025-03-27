@@ -1,6 +1,5 @@
-import React from "react";
-const createElement = React.createElement;
-const Fragment = React.Fragment;
+import * as React from "react";
+import { createElement, Fragment } from "react";
 
 export const empty = null;
 
