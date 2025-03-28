@@ -22,8 +22,7 @@ import Type.Proxy (Proxy(..))
 
 -- | An event handler, which receives a `SyntheticEvent` and performs some
 -- | effects in return.
-type EventHandler
-  = EffectFn1 SyntheticEvent Unit
+type EventHandler = EffectFn1 SyntheticEvent Unit
 
 -- | Event data that we receive from React.
 foreign import data SyntheticEvent :: Type
@@ -38,8 +37,7 @@ foreign import data SyntheticEvent :: Type
 -- |                     \value -> setState \_ -> { value }
 -- |       }
 -- | ```
-newtype EventFn a b
-  = EventFn (a -> b)
+newtype EventFn a b = EventFn (a -> b)
 
 -- | Unsafely create an `EventFn`. This function should be avoided as it can allow
 -- | a `SyntheticEvent` to escape its scope. Accessing a React event's properties is only
@@ -114,10 +112,10 @@ instance mergeCons ::
 -- |                     \{ targetValue, timeStamp } -> setState \_ -> { ... }
 -- |       }
 -- | ```
-merge ::
-  forall a fns fns_list r.
-  RowToList fns fns_list =>
-  Merge fns_list fns a r =>
-  Record fns ->
-  EventFn a (Record r)
+merge
+  :: forall a fns fns_list r
+   . RowToList fns fns_list
+  => Merge fns_list fns a r
+  => Record fns
+  -> EventFn a (Record r)
 merge = mergeImpl (Proxy :: Proxy fns_list)

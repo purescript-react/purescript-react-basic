@@ -45,20 +45,20 @@ foreign import fragment :: Array JSX -> JSX
 -- | Create a `JSX` node from a `ReactComponent`, by providing the props.
 -- |
 -- | __*See also:* `ReactComponent`, `elementKeyed`__
-foreign import element ::
-  forall props.
-  ReactComponent { | props } ->
-  { | props } ->
-  JSX
+foreign import element
+  :: forall props
+   . ReactComponent { | props }
+  -> { | props }
+  -> JSX
 
 -- | Create a `JSX` node from a `ReactComponent`, by providing the props and a key.
 -- |
 -- | __*See also:* `ReactComponent`, `element`, React's documentation regarding the special `key` prop__
-foreign import elementKeyed ::
-  forall props.
-  ReactComponent { | props } ->
-  { key :: String | props } ->
-  JSX
+foreign import elementKeyed
+  :: forall props
+   . ReactComponent { | props }
+  -> { key :: String | props }
+  -> JSX
 
 -- | Represents a traditional React component. Useful for JavaScript interop and
 -- | FFI. For example:
@@ -82,15 +82,15 @@ foreign import data ReactContext :: Type -> Type
 -- | __*See also:* `provider`, `consumer`, React's documentation regarding Context__
 foreign import createContext :: forall a. a -> Effect (ReactContext a)
 
-foreign import contextProvider ::
-  forall a.
-  ReactContext a ->
-  ReactComponent { value :: a, children :: Array JSX }
+foreign import contextProvider
+  :: forall a
+   . ReactContext a
+  -> ReactComponent { value :: a, children :: Array JSX }
 
-foreign import contextConsumer ::
-  forall a.
-  ReactContext a ->
-  ReactComponent { children :: a -> Array JSX }
+foreign import contextConsumer
+  :: forall a
+   . ReactContext a
+  -> ReactComponent { children :: a -> Array JSX }
 
 -- | Create a provider `JSX` given a context value and children.
 -- |
