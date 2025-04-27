@@ -1,39 +1,24 @@
-import React from "react";
-const createElement = React.createElement;
-const Fragment = React.Fragment;
+import * as React from "react";
 
 export const empty = null;
 
-export function keyed(key) {
-  return (child) =>
-    createElement(Fragment, { key: key }, child);
-}
+export const keyed = (key) => (child) =>
+  React.createElement(React.Fragment, { key: key }, child);
 
-export function element(component) {
-  return (props) =>
-    Array.isArray(props.children)
-      ? createElement.apply(null, [component, props].concat(props.children))
-      : createElement(component, props);
-}
+export const element = (component) => (props) =>
+  Array.isArray(props.children)
+    ? React.createElement.apply(null, [component, props].concat(props.children))
+    : React.createElement(component, props);
 
-export function elementKeyed(component) {
-  return (props) =>
-    createElement(component, props);
-}
+export const elementKeyed = (component) => (props) =>
+  React.createElement(component, props);
 
-export function fragment(children) {
-  return createElement.apply(null, [Fragment, null].concat(children));
-}
+export const fragment = (children) =>
+  React.createElement.apply(null, [React.Fragment, null].concat(children));
 
-export function createContext(defaultValue) {
-  return () =>
-    React.createContext(defaultValue);
-}
+export const createContext = (defaultValue) => () =>
+  React.createContext(defaultValue);
 
-export function contextProvider(context) {
-  return context.Provider;
-}
+export const contextProvider = (context) => context.Provider;
 
-export function contextConsumer(context) {
-  return context.Consumer;
-}
+export const contextConsumer = (context) => context.Consumer;

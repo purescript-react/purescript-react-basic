@@ -1,0 +1,13 @@
+package:
+  name: react-basic
+  publish:
+    license: Apache-2.0
+    version: 17.0.0
+    location:
+      githubOwner: purescript-react
+      githubRepo: purescript-react-basic
+  dependencies:
+    - effect: ">=4.0.0 <5.0.0"
+    - prelude: ">=6.0.2 <7.0.0"
+    - record: ">=4.0.0 <5.0.0"
+workspace: {}

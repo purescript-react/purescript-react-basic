@@ -1,2 +1,1 @@
-import React from "react";
-export const strictMode_ = React.StrictMode;
+export { StrictMode as strictMode_ } from "react";

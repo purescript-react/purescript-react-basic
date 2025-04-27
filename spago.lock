@@ -1,0 +1,74 @@
+{
+  "workspace": {
+    "packages": {
+      "react-basic": {
+        "path": "./",
+        "core": {
+          "dependencies": [
+            {
+              "effect": ">=4.0.0 <5.0.0"
+            },
+            {
+              "prelude": ">=6.0.2 <7.0.0"
+            },
+            {
+              "record": ">=4.0.0 <5.0.0"
+            }
+          ],
+          "build_plan": [
+            "effect",
+            "functions",
+            "prelude",
+            "record",
+            "unsafe-coerce"
+          ]
+        },
+        "test": {
+          "dependencies": [],
+          "build_plan": []
+        }
+      }
+    },
+    "extra_packages": {}
+  },
+  "packages": {
+    "effect": {
+      "type": "registry",
+      "version": "4.0.0",
+      "integrity": "sha256-eBtZu+HZcMa5HilvI6kaDyVX3ji8p0W9MGKy2K4T6+M=",
+      "dependencies": [
+        "prelude"
+      ]
+    },
+    "functions": {
+      "type": "registry",
+      "version": "6.0.0",
+      "integrity": "sha256-adMyJNEnhGde2unHHAP79gPtlNjNqzgLB8arEOn9hLI=",
+      "dependencies": [
+        "prelude"
+      ]
+    },
+    "prelude": {
+      "type": "registry",
+      "version": "6.0.2",
+      "integrity": "sha256-kiAPZxihtAel8uRiTNdccf4qylp/9J3jNkEHNAD0MsE=",
+      "dependencies": []
+    },
+    "record": {
+      "type": "registry",
+      "version": "4.0.0",
+      "integrity": "sha256-Za5U85bTRJEfGK5Sk4hM41oXy84YQI0I8TL3WUn1Qzg=",
+      "dependencies": [
+        "functions",
+        "prelude",
+        "unsafe-coerce"
+      ]
+    },
+    "unsafe-coerce": {
+      "type": "registry",
+      "version": "6.0.0",
+      "integrity": "sha256-IqIYW4Vkevn8sI+6aUwRGvd87tVL36BBeOr0cGAE7t0=",
+      "dependencies": []
+    }
+  }
+}
