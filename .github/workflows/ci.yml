@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [master, main]
+    branches: [main]
   pull_request:
-    branches: [master, main]
+    branches: [main]
 
 jobs:
   build:
@@ -12,11 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up a PureScript toolchain
+      - name: Set up PureScript toolchain
         uses: purescript-contrib/setup-purescript@main
         with:
           purescript: "latest"
-          purs-tidy: "latest"
+          purs-tidy: "0.11.0" # "latest"
           spago: "unstable"
 
       - name: Cache PureScript dependencies
